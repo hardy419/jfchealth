@@ -1,0 +1,47 @@
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td width="588" height="25">&nbsp;</td>
+    <td width="332">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><table width="430" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="56" class="footer_txt"><a href="news.html" tppabs="http://jfchealth.com/new/news.html" target="_parent">最新消息</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="56" class="footer_txt"><a href="aboutus.html" tppabs="http://jfchealth.com/new/aboutus.html" target="_parent">關於我們</a></td>
+        <td width="10">&nbsp;</td>
+        <td width="34" class="footer_txt"><a href="course.html" tppabs="http://jfchealth.com/new/course.html" target="_parent">課程</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="56" class="footer_txt"><a href="product01.html" tppabs="http://jfchealth.com/new/product01.html" target="_parent">產品介紹</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="56" class="footer_txt"><a href="user_article.html" tppabs="http://jfchealth.com/new/user_article.html" target="_parent">分享平台</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="56" class="footer_txt"><a href="magazine.html" tppabs="http://jfchealth.com/new/magazine.html" target="_parent">頻譜生活</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="56" class="footer_txt"><a href="contactus.html" tppabs="http://jfchealth.com/new/contactus.html" target="_parent">聯絡我們</a></td>
+      </tr>
+    </table></td>
+    <td align="right" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="30"><a href="https://www.facebook.com/jfchk" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_footer_facebook.png" width="31" height="30" border="0" /></a></td>
+        <td width="20">&nbsp;</td>
+        <td width="30"><a href="https://www.youtube.com/channel/UCkQ9aBI9K8jA_1Ml-96Gm6g" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_footer_youtube.png" width="30" height="30" border="0" /></a></td>
+        <td width="20">&nbsp;</td>
+        <td width="30"><img src="<?PHP echo $dir_image; ?>btn_footer_instagram.png" width="30" height="30" /></td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td height="32">&nbsp;</td>
+    <td align="right" valign="middle" class="footer_txt">版權由駿豐頻譜(香港)有限公司所有 不得轉載.</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<div class="bottom-bar" style="top:960px;">
