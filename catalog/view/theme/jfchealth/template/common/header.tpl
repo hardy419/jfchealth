@@ -49,7 +49,7 @@
             <td><img src="<?PHP echo $dir_image; ?>btn_instagram.png" width="93" height="26" /></td>
           </tr>
         </table></td>
-        <td width="262" align="center"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></td>
+        <td width="262" align="center"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></a></td>
         <td width="329">&nbsp;</td>
         </tr>
       <tr>
@@ -63,7 +63,7 @@
             <td width="30">&nbsp;</td>
             <td width="60" valign="middle"><a href="news.html" tppabs="http://jfchealth.com/new/news.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_news.png" name="Image1" width="60" height="15" border="0" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image; ?>btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" height="36" valign="middle">&nbsp;</td>
-            <td width="58" valign="middle"><a href="aboutus.html" tppabs="http://jfchealth.com/new/aboutus.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_aboutus.png" name="Image2" width="58" height="15" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image; ?>btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="58" valign="middle"><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_aboutus.png" name="Image2" width="58" height="15" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image; ?>btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" valign="middle">&nbsp;</td>
             <td width="30" valign="middle"><a href="course.html" tppabs="http://jfchealth.com/new/course.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_course.png" width="30" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" valign="middle">&nbsp;</td>

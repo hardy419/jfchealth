@@ -44,4 +44,3 @@
     <td>&nbsp;</td>
   </tr>
 </table>
-<div class="bottom-bar" style="top:960px;">

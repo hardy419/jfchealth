@@ -156,6 +156,7 @@
         </tr>
 
 <?php echo $footer; ?>
+<div class="bottom-bar" style="top:960px;">
 
 <map name="Map" id="Map"><area shape="rect" coords="149,5,222,18" href="news.html" tppabs="http://jfchealth.com/new/news.html" target="_parent" />
 <map name="Map2" id="Map2"><area shape="rect" coords="268,6,344,23" href="video.html" tppabs="http://jfchealth.com/new/video.html" target="_parent" />
