@@ -11,19 +11,19 @@
     <td>&nbsp;</td>
     <td align="left" valign="top"><table width="430" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="56" class="footer_txt"><a href="news.html" tppabs="http://jfchealth.com/new/news.html" target="_parent">最新消息</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=product/news" target="_parent">最新消息</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="aboutus.html" tppabs="http://jfchealth.com/new/aboutus.html" target="_parent">關於我們</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=information/aboutus" target="_parent">關於我們</a></td>
         <td width="10">&nbsp;</td>
-        <td width="34" class="footer_txt"><a href="course.html" tppabs="http://jfchealth.com/new/course.html" target="_parent">課程</a></td>
+        <td width="34" class="footer_txt"><a href="index.php?route=product/course" target="_parent">課程</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="product01.html" tppabs="http://jfchealth.com/new/product01.html" target="_parent">產品介紹</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=product/product" target="_parent">產品介紹</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="user_article.html" tppabs="http://jfchealth.com/new/user_article.html" target="_parent">分享平台</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=product/article" target="_parent">分享平台</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="magazine.html" tppabs="http://jfchealth.com/new/magazine.html" target="_parent">頻譜生活</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=product/magazine" target="_parent">頻譜生活</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="contactus.html" tppabs="http://jfchealth.com/new/contactus.html" target="_parent">聯絡我們</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=information/contactus" target="_parent">聯絡我們</a></td>
       </tr>
     </table></td>
     <td align="right" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">

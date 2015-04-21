@@ -32,7 +32,7 @@
                 <td>&nbsp;</td>
               </tr>
               <tr>
-                <td><a href="certificate.html" tppabs="http://jfchealth.com/new/certificate.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_aboutus_cert.png" width="160" height="20" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image; ?>btn_aboutus_cert_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+                <td><a href="index.php?route=information/certificate" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_aboutus_cert.png" width="160" height="20" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image; ?>btn_aboutus_cert_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
                 <td>&nbsp;</td>
               </tr>
             </table></td>
