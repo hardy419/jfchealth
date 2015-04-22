@@ -1,10 +1,15 @@
 <?php 
 class ControllerInformationCertificate extends Controller {
 	public function index() {
-		$this->document->setTitle($this->config->get('config_title'));
+        $this->load->language ('information/information');
+        $this->load->model ('catalog/information');
+        $information_id = 7;
+        $information_info = $this->model_catalog_information->getInformation ($information_id);
+        
+		$this->document->setTitle($information_info['title']);
 		$this->document->setDescription($this->config->get('config_meta_description'));
-
-		$this->data['heading_title'] = $this->config->get('config_title');
+		$this->data['heading_title'] = $information_info['title'];
+		$this->data['description'] = html_entity_decode ($information_info['description'], ENT_QUOTES, 'UTF-8');
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/certificate.css');

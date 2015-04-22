@@ -1,6 +1,4 @@
-    </table></td>
-    <td>&nbsp;</td>
-  </tr>
+<table style="position:relative;top:-25px;margin:auto;">
   <tr>
     <td>&nbsp;</td>
     <td width="588" height="25">&nbsp;</td>
@@ -44,3 +42,5 @@
     <td>&nbsp;</td>
   </tr>
 </table>
+<div style="position:relative;top:-35px;height:20px;background-color:rgb(0,60,131);">
+</div>

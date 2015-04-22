@@ -29,7 +29,7 @@
 <![endif]-->
 </head>
 <body onload="MM_preloadImages('<?PHP echo $dir_image; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image; ?>btn_menu_course_mo.png','<?PHP echo $dir_image; ?>btn_menu_product_mo.png','<?PHP echo $dir_image; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image; ?>btn_menu_login_mo.png','<?PHP echo $dir_image; ?>btn_menu_register_mo.png','<?PHP echo $dir_image; ?>btn_menu_news_mo.png')">
-<div class="top-bar">
+<div class="top-bar" style="z-index:2147483647;">
 <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="20">&nbsp;</td>

@@ -155,7 +155,7 @@ $controller->addPreAction(new Action('common/home/permission'));
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);
 } else {
-	$action = new Action('catalog/category');
+	$action = new Action('catalog/information');
 }
 
 // Dispatch

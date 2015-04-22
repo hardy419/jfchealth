@@ -70,9 +70,15 @@
           
         </table></td>
       </tr>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div><!-- top-bar -->
 
+<div class="bottom-bar" style="margin-top:90px;position:relative;top:880px;z-index:2147483647;">
 <?php echo $footer; ?>
-<div class="bottom-bar" style="top:972px;">
+</div>
 
 </body>
 </html>
