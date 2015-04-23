@@ -67,7 +67,7 @@
             <td width="48" valign="middle">&nbsp;</td>
             <td width="30" valign="middle"><a href="index.php?route=product/course" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_course.png" width="30" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><a href="index.php?route=product/product" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_product.png" width="60" height="15" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image; ?>btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="60" valign="middle"><a href="index.php?route=product/category" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_product.png" width="60" height="15" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image; ?>btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" valign="middle">&nbsp;</td>
             <td width="60" valign="middle"><a href="index.php?route=product/article" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_sharing.png" name="Image5" width="60" height="15" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','<?PHP echo $dir_image; ?>btn_menu_sharing_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="48" valign="middle">&nbsp;</td>

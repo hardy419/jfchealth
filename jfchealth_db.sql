@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 22 日 06:04
+-- 生成日期: 2015 年 04 月 23 日 03:55
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -300,20 +300,17 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=99 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
 
 --
 -- 转存表中的数据 `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(90, '', 0, 0, 1, 1, 1, '2014-12-05 14:06:15', '2015-04-20 10:39:53'),
-(91, '', 0, 0, 1, 2, 1, '2014-12-05 14:07:27', '2014-12-05 14:07:27'),
-(92, '', 0, 0, 1, 4, 1, '2014-12-05 14:07:59', '2014-12-05 14:10:45'),
-(93, '', 0, 0, 1, 6, 1, '2014-12-05 14:08:27', '2014-12-05 14:10:55'),
-(94, '', 0, 0, 1, 5, 1, '2014-12-05 14:09:24', '2015-01-09 17:10:48'),
-(95, '', 0, 0, 1, 7, 1, '2014-12-05 14:10:14', '2014-12-05 14:10:14'),
-(96, '', 0, 0, 1, 3, 1, '2014-12-05 14:12:11', '2014-12-05 14:12:11');
+(99, 'data/img_product01_title.png', 0, 0, 1, 4, 1, '2015-04-23 09:32:24', '2015-04-23 10:59:54'),
+(100, 'data/img_product02_title.png', 0, 0, 1, 3, 1, '2015-04-23 09:32:43', '2015-04-23 11:00:15'),
+(101, 'data/img_product03_title.png', 0, 0, 1, 2, 1, '2015-04-23 09:33:18', '2015-04-23 10:59:16'),
+(102, 'data/img_product04_title.png', 0, 0, 1, 1, 1, '2015-04-23 09:33:27', '2015-04-23 10:59:37');
 
 -- --------------------------------------------------------
 
@@ -337,19 +334,10 @@ CREATE TABLE IF NOT EXISTS `oc_category_description` (
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-(92, 1, 'Planet Series', '&lt;p&gt;Planet Series&lt;/p&gt;\r\n', 'Planet Series', 'Planet Series'),
-(91, 1, 'Wooden Series', 'Wooden Series', 'Wooden Series', 'Wooden Series'),
-(90, 1, 'Hardy', '&lt;p&gt;Reference Series&lt;/p&gt;\r\n', 'Reference Series', 'Reference Series'),
-(96, 1, 'Retro Series', '&lt;p&gt;Retro Series&lt;/p&gt;\r\n', 'Retro Series', 'Retro Series'),
-(91, 2, 'Wooden Series', 'Wooden Series', 'Wooden Series', 'Wooden Series'),
-(92, 2, 'Planet Series', '&lt;p&gt;Planet Series&lt;/p&gt;\r\n', 'Planet Series', 'Planet Series'),
-(93, 2, 'Mini High End Series', '&lt;p&gt;Mini High End Series&lt;/p&gt;\r\n', 'Mini High End Series', 'Mini High End Series'),
-(93, 1, 'Mini High End Series', '&lt;p&gt;Mini High End Series&lt;/p&gt;\r\n', 'Mini High End Series', 'Mini High End Series'),
-(94, 1, 'Loudspeaker Series', '&lt;p&gt;Loudspeaker Series&lt;/p&gt;\r\n', 'Loudspeaker Series', 'Loudspeaker Series'),
-(94, 2, 'Loudspeaker Series', '&lt;p&gt;Loudspeaker Series&lt;/p&gt;\r\n', 'Loudspeaker Series', 'Loudspeaker Series'),
-(95, 1, 'Phono Series', '&lt;p&gt;Phono Series&lt;/p&gt;\r\n', 'Phono Series', 'Phono Series'),
-(95, 2, 'Phono Series', '&lt;p&gt;Phono Series&lt;/p&gt;\r\n', 'Phono Series', 'Phono Series'),
-(96, 2, 'Retro Series', '&lt;p&gt;Retro Series&lt;/p&gt;\r\n', 'Retro Series', 'Retro Series');
+(99, 1, '內喝系列', '', '', ''),
+(100, 1, '外照系列', '', '', ''),
+(101, 1, '三寳系列', '', '', ''),
+(102, 1, '健康系列', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -381,13 +369,10 @@ CREATE TABLE IF NOT EXISTS `oc_category_path` (
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
-(91, 91, 0),
-(94, 94, 0),
-(90, 90, 0),
-(93, 93, 0),
-(92, 92, 0),
-(95, 95, 0),
-(96, 96, 0);
+(99, 99, 0),
+(101, 101, 0),
+(102, 102, 0),
+(100, 100, 0);
 
 -- --------------------------------------------------------
 
@@ -419,13 +404,10 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
-(90, 0),
-(91, 0),
-(92, 0),
-(93, 0),
-(94, 0),
-(95, 0),
-(96, 0);
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0);
 
 -- --------------------------------------------------------
 
@@ -2201,29 +2183,17 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
   `filename` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`product_id`),
   KEY `is_net` (`is_net`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=185 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=189 ;
 
 --
 -- 转存表中的数据 `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`, `is_net`, `filename`) VALUES
-(162, 'T-9 – Preamplifier', '', '', '', '', '', '', '', 1, 5, 'data/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-04', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 3, 1, '2014-12-05 14:57:49', '2015-01-26 13:30:28', 1057, 0, 'T-9 - Datasheet (New).pdf'),
-(163, 'T-2A3C', '', '', '', '', '', '', '', 1, 5, 'data/products/reference_series/T-2A3C/img_photo011.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:01:43', '2015-01-26 13:45:27', 897, 0, 'T-2A3C - Datasheet (New).pdf'),
-(164, 'HPA-55L', '', '', '', '', '', '', '', 1, 5, 'data/products/wooden_series/HPA-55L/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:16:44', '2015-01-22 17:28:54', 744, 0, 'HPA-55L - Datasheet (New).pdf'),
-(165, 'S2O', '', '', '', '', '', '', '', 1, 5, 'data/products/wooden_series/S2O/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:17:31', '2015-01-22 15:01:05', 411, 0, 'S2O.pdf'),
-(166, 'RD-1', '', '', '', '', '', '', '', 1, 5, 'data/RD-1 2 (Small).jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:18:31', '2015-01-22 15:23:43', 678, 0, 'RD-1 - Datasheet (New).pdf'),
-(167, 'Saturn', '', '', '', '', '', '', '', 1, 5, 'data/Signature Front (Small).jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:19:22', '2015-01-22 15:46:27', 1256, 0, 'Saturn Signature - Datasheet.pdf'),
-(168, 'MARS', '', '', '', '', '', '', '', 1, 5, 'data/products/planet_series/MARS/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:20:05', '2015-01-22 14:21:10', 1414, 0, 'Mars - Datasheet (CES).pdf'),
-(169, 'MP-5BT', '', '', '', '', '', '', '', 1, 5, 'data/products/minihighend_series/MP-5BT/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:20:56', '2015-01-26 12:04:21', 1285, 0, 'MP-5BT - Datasheet (New).pdf'),
-(170, 'DR-100', '', '', '', '', '', '', '', 1, 5, 'data/products/minihighend_series/DR-100/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2014-12-12 11:21:52', '2015-01-22 17:19:15', 1210, 0, 'DR-100 - Datasheet (New).pdf'),
-(171, 'EF-99', '', '', '', '', '', '', '', 1, 5, 'data/products/minihighend_series/EF-99/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 0, '2014-12-12 11:26:30', '2015-01-22 17:11:24', 85, 0, ''),
-(172, 'PA-99', '', '', '', '', '', '', '', 1, 5, 'data/products/minihighend_series/PA-99/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 0, '2014-12-12 11:28:16', '2015-01-22 17:11:44', 62, 0, ''),
-(173, 'DT-99', '', '', '', '', '', '', '', 1, 5, 'data/products/minihighend_series/DT-99/img_photo01.jpg', 0, 1, '0.0000', 0, 0, '2014-12-11', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 0, '2014-12-12 11:29:02', '2015-01-22 17:11:33', 58, 0, ''),
-(184, 'LP-1', '', '', '', '', '', '', '', 1, 5, 'data/LP-1  2 (Small).jpg', 0, 1, '0.0000', 0, 0, '2015-01-26', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-01-27 17:41:35', '2015-02-09 12:16:34', 635, 0, 'LP-1 - Datasheet.pdf'),
-(181, 'SP-02', '', '', '', '', '', '', '', 1, 5, 'data/SP-02 1 (Small).JPG', 0, 1, '0.0000', 0, 0, '2015-01-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-01-22 16:11:35', '2015-01-22 17:27:52', 414, 0, 'SP-02 - Datasheet.pdf'),
-(182, 'LP-100', '', '', '', '', '', '', '', 1, 5, 'data/LP-100 Front (Small).jpg', 0, 1, '0.0000', 0, 0, '2015-01-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-01-22 17:05:24', '2015-01-22 17:26:54', 753, 0, 'LP-100 - Datasheet.pdf'),
-(183, 'VP-845LE', '', '', '', '', '', '', '', 1, 5, 'data/VP-845 (Small).jpg', 0, 1, '0.0000', 0, 0, '2015-01-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-01-26 14:29:39', '2015-01-26 14:30:06', 887, 0, 'VP-845LE - Datasheet.pdf');
+(186, 'JF-139', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-1.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 2, 1, '2015-04-23 10:48:02', '2015-04-23 11:43:11', 0, 0, ''),
+(187, 'WF-1', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-2.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-04-23 10:48:46', '0000-00-00 00:00:00', 0, 0, ''),
+(188, 'JF-902C', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-3.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-04-23 10:49:21', '0000-00-00 00:00:00', 0, 0, ''),
+(185, 'JF-139B', '', '', '', '', '', '', '', 1, 5, 'data/img_product01.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 3, 1, '2015-04-23 10:44:59', '2015-04-23 11:42:55', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -2262,22 +2232,10 @@ CREATE TABLE IF NOT EXISTS `oc_product_description` (
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-(162, 1, 'T-9 – Class A Full Function Vacuum Tube Preamplifier', '&lt;p&gt;．Output Voltage: 15V (RMS)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 10-50kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Distortion: 0.001%&lt;/p&gt;\r\n\r\n&lt;p&gt;．S/N Ratio: 92dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 100kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 10kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Line-in Gain: 20dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Phono Gain: 39dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Consumption: 60W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Voltage: 110V-120V, 220V-240V (Converted)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input: LINE1, LINE2, LINE3, Phono(mm)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tubes: 12AX7x3, 803x1, 274x1, ECC81x1, 6V6x2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 420x300x160mm (WxDxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 12kg&lt;/p&gt;\r\n', '', '', ''),
-(163, 1, 'T-2A3C - 70 Watt Mono Block Power Amplifier(Push Pull)', '&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Power: 70W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 18-30kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Distortion: 0.1%&lt;/p&gt;\r\n\r\n&lt;p&gt;．S/N Ratio: 92dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 100kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 4Ω, 8Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Sensitivity: 750mv&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Voltage: 110V-120V, 220V-240V (Converted)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input: RCA&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tube: 12AX7x4, 803x2, 12AU7x2, 2A3Cx16&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 430x430x250mm (WxDxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 90kg/per&lt;/p&gt;\r\n', '', '', ''),
-(164, 1, 'HPA-55L - Portable Headphone Amplifier', '&lt;p&gt;Get the best of your professional headphones with the headphone amplifier. Created with excellent portability, the amplifier is best of every day usage or travel.&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Output&lt;/p&gt;\r\n\r\n&lt;p&gt;2x300mW (Single-end Output Loading: 16Ω)&lt;/p&gt;\r\n\r\n&lt;p&gt;2x1000mW (Balanced Output Loading: 16Ω)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 10Hz-30kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．S/N Ratio: 98dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Consumption: 3500mW&lt;/p&gt;\r\n\r\n&lt;p&gt;．Working Hours of Batteries (Fully Charged): Over 12 Hours&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Port: 3.5mm phono jack&lt;/p&gt;\r\n\r\n&lt;p&gt;．Headphone Output Port: 3.5mm Single-end Phono Jack output x1, 3.5mm Balanced Phono Jack output x1&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 47kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Internal Resistance: 5Ω(Single-end), 10Ω(Balanced)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Damping Factor: 7&lt;/p&gt;\r\n\r\n&lt;p&gt;．Q Factor: 0.75&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Signal Input Level: 3V (RMS)&lt;/p&gt;\r\n\r\n&lt;p&gt;．DV Charging Power Supply: DC 12V 500ma&lt;/p&gt;\r\n\r\n&lt;p&gt;．Batteries Rechargeable Life Time: over 500 times&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 122x65x21mm (HxWxD)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 126g&lt;/p&gt;\r\n', '', '', ''),
-(165, 1, 'S2O - Signal Source Optimizer', '&lt;p&gt;Today''s DSP Signal Processing changes the original sound at the recording studio, adding digital artifacts and noise.&lt;/p&gt;\r\n\r\n&lt;p&gt;This noise picked up by and reproduced by today’s audio systems. With its enclosure made of special recycled wood fibers:&lt;/p&gt;\r\n\r\n&lt;p&gt;Hear that Natural, Original, Moving Sound!&lt;/p&gt;\r\n\r\n&lt;p&gt;A passive device, inserts in line with your CD player line output, removes digital noise created by the DSP recording process.&lt;/p&gt;\r\n\r\n&lt;p&gt;Listen once more to the original, emotional and dynamic sound.&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 600Ω-10kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 600Ω-10kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 138x87.5x45mm(HxWxD)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 1.2kg&lt;/p&gt;\r\n', '', '', ''),
-(181, 1, 'SP-02 - 2 Way Bookshelf Loudspeaker System', '&lt;p&gt;It is the most compact model and is ideal for small to medium sized rooms or any application where space is limited. Ot''s small size also allows for easy and discreet placement on a bookshelf or sideboard.&lt;/p&gt;\r\n\r\n&lt;p&gt;SP-02 is a perfect example of a very compact, cost effective and most versatile loudspeaker system.&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;Characteristic:&lt;/p&gt;\r\n\r\n&lt;p&gt;-2 Way Bookshelf Loudspeaker System&lt;/p&gt;\r\n\r\n&lt;p&gt;-25mm Neodymium Magnet Silk Dome Tweeter with 80mm Extended Response Bass Driver&lt;/p&gt;\r\n\r\n&lt;p&gt;-Magnetically Shielded&lt;/p&gt;\r\n\r\n&lt;p&gt;-High Gross Black Finish Cabinet&lt;/p&gt;\r\n\r\n&lt;p&gt;Specification:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Cabinet Construction: Bass Reflex&lt;/p&gt;\r\n\r\n&lt;p&gt;．Sensitivity (2.83V/1m): 87dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Handling: 10-80W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Impedance(Nominal): 4ohms&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 80Hz to 20kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Crossover Frequency: 2kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 245x405x300(mm)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 5.2kg&lt;/p&gt;\r\n', '', '', ''),
-(182, 1, 'LP-100 - MM/MC Audiophile Grade Tube Phono Amplifier', '&lt;p&gt;With output variances in the multitude of phono cartridges available to the audio enthusiast as well&lt;br /&gt;\r\nas the variety of input variances seen in the front end of amplifiers and preamplifiers for use with&lt;br /&gt;\r\nMM and MC cartridges, most of the time the cartridge used is not matched to the amplifier. This&lt;br /&gt;\r\ncreates a less than pristine performance of the vinyl. The higher definition of the total end to end&lt;br /&gt;\r\nsystem, the more noticeable the mismatch. Dared has developed a professional high end and fully&lt;br /&gt;\r\nuser adjustable front panel accessible phono preamplifier for MM and MC cartridges.&lt;/p&gt;\r\n\r\n&lt;p&gt;First and foremost, the capacitance of the input of the amplifier should more or less match the value&lt;br /&gt;\r\nof the cartridge. The higher the capacitive value of the input of the phono stage, the duller the&lt;br /&gt;\r\nsound will be. As a result, a mismatch between the capacitance output of the phono cartridge and&lt;br /&gt;\r\nthe amplifier''s input may result in either a dark dull sound or overly bright an distorted sound and&lt;br /&gt;\r\nsignal. Added, the quality of the cable between the cartridge and the phono stage also comes into&lt;br /&gt;\r\nplay.&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;Characteristic:&lt;/p&gt;\r\n\r\n&lt;p&gt;-Two sets of RCA Gold Plated Inputs (MM &amp;amp; MC) &lt;/p&gt;\r\n\r\n&lt;p&gt;-Front panel cartridge loading&lt;/p&gt;\r\n\r\n&lt;p&gt;-One sets of RCA Main Gold Plated Outputs&lt;/p&gt;\r\n\r\n&lt;p&gt;-Capacitive loading (6 settings)&lt;/p&gt;\r\n\r\n&lt;p&gt;-Adjustable Gain (0dB, -3dB, -6dB, -9dB, -12dB, -15dB, -18dB)&lt;/p&gt;\r\n\r\n&lt;p&gt;-Resistive loading (6 settings)&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Supply Input: 50W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Voltage Range: 100-120V, 220-240V&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Current Draw Indicated: 50W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Consumption: 50W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Distortion Spec.: 0.07% (1kHz)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tube compliment: (1)ECC85(6N1) (2)12AX7&lt;/p&gt;\r\n\r\n&lt;p&gt;．Inputs: one pair MC (RCA); one pair MM (RCA)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Outputs: one pair RCA outs&lt;/p&gt;\r\n\r\n&lt;p&gt;．MC gain: max. 63dB (adjustable to 66dB and 60dB)&lt;/p&gt;\r\n\r\n&lt;p&gt;．MM Capacitive Loading: 10pF, 20pF, 47pF, 100pF&lt;/p&gt;\r\n\r\n&lt;p&gt;．MM Resistive Loading: 47K fixed&lt;/p&gt;\r\n\r\n&lt;p&gt;．MC Resistive Loading: adjustable 20ohms, 50ohms, 75ohms, 100ohms, 200ohms, 500ohms&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 10Hz – 25kHz (±2dB)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power sequence: Mute delay power up sequence with soft start for improved tube life&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 380x280x125mm / 14.96”x11.02”x4.92” (WxDxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 8kg / 17.64lbs&lt;/p&gt;\r\n', '', '', ''),
-(166, 1, 'RD-1 – Retro Tabletop Radio w. DAB/RDS/Wireless/USB DAC', '&lt;p&gt;Feature here is a nostalgic radio built with an exquisite appearance in a sturdy case. Empowered by its sensitive reception for effortless channel adjustment, its outstanding acoustic quality is facilitated by its seamless connection to both your headphone and its built-in speakers.&lt;/p&gt;\r\n\r\n&lt;p&gt;-Brilliant and stable connectivity&lt;/p&gt;\r\n\r\n&lt;p&gt;-Outstanding addition to your antique Collection&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Vacuum Tube(12AX7, 6N1)Hybrid design Digital Radio&lt;/p&gt;\r\n\r\n&lt;p&gt;．DAB+/DAB and FM with RDS reception via Antenna(For Model RD-1)&lt;/p&gt;\r\n\r\n&lt;p&gt;．FM with RDS reception via Antenna(For Model RD-2)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Streaming music from smart phone, iphone, ipad or computer via Wireless&lt;/p&gt;\r\n\r\n&lt;p&gt;．2xStereo RCA Line input socket for CD/DVD/Blu-ray/iPod/MP3 Audio playback&lt;/p&gt;\r\n\r\n&lt;p&gt;．Stereo RCA Line output socket&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left: 12pt;&quot;&gt;．Extreme High Quality Headphone output(Support Headphone impedance up to 600ohms)&lt;/p&gt;\r\n\r\n&lt;p&gt;．High Quality OLED display support Multi-language&lt;/p&gt;\r\n\r\n&lt;p&gt;．Station name/multi-preset mode&lt;/p&gt;\r\n\r\n&lt;p&gt;．RMS 25Wx2 output power for Tailor made internal stereo loudspeaker&lt;/p&gt;\r\n\r\n&lt;p&gt;．Retro CAT EYE Tube(6E2)VU meter&lt;/p&gt;\r\n\r\n&lt;p&gt;．Retro Design High gloss MDF Speaker Cabinet&lt;/p&gt;\r\n\r\n&lt;p&gt;．Full function IR remote control with one touch instant access to favourite station&lt;/p&gt;\r\n\r\n&lt;p&gt;．AC 110-120V/220-240V(Switchable)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 320x170x165mm (WxLxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 7kg&lt;/p&gt;\r\n', '', '', ''),
-(167, 1, 'Saturn Signature – Class A Integrated Amplifier (Single KT-150)', '&lt;p&gt;Introducing the Sound of Tube - Dared, and the new KT-150 SET high resolution tube integrated amplifier. Highly regarded by audiophiles, a single-ended triode (SET) amplifier is a vacuum tube electronic amplifier that uses a single tube for its final over a“push-pull” type tube amplifier which uses a pair of tubes using anti-phase internal circuit design to generate an output with the wanted audible signals present and the distortion components subtracted. All guitar amplifiers use this simplistic design since the 1940''s and where SET amplifiers are achieving a cult status because of their alleged excellent mid-band performance. It is this &quot;mid-band&quot; that is to many as the most important part of the audio spectrum in music reproduction. This perceived high sonic quality noted by audiophiles is mainly attributed to the simplicity and minimalistic approach of the circuit design and the triode amplifying tube selected.&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;br /&gt;\r\n．Power Output: Class A MAX 25W per channel&lt;br /&gt;\r\n．Power Input: MAX 150W&lt;br /&gt;\r\n．Frequency Response: 20Hz-40kHz (+/-0.5dB 1W)&lt;br /&gt;\r\n．Output Power Distortion: 0.05% (4W 1kHz)&lt;br /&gt;\r\n．Input Sensitivity: 220mV&lt;br /&gt;\r\n．Input Impedance: 100k ohms&lt;br /&gt;\r\n．Inputs: Line 1, Line 2, Line 3, AUX, USB DAC&lt;br /&gt;\r\n．USB DAC Spec.: 32Bit 384kHz&lt;br /&gt;\r\n．Speaker Output Impedance: 4ohms or 8ohms&lt;br /&gt;\r\n．Headphone Output Impedance: 32-600ohms&lt;br /&gt;\r\n．Overall Negative Feedback: -39dB&lt;br /&gt;\r\n．Overall S/N Ratio: 85dB&lt;br /&gt;\r\n．Power Consumption: Max. 220W&lt;br /&gt;\r\n．Damping Factor: 6 (Distortion: 0.1%)&lt;br /&gt;\r\n．Voltage Range: 100-120V, 220-240V&lt;br /&gt;\r\n．Operation Method: Single End Class A&lt;br /&gt;\r\n．Remote Control: RF Remote for Volume Control&lt;br /&gt;\r\n．Power Tubes Required: Matched pair KT-150&lt;br /&gt;\r\n．Preamp &amp;amp; Driver Tubes Required: 12AX7 x2 (ECC83x2), ECC85 (6N1) x2&lt;br /&gt;\r\n．Tube Bias: Manual adjustable with bias monitor meter&lt;br /&gt;\r\n．Dimensions: 380x295x160mm / 14.96”x11.61”x6.3” (WxHxD)&lt;br /&gt;\r\n．Weight: 18kg/39.7lbs&lt;/p&gt;\r\n', '', '', ''),
-(168, 1, 'MARS – Hybrid Vacuum Tube Amplifier', '&lt;p&gt;For many years industry manufacturers have seen a shift of music users looking for instant gratification in the way they hear music. To respond to a new generation of listeners and provide new comers with an introduction to high fidelity, Dared''s response was the creation of MARS, an affordable integrated amplifier featuring wireless streaming of audio to a 6N2 tube preamplifier section driving a Class A MOSFET Class A amplifier.&lt;br /&gt;\r\nMARS features a built in USB DAC as well as wireless connection to Smartphones etc... A preamplifier&lt;br /&gt;\r\noutput is available for those wishing to upgrade their current vintage audio system with a tube driven USB DAC with wireless connectivity to modern day personal devices.&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Output: 2x25W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency: 20-20kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．S/N Ratio: 90dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Line Input Impedance: 100kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 4Ω, 8Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input: 2.4GHz Wireless Audio Input, USB DAC, RCA LINE&lt;/p&gt;\r\n\r\n&lt;p&gt;．Preamp Signal Output: 2Vrms&lt;/p&gt;\r\n\r\n&lt;p&gt;．Headphone Output: 3W (32-300Ω)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Voltage: 90-264VAC&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tubes: 6N3 (5670)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 189x120x100mm (WxDxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 2kg&lt;/p&gt;\r\n', '', '', ''),
-(169, 1, 'MP-5BT – Hybrid Int. Amp. &amp; Preamp w. Wireless/USB DAC', '&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Output: 2x25W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency: 20-25kHZ&lt;/p&gt;\r\n\r\n&lt;p&gt;．S/N Ratio: 86dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Distortion: 0.1%&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 100kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 4Ω, 8Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;．Max. Power Consumption: 110W&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input: 2.4GHz Wireless Audio Input,USB DAC, LINE&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output: Speaker, Headphone, Stereo Preamp&lt;/p&gt;\r\n\r\n&lt;p&gt;．Voltage: AC100-120V/50-60Hz&lt;/p&gt;\r\n\r\n&lt;p&gt;AC220-240V/50-60Hz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tubes: 6N1, 6N2, 6E2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 260x160x155mm (LxWxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 3.8KG&lt;/p&gt;\r\n', '', '', ''),
-(170, 1, 'DR-100 – Tube FM/DAB/RDS Receiver', '&lt;p&gt;Charm your quest with the outstanding acoustic quality of this radio receiver. In addition to its user friendly button panel on the front. It’s stylish case design promises and exquisite complement to your contemporary home decoration along with reliable protection to its precisely manufactured components within.&lt;/p&gt;\r\n\r\n&lt;p&gt;-Excellent and reliable connectivity&lt;/p&gt;\r\n\r\n&lt;p&gt;-DAB receiver with hi-tech connectivity&lt;/p&gt;\r\n\r\n&lt;p&gt;-up-to-date DAB Function&lt;/p&gt;\r\n\r\n&lt;p&gt;-Superb Performance&lt;/p&gt;\r\n\r\n&lt;p&gt;-Compliance with RoHS&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．FM(87.45-108MHZ)&lt;/p&gt;\r\n\r\n&lt;p&gt;．DAB, DAB+ BandIII&lt;/p&gt;\r\n\r\n&lt;p&gt;．DAB, DAB+ Receiver SIN: ≧98dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Audio Frequency Response: 20-20kHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Speaker Power Output: 25Wx2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 4Ω, 8Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;．Headphone Output Impedance: 32Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;．RCA &amp;amp; Mini Phone Jack Input Impedance: 47kΩ&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tubes: 6N1, 12AX7, 6E2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Voltage: AC115V/230V-50/60Hz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Size: 240x140x135mm (WxLxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 3.5kg&lt;/p&gt;\r\n', '', '', ''),
-(171, 1, 'EF-99 – Class A Tube Headphone Amp/Preamp', '&lt;p&gt;Dared EF-99 is a Class A Tube Headphone Amplifier and Preamplifier. Using output transformer and tube filtering technology. Audience can select different headphone impedance to enjoy the high-quality audio performance.&lt;/p&gt;\r\n\r\n&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Output: RMS 1 W X 2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Frequency Response: 20Hz to 30 kHz+/-0.5dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Source: LINE 1, LINE 2, AUX, USB DAC&lt;/p&gt;\r\n\r\n&lt;p&gt;．Distortion: 0.05%&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 100K Single-Ended&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: Output Transformer 32/120/300 (Selectable)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Signal to Noise Ratio: &amp;gt;93dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tube Requirement: 6N2 x1, 12AX7 x1, 6N1 x1&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Requirements: 100VAC 50/60 Hz / 110-120/220-240VAC 50/60 Hz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Supply: EXTERNAL&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 180x240x150mm (LxWxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 5kg&lt;/p&gt;\r\n\r\n&lt;p&gt;．Approval: CE / ROHS / PSE&lt;/p&gt;\r\n', '', '', ''),
-(172, 1, 'PA-99 – Hybrid Amplifier, 2x50W', '&lt;p&gt;SPECIFICATIONS:&lt;/p&gt;\r\n\r\n&lt;p&gt;．POWER OUTPUT: 50 watts per channel into 4 ohms, both channels driven&lt;/p&gt;\r\n\r\n&lt;p&gt;．FREQUENCY RESPONSE: (-3dB points at 1 watt) 20Hz to 30 kHz.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left: 96pt;&quot;&gt;．INPUT SOURCE: 2 stereo single-ended input selection (1 x Variable gain control,&lt;/p&gt;\r\n\r\n&lt;p&gt;1 x fixed gain control)&lt;/p&gt;\r\n\r\n&lt;p&gt;．SENSITIVITY: 750mV for rated output single-ended.&lt;/p&gt;\r\n\r\n&lt;p&gt;．INPUT IMPEDANCE: 40K ohms single-ended.&lt;/p&gt;\r\n\r\n&lt;p&gt;．OUPUT POLARITY: Non-inverting from single-ended inputs.&lt;/p&gt;\r\n\r\n&lt;p&gt;．TUBE REQUIREMENT: 6E2, 12AX7, 6N1&lt;/p&gt;\r\n\r\n&lt;p&gt;．POWER REQUIREMENTS: 100-125VAC 60Hz (200-250VAC 50Hz)&lt;/p&gt;\r\n\r\n&lt;p&gt;．DIMENSIONS: 220x240x60mm (LxWxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．WEIGHT: 4.5kg&lt;/p&gt;\r\n', '', '', ''),
-(173, 1, 'DT-99 – FM/DAB Stereo Tuber/Preamp', '&lt;p&gt;Specifications:&lt;/p&gt;\r\n\r\n&lt;p&gt;．FM (87.45-108MHZ)&lt;/p&gt;\r\n\r\n&lt;p&gt;．DAB, DAB+&lt;/p&gt;\r\n\r\n&lt;p&gt;．DAB, DAB+ RECEIVER SIN: 98dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．FM Receiver SIN: 98dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Audio Frequency Responses: 87MHz-108MHz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 600&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 47Kohm&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 220x140x60mm (WxLxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 2.5kg&lt;/p&gt;\r\n\r\n&lt;p&gt;．USB Input for PC DAC&lt;/p&gt;\r\n', '', '', ''),
-(183, 1, 'VP-845LE - Integrated Amplifier (15th Anniversary Edition)', '&lt;p&gt;．Power Output: 35 x2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Fequency Response: 20Hz-20kHz (±1.dB)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Harmonic Distortion: &amp;lt;1%&lt;/p&gt;\r\n\r\n&lt;p&gt;．Signal to Noise Ratio: &amp;gt;84dB&lt;/p&gt;\r\n\r\n&lt;p&gt;．Input Impedance: 100kohms&lt;/p&gt;\r\n\r\n&lt;p&gt;．Output Impedance: 4ohms, 8ohms&lt;/p&gt;\r\n\r\n&lt;p&gt;．Power Supply: AC100V-150V/50-60Hz, AC220V-240V/50-60Hz&lt;/p&gt;\r\n\r\n&lt;p&gt;．Tubes: 845 x2, 6N8 x2, 12AX7 x2&lt;/p&gt;\r\n\r\n&lt;p&gt;．Dimensions: 550x260x330mm(LxWxH)&lt;/p&gt;\r\n\r\n&lt;p&gt;．Weight: 34kg&lt;/p&gt;\r\n', '', '', ''),
-(184, 1, 'LP-1 - MM/MC Phono Pre-amplifier', '&lt;p&gt;It has powerful fetures, can be compatible with a variety of turntables amplifiers. Supports MM and MC phono amplification.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Characteristic:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;．Audiophile Performance&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Audiophile-grade 6N3 (5670) tubes&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Dual mono configuration&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Outstanding sound quality&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Precise RIAA equalisation&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Switchable input impedance&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Specifications:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Max. Output Voltage: 5V&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Distortion: 0.01%&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．S/N Ratio: 90dB(MM), 70dB (MC)&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Input Impedance (MM): 47k&lt;/span&gt;Ω&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Input Impedance (MC): 20Ω, 50Ω, 75Ω, 100Ω, 200Ω&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．MM Amplification Gain: 35dB&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．MC Amplification Gain: 65dB&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Output Impedance: 2kΩ&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Subsonic Filter: 20Hz or 40Hz&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Input Supply Voltage: AV100-120 / AC220-240&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Max. Power Consumption: 20W&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Tubes Required: 6N3(5670)&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Dimensions: 189x150x100mm / 7.44&quot;x5.91&quot;x3.94&quot; (WxDxH)&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;&gt;．Weight: 2kg / 4.41lbs&lt;/span&gt;&lt;/p&gt;\r\n', '', '', '');
+(185, 1, '半截式駿豐頻譜水保健儀', '', '', '', ''),
+(186, 1, '駿豐頻譜水保健儀', '', '', '', ''),
+(187, 1, '駿豐健康淨水器', '', '', '', ''),
+(188, 1, '駿豐頻譜保健房', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2315,22 +2273,10 @@ CREATE TABLE IF NOT EXISTS `oc_product_filter` (
 --
 
 INSERT INTO `oc_product_filter` (`product_id`, `filter_id`) VALUES
-(162, 0),
-(163, 0),
-(164, 0),
-(165, 0),
-(166, 0),
-(167, 0),
-(168, 0),
-(169, 0),
-(170, 0),
-(171, 0),
-(172, 0),
-(173, 0),
-(181, 0),
-(182, 0),
-(183, 0),
-(184, 0);
+(185, 0),
+(186, 0),
+(187, 0),
+(188, 0);
 
 -- --------------------------------------------------------
 
@@ -2345,38 +2291,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2460 ;
-
---
--- 转存表中的数据 `oc_product_image`
---
-
-INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2455, 163, 'data/T-2A3 COVER (Small) (2).jpg', 2),
-(2450, 164, 'data/File2 (Small).JPG', 2),
-(2449, 164, 'data/HPA-55L (Small).jpg', 3),
-(2448, 164, 'data/File1 (Small).JPG', 1),
-(2413, 168, 'data/_20140820 LHE Dared MARS-Leaflet 3 (Small).jpg', 1),
-(2412, 168, 'data/dared_back_high (Small).jpg', 2),
-(2417, 165, 'data/S2O 2 (Small).jpg', 2),
-(2418, 165, 'data/S2O 3 (Small).jpg', 1),
-(2419, 165, 'data/S2O 4 (Small).jpg', 3),
-(2434, 167, 'data/Signature Back (Small).jpg', 1),
-(2433, 166, 'data/RD-1 4 (Small).jpg', 2),
-(2432, 166, 'data/RD-1 3 (Small).jpg', 3),
-(2431, 166, 'data/RD-1 (Small).JPG', 1),
-(2447, 181, 'data/SP-02 2 (Small).JPG', 2),
-(2446, 181, 'data/SP-02 3 (Small).JPG', 1),
-(2445, 182, 'data/LP-100 Back (Small).jpg', 1),
-(2441, 170, 'data/p01 (Small).jpg', 4),
-(2442, 170, 'data/DSC_6053 (Small).JPG', 3),
-(2443, 170, 'data/DSC_6005 (Small).JPG', 2),
-(2444, 170, 'data/DSC_6055 (Small).JPG', 1),
-(2451, 169, 'data/MP-5BT (Small).jpg', 3),
-(2452, 169, 'data/MP-5BT 3 (Small).jpg', 2),
-(2453, 169, 'data/MP-5BT 4 (Small).jpg', 1),
-(2454, 162, 'data/T-9 back (Small).jpg', 1),
-(2456, 163, 'data/T SERIES BACK (Small) (2).jpg', 1),
-(2459, 184, 'data/LP-1 (Small).jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -2458,38 +2372,14 @@ CREATE TABLE IF NOT EXISTS `oc_product_related` (
 --
 
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
-(0, 162),
-(0, 163),
-(0, 164),
-(0, 165),
-(0, 166),
-(0, 167),
-(0, 168),
-(0, 169),
-(0, 170),
-(0, 171),
-(0, 172),
-(0, 173),
-(0, 181),
-(0, 182),
-(0, 183),
-(0, 184),
-(162, 0),
-(163, 0),
-(164, 0),
-(165, 0),
-(166, 0),
-(167, 0),
-(168, 0),
-(169, 0),
-(170, 0),
-(171, 0),
-(172, 0),
-(173, 0),
-(181, 0),
-(182, 0),
-(183, 0),
-(184, 0);
+(0, 185),
+(0, 186),
+(0, 187),
+(0, 188),
+(185, 0),
+(186, 0),
+(187, 0),
+(188, 0);
 
 -- --------------------------------------------------------
 
@@ -2540,22 +2430,10 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_category` (
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
-(162, 90),
-(163, 90),
-(164, 91),
-(165, 91),
-(166, 96),
-(167, 92),
-(168, 92),
-(169, 93),
-(170, 93),
-(171, 93),
-(172, 93),
-(173, 93),
-(181, 94),
-(182, 95),
-(183, 90),
-(184, 95);
+(185, 99),
+(186, 99),
+(187, 99),
+(188, 100);
 
 -- --------------------------------------------------------
 
@@ -2574,22 +2452,10 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
 --
 
 INSERT INTO `oc_product_to_download` (`product_id`, `download_id`) VALUES
-(162, 0),
-(163, 0),
-(164, 0),
-(165, 0),
-(166, 0),
-(167, 0),
-(168, 0),
-(169, 0),
-(170, 0),
-(171, 0),
-(172, 0),
-(173, 0),
-(181, 0),
-(182, 0),
-(183, 0),
-(184, 0);
+(185, 0),
+(186, 0),
+(187, 0),
+(188, 0);
 
 -- --------------------------------------------------------
 
@@ -2621,22 +2487,10 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
-(162, 0),
-(163, 0),
-(164, 0),
-(165, 0),
-(166, 0),
-(167, 0),
-(168, 0),
-(169, 0),
-(170, 0),
-(171, 0),
-(172, 0),
-(173, 0),
-(181, 0),
-(182, 0),
-(183, 0),
-(184, 0);
+(185, 0),
+(186, 0),
+(187, 0),
+(188, 0);
 
 -- --------------------------------------------------------
 
@@ -2983,14 +2837,14 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (5558, 0, 'config', 'config_country_id', '44', 0),
 (5557, 0, 'config', 'config_layout_id', '4', 0),
 (5554, 0, 'config', 'config_title', '駿豐頻譜（香港）有限公司', 0),
-(5555, 0, 'config', 'config_meta_description', 'Dared', 0),
+(5555, 0, 'config', 'config_meta_description', 'JFC', 0),
 (5556, 0, 'config', 'config_template', 'jfchealth', 0),
 (5553, 0, 'config', 'config_fax', '', 0),
 (5552, 0, 'config', 'config_telephone', '123456789', 0),
 (5551, 0, 'config', 'config_email', 'info@dared.com.hk', 0),
 (5550, 0, 'config', 'config_address', 'Address 1', 0),
-(5549, 0, 'config', 'config_owner', 'Dared', 0),
-(5548, 0, 'config', 'config_name', 'Dared', 0),
+(5549, 0, 'config', 'config_owner', 'JFC', 0),
+(5548, 0, 'config', 'config_name', 'JFC', 0),
 (5646, 0, 'config', 'config_compression', '0', 0),
 (5647, 0, 'config', 'config_error_display', '0', 0),
 (5648, 0, 'config', 'config_error_log', '1', 0),
@@ -3575,9 +3429,7 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
 
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (730, 'manufacturer_id=8', 'apple'),
-(813, 'information_id=4', 'about_us'),
-(808, 'category_id=90', 'Reference Series'),
-(798, 'category_id=91', 'Wooden Series');
+(813, 'information_id=4', 'about_us');
 
 -- --------------------------------------------------------
 

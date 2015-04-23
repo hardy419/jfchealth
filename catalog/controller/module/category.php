@@ -66,19 +66,23 @@ class ControllerModuleCategory extends Controller {
 
 				$children_data[] = array(
 					'category_id' => $child['category_id'],
-					'name'        => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total . ')' : ''),
+					//'name'        => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total . ')' : ''),
+                    'name'        => $child['name'],
 					'href'        => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])	
 				);		
 			}
 
 			$this->data['categories'][] = array(
 				'category_id' => $category['category_id'],
-				'name'        => $category['name'] . ($this->config->get('config_product_count') ? ' (' . $total . ')' : ''),
+				//'name'        => $category['name'] . ($this->config->get('config_product_count') ? ' (' . $total . ')' : ''),
+                'name'        => $category['sort_order'],
 				'children'    => $children_data,
 				'href'        => $route=='product/support'?$this->url->link('product/support', 'path=' . $category['category_id']):$this->url->link('product/category', 'path=' . $category['category_id'])
 			);	
 		}
 
+        $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
+        
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/category.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/module/category.tpl';
 		} else {

@@ -23,34 +23,7 @@
                 <td width="160" height="50">&nbsp;</td>
                 <td>&nbsp;</td>
               </tr>
-              <tr>
-                <td><img src="<?PHP echo $dir_image; ?>btn_product_01_mo.png" name="Image13" width="99" height="18" border="0" id="Image13" /></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td><a href="product01.html" tppabs="http://jfchealth.com/new/product01.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_product_02.png" name="Image10" width="99" height="18" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image; ?>btn_product_02_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td><a href="product03.html" tppabs="http://jfchealth.com/new/product03.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_product_03.png" width="99" height="18" border="0" id="Image11" onmouseover="MM_swapImage('Image11','','<?PHP echo $dir_image; ?>btn_product_03_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td><a href="product04.html" tppabs="http://jfchealth.com/new/product04.html" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_product_04.png" width="99" height="18" border="0" id="Image12" onmouseover="MM_swapImage('Image12','','<?PHP echo $dir_image; ?>btn_product_04_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-                <td>&nbsp;</td>
-              </tr>
+              <?php echo $column_left; ?>
             </table></td>
             <td>&nbsp;</td>
             <td align="left" valign="top"><table width="670" border="0" cellspacing="0" cellpadding="0">
