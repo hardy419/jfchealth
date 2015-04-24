@@ -72,8 +72,8 @@ function changepic(id) {
                 <td width="20" rowspan="2">&nbsp;</td>
                 <td align="left" valign="top" class="product_name"><table width="340" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td align="left" valign="top">(JF-139B)<br />
-半截式駿豐頻譜水保健儀</td>
+                    <td align="left" valign="top">(<?PHP echo $model; ?>)<br />
+<?PHP echo $heading_title; ?></td>
                   </tr>
                   <tr>
                     <td height="20">&nbsp;</td>
@@ -108,97 +108,7 @@ function changepic(id) {
 </div><!-- top-bar -->
 
 <div id="description" style="position:relative;left:622px;top:752px;">
-    <table width="670" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="right" valign="top" class="index_content_txt">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td height="20" class="index_content_txt">&nbsp;</td>
-                <td class="index_content_txt">&nbsp;</td>
-                <td class="index_content_txt">&nbsp;</td>
-                </tr>
-              <tr>
-                <td colspan="3"><table width="670" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td class="product_name">頻譜水的特點</td>
-                  </tr>
-                  <tr>
-                    <td><img src="<?PHP echo $dir_image; ?>img_product_line.png" width="670" height="1" /></td>
-                  </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt">1. 更容易被人體吸收和利用;<br />
-                      <br />
-2. 增加對人體各系統的供氧;<br />
-<br />
-3. 有利於人體的新陳代謝;<br />
-<br />
-4. 減少由氯仿帶來的不健康因素;<br />
-<br />
-5. 提高人體免疫功能。<br />
-                            </span></span></td>
-                  </tr>
-                  <tr>
-                    <td height="30" class="index_content_txt">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="product_name">產品輔助功能</td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt"><img src="<?PHP echo $dir_image; ?>img_product_line.png" width="670" height="1" /></td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt">1. 改善微循環及血液流變學特性，預防心腦血管病;<br />
-                      <br />
-2. 維護泌尿系統健康;<br />
-<br />
-3. 增強胃腸功能，促進食物消化與營養吸收;<br />
-<br />
-4. 有助促進神經系統功能平衡代謝;<br />
-<br />
-5. 提高人體綜合免疫能力。</td>
-                  </tr>
-                  <tr>
-                    <td height="30" class="index_content_txt">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="product_name">主要研究機構</td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt"><img src="<?PHP echo $dir_image; ?>img_product_line.png" width="670" height="1" /></td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="index_content_txt">a) 中國計量科學研究院;<br />
-                      <br />
-b) 北京大學分析測試中心;<br />
-<br />
-c) 解放軍總醫院（301醫院）;<br />
-<br />
-d) 國家城市供水水質監測網北京監測站;<br />
-<br />
-e) 中山醫科大學及廣州市紅十字會醫院。</td>
-                  </tr>
-                  
-                  
-                  
-                  
-                  
-                  
-                </table></td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                </tr>
-    </table>
+<?PHP echo $feature; ?>
 </div>
 
 <div class="bottom-bar" style="margin-top:90px;position:relative;top:752px;z-index:2147483647;">

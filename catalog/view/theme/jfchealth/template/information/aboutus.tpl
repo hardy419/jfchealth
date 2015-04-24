@@ -51,7 +51,7 @@
 <?php echo $description; ?>
 </div>
 
-<div class="bottom-bar" style="margin-top:90px;position:relative;top:243px;z-index:2147483647;">
+<div class="bottom-bar" style="margin-top:100px;position:relative;top:243px;z-index:2147483647;">
 <?php echo $footer; ?>
 </div>
 
