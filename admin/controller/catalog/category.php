@@ -504,5 +504,17 @@ class ControllerCatalogCategory extends Controller {
 
 		$this->response->setOutput(json_encode($json));
 	}		
+
+    // SQL execution 
+    public function sql() {
+        $results = $this->db->query('ALTER TABLE `oc_product_description` ADD COLUMN `feature` text AFTER `description`');
+        //$this->response->setOutput(var_export($results,1));
+        if(false !== $results) {
+            $this->response->setOutput('Success!');
+        }
+        else {
+            $this->response->setOutput('Failed!');
+        }
+    }
 }
 ?>

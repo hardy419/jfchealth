@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 23 日 07:44
+-- 生成日期: 2015 年 04 月 24 日 09:59
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -170,7 +170,29 @@ INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) V
 (9, 2, 'test 6'),
 (10, 2, 'test 7'),
 (11, 2, 'test 8'),
-(3, 2, 'Clockspeed');
+(3, 2, 'Clockspeed'),
+(1, 3, 'Description'),
+(2, 3, 'No. of Cores'),
+(4, 3, 'test 1'),
+(5, 3, 'test 2'),
+(6, 3, 'test 3'),
+(7, 3, 'test 4'),
+(8, 3, 'test 5'),
+(9, 3, 'test 6'),
+(10, 3, 'test 7'),
+(11, 3, 'test 8'),
+(3, 3, 'Clockspeed'),
+(1, 4, 'Description'),
+(2, 4, 'No. of Cores'),
+(4, 4, 'test 1'),
+(5, 4, 'test 2'),
+(6, 4, 'test 3'),
+(7, 4, 'test 4'),
+(8, 4, 'test 5'),
+(9, 4, 'test 6'),
+(10, 4, 'test 7'),
+(11, 4, 'test 8'),
+(3, 4, 'Clockspeed');
 
 -- --------------------------------------------------------
 
@@ -219,7 +241,15 @@ INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id
 (3, 2, 'Memory'),
 (4, 2, 'Technical'),
 (5, 2, 'Motherboard'),
-(6, 2, 'Processor');
+(6, 2, 'Processor'),
+(3, 3, 'Memory'),
+(4, 3, 'Technical'),
+(5, 3, 'Motherboard'),
+(6, 3, 'Processor'),
+(3, 4, 'Memory'),
+(4, 4, 'Technical'),
+(5, 4, 'Motherboard'),
+(6, 4, 'Processor');
 
 -- --------------------------------------------------------
 
@@ -281,7 +311,9 @@ CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
 --
 
 INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(100, 1, 9, 'banner2');
+(100, 1, 9, 'banner2'),
+(100, 3, 9, 'banner2'),
+(100, 4, 9, 'banner2');
 
 -- --------------------------------------------------------
 
@@ -337,7 +369,15 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 (99, 1, '內喝系列', '', '', ''),
 (100, 1, '外照系列', '', '', ''),
 (101, 1, '三寳系列', '', '', ''),
-(102, 1, '健康系列', '', '', '');
+(102, 1, '健康系列', '', '', ''),
+(99, 3, '內喝系列', '', '', ''),
+(100, 3, '外照系列', '', '', ''),
+(101, 3, '三寳系列', '', '', ''),
+(102, 3, '健康系列', '', '', ''),
+(99, 4, '內喝系列', '', '', ''),
+(100, 4, '外照系列', '', '', ''),
+(101, 4, '三寳系列', '', '', ''),
+(102, 4, '健康系列', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -884,7 +924,9 @@ CREATE TABLE IF NOT EXISTS `oc_customer_group_description` (
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 (1, 1, 'Default', 'test'),
-(1, 2, 'Default', 'test');
+(1, 2, 'Default', 'test'),
+(1, 3, 'Default', 'test'),
+(1, 4, 'Default', 'test');
 
 -- --------------------------------------------------------
 
@@ -1208,9 +1250,15 @@ CREATE TABLE IF NOT EXISTS `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
+(7, 3, 'Contact Us', '&lt;table&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert1_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert01.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert02.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert03.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;中國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;美國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;新加坡發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert04.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert05.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert06.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;英國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;澳大利亞發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;德國發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert2_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert07.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert08.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert09.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;70&quot; valign=&quot;middle&quot;&gt;醫療器械質量管理體系&lt;br /&gt;\r\n						認証証書&lt;br /&gt;\r\n						(編號：04712Q10000090)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;質量體系認証証書&lt;br /&gt;\r\n						(編號：04712Q10097R4M)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;高新企業証書&lt;br /&gt;\r\n						(編號：GF201144000801)&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert3_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert10.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert11.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert12.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年6月在美國第22屆匹茲堡國際新發明新產品博覽會(INPEX)上，&lt;br /&gt;\r\n						榮獲電器/電子科技類金獎(左)，醫學科技類銀獎(中)，生物科技類銀獎(右)。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert13.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert14.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;3&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年11月在比利時布魯塞爾第55屆尤裹卡國際新發明新技術 博覽會上，榮獲醫學科技類金獎(左)和比利時佛萊芒政府特別獎(右)。&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n'),
 (8, 1, 'test', '&lt;p&gt;test&lt;/p&gt;\r\n'),
 (4, 1, 'About Us', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;920&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td height=&quot;30&quot; valign=&quot;top&quot; width=&quot;230&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n          &lt;td width=&quot;670&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_aboutus_banner.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;‧創立于1989年&lt;br /&gt;\r\n						‧集科研，生產，銷售為一體&lt;br /&gt;\r\n						‧500家專賣店&lt;br /&gt;\r\n						‧2,000個服務網店&lt;br /&gt;\r\n						‧員工人數近6,000人&lt;/td&gt;\r\n						&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;right&quot; valign=&quot;middle&quot; width=&quot;312&quot;&gt;&lt;img height=&quot;65&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/word_aboutus.png&quot; width=&quot;249&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司創業於1989年，是一家專門致力於家庭保健事業的高新技術企業。公司以高科技為先導，以雄厚的科研力量為基礎，以國內資深科學家、醫學專家、國家權威研究及檢測機構為依託，以擁有自主知識產權的發明專利和非藥物健康產品為核心，以嚴實的經營作風與科學規範的管理而不斷發展壯大。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;目前公司生產和經營的系列駿豐頻譜水保健儀高科技系列產品已通過科技成果鑒定，獲得中、美、德、英、日、澳和新加坡等多國發明專利，在國內榮獲“科技進步獎”，榮獲五項國際發明大獎。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司在長期實踐生物頻譜技術的研究，經不斷探索與創新，科學總結出“內喝外照”（即內喝頻譜水，外照頻譜儀/屋）的生物頻譜療法，進一步滿足了人們對健康的需求，是實現人們夢寐以求的非藥物自然療法的又一重大貢獻，為人們在日常生活中進行保健和輔助治療提供了更加方便和有效的新途徑。&lt;/p&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n'),
-(7, 1, 'Contact Us', '&lt;table&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert1_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert01.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert02.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert03.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;中國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;美國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;新加坡發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert04.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert05.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert06.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;英國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;澳大利亞發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;德國發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert2_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert07.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert08.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert09.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;70&quot; valign=&quot;middle&quot;&gt;醫療器械質量管理體系&lt;br /&gt;\r\n						認証証書&lt;br /&gt;\r\n						(編號：04712Q10000090)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;質量體系認証証書&lt;br /&gt;\r\n						(編號：04712Q10097R4M)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;高新企業証書&lt;br /&gt;\r\n						(編號：GF201144000801)&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert3_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert10.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert11.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert12.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年6月在美國第22屆匹茲堡國際新發明新產品博覽會(INPEX)上，&lt;br /&gt;\r\n						榮獲電器/電子科技類金獎(左)，醫學科技類銀獎(中)，生物科技類銀獎(右)。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert13.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert14.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;3&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年11月在比利時布魯塞爾第55屆尤裹卡國際新發明新技術 博覽會上，榮獲醫學科技類金獎(左)和比利時佛萊芒政府特別獎(右)。&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n');
+(7, 1, 'Contact Us', '&lt;table&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert1_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert01.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert02.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert03.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;中國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;美國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;新加坡發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert04.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert05.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert06.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;英國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;澳大利亞發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;德國發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert2_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert07.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert08.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert09.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;70&quot; valign=&quot;middle&quot;&gt;醫療器械質量管理體系&lt;br /&gt;\r\n						認証証書&lt;br /&gt;\r\n						(編號：04712Q10000090)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;質量體系認証証書&lt;br /&gt;\r\n						(編號：04712Q10097R4M)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;高新企業証書&lt;br /&gt;\r\n						(編號：GF201144000801)&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert3_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert10.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert11.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert12.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年6月在美國第22屆匹茲堡國際新發明新產品博覽會(INPEX)上，&lt;br /&gt;\r\n						榮獲電器/電子科技類金獎(左)，醫學科技類銀獎(中)，生物科技類銀獎(右)。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert13.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert14.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;3&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年11月在比利時布魯塞爾第55屆尤裹卡國際新發明新技術 博覽會上，榮獲醫學科技類金獎(左)和比利時佛萊芒政府特別獎(右)。&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n'),
+(8, 3, 'test', '&lt;p&gt;test&lt;/p&gt;\r\n'),
+(4, 3, 'About Us', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;920&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td height=&quot;30&quot; valign=&quot;top&quot; width=&quot;230&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n          &lt;td width=&quot;670&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_aboutus_banner.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;‧創立于1989年&lt;br /&gt;\r\n						‧集科研，生產，銷售為一體&lt;br /&gt;\r\n						‧500家專賣店&lt;br /&gt;\r\n						‧2,000個服務網店&lt;br /&gt;\r\n						‧員工人數近6,000人&lt;/td&gt;\r\n						&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;right&quot; valign=&quot;middle&quot; width=&quot;312&quot;&gt;&lt;img height=&quot;65&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/word_aboutus.png&quot; width=&quot;249&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司創業於1989年，是一家專門致力於家庭保健事業的高新技術企業。公司以高科技為先導，以雄厚的科研力量為基礎，以國內資深科學家、醫學專家、國家權威研究及檢測機構為依託，以擁有自主知識產權的發明專利和非藥物健康產品為核心，以嚴實的經營作風與科學規範的管理而不斷發展壯大。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;目前公司生產和經營的系列駿豐頻譜水保健儀高科技系列產品已通過科技成果鑒定，獲得中、美、德、英、日、澳和新加坡等多國發明專利，在國內榮獲“科技進步獎”，榮獲五項國際發明大獎。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司在長期實踐生物頻譜技術的研究，經不斷探索與創新，科學總結出“內喝外照”（即內喝頻譜水，外照頻譜儀/屋）的生物頻譜療法，進一步滿足了人們對健康的需求，是實現人們夢寐以求的非藥物自然療法的又一重大貢獻，為人們在日常生活中進行保健和輔助治療提供了更加方便和有效的新途徑。&lt;/p&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n'),
+(8, 4, 'test', '&lt;p&gt;test&lt;/p&gt;\r\n'),
+(4, 4, 'About Us', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;920&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td height=&quot;30&quot; valign=&quot;top&quot; width=&quot;230&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n          &lt;td width=&quot;670&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_aboutus_banner.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;‧創立于1989年&lt;br /&gt;\r\n						‧集科研，生產，銷售為一體&lt;br /&gt;\r\n						‧500家專賣店&lt;br /&gt;\r\n						‧2,000個服務網店&lt;br /&gt;\r\n						‧員工人數近6,000人&lt;/td&gt;\r\n						&lt;td width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;right&quot; valign=&quot;middle&quot; width=&quot;312&quot;&gt;&lt;img height=&quot;65&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/word_aboutus.png&quot; width=&quot;249&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司創業於1989年，是一家專門致力於家庭保健事業的高新技術企業。公司以高科技為先導，以雄厚的科研力量為基礎，以國內資深科學家、醫學專家、國家權威研究及檢測機構為依託，以擁有自主知識產權的發明專利和非藥物健康產品為核心，以嚴實的經營作風與科學規範的管理而不斷發展壯大。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;目前公司生產和經營的系列駿豐頻譜水保健儀高科技系列產品已通過科技成果鑒定，獲得中、美、德、英、日、澳和新加坡等多國發明專利，在國內榮獲“科技進步獎”，榮獲五項國際發明大獎。&lt;/p&gt;\r\n\r\n			&lt;p class=&quot;index_content_txt&quot;&gt;駿豐頻譜公司在長期實踐生物頻譜技術的研究，經不斷探索與創新，科學總結出“內喝外照”（即內喝頻譜水，外照頻譜儀/屋）的生物頻譜療法，進一步滿足了人們對健康的需求，是實現人們夢寐以求的非藥物自然療法的又一重大貢獻，為人們在日常生活中進行保健和輔助治療提供了更加方便和有效的新途徑。&lt;/p&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n'),
+(7, 4, 'Contact Us', '&lt;table&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert1_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert01.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert02.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert03.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;中國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;美國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;新加坡發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert04.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert05.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert06.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;30&quot; valign=&quot;middle&quot;&gt;英國發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;澳大利亞發明專利&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;德國發明專利&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert2_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert07.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert08.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;276&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert09.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;70&quot; valign=&quot;middle&quot;&gt;醫療器械質量管理體系&lt;br /&gt;\r\n						認証証書&lt;br /&gt;\r\n						(編號：04712Q10000090)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;質量體系認証証書&lt;br /&gt;\r\n						(編號：04712Q10097R4M)&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; valign=&quot;middle&quot;&gt;高新企業証書&lt;br /&gt;\r\n						(編號：GF201144000801)&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td colspan=&quot;5&quot;&gt;&lt;img height=&quot;28&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/img_cert3_title.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert10.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert11.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td width=&quot;50&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td width=&quot;190&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert12.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年6月在美國第22屆匹茲堡國際新發明新產品博覽會(INPEX)上，&lt;br /&gt;\r\n						榮獲電器/電子科技類金獎(左)，醫學科技類銀獎(中)，生物科技類銀獎(右)。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;5&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert13.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&lt;img height=&quot;200&quot; src=&quot;http://202.74.0.45/temp/JFC/catalog/view/theme/jfchealth/images/cert14.png&quot; width=&quot;190&quot; /&gt;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; colspan=&quot;3&quot; height=&quot;50&quot; valign=&quot;middle&quot;&gt;2006年11月在比利時布魯塞爾第55屆尤裹卡國際新發明新技術 博覽會上，榮獲醫學科技類金獎(左)和比利時佛萊芒政府特別獎(右)。&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n						&lt;td align=&quot;center&quot; class=&quot;index_content_txt&quot; height=&quot;20&quot; valign=&quot;middle&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n');
 
 -- --------------------------------------------------------
 
@@ -1263,14 +1311,16 @@ CREATE TABLE IF NOT EXISTS `oc_language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
-(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 1, 1);
+(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 1, 1),
+(3, 'Simplified Chinese', 'zh', 'zh', 'cn.png', 'zh', 'zh', 3, 1),
+(4, 'Traditional Chinese', 'zh-HK', 'zh-HK', 'cn.png', 'zh-HK', 'zh-HK', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1377,7 +1427,13 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 (3, 1, 'Inch', 'in'),
 (1, 2, 'Centimeter', 'cm'),
 (2, 2, 'Millimeter', 'mm'),
-(3, 2, 'Inch', 'in');
+(3, 2, 'Inch', 'in'),
+(1, 3, 'Centimeter', 'cm'),
+(2, 3, 'Millimeter', 'mm'),
+(3, 3, 'Inch', 'in'),
+(1, 4, 'Centimeter', 'cm'),
+(2, 4, 'Millimeter', 'mm'),
+(3, 4, 'Inch', 'in');
 
 -- --------------------------------------------------------
 
@@ -1555,7 +1611,29 @@ INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
 (9, 2, 'Time'),
 (10, 2, 'Date &amp; Time'),
 (12, 2, 'Delivery Date'),
-(11, 2, 'Size');
+(11, 2, 'Size'),
+(1, 3, 'Radio'),
+(2, 3, 'Checkbox'),
+(4, 3, 'Text'),
+(6, 3, 'Textarea'),
+(8, 3, 'Date'),
+(7, 3, 'File'),
+(5, 3, 'Select'),
+(9, 3, 'Time'),
+(10, 3, 'Date &amp; Time'),
+(12, 3, 'Delivery Date'),
+(11, 3, 'Size'),
+(1, 4, 'Radio'),
+(2, 4, 'Checkbox'),
+(4, 4, 'Text'),
+(6, 4, 'Textarea'),
+(8, 4, 'Date'),
+(7, 4, 'File'),
+(5, 4, 'Select'),
+(9, 4, 'Time'),
+(10, 4, 'Date &amp; Time'),
+(12, 4, 'Delivery Date'),
+(11, 4, 'Size');
 
 -- --------------------------------------------------------
 
@@ -1637,7 +1715,35 @@ INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `op
 (24, 2, 2, 'Checkbox 2'),
 (48, 2, 11, 'Large'),
 (47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small');
+(46, 2, 11, 'Small'),
+(43, 3, 1, 'Large'),
+(32, 3, 1, 'Small'),
+(45, 3, 2, 'Checkbox 4'),
+(44, 3, 2, 'Checkbox 3'),
+(31, 3, 1, 'Medium'),
+(42, 3, 5, 'Yellow'),
+(41, 3, 5, 'Green'),
+(39, 3, 5, 'Red'),
+(40, 3, 5, 'Blue'),
+(23, 3, 2, 'Checkbox 1'),
+(24, 3, 2, 'Checkbox 2'),
+(48, 3, 11, 'Large'),
+(47, 3, 11, 'Medium'),
+(46, 3, 11, 'Small'),
+(43, 4, 1, 'Large'),
+(32, 4, 1, 'Small'),
+(45, 4, 2, 'Checkbox 4'),
+(44, 4, 2, 'Checkbox 3'),
+(31, 4, 1, 'Medium'),
+(42, 4, 5, 'Yellow'),
+(41, 4, 5, 'Green'),
+(39, 4, 5, 'Red'),
+(40, 4, 5, 'Blue'),
+(23, 4, 2, 'Checkbox 1'),
+(24, 4, 2, 'Checkbox 2'),
+(48, 4, 11, 'Large'),
+(47, 4, 11, 'Medium'),
+(46, 4, 11, 'Small');
 
 -- --------------------------------------------------------
 
@@ -2013,7 +2119,35 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 (1, 2, 'Pending'),
 (16, 2, 'Voided'),
 (15, 2, 'Processed'),
-(14, 2, 'Expired');
+(14, 2, 'Expired'),
+(2, 3, 'Processing'),
+(3, 3, 'Shipped'),
+(7, 3, 'Canceled'),
+(5, 3, 'Complete'),
+(8, 3, 'Denied'),
+(9, 3, 'Canceled Reversal'),
+(10, 3, 'Failed'),
+(11, 3, 'Refunded'),
+(12, 3, 'Reversed'),
+(13, 3, 'Chargeback'),
+(1, 3, 'Pending'),
+(16, 3, 'Voided'),
+(15, 3, 'Processed'),
+(14, 3, 'Expired'),
+(2, 4, 'Processing'),
+(3, 4, 'Shipped'),
+(7, 4, 'Canceled'),
+(5, 4, 'Complete'),
+(8, 4, 'Denied'),
+(9, 4, 'Canceled Reversal'),
+(10, 4, 'Failed'),
+(11, 4, 'Refunded'),
+(12, 4, 'Reversed'),
+(13, 4, 'Chargeback'),
+(1, 4, 'Pending'),
+(16, 4, 'Voided'),
+(15, 4, 'Processed'),
+(14, 4, 'Expired');
 
 -- --------------------------------------------------------
 
@@ -2190,10 +2324,10 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`, `is_net`, `filename`) VALUES
-(186, 'JF-139', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-1.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 2, 1, '2015-04-23 10:48:02', '2015-04-23 11:43:11', 2, 0, ''),
+(186, 'JF-139', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-1.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 2, 1, '2015-04-23 10:48:02', '2015-04-23 11:43:11', 5, 0, ''),
 (187, 'WF-1', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-2.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-04-23 10:48:46', '0000-00-00 00:00:00', 1, 0, ''),
-(188, 'JF-902C', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-3.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-04-23 10:49:21', '0000-00-00 00:00:00', 3, 0, ''),
-(185, 'JF-139B', '', '', '', '', '', '', '', 1, 5, 'data/img_product01.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 3, 1, '2015-04-23 10:44:59', '2015-04-23 15:06:30', 26, 0, '');
+(188, 'JF-902C', '', '', '', '', '', '', '', 1, 5, 'data/img_product01-3.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 1, 1, '2015-04-23 10:49:21', '0000-00-00 00:00:00', 7, 0, ''),
+(185, 'JF-139B', '', '', '', '', '', '', '', 1, 5, 'data/img_product01.png', 0, 1, '0.0000', 0, 0, '2015-04-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 3, 1, '2015-04-23 10:44:59', '2015-04-24 11:06:38', 82, 0, '');
 
 -- --------------------------------------------------------
 
@@ -2220,6 +2354,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `feature` text NOT NULL,
   `meta_description` varchar(255) NOT NULL,
   `meta_keyword` varchar(255) NOT NULL,
   `tag` text NOT NULL,
@@ -2231,11 +2366,19 @@ CREATE TABLE IF NOT EXISTS `oc_product_description` (
 -- 转存表中的数据 `oc_product_description`
 --
 
-INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-(186, 1, '駿豐頻譜水保健儀', '', '', '', ''),
-(187, 1, '駿豐健康淨水器', '', '', '', ''),
-(188, 1, '駿豐頻譜保健房', '', '', '', ''),
-(185, 1, '半截式駿豐頻譜水保健儀', '&lt;p&gt;半截式駿豐頻譜水保健儀(JF-139B採用國際頂尖頻譜科技製作而成的家居健康頻譜水飲用器！它通過特定的頻譜場作用，將普通的飲用水製調制處理成與人體正常頻譜場相匹配的優化水。&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;當改變了原水的理化特性後，便產生頻譜水。它可改變了O17核磁共振譜線；提高了電導率，電導率譜更接近於人體血漿電導率譜；增加了水中的含氧量 5%；降低了水中氯仿含量 1.7微克/升；提高了水對無機物的溶解力 40.8%。&lt;br /&gt;\r\n&lt;br /&gt;\r\n駿豐頻譜水不含任何藥物成份，製作方便，口感好，能迅速進入並滲透到體內各部份，與之相互作用，對已失調的人體各部份進行調解，使其恢復到正常平衡狀態，同時使健康更加穩定，從而達到預防疾病與身体保健的效果。&lt;/p&gt;\r\n', '', '', '');
+INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `feature`, `meta_description`, `meta_keyword`, `tag`) VALUES
+(186, 1, '駿豐頻譜水保健儀', '', '', '', '', ''),
+(187, 1, '駿豐健康淨水器', '', '', '', '', ''),
+(188, 1, '駿豐頻譜保健房', '', '', '', '', ''),
+(185, 4, '半截式駿豐頻譜水保健儀', '&lt;p&gt;半截式駿豐頻譜水保健儀(JF-139B採用國際頂尖頻譜科技製作而成的家居健康頻譜水飲用器！它通過特定的頻譜場作用，將普通的飲用水製調制處理成與人體正常頻譜場相匹配的優化水。&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;當改變了原水的理化特性後，便產生頻譜水。它可改變了O17核磁共振譜線；提高了電導率，電導率譜更接近於人體血漿電導率譜；增加了水中的含氧量 5%；降低了水中氯仿含量 1.7微克/升；提高了水對無機物的溶解力 40.8%。&lt;br /&gt;\r\n&lt;br /&gt;\r\n駿豐頻譜水不含任何藥物成份，製作方便，口感好，能迅速進入並滲透到體內各部份，與之相互作用，對已失調的人體各部份進行調解，使其恢復到正常平衡狀態，同時使健康更加穩定，從而達到預防疾病與身体保健的效果。&lt;/p&gt;\r\n', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot; width=&quot;670&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td align=&quot;right&quot; class=&quot;index_content_txt&quot; valign=&quot;top&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td class=&quot;index_content_txt&quot; height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td colspan=&quot;3&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;頻譜水的特點&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 更容易被人體吸收和利用;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 增加對人體各系統的供氧;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 有利於人體的新陳代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 減少由氯仿帶來的不健康因素;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體免疫功能。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;產品輔助功能&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 改善微循環及血液流變學特性，預防心腦血管病;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 維護泌尿系統健康;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 增強胃腸功能，促進食物消化與營養吸收;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 有助促進神經系統功能平衡代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體綜合免疫能力。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;主要研究機構&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;a) 中國計量科學研究院;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						b) 北京大學分析測試中心;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						c) 解放軍總醫院（301醫院）;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						d) 國家城市供水水質監測網北京監測站;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						e) 中山醫科大學及廣州市紅十字會醫院。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n', '', '', ''),
+(186, 3, '駿豐頻譜水保健儀', '', '', '', '', ''),
+(187, 3, '駿豐健康淨水器', '', '', '', '', ''),
+(188, 3, '駿豐頻譜保健房', '', '', '', '', ''),
+(186, 4, '駿豐頻譜水保健儀', '', '', '', '', ''),
+(187, 4, '駿豐健康淨水器', '', '', '', '', ''),
+(188, 4, '駿豐頻譜保健房', '', '', '', '', ''),
+(185, 1, '半截式駿豐頻譜水保健儀', '&lt;p&gt;半截式駿豐頻譜水保健儀(JF-139B採用國際頂尖頻譜科技製作而成的家居健康頻譜水飲用器！它通過特定的頻譜場作用，將普通的飲用水製調制處理成與人體正常頻譜場相匹配的優化水。&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;當改變了原水的理化特性後，便產生頻譜水。它可改變了O17核磁共振譜線；提高了電導率，電導率譜更接近於人體血漿電導率譜；增加了水中的含氧量 5%；降低了水中氯仿含量 1.7微克/升；提高了水對無機物的溶解力 40.8%。&lt;br /&gt;\r\n&lt;br /&gt;\r\n駿豐頻譜水不含任何藥物成份，製作方便，口感好，能迅速進入並滲透到體內各部份，與之相互作用，對已失調的人體各部份進行調解，使其恢復到正常平衡狀態，同時使健康更加穩定，從而達到預防疾病與身体保健的效果。&lt;/p&gt;\r\n', '&lt;style type=&quot;text/css&quot;&gt;.product_name {\r\n	font-size: 24px;\r\n	color: #de2925;\r\n	font-weight: bold;\r\n	font-family: &quot;メイリオ&quot;,&quot;Meiryo&quot;,&quot;ヒラギノ角ゴ Pro W3&quot;,&quot;Hiragino Kaku Gothic Pro&quot;, &quot;Osaka&quot;,&quot;ＭＳ Ｐゴシック&quot;,&quot;MS PGothic&quot;,&quot;sans-serif&quot;,&quot;arial&quot;,&quot;helvetica&quot;;\r\n}\r\n&lt;/style&gt;\r\n&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td align=&quot;right&quot; class=&quot;index_content_txt&quot; valign=&quot;top&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td class=&quot;index_content_txt&quot; height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td colspan=&quot;3&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot;&gt;頻譜水的特點&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 更容易被人體吸收和利用;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 增加對人體各系統的供氧;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 有利於人體的新陳代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 減少由氯仿帶來的不健康因素;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體免疫功能。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot;&gt;產品輔助功能&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 改善微循環及血液流變學特性，預防心腦血管病;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 維護泌尿系統健康;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 增強胃腸功能，促進食物消化與營養吸收;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 有助促進神經系統功能平衡代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體綜合免疫能力。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot;&gt;主要研究機構&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;a) 中國計量科學研究院;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						b) 北京大學分析測試中心;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						c) 解放軍總醫院（301醫院）;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						d) 國家城市供水水質監測網北京監測站;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						e) 中山醫科大學及廣州市紅十字會醫院。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n', '', '', ''),
+(185, 3, '半截式駿豐頻譜水保健儀', '&lt;p&gt;半截式駿豐頻譜水保健儀(JF-139B採用國際頂尖頻譜科技製作而成的家居健康頻譜水飲用器！它通過特定的頻譜場作用，將普通的飲用水製調制處理成與人體正常頻譜場相匹配的優化水。&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;當改變了原水的理化特性後，便產生頻譜水。它可改變了O17核磁共振譜線；提高了電導率，電導率譜更接近於人體血漿電導率譜；增加了水中的含氧量 5%；降低了水中氯仿含量 1.7微克/升；提高了水對無機物的溶解力 40.8%。&lt;br /&gt;\r\n&lt;br /&gt;\r\n駿豐頻譜水不含任何藥物成份，製作方便，口感好，能迅速進入並滲透到體內各部份，與之相互作用，對已失調的人體各部份進行調解，使其恢復到正常平衡狀態，同時使健康更加穩定，從而達到預防疾病與身体保健的效果。&lt;/p&gt;\r\n', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot; width=&quot;670&quot;&gt;\r\n	&lt;tbody&gt;\r\n		&lt;tr&gt;\r\n			&lt;td align=&quot;right&quot; class=&quot;index_content_txt&quot; valign=&quot;top&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td class=&quot;index_content_txt&quot; height=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n		&lt;tr&gt;\r\n			&lt;td colspan=&quot;3&quot;&gt;\r\n			&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;670&quot;&gt;\r\n				&lt;tbody&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;頻譜水的特點&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 更容易被人體吸收和利用;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 增加對人體各系統的供氧;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 有利於人體的新陳代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 減少由氯仿帶來的不健康因素;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體免疫功能。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;產品輔助功能&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;1. 改善微循環及血液流變學特性，預防心腦血管病;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						2. 維護泌尿系統健康;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						3. 增強胃腸功能，促進食物消化與營養吸收;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						4. 有助促進神經系統功能平衡代謝;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						5. 提高人體綜合免疫能力。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot; height=&quot;30&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;product_name&quot; style=&quot;font-size: 24px; color: rgb(222, 41, 37); font-weight: bold; font-family: メイリオ, Meiryo, ''ヒラギノ角ゴ Pro W3'', ''Hiragino Kaku Gothic Pro'', Osaka, ''ＭＳ Ｐゴシック'', ''MS PGothic'', sans-serif, arial, helvetica;&quot;&gt;主要研究機構&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;image/data/img_product_line.png&quot; width=&quot;670&quot; /&gt;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;&amp;nbsp;&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n					&lt;tr&gt;\r\n						&lt;td class=&quot;index_content_txt&quot;&gt;a) 中國計量科學研究院;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						b) 北京大學分析測試中心;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						c) 解放軍總醫院（301醫院）;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						d) 國家城市供水水質監測網北京監測站;&lt;br /&gt;\r\n						&lt;br /&gt;\r\n						e) 中山醫科大學及廣州市紅十字會醫院。&lt;/td&gt;\r\n					&lt;/tr&gt;\r\n				&lt;/tbody&gt;\r\n			&lt;/table&gt;\r\n			&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n			&lt;td&gt;&amp;nbsp;&lt;/td&gt;\r\n		&lt;/tr&gt;\r\n	&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2290,15 +2433,15 @@ CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2462 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2466 ;
 
 --
 -- 转存表中的数据 `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2460, 185, 'data/img_product03.png', 1),
-(2461, 185, 'data/img_product02-1.png', 2);
+(2465, 185, 'data/img_product03.png', 1),
+(2464, 185, 'data/img_product02-1.png', 2);
 
 -- --------------------------------------------------------
 
@@ -2587,7 +2730,13 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 (3, 1, 'Replacement Sent'),
 (1, 2, 'Refunded'),
 (2, 2, 'Credit Issued'),
-(3, 2, 'Replacement Sent');
+(3, 2, 'Replacement Sent'),
+(1, 3, 'Refunded'),
+(2, 3, 'Credit Issued'),
+(3, 3, 'Replacement Sent'),
+(1, 4, 'Refunded'),
+(2, 4, 'Credit Issued'),
+(3, 4, 'Replacement Sent');
 
 -- --------------------------------------------------------
 
@@ -2632,7 +2781,17 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 (2, 2, 'Received Wrong Item'),
 (3, 2, 'Order Error'),
 (4, 2, 'Faulty, please supply details'),
-(5, 2, 'Other, please supply details');
+(5, 2, 'Other, please supply details'),
+(1, 3, 'Dead On Arrival'),
+(2, 3, 'Received Wrong Item'),
+(3, 3, 'Order Error'),
+(4, 3, 'Faulty, please supply details'),
+(5, 3, 'Other, please supply details'),
+(1, 4, 'Dead On Arrival'),
+(2, 4, 'Received Wrong Item'),
+(3, 4, 'Order Error'),
+(4, 4, 'Faulty, please supply details'),
+(5, 4, 'Other, please supply details');
 
 -- --------------------------------------------------------
 
@@ -2657,7 +2816,13 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 (2, 1, 'Awaiting Products'),
 (1, 2, 'Pending'),
 (3, 2, 'Complete'),
-(2, 2, 'Awaiting Products');
+(2, 2, 'Awaiting Products'),
+(1, 3, 'Pending'),
+(3, 3, 'Complete'),
+(2, 3, 'Awaiting Products'),
+(1, 4, 'Pending'),
+(3, 4, 'Complete'),
+(2, 4, 'Awaiting Products');
 
 -- --------------------------------------------------------
 
@@ -2884,7 +3049,15 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 (7, 2, 'In Stock'),
 (8, 2, 'Pre-Order'),
 (5, 2, 'Out Of Stock'),
-(6, 2, '2 - 3 Days');
+(6, 2, '2 - 3 Days'),
+(7, 3, 'In Stock'),
+(8, 3, 'Pre-Order'),
+(5, 3, 'Out Of Stock'),
+(6, 3, '2 - 3 Days'),
+(7, 4, 'In Stock'),
+(8, 4, 'Pre-Order'),
+(5, 4, 'Out Of Stock'),
+(6, 4, '2 - 3 Days');
 
 -- --------------------------------------------------------
 
@@ -3570,7 +3743,13 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 (8, 1, 'General'),
 (6, 2, 'Christmas'),
 (7, 2, 'Birthday'),
-(8, 2, 'General');
+(8, 2, 'General'),
+(6, 3, 'Christmas'),
+(7, 3, 'Birthday'),
+(8, 3, 'General'),
+(6, 4, 'Christmas'),
+(7, 4, 'Birthday'),
+(8, 4, 'General');
 
 -- --------------------------------------------------------
 
@@ -3620,7 +3799,15 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 (1, 2, 'Kilogram', 'kg'),
 (2, 2, 'Gram', 'g'),
 (5, 2, 'Pound ', 'lb'),
-(6, 2, 'Ounce', 'oz');
+(6, 2, 'Ounce', 'oz'),
+(1, 3, 'Kilogram', 'kg'),
+(2, 3, 'Gram', 'g'),
+(5, 3, 'Pound ', 'lb'),
+(6, 3, 'Ounce', 'oz'),
+(1, 4, 'Kilogram', 'kg'),
+(2, 4, 'Gram', 'g'),
+(5, 4, 'Pound ', 'lb'),
+(6, 4, 'Ounce', 'oz');
 
 -- --------------------------------------------------------
 

@@ -76,9 +76,6 @@ function changepic(id) {
 <?PHP echo $heading_title; ?></td>
                   </tr>
                   <tr>
-                    <td height="20">&nbsp;</td>
-                  </tr>
-                  <tr>
                     <td align="left" valign="top" class="index_content_txt"><?php echo $description; ?></td>
                   </tr>
                   <tr>
