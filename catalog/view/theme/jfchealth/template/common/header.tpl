@@ -20,15 +20,31 @@
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
+<script>
+// Switch language
+function swt_lang(l) {
+  $.ajax({
+    type:'POST',
+    url:'?route=module/language',
+    data:{
+      language_code:l,
+      redirect:window.location.href
+    },
+    success:function(data) {
+      window.location.reload();
+    }
+  });
+}
+</script>
 <!--[if IE 7]> 
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/dared/stylesheet/ie7.css" />
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/jfchealth/stylesheet/ie7.css" />
 <![endif]-->
 <!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/dared/stylesheet/ie6.css" />
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/jfchealth/stylesheet/ie6.css" />
 </script>
 <![endif]-->
 </head>
-<body onload="MM_preloadImages('<?PHP echo $dir_image; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image; ?>btn_menu_course_mo.png','<?PHP echo $dir_image; ?>btn_menu_product_mo.png','<?PHP echo $dir_image; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image; ?>btn_menu_login_mo.png','<?PHP echo $dir_image; ?>btn_menu_register_mo.png','<?PHP echo $dir_image; ?>btn_menu_news_mo.png')">
+<body onload="MM_preloadImages('<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_news_mo.png')">
 <div class="top-bar" style="z-index:2147483647;">
 <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -50,7 +66,7 @@
           </tr>
         </table></td>
         <td width="262" align="center"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></a></td>
-        <td width="329">&nbsp;</td>
+        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>簡</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("en")'>ENG</a></td>
         </tr>
       <tr>
         <td>&nbsp;</td>
@@ -61,23 +77,23 @@
         <td height="36" colspan="3" background="<?PHP echo $dir_image; ?>img_menu_bg.png"><table width="920" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="30">&nbsp;</td>
-            <td width="60" valign="middle"><a href="index.php?route=product/news" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_news.png" name="Image1" width="60" height="15" border="0" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image; ?>btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" height="36" valign="middle">&nbsp;</td>
-            <td width="58" valign="middle"><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_aboutus.png" name="Image2" width="58" height="15" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image; ?>btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" valign="middle">&nbsp;</td>
-            <td width="30" valign="middle"><a href="index.php?route=product/course" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_course.png" width="30" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><a href="index.php?route=product/category" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_product.png" width="60" height="15" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image; ?>btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><a href="index.php?route=product/article" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_sharing.png" name="Image5" width="60" height="15" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','<?PHP echo $dir_image; ?>btn_menu_sharing_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><a href="index.php?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_magazine.png" width="60" height="15" border="0" id="Image6" onmouseover="MM_swapImage('Image6','','<?PHP echo $dir_image; ?>btn_menu_magazine_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="48" valign="middle">&nbsp;</td>
-            <td width="59" valign="middle"><a href="index.php?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_menu_contactus.png" width="59" height="15" border="0" id="Image7" onmouseover="MM_swapImage('Image7','','<?PHP echo $dir_image; ?>btn_menu_contactus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-            <td width="50" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><img src="<?PHP echo $dir_image; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <td width="60" valign="middle"><a href="index.php?route=product/news" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_news.png" name="Image1" width="60" height="15" border="0" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="45" height="36" valign="middle">&nbsp;</td>
+            <td width="58" valign="middle"><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_aboutus.png" name="Image2" width="58" height="15" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="38" valign="middle">&nbsp;</td>
+            <td width="51" valign="middle"><a href="index.php?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_course.png" width="51" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="30" valign="middle">&nbsp;</td>
+            <td width="86" valign="middle"><a href="index.php?route=product/category" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_product.png" width="86" height="15" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="35" valign="middle">&nbsp;</td>
+            <td width="60" valign="middle"><a href="index.php?route=product/article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_sharing.png" name="Image5" width="60" height="15" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>btn_menu_sharing_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="32" valign="middle">&nbsp;</td>
+            <td width="96" valign="middle"><a href="index.php?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_magazine.png" width="96" height="15" border="0" id="Image6" onmouseover="MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>btn_menu_magazine_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="20" valign="middle">&nbsp;</td>
+            <td width="78" valign="middle"><a href="index.php?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_contactus.png" width="78" height="15" border="0" id="Image7" onmouseover="MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="30" valign="middle">&nbsp;</td>
+            <td width="60" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
             <td width="20" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="16" /></td>
-            <td width="85" valign="middle"><img src="<?PHP echo $dir_image; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <td width="85" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
           </tr>
         </table></td>
         </tr>

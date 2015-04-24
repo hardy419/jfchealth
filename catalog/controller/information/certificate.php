@@ -12,11 +12,12 @@ class ControllerInformationCertificate extends Controller {
 		$this->data['description'] = html_entity_decode ($information_info['description'], ENT_QUOTES, 'UTF-8');
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
-        $this->document->addStyle('catalog/view/theme/jfchealth/css/certificate.css');
+        $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/certificate.css');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
         //$this->data['dir_image'] = DIR_TEMPLATE . $this->config->get('config_template') . '/images/';
         //$this->data['dir_pdf'] = DIR_PDF;
         $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
+        $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/certificate.tpl')) {

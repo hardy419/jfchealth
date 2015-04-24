@@ -7,11 +7,12 @@ class ControllerInformationContactUs extends Controller {
 		$this->data['heading_title'] = $this->config->get('config_title');
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
-        $this->document->addStyle('catalog/view/theme/jfchealth/css/contactus.css');
+        $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/contactus.css');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
         //$this->data['dir_image'] = DIR_TEMPLATE . $this->config->get('config_template') . '/images/';
         //$this->data['dir_pdf'] = DIR_PDF;
         $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
+        $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/contactus.tpl')) {

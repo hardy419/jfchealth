@@ -4,7 +4,7 @@
 **/
 
 // Locale
-$_['code']                  = 'zh_HK';
+$_['code']                  = 'zh-HK';
 $_['charset']               = 'utf-8';
 $_['direction']             = 'ltr';
 $_['locale']                = 'zh,zh-hk,zh_hk,zh-cn,zh_cn.UTF-8,cn-gb,chinese';
