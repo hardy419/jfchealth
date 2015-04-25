@@ -1,18 +1,18 @@
 <?php echo $header; ?>
 
       <tr>
-        <td height="781" colspan="3" valign="top" background="<?PHP echo $dir_image; ?>img_index_content_bg.png"><table width="920" border="0" cellspacing="0" cellpadding="0">
+        <td height="781" colspan="3" valign="top" background="<?PHP echo $dir_image_lang; ?>img_index_content_bg.png"><table width="920" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="260" height="230" align="left" valign="top"><table width="230" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td colspan="3"><img src="<?PHP echo $dir_image; ?>img_index_newstitle.png" width="230" height="25" border="0" usemap="#Map" /></td>
+                <td colspan="3"><img src="<?PHP echo $dir_image_lang; ?>img_index_newstitle.png" width="230" height="25" border="0" usemap="#Map" /></td>
                 </tr>
               <tr>
                 <td colspan="3">&nbsp;</td>
                 </tr>
               <tr>
                 <td width="11" align="left" valign="top">&nbsp;</td>
-                <td width="208" height="176" background="<?PHP echo $dir_image; ?>img_index_news_photo01.png"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                <td width="208" height="176" style="position:relative;left:-5px;top:-5px;" background="<?PHP echo $dir_image; ?>img_index_news_photo01.png"><table width="208" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="108">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -83,7 +83,7 @@
               </tr>
               <tr>
                 <td class="index_content_txt">&nbsp;</td>
-                <td height="40" align="center" class="index_content_txt"><a href="<?PHP echo $dir_image; ?>magazine.html" tppabs="http://jfchealth.com/new/magazine.html" target="_parent"><img src="<?PHP echo $dir_image; ?>button.png" width="85" height="25" border="0" /></a></td>
+                <td height="40" align="center" class="index_content_txt"><a href="magazine.html" tppabs="http://jfchealth.com/new/magazine.html" target="_parent"><img src="<?PHP echo $dir_image; ?>button.png" width="85" height="25" border="0" /></a></td>
                 <td class="index_content_txt">&nbsp;</td>
               </tr>
             </table></td>
@@ -138,7 +138,7 @@
                 </table></td>
                 <td colspan="2" align="left" valign="top"><table width="353" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td><img src="<?PHP echo $dir_image; ?>img_index_videotitle.png" width="353" height="25" border="0" usemap="#Map2" /></td>
+                    <td><img src="<?PHP echo $dir_image_lang; ?>img_index_videotitle.png" width="353" height="25" border="0" usemap="#Map2" /></td>
                     </tr>
                   <tr>
                     <td height="20">&nbsp;</td>

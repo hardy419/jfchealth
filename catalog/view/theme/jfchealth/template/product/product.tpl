@@ -12,7 +12,7 @@
             <td>&nbsp;</td>
             <td><img src="<?PHP echo $detail_title_image; ?>" width="670" height="34" border="0" usemap="#Map" />
               <map name="Map" id="Map">
-                <area shape="rect" coords="1,7,69,35" href="?route=product/category&path=<?PHP echo $_GET['path'] ?>" tppabs="http://jfchealth.com/new/product02.html" target="_parent" />
+                <area shape="rect" coords="1,7,69,35" href="?route=product/category&path=<?PHP echo $_GET['path'] ?>" target="_parent" />
               </map>
               </td>
             </tr>
@@ -82,7 +82,7 @@ function changepic(id) {
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="right" valign="top"><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_enqury.png" width="163" height="46" border="0" /></a></td>
+                    <td align="right" valign="top"><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_enqury.png" width="163" height="46" border="0" /></a></td>
                   </tr>
                 </table></td>
                 </tr>

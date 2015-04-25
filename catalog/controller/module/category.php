@@ -82,6 +82,7 @@ class ControllerModuleCategory extends Controller {
 		}
 
         $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
+        $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/category.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/module/category.tpl';

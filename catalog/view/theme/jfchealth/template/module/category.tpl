@@ -30,9 +30,9 @@
 <?php foreach ($categories as $category) {  ?>
   <tr>
     <?php if ($category['category_id'] == $category_id) { ?>
-    <td><img src="<?PHP echo $dir_image; ?>btn_product_<?php echo $category['name']; ?>_mo.png" width="99" height="18" border="0" /></td>
+    <td><img src="<?PHP echo $dir_image_lang; ?>btn_product_<?php echo $category['name']; ?>_mo.png" width="99" height="18" border="0" /></td>
     <?php } else { ?>
-    <td><a href="<?php echo $category['href']; ?>" target="_parent"><img src="<?PHP echo $dir_image; ?>btn_product_<?php echo $category['name']; ?>.png" width="99" height="18" border="0" id="Image<?php echo $category['category_id']; ?>" onmouseover="MM_swapImage('Image<?php echo $category['category_id']; ?>','','<?PHP echo $dir_image; ?>btn_product_<?php echo $category['name']; ?>_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+    <td><a href="<?php echo $category['href']; ?>" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_product_<?php echo $category['name']; ?>.png" width="99" height="18" border="0" id="Image<?php echo $category['category_id']; ?>" onmouseover="MM_swapImage('Image<?php echo $category['category_id']; ?>','','<?PHP echo $dir_image_lang; ?>btn_product_<?php echo $category['name']; ?>_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
     <?php } ?>
     <td>&nbsp;</td>
   </tr>
