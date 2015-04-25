@@ -4,7 +4,7 @@
         <td height="702" colspan="3" valign="top"><table width="920" border="0" cellspacing="0" cellpadding="0">
           
           <tr>
-            <td colspan="3"><img src="<?PHP echo $dir_image; ?>img_news_title.png" width="920" height="63" /></td>
+            <td colspan="3"><img src="<?PHP echo $dir_image_lang; ?>img_news_title.png" width="920" height="63" /></td>
             </tr>
           <tr>
             <td height="20">&nbsp;</td>
@@ -43,7 +43,7 @@
             <td>&nbsp;</td>
             </tr>
           <tr>
-            <td><img src="img_photo_cover-1.png" tppabs="http://jfchealth.com/new/images/news/new02/img_photo_cover.png" width="210" height="210" /></td>
+            <td><img src="img_photo_cover-1.png" width="210" height="210" /></td>
             <td>&nbsp;</td>
             <td height="20" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
               <tr>

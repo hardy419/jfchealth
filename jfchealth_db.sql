@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 25 日 04:01
+-- 生成日期: 2015 年 04 月 25 日 07:15
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -1495,8 +1495,6 @@ CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
-  `title` varchar(200) NOT NULL,
-  `description` text NOT NULL,
   `time` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`news_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
@@ -1505,11 +1503,26 @@ CREATE TABLE IF NOT EXISTS `oc_news` (
 -- 转存表中的数据 `oc_news`
 --
 
-INSERT INTO `oc_news` (`news_id`, `sort_order`, `status`, `title`, `description`, `time`) VALUES
-(2, 9997, 1, 'International CES 2015', '&lt;p&gt;Thank you for visiting our studio at CES 2015.&lt;/p&gt;\r\n\r\n&lt;p&gt;Hope to see you at CES 2016!&lt;/p&gt;\r\n', '08-12-2014'),
-(3, 9996, 1, 'High End Munich 2014', '&lt;p&gt;Thank you for visiting our booth at High End Munich 2014.&lt;/p&gt;\r\n\r\n&lt;p&gt;Hope to see you at High End Munich next Year!&lt;/p&gt;\r\n', '08-12-2014'),
-(4, 9999, 1, '．Upcoming Event', '&lt;p&gt;HKTDC Electronic Fair 2015 (Spring Edition)&lt;/p&gt;\r\n\r\n&lt;p&gt;Date: 13-16 April, 2015&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;Booth: 3E-B10&lt;/p&gt;\r\n\r\n&lt;p&gt;Venue: HKCEC (Hong Kong Convention &amp;amp; Exhibition Centre)&lt;/p&gt;\r\n', '08-12-2014'),
-(10, 9998, 1, '．Upcoming Event', '&lt;p&gt;HighEnd Munich 2015&lt;/p&gt;\r\n\r\n&lt;p&gt;Date: 14-17 May, 2015&lt;/p&gt;\r\n\r\n&lt;p&gt;Booth No.: Hall 4, B17&lt;/p&gt;\r\n\r\n&lt;p&gt;Venue: MOC Munich, Lilienthalallee 40, 80939 Munich, Germany&lt;/p&gt;\r\n', '26-01-2015');
+INSERT INTO `oc_news` (`news_id`, `sort_order`, `status`, `time`) VALUES
+(2, 9997, 1, '08-12-2014'),
+(3, 9996, 1, '08-12-2014'),
+(4, 9999, 1, '08-12-2014'),
+(10, 9998, 1, '26-01-2015');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `oc_news_description`
+--
+
+CREATE TABLE IF NOT EXISTS `oc_news_description` (
+  `news_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`news_id`,`language_id`),
+  KEY `title` (`title`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
