@@ -1,9 +1,9 @@
-<table style="position:relative;top:-25px;margin:auto;">
+<table style="position:relative;top:0px;margin:auto;">
   <tr>
-    <td>&nbsp;</td>
-    <td width="588" height="25">&nbsp;</td>
-    <td width="332">&nbsp;</td>
-    <td>&nbsp;</td>
+    <td></td>
+    <td width="588" height="0"></td>
+    <td width="332"></td>
+    <td></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -42,5 +42,5 @@
     <td>&nbsp;</td>
   </tr>
 </table>
-<div style="position:relative;top:-35px;height:20px;background-color:rgb(0,60,131);">
+<div style="position:relative;top:0px;height:20px;background-color:rgb(0,60,131);">
 </div>

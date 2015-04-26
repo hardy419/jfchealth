@@ -45,7 +45,7 @@ function swt_lang(l) {
 <![endif]-->
 </head>
 <body onload="MM_preloadImages('<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_news_mo.png')">
-<div class="top-bar" style="z-index:2147483647;">
+<div class="top-bar">
 <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="20">&nbsp;</td>
@@ -100,31 +100,8 @@ function swt_lang(l) {
       <tr>
         <td height="20" colspan="3">&nbsp;</td>
         </tr>
-<!--<body>
-<div class="warpper">
-<div id="header" class=" pad-B10">
-	<div class="head-top">
-		<?php if ($logo) { ?>
-		<div class="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
-		<?php } ?>
-	</div>
-	<div class="head-menu">
-		<ul class="m">
-			<li class="l"><a class="m-a" href="<?php echo $aboutus; ?>"><span class="m_about m_about<?php echo $_GET['route']=='information/about'?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $category; ?>"><span class="m_product m_product<?php echo ($_GET['route']=='product/category' || $_GET['route']=='product/product')?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $news; ?>"><span class="m_news m_news<?php echo $_GET['route']=='information/news'?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $support; ?>"><span class="m_support m_support<?php echo $_GET['route']=='product/support'?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $dealers; ?>"><span class="m_dealers m_dealers<?php echo $_GET['route']=='information/dealers'?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $registration; ?>"><span class="m_regis m_regis<?php echo $_GET['route']=='information/registration'?'_on':'';?>"></span></a></li>
-			<li class="l"><a class="m-a" href="<?php echo $contact; ?>"><span class="m_contact m_contact<?php echo $_GET['route']=='information/contact'?'_on':'';?>"></span></a></li>
-		</ul>
-	</div>
-</div>
-<?php if ($error) { ?>
-    
-    <div class="warning"><?php echo $error ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
-    
-<?php } ?>
-<div id="notification"></div>
-<div class="contenter pad-B10">
--->
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div><!-- top-bar -->
