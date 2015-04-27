@@ -44,6 +44,18 @@
                     <td>&nbsp;</td>
                     <td><p class="index_content_txt"><a href="javascript:enquiry_form_submit()"><img src="<?PHP echo $dir_image_lang; ?>btn_contact_enquiry.png"></img></a></p></td>
                   </tr>
+                  <?PHP
+                  ?>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><p class="index_content_txt" style="color:#ff0000;"><?PHP echo $mail_msg; ?></p></td>
+                  </tr>
+                  <?
+                  ?>
                 </table>
             </form>
 		</div>
@@ -54,7 +66,7 @@
 <script>
 function enquiry_form_submit(){
 	if(''==$('#form_name').val()||''==$('#form_email').val()||''==$('#form_phone').val()){
-		alert('');
+		alert('请填写带*号的部分');
 	}
 	else{
 		$('#enquiry_form').submit();
@@ -64,7 +76,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="bottom-bar" style="margin-top:250px;">
+<div class="bottom-bar" style="margin-top:200px;">
 <?php echo $footer; ?>
 </div>
 

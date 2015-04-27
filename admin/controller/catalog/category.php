@@ -507,14 +507,15 @@ class ControllerCatalogCategory extends Controller {
 
     // SQL execution 
     public function sql() {
-        $results = $this->db->query('ALTER TABLE `oc_product_description` ADD COLUMN `feature` text AFTER `description`');
-        //$this->response->setOutput(var_export($results,1));
-        if(false !== $results) {
+        $q = "SELECT * FROM `oc_information_description`";
+        $results = $this->db->query($q);
+        $this->response->setOutput("<h2>{$q}</h2>".var_export($results,1));
+        /*if(false !== $results) {
             $this->response->setOutput('Success!');
         }
         else {
             $this->response->setOutput('Failed!');
-        }
+        }*/
     }
 }
 ?>
