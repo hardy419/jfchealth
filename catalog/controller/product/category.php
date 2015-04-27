@@ -92,6 +92,7 @@ class ControllerProductCategory extends Controller {
         if(0 === $category_id) {
             $categories = $this->model_catalog_category->getCategories(0);
             $category_id = $categories[0]['category_id'];
+            $this->request->get['path'] = $category_id;
         }
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
@@ -104,7 +105,7 @@ class ControllerProductCategory extends Controller {
 
 			$this->data['heading_title'] = $category_info['name'];
 
-            $this->data['title_image'] = DIR_IMAGE.$category_info['image'];
+            $this->data['sort_order'] = $category_info['sort_order'];
 
 			$this->data['text_refine'] = $this->language->get('text_refine');
 			$this->data['text_empty'] = $this->language->get('text_empty');			

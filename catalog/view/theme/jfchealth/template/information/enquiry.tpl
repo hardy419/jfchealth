@@ -64,7 +64,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="bottom-bar" style="margin-top:90px;position:relative;top:880px;z-index:2147483647;">
+<div class="bottom-bar" style="margin-top:250px;">
 <?php echo $footer; ?>
 </div>
 

@@ -44,7 +44,7 @@ class ControllerProductProduct extends Controller {
 			$category_info = $this->model_catalog_category->getCategory($category_id);
 
             // Vars that have sth to do with category
-            $this->data['detail_title_image'] = DIR_IMAGE.str_replace ('_title', '_detail_title', $category_info['image']);
+            $this->data['category_sort_order'] = $category_info['sort_order'];
 
 			if ($category_info) {
 				$url = '';

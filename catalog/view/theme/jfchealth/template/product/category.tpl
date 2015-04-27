@@ -6,7 +6,7 @@
 	</div>
 	<div class="right-content">
 		<div class="content-title">
-			<img src="<?PHP echo $title_image; ?>" width="670" height="34" />
+			<img src="<?PHP echo $dir_image_lang; ?>img_product<?php echo $sort_order; ?>_title.png" width="670" height="34" />
 		</div>
 		<div class="product-list">
 		  <table width="670" border="0" cellpadding="0" cellspacing="0"><tr>
@@ -42,6 +42,7 @@
 				}
 				?>
 			  </tr>
+			  <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 			  <tr>
 				<?PHP
 				for($idx=3; $idx<6; ++$idx) if(isset($products[$idx])) {
@@ -87,7 +88,7 @@
 	<div style="clear:both"></div>
 </div><!-- div content -->
 
-<div class="bottom-bar" style="margin-top:290px;">
+<div class="bottom-bar" style="position:absolute;top:880px;">
 <?php echo $footer; ?>
 </div>
 
