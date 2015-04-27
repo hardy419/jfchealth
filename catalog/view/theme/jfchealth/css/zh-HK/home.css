@@ -59,3 +59,8 @@ a:hover {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
+.content-background
+{
+	background-image: url("../../images/zh-HK/img_index_content_bg.png");
+}
