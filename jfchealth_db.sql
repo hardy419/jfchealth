@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 27 日 09:00
+-- 生成日期: 2015 年 04 月 28 日 07:00
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -1505,21 +1505,20 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `time` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `oc_news`
 --
 
-INSERT INTO `oc_news` (`news_id`, `sort_order`, `status`, `time`) VALUES
-(2, 9997, 1, '08-12-2014'),
-(3, 9996, 1, '08-12-2014'),
-(4, 9999, 1, '08-12-2014'),
-(10, 9998, 1, '26-01-2015');
+INSERT INTO `oc_news` (`news_id`, `image`, `sort_order`, `status`, `time`) VALUES
+(2, '', 12, 1, '08-12-2014'),
+(3, '', 12, 1, '08-12-2014');
 
 -- --------------------------------------------------------
 
@@ -1536,6 +1535,16 @@ CREATE TABLE IF NOT EXISTS `oc_news_description` (
   KEY `title` (`title`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_news_description`
+--
+
+INSERT INTO `oc_news_description` (`news_id`, `language_id`, `title`, `description`) VALUES
+(2, 1, 'test1', 'test1 desc'),
+(3, 1, 'test2 ', '&lt;p&gt;test2 desc&lt;/p&gt;\r\n'),
+(3, 4, '', ''),
+(3, 3, '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -1548,7 +1557,7 @@ CREATE TABLE IF NOT EXISTS `oc_news_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=123 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
 
 --
 -- 转存表中的数据 `oc_news_image`
@@ -1556,16 +1565,14 @@ CREATE TABLE IF NOT EXISTS `oc_news_image` (
 
 INSERT INTO `oc_news_image` (`news_image_id`, `news_id`, `image`, `sort_order`) VALUES
 (111, 2, 'data/IMG-20150107-WA0000.jpg', 3),
-(115, 3, 'data/1234567 (Small).jpg', 2),
-(116, 3, 'data/1234 (Small).jpg', 1),
 (110, 2, 'data/IMG-20150106-WA0003.jpg', 2),
 (109, 2, 'data/ces-2015.jpg', 4),
 (108, 2, 'data/IMG-20150106-WA0006.jpg', 1),
-(114, 3, 'data/123456 (Small).jpg', 3),
-(113, 3, 'data/12345 (Small).jpg', 4),
-(112, 3, 'data/High End Munich 2014 - Logo.png', 5),
-(122, 4, 'data/HKTDC.jpg', 1),
-(121, 10, 'data/HE15_Logo_GB_01.jpg', 1);
+(137, 3, 'no_image.jpg', 2),
+(138, 3, 'no_image.jpg', 1),
+(139, 3, 'no_image.jpg', 3),
+(140, 3, 'no_image.jpg', 4),
+(141, 3, 'no_image.jpg', 5);
 
 -- --------------------------------------------------------
 

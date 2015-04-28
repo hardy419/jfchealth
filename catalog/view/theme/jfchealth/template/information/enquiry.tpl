@@ -76,7 +76,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="bottom-bar" style="margin-top:200px;">
+<div class="bottom-bar" style="margin-top:220px;">
 <?php echo $footer; ?>
 </div>
 
