@@ -1,9 +1,9 @@
 <?php
 // Heading
-$_['heading_title']          = 'News'; 
+$_['heading_title']          = 'Course'; 
 
 // Text  
-$_['text_success']           = 'Success: You have modified News!';
+$_['text_success']           = 'Success: You have modified Course!';
 $_['text_plus']              = '+';
 $_['text_minus']             = '-';
 $_['text_default']           = 'Default';
@@ -16,13 +16,13 @@ $_['text_percent']           = 'Percentage';
 $_['text_amount']            = 'Fixed Amount';
 
 // Column
-$_['column_title']           = 'News Title';
+$_['column_name']           = 'Course Title';
 $_['column_time']            = 'Time Added';
 $_['column_status']          = 'Status';
 $_['column_action']          = 'Action';
 
 // Entry
-$_['entry_name']             = 'News Title:';
+$_['entry_name']             = 'Course Name:';
 $_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';
 $_['entry_meta_description'] = 'Meta Tag Description:';
 $_['entry_description']      = 'Description:';
@@ -32,7 +32,7 @@ $_['entry_keyword']          = 'SEO Keyword:<br /><span class="help">Do not use 
 $_['entry_filename']            = 'File:';
 $_['entry_model']            = 'Model:';
 $_['entry_sku']              = 'SKU:<br/><span class="help">Stock Keeping Unit</span>';
-$_['entry_upc']              = 'UPC:<br/><span class="help">Universal News Code</span>';
+$_['entry_upc']              = 'UPC:<br/><span class="help">Universal Course Code</span>';
 $_['entry_ean']              = 'EAN:<br/><span class="help">European Article Number</span>';
 $_['entry_jan']              = 'JAN:<br/><span class="help">Japanese Article Number</span>';
 $_['entry_isbn']             = 'ISBN:<br/><span class="help">International Standard Book Number</span>';
@@ -43,10 +43,10 @@ $_['entry_manufacturer']     = 'Manufacturer:<br /><span class="help">(Autocompl
 $_['entry_date_available']   = 'Date Available:';
 $_['entry_quantity']         = 'Quantity:';
 $_['entry_minimum']          = 'Minimum Quantity:<br/><span class="help">Force a minimum ordered amount</span>';
-$_['entry_stock_status']     = 'Out Of Stock Status:<br/><span class="help">Status shown when a news is out of stock</span>';
+$_['entry_stock_status']     = 'Out Of Stock Status:<br/><span class="help">Status shown when a course is out of stock</span>';
 $_['entry_price']            = 'Price:';
 $_['entry_tax_class']        = 'Tax Class:';
-$_['entry_points']           = 'Points:<br/><span class="help">Number of points needed to buy this item. If you don\'t want this news to be purchased with points leave as 0.</span>';
+$_['entry_points']           = 'Points:<br/><span class="help">Number of points needed to buy this item. If you don\'t want this course to be purchased with points leave as 0.</span>';
 $_['entry_option_points']    = 'Points:';
 $_['entry_subtract']         = 'Subtract Stock:';
 $_['entry_weight_class']     = 'Weight Class:';
@@ -69,8 +69,8 @@ $_['entry_sort_order']       = 'Sort Order:';
 $_['entry_category']         = 'Categories:<br /><span class="help">(Autocomplete)</span>';
 $_['entry_filter']           = 'Filters:<br /><span class="help">(Autocomplete)</span>';
 $_['entry_download']         = 'Downloads:<br /><span class="help">(Autocomplete)</span>';
-$_['entry_related']          = 'Related Newss:<br /><span class="help">(Autocomplete)</span>';
-$_['entry_tag']          	 = 'News Tags:<br /><span class="help">comma separated</span>';
+$_['entry_related']          = 'Related Courses:<br /><span class="help">(Autocomplete)</span>';
+$_['entry_tag']          	 = 'Course Tags:<br /><span class="help">comma separated</span>';
 $_['entry_reward']           = 'Reward Points:';
 $_['entry_layout']           = 'Layout Override:';
 $_['entry_profile']          = 'Profile:';
@@ -97,7 +97,7 @@ $_['text_length_year']       = 'Year';
 
 // Error
 $_['error_warning']          = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']       = 'Warning: You do not have permission to modify news!';
-$_['error_name']             = 'News Name must be greater than 3 and less than 255 characters!';
-$_['error_model']            = 'News Model must be greater than 3 and less than 64 characters!';
+$_['error_permission']       = 'Warning: You do not have permission to modify course!';
+$_['error_name']             = 'Course Name must be greater than 3 and less than 255 characters!';
+$_['error_model']            = 'Course Model must be greater than 3 and less than 64 characters!';
 ?>

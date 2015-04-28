@@ -97,4 +97,5 @@ $_['text_paypal_manage']               = 'PayPal';
 $_['text_paypal_search']               = 'Search';
 $_['text_recurring_profile']           = 'Recurring Profiles';
 $_['text_news']     			       = 'Event & News';
+$_['text_course']     			       = 'Course';
 ?>

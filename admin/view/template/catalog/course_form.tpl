@@ -30,14 +30,25 @@
             <table class="form">
               <tr>
                 <td><span class="required">*</span> <?php echo $entry_name; ?></td>
-                <td><input type="text" name="news_description[<?php echo $language['language_id']; ?>][title]" size="100" value="<?php echo isset($news_description[$language['language_id']]) ? $news_description[$language['language_id']]['title'] : ''; ?>" />
+                <td><input type="text" name="course_description[<?php echo $language['language_id']; ?>][name]" size="100" value="<?php echo isset($course_description[$language['language_id']]) ? $course_description[$language['language_id']]['name'] : ''; ?>" />
                   <?php if (isset($error_name[$language['language_id']])) { ?>
                   <span class="error"><?php echo $error_name[$language['language_id']]; ?></span>
                   <?php } ?></td>
               </tr>
               <tr>
-                <td><?php echo $entry_description; ?></td>
-                <td><textarea name="news_description[<?php echo $language['language_id']; ?>][description]" id="description<?php echo $language['language_id']; ?>"><?php echo isset($news_description[$language['language_id']]) ? $news_description[$language['language_id']]['description'] : ''; ?></textarea></td>
+                <td><?php echo $entry_course_date; ?></td>
+                <td><input type="text" name="course_description[<?php echo $language['language_id']; ?>][course_date]" size="100" value="<?php echo isset($course_description[$language['language_id']]) ? $course_description[$language['language_id']]['course_date'] : ''; ?>" />
+                </td>
+              </tr>
+              <tr>
+                <td><?php echo $entry_location; ?></td>
+                <td><input type="text" name="course_description[<?php echo $language['language_id']; ?>][location]" size="100" value="<?php echo isset($course_description[$language['language_id']]) ? $course_description[$language['language_id']]['location'] : ''; ?>" />
+                </td>
+              </tr>
+              <tr>
+                <td><?php echo $entry_speaker; ?></td>
+                <td><input type="text" name="course_description[<?php echo $language['language_id']; ?>][speaker]" size="100" value="<?php echo isset($course_description[$language['language_id']]) ? $course_description[$language['language_id']]['speaker'] : ''; ?>" />
+                </td>
               </tr>
             </table>
           </div>
@@ -51,6 +62,21 @@
               <td><div class="image"><img src="<?php echo $thumb; ?>" alt="" id="thumb" /><br />
                   <input type="hidden" name="image" value="<?php echo $image; ?>" id="image" />
                   <a onclick="image_upload('image', 'thumb');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb').attr('src', '<?php echo $no_image; ?>'); $('#image').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+            </tr>
+            <tr>
+              <td><?php echo $entry_time_period; ?></td>
+              <td><input type="text" name="time_period" size="20" value="<?php echo isset($time_period) ? $time_period : ''; ?>" />
+              </td>
+            </tr>
+            <tr>
+              <td><?php echo $seats; ?></td>
+              <td><input type="text" name="seats" size="8" value="<?php echo isset($seats) ? $seats : ''; ?>" />
+              </td>
+            </tr>
+            <tr>
+              <td><?php echo $phone; ?></td>
+              <td><input type="text" name="phone" size="16" value="<?php echo isset($phone) ? $phone : ''; ?>" />
+              </td>
             </tr>
             <tr>
               <td><?php echo $entry_status; ?></td>
@@ -83,22 +109,22 @@
               <td><div class="scrollbox">
                   <?php $class = 'even'; ?>
                   <div class="<?php echo $class; ?>">
-                    <?php if (in_array(0, $news_store)) { ?>
-                    <input type="checkbox" name="news_store[]" value="0" checked="checked" />
+                    <?php if (in_array(0, $course_store)) { ?>
+                    <input type="checkbox" name="course_store[]" value="0" checked="checked" />
                     <?php echo $text_default; ?>
                     <?php } else { ?>
-                    <input type="checkbox" name="news_store[]" value="0" />
+                    <input type="checkbox" name="course_store[]" value="0" />
                     <?php echo $text_default; ?>
                     <?php } ?>
                   </div>
                   <?php foreach ($stores as $store) { ?>
                   <?php $class = ($class == 'even' ? 'odd' : 'even'); ?>
                   <div class="<?php echo $class; ?>">
-                    <?php if (in_array($store['store_id'], $news_store)) { ?>
-                    <input type="checkbox" name="news_store[]" value="<?php echo $store['store_id']; ?>" checked="checked" />
+                    <?php if (in_array($store['store_id'], $course_store)) { ?>
+                    <input type="checkbox" name="course_store[]" value="<?php echo $store['store_id']; ?>" checked="checked" />
                     <?php echo $store['name']; ?>
                     <?php } else { ?>
-                    <input type="checkbox" name="news_store[]" value="<?php echo $store['store_id']; ?>" />
+                    <input type="checkbox" name="course_store[]" value="<?php echo $store['store_id']; ?>" />
                     <?php echo $store['name']; ?>
                     <?php } ?>
                   </div>
@@ -118,14 +144,14 @@
               </tr>
             </thead>
             <?php $image_row = 0; ?>
-            <?php foreach ($news_images as $news_image) { ?>
+            <?php foreach ($course_images as $course_image) { ?>
             <tbody id="image-row<?php echo $image_row; ?>">
               <tr>
-                <td class="left"><div class="image"><img src="<?php echo $news_image['thumb']; ?>" alt="" id="thumb<?php echo $image_row; ?>" />
-                    <input type="hidden" name="news_image[<?php echo $image_row; ?>][image]" value="<?php echo $news_image['image']; ?>" id="image<?php echo $image_row; ?>" />
+                <td class="left"><div class="image"><img src="<?php echo $course_image['thumb']; ?>" alt="" id="thumb<?php echo $image_row; ?>" />
+                    <input type="hidden" name="course_image[<?php echo $image_row; ?>][image]" value="<?php echo $course_image['image']; ?>" id="image<?php echo $image_row; ?>" />
                     <br />
                     <a onclick="image_upload('image<?php echo $image_row; ?>', 'thumb<?php echo $image_row; ?>');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb<?php echo $image_row; ?>').attr('src', '<?php echo $no_image; ?>'); $('#image<?php echo $image_row; ?>').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
-                <td class="right"><input type="text" name="news_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $news_image['sort_order']; ?>" size="2" /></td>
+                <td class="right"><input type="text" name="course_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $course_image['sort_order']; ?>" size="2" /></td>
                 <td class="left"><a onclick="$('#image-row<?php echo $image_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
               </tr>
             </tbody>
@@ -241,12 +267,12 @@ $('input[name=\'category\']').autocomplete({
 		});
 	}, 
 	select: function(event, ui) {
-		$('#news-category' + ui.item.value).remove();
+		$('#course-category' + ui.item.value).remove();
 		
-		$('#news-category').append('<div id="news-category' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="news_category[]" value="' + ui.item.value + '" /></div>');
+		$('#course-category').append('<div id="course-category' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="course_category[]" value="' + ui.item.value + '" /></div>');
 
-		$('#news-category div:odd').attr('class', 'odd');
-		$('#news-category div:even').attr('class', 'even');
+		$('#course-category div:odd').attr('class', 'odd');
+		$('#course-category div:even').attr('class', 'even');
 				
 	},
 	focus: function(event, ui) {
@@ -254,11 +280,11 @@ $('input[name=\'category\']').autocomplete({
    }
 });
 
-$('#news-category div img').live('click', function() {
+$('#course-category div img').live('click', function() {
 	$(this).parent().remove();
 	
-	$('#news-category div:odd').attr('class', 'odd');
-	$('#news-category div:even').attr('class', 'even');	
+	$('#course-category div:odd').attr('class', 'odd');
+	$('#course-category div:even').attr('class', 'even');	
 });
 
 // Filter
@@ -279,12 +305,12 @@ $('input[name=\'filter\']').autocomplete({
 		});
 	}, 
 	select: function(event, ui) {
-		$('#news-filter' + ui.item.value).remove();
+		$('#course-filter' + ui.item.value).remove();
 		
-		$('#news-filter').append('<div id="news-filter' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="news_filter[]" value="' + ui.item.value + '" /></div>');
+		$('#course-filter').append('<div id="course-filter' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="course_filter[]" value="' + ui.item.value + '" /></div>');
 
-		$('#news-filter div:odd').attr('class', 'odd');
-		$('#news-filter div:even').attr('class', 'even');
+		$('#course-filter div:odd').attr('class', 'odd');
+		$('#course-filter div:even').attr('class', 'even');
 				
 		return false;
 	},
@@ -293,11 +319,11 @@ $('input[name=\'filter\']').autocomplete({
    }
 });
 
-$('#news-filter div img').live('click', function() {
+$('#course-filter div img').live('click', function() {
 	$(this).parent().remove();
 	
-	$('#news-filter div:odd').attr('class', 'odd');
-	$('#news-filter div:even').attr('class', 'even');	
+	$('#course-filter div:odd').attr('class', 'odd');
+	$('#course-filter div:even').attr('class', 'even');	
 });
 
 // Downloads
@@ -318,12 +344,12 @@ $('input[name=\'download\']').autocomplete({
 		});
 	}, 
 	select: function(event, ui) {
-		$('#news-download' + ui.item.value).remove();
+		$('#course-download' + ui.item.value).remove();
 		
-		$('#news-download').append('<div id="news-download' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="news_download[]" value="' + ui.item.value + '" /></div>');
+		$('#course-download').append('<div id="course-download' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="course_download[]" value="' + ui.item.value + '" /></div>');
 
-		$('#news-download div:odd').attr('class', 'odd');
-		$('#news-download div:even').attr('class', 'even');
+		$('#course-download div:odd').attr('class', 'odd');
+		$('#course-download div:even').attr('class', 'even');
 				
 		return false;
 	},
@@ -332,11 +358,11 @@ $('input[name=\'download\']').autocomplete({
    }
 });
 
-$('#news-download div img').live('click', function() {
+$('#course-download div img').live('click', function() {
 	$(this).parent().remove();
 	
-	$('#news-download div:odd').attr('class', 'odd');
-	$('#news-download div:even').attr('class', 'even');	
+	$('#course-download div:odd').attr('class', 'odd');
+	$('#course-download div:even').attr('class', 'even');	
 });
 
 // Related
@@ -344,25 +370,25 @@ $('input[name=\'related\']').autocomplete({
 	delay: 500,
 	source: function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/news/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
+			url: 'index.php?route=catalog/course/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
 			dataType: 'json',
 			success: function(json) {		
 				response($.map(json, function(item) {
 					return {
 						label: item.name,
-						value: item.news_id
+						value: item.course_id
 					}
 				}));
 			}
 		});
 	}, 
 	select: function(event, ui) {
-		$('#news-related' + ui.item.value).remove();
+		$('#course-related' + ui.item.value).remove();
 		
-		$('#news-related').append('<div id="news-related' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="news_related[]" value="' + ui.item.value + '" /></div>');
+		$('#course-related').append('<div id="course-related' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="course_related[]" value="' + ui.item.value + '" /></div>');
 
-		$('#news-related div:odd').attr('class', 'odd');
-		$('#news-related div:even').attr('class', 'even');
+		$('#course-related div:odd').attr('class', 'odd');
+		$('#course-related div:even').attr('class', 'even');
 				
 		return false;
 	},
@@ -371,11 +397,11 @@ $('input[name=\'related\']').autocomplete({
    }
 });
 
-$('#news-related div img').live('click', function() {
+$('#course-related div img').live('click', function() {
 	$(this).parent().remove();
 	
-	$('#news-related div:odd').attr('class', 'odd');
-	$('#news-related div:even').attr('class', 'even');	
+	$('#course-related div:odd').attr('class', 'odd');
+	$('#course-related div:even').attr('class', 'even');	
 });
 //--></script> 
 <script type="text/javascript">/*
@@ -384,10 +410,10 @@ var attribute_row = <?php echo $attribute_row; ?>;
 function addAttribute() {
 	html  = '<tbody id="attribute-row' + attribute_row + '">';
     html += '  <tr>';
-	html += '    <td class="left"><input type="text" name="news_attribute[' + attribute_row + '][name]" value="" /><input type="hidden" name="news_attribute[' + attribute_row + '][attribute_id]" value="" /></td>';
+	html += '    <td class="left"><input type="text" name="course_attribute[' + attribute_row + '][name]" value="" /><input type="hidden" name="course_attribute[' + attribute_row + '][attribute_id]" value="" /></td>';
 	html += '    <td class="left">';
 	<?php foreach ($languages as $language) { ?>
-	html += '<textarea name="news_attribute[' + attribute_row + '][news_attribute_description][<?php echo $language['language_id']; ?>][text]" cols="40" rows="5"></textarea><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" align="top" /><br />';
+	html += '<textarea name="course_attribute[' + attribute_row + '][course_attribute_description][<?php echo $language['language_id']; ?>][text]" cols="40" rows="5"></textarea><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" align="top" /><br />';
     <?php } ?>
 	html += '    </td>';
 	html += '    <td class="left"><a onclick="$(\'#attribute-row' + attribute_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
@@ -402,7 +428,7 @@ function addAttribute() {
 }
 
 function attributeautocomplete(attribute_row) {
-	$('input[name=\'news_attribute[' + attribute_row + '][name]\']').catcomplete({
+	$('input[name=\'course_attribute[' + attribute_row + '][name]\']').catcomplete({
 		delay: 500,
 		source: function(request, response) {
 			$.ajax({
@@ -420,8 +446,8 @@ function attributeautocomplete(attribute_row) {
 			});
 		}, 
 		select: function(event, ui) {
-			$('input[name=\'news_attribute[' + attribute_row + '][name]\']').attr('value', ui.item.label);
-			$('input[name=\'news_attribute[' + attribute_row + '][attribute_id]\']').attr('value', ui.item.value);
+			$('input[name=\'course_attribute[' + attribute_row + '][name]\']').attr('value', ui.item.label);
+			$('input[name=\'course_attribute[' + attribute_row + '][attribute_id]\']').attr('value', ui.item.value);
 			
 			return false;
 		},
@@ -459,14 +485,14 @@ $('input[name=\'option\']').catcomplete({
 	}, 
 	select: function(event, ui) {
 		html  = '<div id="tab-option-' + option_row + '" class="vtabs-content">';
-		html += '	<input type="hidden" name="news_option[' + option_row + '][news_option_id]" value="" />';
-		html += '	<input type="hidden" name="news_option[' + option_row + '][name]" value="' + ui.item.label + '" />';
-		html += '	<input type="hidden" name="news_option[' + option_row + '][option_id]" value="' + ui.item.value + '" />';
-		html += '	<input type="hidden" name="news_option[' + option_row + '][type]" value="' + ui.item.type + '" />';
+		html += '	<input type="hidden" name="course_option[' + option_row + '][course_option_id]" value="" />';
+		html += '	<input type="hidden" name="course_option[' + option_row + '][name]" value="' + ui.item.label + '" />';
+		html += '	<input type="hidden" name="course_option[' + option_row + '][option_id]" value="' + ui.item.value + '" />';
+		html += '	<input type="hidden" name="course_option[' + option_row + '][type]" value="' + ui.item.type + '" />';
 		html += '	<table class="form">';
 		html += '	  <tr>';
 		html += '		<td><?php echo $entry_required; ?></td>';
-		html += '       <td><select name="news_option[' + option_row + '][required]">';
+		html += '       <td><select name="course_option[' + option_row + '][required]">';
 		html += '	      <option value="1"><?php echo $text_yes; ?></option>';
 		html += '	      <option value="0"><?php echo $text_no; ?></option>';
 		html += '	    </select></td>';
@@ -475,42 +501,42 @@ $('input[name=\'option\']').catcomplete({
 		if (ui.item.type == 'text') {
 			html += '     <tr>';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><input type="text" name="news_option[' + option_row + '][option_value]" value="" /></td>';
+			html += '       <td><input type="text" name="course_option[' + option_row + '][option_value]" value="" /></td>';
 			html += '     </tr>';
 		}
 		
 		if (ui.item.type == 'textarea') {
 			html += '     <tr>';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><textarea name="news_option[' + option_row + '][option_value]" cols="40" rows="5"></textarea></td>';
+			html += '       <td><textarea name="course_option[' + option_row + '][option_value]" cols="40" rows="5"></textarea></td>';
 			html += '     </tr>';						
 		}
 		 
 		if (ui.item.type == 'file') {
 			html += '     <tr style="display: none;">';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><input type="text" name="news_option[' + option_row + '][option_value]" value="" /></td>';
+			html += '       <td><input type="text" name="course_option[' + option_row + '][option_value]" value="" /></td>';
 			html += '     </tr>';			
 		}
 						
 		if (ui.item.type == 'date') {
 			html += '     <tr>';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><input type="text" name="news_option[' + option_row + '][option_value]" value="" class="date" /></td>';
+			html += '       <td><input type="text" name="course_option[' + option_row + '][option_value]" value="" class="date" /></td>';
 			html += '     </tr>';			
 		}
 		
 		if (ui.item.type == 'datetime') {
 			html += '     <tr>';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><input type="text" name="news_option[' + option_row + '][option_value]" value="" class="datetime" /></td>';
+			html += '       <td><input type="text" name="course_option[' + option_row + '][option_value]" value="" class="datetime" /></td>';
 			html += '     </tr>';			
 		}
 		
 		if (ui.item.type == 'time') {
 			html += '     <tr>';
 			html += '       <td><?php echo $entry_option_value; ?></td>';
-			html += '       <td><input type="text" name="news_option[' + option_row + '][option_value]" value="" class="time" /></td>';
+			html += '       <td><input type="text" name="course_option[' + option_row + '][option_value]" value="" class="time" /></td>';
 			html += '     </tr>';			
 		}
 		
@@ -577,29 +603,29 @@ var option_value_row = <?php echo $option_value_row; ?>;
 function addOptionValue(option_row) {	
 	html  = '<tbody id="option-value-row' + option_value_row + '">';
 	html += '  <tr>';
-	html += '    <td class="left"><select name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][option_value_id]">';
+	html += '    <td class="left"><select name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][option_value_id]">';
 	html += $('#option-values' + option_row).html();
-	html += '    </select><input type="hidden" name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][news_option_value_id]" value="" /></td>';
-	html += '    <td class="right"><input type="text" name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][quantity]" value="" size="3" /></td>'; 
-	html += '    <td class="left"><select name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][subtract]">';
+	html += '    </select><input type="hidden" name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][course_option_value_id]" value="" /></td>';
+	html += '    <td class="right"><input type="text" name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][quantity]" value="" size="3" /></td>'; 
+	html += '    <td class="left"><select name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][subtract]">';
 	html += '      <option value="1"><?php echo $text_yes; ?></option>';
 	html += '      <option value="0"><?php echo $text_no; ?></option>';
 	html += '    </select></td>';
-	html += '    <td class="right"><select name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][price_prefix]">';
+	html += '    <td class="right"><select name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][price_prefix]">';
 	html += '      <option value="+">+</option>';
 	html += '      <option value="-">-</option>';
 	html += '    </select>';
-	html += '    <input type="text" name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][price]" value="" size="5" /></td>';
-	html += '    <td class="right"><select name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][points_prefix]">';
+	html += '    <input type="text" name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][price]" value="" size="5" /></td>';
+	html += '    <td class="right"><select name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][points_prefix]">';
 	html += '      <option value="+">+</option>';
 	html += '      <option value="-">-</option>';
 	html += '    </select>';
-	html += '    <input type="text" name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][points]" value="" size="5" /></td>';	
-	html += '    <td class="right"><select name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][weight_prefix]">';
+	html += '    <input type="text" name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][points]" value="" size="5" /></td>';	
+	html += '    <td class="right"><select name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][weight_prefix]">';
 	html += '      <option value="+">+</option>';
 	html += '      <option value="-">-</option>';
 	html += '    </select>';
-	html += '    <input type="text" name="news_option[' + option_row + '][news_option_value][' + option_value_row + '][weight]" value="" size="5" /></td>';
+	html += '    <input type="text" name="course_option[' + option_row + '][course_option_value][' + option_value_row + '][weight]" value="" size="5" /></td>';
 	html += '    <td class="left"><a onclick="$(\'#option-value-row' + option_value_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
 	html += '</tbody>';
@@ -615,16 +641,16 @@ var discount_row = <?php echo $discount_row; ?>;
 function addDiscount() {
 	html  = '<tbody id="discount-row' + discount_row + '">';
 	html += '  <tr>'; 
-    html += '    <td class="left"><select name="news_discount[' + discount_row + '][customer_group_id]">';
+    html += '    <td class="left"><select name="course_discount[' + discount_row + '][customer_group_id]">';
     <?php foreach ($customer_groups as $customer_group) { ?>
     html += '      <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo addslashes($customer_group['name']); ?></option>';
     <?php } ?>
     html += '    </select></td>';		
-    html += '    <td class="right"><input type="text" name="news_discount[' + discount_row + '][quantity]" value="" size="2" /></td>';
-    html += '    <td class="right"><input type="text" name="news_discount[' + discount_row + '][priority]" value="" size="2" /></td>';
-	html += '    <td class="right"><input type="text" name="news_discount[' + discount_row + '][price]" value="" /></td>';
-    html += '    <td class="left"><input type="text" name="news_discount[' + discount_row + '][date_start]" value="" class="date" /></td>';
-	html += '    <td class="left"><input type="text" name="news_discount[' + discount_row + '][date_end]" value="" class="date" /></td>';
+    html += '    <td class="right"><input type="text" name="course_discount[' + discount_row + '][quantity]" value="" size="2" /></td>';
+    html += '    <td class="right"><input type="text" name="course_discount[' + discount_row + '][priority]" value="" size="2" /></td>';
+	html += '    <td class="right"><input type="text" name="course_discount[' + discount_row + '][price]" value="" /></td>';
+    html += '    <td class="left"><input type="text" name="course_discount[' + discount_row + '][date_start]" value="" class="date" /></td>';
+	html += '    <td class="left"><input type="text" name="course_discount[' + discount_row + '][date_end]" value="" class="date" /></td>';
 	html += '    <td class="left"><a onclick="$(\'#discount-row' + discount_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';	
     html += '</tbody>';
@@ -642,15 +668,15 @@ var special_row = <?php echo $special_row; ?>;
 function addSpecial() {
 	html  = '<tbody id="special-row' + special_row + '">';
 	html += '  <tr>'; 
-    html += '    <td class="left"><select name="news_special[' + special_row + '][customer_group_id]">';
+    html += '    <td class="left"><select name="course_special[' + special_row + '][customer_group_id]">';
     <?php foreach ($customer_groups as $customer_group) { ?>
     html += '      <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo addslashes($customer_group['name']); ?></option>';
     <?php } ?>
     html += '    </select></td>';		
-    html += '    <td class="right"><input type="text" name="news_special[' + special_row + '][priority]" value="" size="2" /></td>';
-	html += '    <td class="right"><input type="text" name="news_special[' + special_row + '][price]" value="" /></td>';
-    html += '    <td class="left"><input type="text" name="news_special[' + special_row + '][date_start]" value="" class="date" /></td>';
-	html += '    <td class="left"><input type="text" name="news_special[' + special_row + '][date_end]" value="" class="date" /></td>';
+    html += '    <td class="right"><input type="text" name="course_special[' + special_row + '][priority]" value="" size="2" /></td>';
+	html += '    <td class="right"><input type="text" name="course_special[' + special_row + '][price]" value="" /></td>';
+    html += '    <td class="left"><input type="text" name="course_special[' + special_row + '][date_start]" value="" class="date" /></td>';
+	html += '    <td class="left"><input type="text" name="course_special[' + special_row + '][date_end]" value="" class="date" /></td>';
 	html += '    <td class="left"><a onclick="$(\'#special-row' + special_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
     html += '</tbody>';
@@ -695,8 +721,8 @@ var image_row = <?php echo $image_row; ?>;
 function addImage() {
     html  = '<tbody id="image-row' + image_row + '">';
 	html += '  <tr>';
-	html += '    <td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="news_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
-	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][sort_order]" value="" size="2" /></td>';
+	html += '    <td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="course_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
+	html += '    <td class="right"><input type="text" name="course_image[' + image_row + '][sort_order]" value="" size="2" /></td>';
 	html += '    <td class="left"><a onclick="$(\'#image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
 	html += '</tbody>';
@@ -728,14 +754,14 @@ function addProfile() {
     var html = '';
     html += '<tr id="profile-row' + profileCount + '">';
     html += '  <td class="left">';
-    html += '    <select name="news_profiles[' + profileCount + '][profile_id]">';
+    html += '    <select name="course_profiles[' + profileCount + '][profile_id]">';
     <?php foreach ($profiles as $profile): ?>
     html += '      <option value="<?php echo $profile['profile_id'] ?>"><?php echo $profile['name'] ?></option>';
     <?php endforeach; ?>
     html += '    </select>';
     html += '  </td>';
     html += '  <td class="left">';
-    html += '    <select name="news_profiles[' + profileCount + '][customer_group_id]">';
+    html += '    <select name="course_profiles[' + profileCount + '][customer_group_id]">';
     <?php foreach ($customer_groups as $customer_group): ?>
     html += '      <option value="<?php echo $customer_group['customer_group_id'] ?>"><?php echo $customer_group['name'] ?></option>';
     <?php endforeach; ?>
@@ -749,12 +775,12 @@ function addProfile() {
     $('#tab-profile table tbody').append(html);
 }
 */
-<?php /* if (isset($this->request->get['news_id'])) { ?>
+<?php /* if (isset($this->request->get['course_id'])) { ?>
     function openbayLinkStatus(){
-        var news_id = '<?php echo $this->request->get['news_id']; ?>';
+        var course_id = '<?php echo $this->request->get['course_id']; ?>';
         $.ajax({
             type: 'GET',
-            url: 'index.php?route=extension/openbay/linkStatus&token=<?php echo $token; ?>&news_id='+news_id,
+            url: 'index.php?route=extension/openbay/linkStatus&token=<?php echo $token; ?>&course_id='+course_id,
             dataType: 'html',
             success: function(data) {
                 //add the button to nav
@@ -780,7 +806,7 @@ function addProfile() {
 <script type="text/javascript" src="view/javascript/jquery/ajaxupload.js"></script> 
 <script type="text/javascript"><!--
 new AjaxUpload('#button-upload', {
-	action: 'index.php?route=catalog/download/upload&token=<?php echo $token; ?>&c=news&id=<?php echo $id;?>',
+	action: 'index.php?route=catalog/download/upload&token=<?php echo $token; ?>&c=course&id=<?php echo $id;?>',
 	name: 'file',
 	autoSubmit: true,
 	responseType: 'json',

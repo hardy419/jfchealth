@@ -1,26 +1,26 @@
 <?php
-class ControllerCatalogNews extends Controller { 
+class ControllerCatalogCourse extends Controller { 
 	private $error = array();
 
 	public function index() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle($this->language->get('heading_title')); 
 
-		$this->load->model('catalog/news');
+		$this->load->model('catalog/course');
 
 		$this->getList();
 	}
 
 	public function insert() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/news');
+		$this->load->model('catalog/course');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_news->addNews($this->request->post);
+			$this->model_catalog_course->addCourse($this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -38,21 +38,21 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 //$this->response->setOutput(var_export($this->error,1));return;
 		$this->getForm();
 	}
 
 	public function update() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/news');
+		$this->load->model('catalog/course');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_news->editNews($this->request->get['news_id'], $this->request->post);
+			$this->model_catalog_course->editCourse($this->request->get['course_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -70,22 +70,22 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getForm();
 	}
 
 	public function delete() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/news');
+		$this->load->model('catalog/course');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
-			foreach ($this->request->post['selected'] as $news_id) {
-				$this->model_catalog_news->deleteNews($news_id);
+			foreach ($this->request->post['selected'] as $course_id) {
+				$this->model_catalog_course->deleteCourse($course_id);
 			}
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -104,22 +104,22 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getList();
 	}
 
 	public function copy() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/news');
+		$this->load->model('catalog/course');
 
 		if (isset($this->request->post['selected']) && $this->validateCopy()) {
-			foreach ($this->request->post['selected'] as $news_id) {
-				$this->model_catalog_news->copyNews($news_id);
+			foreach ($this->request->post['selected'] as $course_id) {
+				$this->model_catalog_course->copyCourse($course_id);
 			}
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -158,7 +158,7 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getList();
@@ -210,15 +210,15 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'),       		
+			'href'      => $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'),       		
 			'separator' => ' :: '
 		);
 
-		$this->data['insert'] = $this->url->link('catalog/news/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
-		$this->data['copy'] = $this->url->link('catalog/news/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');	
-		$this->data['delete'] = $this->url->link('catalog/news/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['insert'] = $this->url->link('catalog/course/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['copy'] = $this->url->link('catalog/course/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');	
+		$this->data['delete'] = $this->url->link('catalog/course/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-		$this->data['news'] = array();
+		$this->data['course'] = array();
 
 		$data = array(
 			'sort'            => $sort,
@@ -230,16 +230,16 @@ class ControllerCatalogNews extends Controller {
         // Retrieving data
 		$this->load->model('tool/image');
 
-		$news_total = $this->model_catalog_news->getTotalNews($data);
+		$course_total = $this->model_catalog_course->getTotalCourse($data);
 
-		$results = $this->model_catalog_news->getNewsItems($data);
+		$results = $this->model_catalog_course->getCourses($data);
 
 		foreach ($results as $result) {
 			$action = array();
 
 			$action[] = array(
 				'text' => $this->language->get('text_edit'),
-				'href' => $this->url->link('catalog/news/update', 'token=' . $this->session->data['token'] . '&news_id=' . $result['news_id'] . $url, 'SSL')
+				'href' => $this->url->link('catalog/course/update', 'token=' . $this->session->data['token'] . '&course_id=' . $result['course_id'] . $url, 'SSL')
 			);
 
 			if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])) {
@@ -249,11 +249,11 @@ class ControllerCatalogNews extends Controller {
 			}
 
 			$this->data['informations'][] = array(
-				'news_id' => $result['news_id'],
-				'title'       => $result['title'],
-				'time'      => $result['time'],
-				'status'      => $result['status'],
-				'selected'   => isset($this->request->post['selected']) && in_array($result['news_id'], $this->request->post['selected']),
+				'course_id'  => $result['course_id'],
+				'name'       => $result['name'],
+				'time'       => $result['time'],
+				'status'     => $result['status'],
+				'selected'   => isset($this->request->post['selected']) && in_array($result['course_id'], $this->request->post['selected']),
 				'action'     => $action
 			);
 		}
@@ -266,7 +266,7 @@ class ControllerCatalogNews extends Controller {
 		$this->data['text_no_results'] = $this->language->get('text_no_results');		
 		$this->data['text_image_manager'] = $this->language->get('text_image_manager');		
 		
-		$this->data['column_title'] = $this->language->get('column_title');		
+		$this->data['column_name'] = $this->language->get('column_name');		
 		$this->data['column_time'] = $this->language->get('column_time');		
 		$this->data['column_status'] = $this->language->get('column_status');		
 		$this->data['column_action'] = $this->language->get('column_action');		
@@ -305,9 +305,9 @@ class ControllerCatalogNews extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$this->data['sort_title'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=nd.title' . $url, 'SSL');
-		$this->data['sort_time'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=n.time' . $url, 'SSL');
-		$this->data['sort_status'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=n.status' . $url, 'SSL');
+		$this->data['sort_name'] = $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . '&sort=cd.name' . $url, 'SSL');
+		$this->data['sort_time'] = $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . '&sort=c.time' . $url, 'SSL');
+		$this->data['sort_status'] = $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . '&sort=c.status' . $url, 'SSL');
 
         // Build url for pagination
 		$url = '';
@@ -321,18 +321,18 @@ class ControllerCatalogNews extends Controller {
 		}
 
 		$pagination = new Pagination();
-		$pagination->total = $news_total;
+		$pagination->total = $course_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_admin_limit');
 		$pagination->text = $this->language->get('text_pagination');
-		$pagination->url = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 
 		$this->data['pagination'] = $pagination->render();
 
 		$this->data['sort'] = $sort;
 		$this->data['order'] = $order;
 
-		$this->template = 'catalog/news_list.tpl';
+		$this->template = 'catalog/course_list.tpl';
 		$this->children = array(
 			'common/header',
 			'common/footer'
@@ -386,10 +386,10 @@ class ControllerCatalogNews extends Controller {
 		$this->data['tab_links'] = $this->language->get('tab_links');
 		$this->data['tab_image'] = $this->language->get('tab_image');
 
-		if (isset($this->request->get['news_id'])) {
-			$this->data['id'] = $this->request->get['news_id'];
+		if (isset($this->request->get['course_id'])) {
+			$this->data['id'] = $this->request->get['course_id'];
 		}else{
-			$this->data['id'] = file_get_contents(DIR_DOWNLOAD.'news/id');		
+			$this->data['id'] = file_get_contents(DIR_DOWNLOAD.'course/id');		
 		}
 
         // Error messages
@@ -399,16 +399,16 @@ class ControllerCatalogNews extends Controller {
 			$this->data['error_warning'] = '';
 		}
 
-		if (isset($this->error['title'])) {
-			$this->data['error_title'] = $this->error['title'];
+		if (isset($this->error['name'])) {
+			$this->data['error_name'] = $this->error['name'];
 		} else {
-			$this->data['error_title'] = array();
+			$this->data['error_name'] = array();
 		}
 
-		if (isset($this->error['description'])) {
-			$this->data['error_description'] = $this->error['description'];
+		if (isset($this->error['course_date'])) {
+			$this->data['error_course_date'] = $this->error['course_date'];
 		} else {
-			$this->data['error_description'] = array();
+			$this->data['error_course_date'] = array();
 		}	
 
 		if (isset($this->error['time'])) {
@@ -444,22 +444,22 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+			'href'      => $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL'),
 			'separator' => ' :: '
 		);
 
         // Insert OR Update?
-		if (!isset($this->request->get['news_id'])) {
-			$this->data['action'] = $this->url->link('catalog/news/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		if (!isset($this->request->get['course_id'])) {
+			$this->data['action'] = $this->url->link('catalog/course/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		} else {
-			$this->data['action'] = $this->url->link('catalog/news/update', 'token=' . $this->session->data['token'] . '&news_id=' . $this->request->get['news_id'] . $url, 'SSL');
+			$this->data['action'] = $this->url->link('catalog/course/update', 'token=' . $this->session->data['token'] . '&course_id=' . $this->request->get['course_id'] . $url, 'SSL');
 		}
 
-		$this->data['cancel'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['cancel'] = $this->url->link('catalog/course', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
         // Retrieve data by id
-		if (isset($this->request->get['news_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-			$news_info = $this->model_catalog_news->getNewsItem($this->request->get['news_id']);
+		if (isset($this->request->get['course_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
+			$course_info = $this->model_catalog_course->getCourse($this->request->get['course_id']);
 		}
 		$this->data['token'] = $this->session->data['token'];
 
@@ -467,76 +467,39 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['languages'] = $this->model_localisation_language->getLanguages();
 
-		if (isset($this->request->post['news_description'])) {
-			$this->data['news_description'] = $this->request->post['news_description'];
-		} elseif (isset($this->request->get['news_id'])) {
-			$this->data['news_description'] = $this->model_catalog_news->getNewsDescriptions($this->request->get['news_id']);
+		if (isset($this->request->post['course_description'])) {
+			$this->data['course_description'] = $this->request->post['course_description'];
+		} elseif (isset($this->request->get['course_id'])) {
+			$this->data['course_description'] = $this->model_catalog_course->getCourseDescriptions($this->request->get['course_id']);
 		} else {
-			$this->data['news_description'] = array();
+			$this->data['course_description'] = array();
 		}
 
-		if (isset($this->request->post['image'])) {
-			$this->data['image'] = $this->request->post['image'];
-		} elseif (!empty($news_info)) {
-			$this->data['image'] = $news_info['image'];
-		} else {
-			$this->data['image'] = '';
-		}
+        $data_columns = array('image', 'date', 'time_period', 'seats', 'phone', 'sort_order', 'status', 'time');
+
+        foreach ($data_columns as $data_column) {
+            if (isset($this->request->post[$data_column])) {
+                $this->data[$data_column] = $this->request->post[$data_column];
+            } elseif (!empty($course_info)) {
+                $this->data[$data_column] = $course_info[$data_column];
+            } else {
+                $this->data[$data_column] = '';
+            }
+        }
 
 		$this->load->model('tool/image');
 
 		if (isset($this->request->post['image']) && file_exists(DIR_IMAGE . $this->request->post['image'])) {
 			$this->data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
-		} elseif (!empty($news_info) && $news_info['image'] && file_exists(DIR_IMAGE . $news_info['image'])) {
-			$this->data['thumb'] = $this->model_tool_image->resize($news_info['image'], 100, 100);
+		} elseif (!empty($course_info) && $course_info['image'] && file_exists(DIR_IMAGE . $course_info['image'])) {
+			$this->data['thumb'] = $this->model_tool_image->resize($course_info['image'], 100, 100);
 		} else {
 			$this->data['thumb'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
 		}
 
-		// Images
-		if (isset($this->request->post['news_image'])) {
-			$news_images = $this->request->post['news_image'];
-		} elseif (isset($this->request->get['news_id'])) {
-			$news_images = $this->model_catalog_news->getNewsImages($this->request->get['news_id']);
-		} else {
-			$news_images = array();
-		}
-
-		$this->data['news_images'] = array();
-
-		foreach ($news_images as $news_image) {
-			if ($news_image['image'] && file_exists(DIR_IMAGE . $news_image['image'])) {
-				$image = $news_image['image'];
-			} else {
-				$image = 'no_image.jpg';
-			}
-
-			$this->data['news_images'][] = array(
-				'image'      => $image,
-				'thumb'      => $this->model_tool_image->resize($image, 100, 100),
-				'sort_order' => $news_image['sort_order']
-			);
-		}
-
 		$this->data['no_image'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
 
-		if (isset($this->request->post['sort_order'])) {
-			$this->data['sort_order'] = $this->request->post['sort_order'];
-		} elseif (!empty($news_info)) {
-			$this->data['sort_order'] = $news_info['sort_order'];
-		} else {
-			$this->data['sort_order'] = 1;
-		}
-
-		if (isset($this->request->post['status'])) {
-			$this->data['status'] = $this->request->post['status'];
-		} elseif (!empty($news_info)) {
-			$this->data['status'] = $news_info['status'];
-		} else {
-			$this->data['status'] = 1;
-		}
-
-		$this->template = 'catalog/news_form.tpl';
+		$this->template = 'catalog/course_form.tpl';
 		$this->children = array(
 			'common/header',
 			'common/footer'
@@ -546,8 +509,14 @@ class ControllerCatalogNews extends Controller {
 	}
 
 	protected function validateForm() {
-		if (!$this->user->hasPermission('modify', 'catalog/news')) {
+		if (!$this->user->hasPermission('modify', 'catalog/course')) {
 			$this->error['warning'] = $this->language->get('error_permission');
+		}
+
+		foreach ($this->request->post['course_description'] as $language_id => $value) {
+			if ((utf8_strlen($value['name']) < 1) || (utf8_strlen($value['name']) > 255)) {
+				$this->error['name'][$language_id] = $this->language->get('error_name');
+			}
 		}
 
 		if ($this->error && !isset($this->error['warning'])) {
@@ -562,7 +531,7 @@ class ControllerCatalogNews extends Controller {
 	}
 
 	protected function validateDelete() {
-		if (!$this->user->hasPermission('modify', 'catalog/news')) {
+		if (!$this->user->hasPermission('modify', 'catalog/course')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
@@ -574,7 +543,7 @@ class ControllerCatalogNews extends Controller {
 	}
 
 	protected function validateCopy() {
-		if (!$this->user->hasPermission('modify', 'catalog/news')) {
+		if (!$this->user->hasPermission('modify', 'catalog/course')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
