@@ -28,7 +28,7 @@ class ControllerProductCourse extends Controller {
 		if (isset($this->request->get['limit'])) {
 			$limit = $this->request->get['limit'];
 		} else {
-			$limit = $this->config->get('config_catalog_limit');
+			$limit = 3;
 		}
 
 		$this->data['breadcrumbs'] = array();

@@ -1,7 +1,7 @@
 <?php
 class ModelCatalogNews extends Model {
 	public function addNews($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date_added = CURDATE()");
 
 		$news_id = $this->db->getLastId();
 
