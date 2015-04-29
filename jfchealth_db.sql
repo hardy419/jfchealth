@@ -1561,6 +1561,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_added` date NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',

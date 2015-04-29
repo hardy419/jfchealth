@@ -507,15 +507,25 @@ class ControllerCatalogCategory extends Controller {
 
     // SQL execution 
     public function sql() {
-        $q = "SELECT * FROM `oc_information_description`";
+        $q = "CREATE TABLE IF NOT EXISTS `oc_course_description` (
+  `course_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `course_date` varchar(32) NOT NULL,
+  `location` varchar(64) NOT NULL,
+  `speaker` varchar(16) NOT NULL,
+  PRIMARY KEY (`course_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+";
         $results = $this->db->query($q);
-        $this->response->setOutput("<h2>{$q}</h2>".var_export($results,1));
-        /*if(false !== $results) {
+        /*$this->response->setOutput("<h2>{$q}</h2>".var_export($results,1));*/
+        if(false !== $results) {
             $this->response->setOutput('Success!');
         }
         else {
             $this->response->setOutput('Failed!');
-        }*/
+        }
     }
 }
 ?>

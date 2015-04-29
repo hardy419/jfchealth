@@ -366,7 +366,13 @@ class ControllerCatalogCourse extends Controller {
 		$this->data['text_amount'] = $this->language->get('text_amount');
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
-		$this->data['entry_description'] = $this->language->get('entry_description');
+		$this->data['entry_course_date'] = $this->language->get('entry_course_date');
+		$this->data['entry_location'] = $this->language->get('entry_location');
+		$this->data['entry_speaker'] = $this->language->get('entry_speaker');
+		$this->data['entry_image'] = $this->language->get('entry_image');
+		$this->data['entry_time_period'] = $this->language->get('entry_time_period');
+		$this->data['entry_seats'] = $this->language->get('entry_seats');
+		$this->data['entry_phone'] = $this->language->get('entry_phone');
 		$this->data['entry_filename'] = $this->language->get('entry_filename');
 		$this->data['entry_store'] = $this->language->get('entry_store');
 		$this->data['entry_keyword'] = $this->language->get('entry_keyword');

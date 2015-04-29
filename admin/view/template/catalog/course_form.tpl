@@ -69,12 +69,12 @@
               </td>
             </tr>
             <tr>
-              <td><?php echo $seats; ?></td>
+              <td><?php echo $entry_seats; ?></td>
               <td><input type="text" name="seats" size="8" value="<?php echo isset($seats) ? $seats : ''; ?>" />
               </td>
             </tr>
             <tr>
-              <td><?php echo $phone; ?></td>
+              <td><?php echo $entry_phone; ?></td>
               <td><input type="text" name="phone" size="16" value="<?php echo isset($phone) ? $phone : ''; ?>" />
               </td>
             </tr>

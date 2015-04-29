@@ -1,7 +1,7 @@
 <?php
 class ModelCatalogCourse extends Model {
 	public function addCourse($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "course SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date = '" . $data['date'] . "', time_period = '" . $data['time_period'] . "', seats = '" . (int)$data['seats'] . "', phone = '" . $data['phone'] . "'");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "course SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date = CURDATE(), time_period = '" . $data['time_period'] . "', seats = '" . (int)$data['seats'] . "', phone = '" . $data['phone'] . "'");
 
 		$course_id = $this->db->getLastId();
 

@@ -145,3 +145,38 @@ ul
 {
     margin-top:40px;
 }
+
+.course-content
+{
+    width:960px;
+    margin-top:30px;
+    margin-left:20px;
+}
+.apply-div
+{
+    background-image: url("../images/course_popup1c.png");
+    width:560px;
+    height:315px;
+    font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
+}
+.head-div
+{
+    height:20px;
+}
+.apply-form
+{
+    position:relative;
+    top:-20px;
+}
+.apply-info-div
+{
+    background-image: url("../images/course_popup2c.png");
+    width:560px;
+    height:222px;
+    font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
+}
+.info-content
+{
+    position:relative;
+    top:-20px;
+}

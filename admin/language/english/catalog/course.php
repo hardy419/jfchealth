@@ -23,6 +23,13 @@ $_['column_action']          = 'Action';
 
 // Entry
 $_['entry_name']             = 'Course Name:';
+$_['entry_course_date']             = 'Course Date:';
+$_['entry_location']             = 'Location:';
+$_['entry_speaker']             = 'Speaker:';
+$_['entry_image']             = 'PReview:';
+$_['entry_time_period']             = 'Time period:';
+$_['entry_seats']             = 'Number of Seats:';
+$_['entry_phone']             = 'Phone:';
 $_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';
 $_['entry_meta_description'] = 'Meta Tag Description:';
 $_['entry_description']      = 'Description:';
