@@ -2,7 +2,7 @@
 class ControllerProductNews extends Controller {
     private function getIntro($html) {
         $start = strpos ($html, '>', strpos ($html, 'index_content_txt'))+1;
-        $end = strpos ($html, '</td>', $start);
+        $end = strpos ($html, '<', $start);
         return substr($html, $start, $end-$start);
     }
 
@@ -16,7 +16,7 @@ class ControllerProductNews extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'n.time';
+			$sort = 'n.date_added';
 		}
 
 		if (isset($this->request->get['order'])) {

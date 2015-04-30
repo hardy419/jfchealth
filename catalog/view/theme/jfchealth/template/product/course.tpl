@@ -79,9 +79,28 @@
 				</table></td>
 				</tr>
 			  <?PHP } else {break;} ?>
+			  <tr>
+				<td height="20">&nbsp;</td>
+				</tr>
+			  <tr>
+				<style>
+.results a:link {
+	color: #000000;
+}
+.results a:visited {
+	color: #000000;
+}
+.results a:hover {
+	color: #000000;
+}
+.results a:active {
+	color: #000000;
+}
+				</style>
+				<td height="10" colspan="3" align="right"><?php echo $pagination; ?></td>
+				</tr>
 		  </table>
 		</div>
-        <div class="pagination" style="text-align:right;"><?php echo $pagination; ?></div>
     </div>
 	<div style="clear:both"></div>
 </div><!-- div content -->

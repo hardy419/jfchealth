@@ -44,7 +44,7 @@
 			<td>&nbsp;</td>
 			<td height="20" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
 			  <tr>
-				<td class="index_course_title"><span class="index_title_date"><?PHP echo $news[$idx]['date']; ?></span></td>
+				<td class="index_course_title"><span class="index_title_date"><?PHP echo $news[$idx]['date_added']; ?></span></td>
 			  </tr>
 			  <tr>
 				<td class="index_course_title"><?PHP echo $news[$idx]['title']; ?></td>
@@ -58,9 +58,28 @@
 			</table></td>
 		  </tr>
 			  <?PHP } else {break;} ?>
+			  <tr>
+				<td height="20">&nbsp;</td>
+				</tr>
+			  <tr>
+				<style>
+.results a:link {
+	color: #000000;
+}
+.results a:visited {
+	color: #000000;
+}
+.results a:hover {
+	color: #000000;
+}
+.results a:active {
+	color: #000000;
+}
+				</style>
+				<td height="10" colspan="3" align="right"><?php echo $pagination; ?></td>
+				</tr>
 		  </table>
 		</div>
-        <div class="pagination" style="text-align:right;"><?php echo $pagination; ?></div>
     </div>
 	<div style="clear:both"></div>
 </div><!-- div content -->
