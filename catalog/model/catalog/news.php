@@ -15,14 +15,14 @@ class ModelCatalogNews extends Model {
 		return $query->rows[0];
 	}
 
-	public function getNews($data = array()) {
+	public function getNews($data = array(), $type) {
 		/*if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
 		} else {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	*/
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type = {$type} AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		$sort_data = array(
 			'nd.title',
@@ -60,14 +60,14 @@ class ModelCatalogNews extends Model {
 		return $query->rows;
 	}
 
-	public function getTotalNews($data = array()) {
+	public function getTotalNews($data = array(), $type) {
 		/*if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
 		} else {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}*/
 
-        $sql = "SELECT  COUNT(DISTINCT n.news_id) AS total FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT  COUNT(DISTINCT n.news_id) AS total FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type = {$type} AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		$query = $this->db->query($sql);
 

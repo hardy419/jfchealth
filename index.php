@@ -216,6 +216,34 @@ $registry->set('openbay', new Openbay($registry));
 
 // Encryption
 $registry->set('encryption', new Encryption($config->get('config_encryption')));
+
+// Pre processes
+if(isset($request->get['route'])) {
+    if (false !== strpos ($request->get['route'], 'news')) {
+        $request->get['t'] = '1';
+        $request->get['n'] = 'news';
+    }
+    if (false !== strpos ($request->get['route'], 'expert_article')) {
+        $request->get['route'] = str_replace ('expert_article', 'news', $request->get['route']);
+        $request->get['t'] = '3';
+        $request->get['n'] = 'expert_article';
+    }
+    if (false !== strpos ($request->get['route'], 'article')) {
+        $request->get['route'] = str_replace ('article', 'news', $request->get['route']);
+        $request->get['t'] = '2';
+        $request->get['n'] = 'user_article';
+    }
+    if (false !== strpos ($request->get['route'], 'video')) {
+        $request->get['route'] = str_replace ('video', 'news', $request->get['route']);
+        $request->get['t'] = '4';
+        $request->get['n'] = 'video';
+    }
+    if (false !== strpos ($request->get['route'], 'magazine')) {
+        $request->get['route'] = str_replace ('magazine', 'news', $request->get['route']);
+        $request->get['t'] = '5';
+        $request->get['n'] = 'magazine';
+    }
+}
 		
 // Front Controller 
 $controller = new Front($registry);

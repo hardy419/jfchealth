@@ -29,11 +29,15 @@ ul
 .left-nav
 {
     float:left;
-    margin:120px auto auto -10px;
+    margin:120px auto auto 0px;
 }
 .left-nav li
 {
     margin-bottom:20px;
+}
+.nav-3
+{
+    margin:100px auto auto 0px;
 }
 .right-content
 {
@@ -186,4 +190,12 @@ ul
     width:960px;
     margin-top:0px;
     margin-left:20px;
+}
+
+.magazine-content
+{
+    width:960px;
+    margin:0px auto;
+    position:relative;
+    left:20px;
 }

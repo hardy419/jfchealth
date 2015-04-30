@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']          = 'News'; 
+$_['heading_title']          = 'User Article'; 
 
 // Text  
 $_['text_success']           = 'Success: You have modified records!';

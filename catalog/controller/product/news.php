@@ -7,7 +7,7 @@ class ControllerProductNews extends Controller {
     }
 
 	public function index() {
-		$this->language->load('product/news');
+		$this->language->load('product/' . $this->request->get['n']);
 
 		$this->load->model('catalog/news');
 
@@ -34,16 +34,8 @@ class ControllerProductNews extends Controller {
 		if (isset($this->request->get['limit'])) {
 			$limit = $this->request->get['limit'];
 		} else {
-			$limit = 3;
+			$limit = ($this->request->get['t']== 3 || $this->request->get['t']== 5)? 6 : 3;
 		}
-
-		$this->data['breadcrumbs'] = array();
-
-		$this->data['breadcrumbs'][] = array(
-			'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),
-			'separator' => false
-		);
 
         $this->document->setTitle($this->config->get('config_title'));
         $this->document->setDescription($this->config->get('config_meta_description'));
@@ -87,9 +79,9 @@ class ControllerProductNews extends Controller {
             'limit'              => $limit
         );
 
-        $news_total = $this->model_catalog_news->getTotalnews($data); 
+        $news_total = $this->model_catalog_news->getTotalNews($data, $this->request->get['t']); 
 
-        $results = $this->model_catalog_news->getnews($data);	
+        $results = $this->model_catalog_news->getNews($data, $this->request->get['t']);	
 
         foreach ($results as $result) {
             /*if ($result['image']) {
@@ -127,7 +119,7 @@ class ControllerProductNews extends Controller {
         $pagination->page = $page;
         $pagination->limit = $limit;
         $pagination->text = $this->language->get('text_pagination');
-        $pagination->url = $this->url->link('product/news', 'page={page}' . $url);
+        $pagination->url = $this->url->link('product/'.$this->request->get['n'], 'page={page}' . $url);
 
         $this->data['pagination'] = $pagination->render();
 
@@ -138,7 +130,15 @@ class ControllerProductNews extends Controller {
         $this->data['continue'] = $this->url->link('common/home');
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
-        $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/news.css');
+        if($this->request->get['t'] == 1) {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/news.css');
+        }
+        else if($this->request->get['t'] >=2 && $this->request->get['t'] <= 4) {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/article.css');
+        }
+        else {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/magazine.css');
+        }
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
         //$this->data['dir_image'] = DIR_TEMPLATE . $this->config->get('config_template') . '/images/';
         //$this->data['dir_pdf'] = DIR_PDF;
@@ -146,10 +146,10 @@ class ControllerProductNews extends Controller {
         $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';
 		
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/news.tpl')) {
-			$this->template = $this->config->get('config_template') . '/template/product/news.tpl';
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/'.$this->request->get['n'].'.tpl')) {
+			$this->template = $this->config->get('config_template') . '/template/product/'.$this->request->get['n'].'.tpl';
 		} else {
-			$this->template = 'default/template/product/news.tpl';
+			$this->template = 'default/template/product/'.$this->request->get['n'].'.tpl';
 		}
 		
 		$this->children = array(
@@ -164,7 +164,7 @@ class ControllerProductNews extends Controller {
 		$this->response->setOutput($this->render());
 	}
 	public function detail() {
-		$this->language->load('product/news');
+		$this->language->load('product/'. $this->request->get['n']);
 
 		$this->load->model('catalog/news');
 
@@ -192,11 +192,21 @@ class ControllerProductNews extends Controller {
         $news_info = $this->model_catalog_news->getNewsItem($this->request->get['nid']);	
 
         $this->data['date_added'] = $news_info['date_added'];
+        $this->data['image'] = DIR_IMAGE.$news_info['image'];
+        $this->data['type'] = $news_info['type'];
+        $this->data['info'] = explode('|', $news_info['info']);
+        $this->data['filename'] = $news_info['filename'];
         $this->data['title'] = $news_info['title'];
         $this->data['description'] = html_entity_decode($news_info['description'], ENT_QUOTES, 'UTF-8');
+        $this->data['infod'] = explode('|', $news_info['infod']);
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
-        $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/news.css');
+        if($this->request->get['t'] == 1) {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/news.css');
+        }
+        else if($this->request->get['t'] >=2 && $this->request->get['t'] <= 4) {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/article.css');
+        }
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
         //$this->data['dir_image'] = DIR_TEMPLATE . $this->config->get('config_template') . '/images/';
         //$this->data['dir_pdf'] = DIR_PDF;
@@ -204,10 +214,10 @@ class ControllerProductNews extends Controller {
         $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';
 		
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/news_detail.tpl')) {
-			$this->template = $this->config->get('config_template') . '/template/product/news_detail.tpl';
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/'.$this->request->get['n'].'_detail.tpl')) {
+			$this->template = $this->config->get('config_template') . '/template/product/'.$this->request->get['n'].'_detail.tpl';
 		} else {
-			$this->template = 'default/template/product/news_detail.tpl';
+			$this->template = 'default/template/product/'.$this->request->get['n'].'_detail.tpl';
 		}
 		
 		$this->children = array(
