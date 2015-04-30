@@ -93,6 +93,7 @@ class ControllerProductNews extends Controller {
             $this->data['news'][] = array(
                 'news_id'  => $result['news_id'],
                 'image'       => DIR_IMAGE.$result['image'],
+                'filename'        => $result['filename'],
                 'title'        => $result['title'],
                 'date_added'        => $result['date_added'],
                 'intro'       => $this->getIntro(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')),

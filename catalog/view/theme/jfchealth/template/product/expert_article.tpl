@@ -27,7 +27,7 @@
 				  </tr>
 				</table></td>
 				</tr>
-			<?PHP for ($idx=1; $idx<3; ++$idx) if(isset($news[$idx])) { ?>
+			<?PHP for ($idx=1; $idx<6; ++$idx) if(isset($news[$idx])) { ?>
 			  <tr>
 				<td>&nbsp;</td>
 			  </tr>

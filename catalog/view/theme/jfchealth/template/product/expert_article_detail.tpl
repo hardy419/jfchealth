@@ -12,7 +12,7 @@
 		<div class="content-title">
 			<img src="<?PHP echo $dir_image_lang; ?>img_expertshare_detail_title.png" width="670" height="34" border="0" usemap="#Map" />
 			  <map name="Map" id="Map">
-				<area shape="rect" coords="1,7,69,35" href="?route=product/article" target="_parent" />
+				<area shape="rect" coords="1,7,69,35" href="?route=product/expert_article" target="_parent" />
 			  </map>
 		</div>
 		<div class="article-list">

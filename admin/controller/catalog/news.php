@@ -621,7 +621,12 @@ class ControllerCatalogNews extends Controller {
 				
 				$dir_p = $this->request->get['id'];
 
-				$json['filename'] = '/image/data/'.$dir_a.'/'.$dir_p .'/'. $filename;
+				if('' != $dir_p) {
+                    $json['filename'] = 'image/data/'.$dir_a.'/'.$dir_p .'/'. $filename;
+                }
+                else {
+                    $json['filename'] = 'image/data/'.$dir_a.'/0/'. $filename;
+                }
 				
 				if(!file_exists(DIR_DOWNLOAD.$dir_a))
 				{
