@@ -17,7 +17,7 @@ class ControllerCommonLogin extends Controller {
 			if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], HTTP_SERVER) === 0 || strpos($this->request->post['redirect'], HTTPS_SERVER) === 0 )) {
 				$this->redirect($this->request->post['redirect'] . '&token=' . $this->session->data['token']);
 			} else {
-				$this->redirect($this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL'));
+				$this->redirect($this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL'));
 			}
 		}
 

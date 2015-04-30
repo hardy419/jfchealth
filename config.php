@@ -15,7 +15,7 @@ define('DIR_CONFIG', dirname(__FILE__).'/system/config/');
 define('DIR_IMAGE', 'image/');
 define('DIR_PDF', dirname(__FILE__).'/pdf/');
 define('DIR_CACHE', dirname(__FILE__).'/system/cache/');
-define('DIR_DOWNLOAD', dirname(__FILE__).'/download/');
+define('DIR_DOWNLOAD', dirname(__FILE__).'/image/data/');
 define('DIR_LOGS', dirname(__FILE__).'/system/logs/');
 
 // DB

@@ -780,7 +780,7 @@ function addProfile() {
 <script type="text/javascript" src="view/javascript/jquery/ajaxupload.js"></script> 
 <script type="text/javascript"><!--
 new AjaxUpload('#button-upload', {
-	action: 'index.php?route=catalog/download/upload&token=<?php echo $token; ?>&c=news&id=<?php echo $id;?>',
+	action: 'index.php?route=catalog/news/upload&token=<?php echo $token; ?>&c=news&id=<?php echo $id;?>',
 	name: 'file',
 	autoSubmit: true,
 	responseType: 'json',

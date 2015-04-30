@@ -16,7 +16,7 @@ define('DIR_TEMPLATE', dirname(dirname(__FILE__)).'/admin/view/template/');
 define('DIR_CONFIG', dirname(dirname(__FILE__)).'/system/config/');
 define('DIR_IMAGE', dirname(dirname(__FILE__)).'/image/');
 define('DIR_CACHE', dirname(dirname(__FILE__)).'/system/cache/');
-define('DIR_DOWNLOAD', dirname(dirname(__FILE__)).'/download/');
+define('DIR_DOWNLOAD', dirname(dirname(__FILE__)).'/image/data/');
 define('DIR_LOGS', dirname(dirname(__FILE__)).'/system/logs/');
 define('DIR_CATALOG', dirname(dirname(__FILE__)).'/catalog/');
 

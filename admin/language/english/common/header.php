@@ -98,4 +98,9 @@ $_['text_paypal_search']               = 'Search';
 $_['text_recurring_profile']           = 'Recurring Profiles';
 $_['text_news']     			       = 'Event & News';
 $_['text_course']     			       = 'Course';
+$_['text_article']     			       = 'Article';
+$_['text_user_article']     	       = 'User Article';
+$_['text_expert_article']              = 'Expert Article';
+$_['text_video']     			       = 'Video';
+$_['text_magazine']     		       = 'Magazine';
 ?>

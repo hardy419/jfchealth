@@ -52,6 +52,11 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_information'] = $this->language->get('text_information');
 		$this->data['text_news'] = $this->language->get('text_news');
 		$this->data['text_course'] = $this->language->get('text_course');
+		$this->data['text_article'] = $this->language->get('text_article');
+		$this->data['text_user_article'] = $this->language->get('text_user_article');
+		$this->data['text_expert_article'] = $this->language->get('text_expert_article');
+		$this->data['text_video'] = $this->language->get('text_video');
+		$this->data['text_magazine'] = $this->language->get('text_magazine');
 		$this->data['text_language'] = $this->language->get('text_language');
 		$this->data['text_layout'] = $this->language->get('text_layout');
 		$this->data['text_localisation'] = $this->language->get('text_localisation');
@@ -153,6 +158,10 @@ class ControllerCommonHeader extends Controller {
 			$this->data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['course'] = $this->url->link('catalog/course', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['user_article'] = $this->url->link('catalog/user_article', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['expert_article'] = $this->url->link('catalog/expert_article', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['video'] = $this->url->link('catalog/video', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['magazine'] = $this->url->link('catalog/magazine', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['language'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['logout'] = $this->url->link('common/logout', 'token=' . $this->session->data['token'], 'SSL');

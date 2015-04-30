@@ -83,6 +83,14 @@ $(document).ready(function(){
           <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
           <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
           <li><a href="<?php echo $course; ?>"><?php echo $text_course; ?></a></li>
+          <li><a class="parent"><?php echo $text_article; ?></a>
+            <ul>
+              <li><a href="<?php echo $user_article; ?>"><?php echo $text_user_article; ?></a></li>
+              <li><a href="<?php echo $expert_article; ?>"><?php echo $text_expert_article; ?></a></li>
+              <li><a href="<?php echo $video; ?>"><?php echo $text_video; ?></a></li>
+            </ul>
+          </li>
+          <li><a href="<?php echo $magazine; ?>"><?php echo $text_magazine; ?></a></li>
         </ul>
       </li>
       <!--<li id="extension"><a class="top"><?php echo $text_extension; ?></a>

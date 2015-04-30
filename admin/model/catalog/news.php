@@ -1,7 +1,7 @@
 <?php
 class ModelCatalogNews extends Model {
-	public function addNews($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date_added = CURDATE()");
+	public function addNews($data, $type) {
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET type = {$type}, info = '" . $this->db->escape($data['info']) . "', filename = '" . $this->db->escape($data['filename']) . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date_added = CURDATE()");
 
 		$news_id = $this->db->getLastId();
 
@@ -11,7 +11,7 @@ class ModelCatalogNews extends Model {
 		}
 
 		foreach ($data['news_description'] as $language_id => $value) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "news_description SET news_id = '" . (int)$news_id . "', language_id = '" . (int)$language_id . "', title = '" . $this->db->escape($value['title']) . "', description = '" . $this->db->escape($value['description']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "news_description SET news_id = '" . (int)$news_id . "', language_id = '" . (int)$language_id . "', title = '" . $this->db->escape($value['title']) . "', description = '" . $this->db->escape($value['description']) . "', infod = '" . $this->db->escape($value['infod']) . "'");
 		}
 
 		if (isset($data['news_image'])) {
@@ -24,7 +24,7 @@ class ModelCatalogNews extends Model {
 	}
 
 	public function editNews($news_id, $data) {
-		$this->db->query("UPDATE " . DB_PREFIX . "news SET status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE news_id = '" . (int)$news_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "news SET info = '" . $this->db->escape($data['info']) . "', filename = '" . $this->db->escape($data['filename']) . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE news_id = '" . (int)$news_id . "'");
 
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "news SET image = '" . $this->db->escape(html_entity_decode($data['image'], ENT_QUOTES, 'UTF-8')) . "' WHERE news_id = '" . (int)$news_id . "'");
@@ -33,7 +33,7 @@ class ModelCatalogNews extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_description WHERE news_id = '" . (int)$news_id . "'");
 
 		foreach ($data['news_description'] as $language_id => $value) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "news_description SET news_id = '" . (int)$news_id . "', language_id = '" . (int)$language_id . "', title = '" . $this->db->escape($value['title']) . "', description = '" . $this->db->escape($value['description']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "news_description SET news_id = '" . (int)$news_id . "', language_id = '" . (int)$language_id . "', title = '" . $this->db->escape($value['title']) . "', description = '" . $this->db->escape($value['description']) . "', infod = '" . $this->db->escape($value['infod']) . "'");
 		}
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_image WHERE news_id = '" . (int)$news_id . "'");
@@ -96,10 +96,10 @@ class ModelCatalogNews extends Model {
 		return $query->row;
 	}
 
-	public function getNewsItems($data = array()) {
+	public function getNewsItems($data = array(), $type) {
 		$sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON (n.news_id = nd.news_id)";
 
-		$sql .= " WHERE nd.language_id = '" . (int)$this->config->get('config_language_id') . "'"; 
+		$sql .= " WHERE n.type = {$type} AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'"; 
 
 		$sql .= " GROUP BY n.news_id";
 
@@ -320,8 +320,8 @@ class ModelCatalogNews extends Model {
 		return $this->db->query("SELECT * FROM `" . DB_PREFIX . "news_profile` WHERE news_id = " . (int)$news_id)->rows;
 	}
 */
-	public function getTotalNews($data = array()) {
-		$sql = "SELECT COUNT(DISTINCT news_id) AS total FROM " . DB_PREFIX . "news";
+	public function getTotalNews($data = array(), $type) {
+		$sql = "SELECT COUNT(DISTINCT news_id) AS total FROM " . DB_PREFIX . "news WHERE type = {$type}";
 
 		$query = $this->db->query($sql);
 

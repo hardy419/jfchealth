@@ -3,7 +3,7 @@ class ControllerCatalogNews extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/' . $this->request->get['n']);
 
 		$this->document->setTitle($this->language->get('heading_title')); 
 
@@ -13,14 +13,14 @@ class ControllerCatalogNews extends Controller {
 	}
 
 	public function insert() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/' . $this->request->get['n']);
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/news');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_news->addNews($this->request->post);
+			$this->model_catalog_news->addNews($this->request->post, $this->request->get['t']);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -38,14 +38,14 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 //$this->response->setOutput(var_export($this->error,1));return;
 		$this->getForm();
 	}
 
 	public function update() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/' . $this->request->get['n']);
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -70,14 +70,14 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getForm();
 	}
 
 	public function delete() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/' . $this->request->get['n']);
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -104,14 +104,14 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getList();
 	}
 
 	public function copy() {
-		$this->language->load('catalog/news');
+		$this->language->load('catalog/' . $this->request->get['n']);
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -126,26 +126,6 @@ class ControllerCatalogNews extends Controller {
 
 			$url = '';
 
-			if (isset($this->request->get['filter_name'])) {
-				$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
-			}
-
-			if (isset($this->request->get['filter_model'])) {
-				$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
-			}
-
-			if (isset($this->request->get['filter_price'])) {
-				$url .= '&filter_price=' . $this->request->get['filter_price'];
-			}
-
-			if (isset($this->request->get['filter_quantity'])) {
-				$url .= '&filter_quantity=' . $this->request->get['filter_quantity'];
-			}	
-
-			if (isset($this->request->get['filter_status'])) {
-				$url .= '&filter_status=' . $this->request->get['filter_status'];
-			}
-
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -158,7 +138,7 @@ class ControllerCatalogNews extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getList();
@@ -210,13 +190,13 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'),       		
+			'href'      => $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'),       		
 			'separator' => ' :: '
 		);
 
-		$this->data['insert'] = $this->url->link('catalog/news/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
-		$this->data['copy'] = $this->url->link('catalog/news/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');	
-		$this->data['delete'] = $this->url->link('catalog/news/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['insert'] = $this->url->link('catalog/'.$this->request->get['n'].'/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['copy'] = $this->url->link('catalog/'.$this->request->get['n'].'/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');	
+		$this->data['delete'] = $this->url->link('catalog/'.$this->request->get['n'].'/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$this->data['news'] = array();
 
@@ -230,16 +210,16 @@ class ControllerCatalogNews extends Controller {
         // Retrieving data
 		$this->load->model('tool/image');
 
-		$news_total = $this->model_catalog_news->getTotalNews($data);
+		$news_total = $this->model_catalog_news->getTotalNews($data, $this->request->get['t']);
 
-		$results = $this->model_catalog_news->getNewsItems($data);
+		$results = $this->model_catalog_news->getNewsItems($data, $this->request->get['t']);
 
 		foreach ($results as $result) {
 			$action = array();
 
 			$action[] = array(
 				'text' => $this->language->get('text_edit'),
-				'href' => $this->url->link('catalog/news/update', 'token=' . $this->session->data['token'] . '&news_id=' . $result['news_id'] . $url, 'SSL')
+				'href' => $this->url->link('catalog/'.$this->request->get['n'].'/update', 'token=' . $this->session->data['token'] . '&news_id=' . $result['news_id'] . $url, 'SSL')
 			);
 
 			if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])) {
@@ -248,6 +228,7 @@ class ControllerCatalogNews extends Controller {
 				$image = $this->model_tool_image->resize('no_image.jpg', 40, 40);
 			}
 
+            // $informations = the showing list array
 			$this->data['informations'][] = array(
 				'news_id' => $result['news_id'],
 				'title'       => $result['title'],
@@ -305,9 +286,9 @@ class ControllerCatalogNews extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$this->data['sort_title'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=nd.title' . $url, 'SSL');
-		$this->data['sort_time'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=n.time' . $url, 'SSL');
-		$this->data['sort_status'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . '&sort=n.status' . $url, 'SSL');
+		$this->data['sort_title'] = $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . '&sort=nd.title' . $url, 'SSL');
+		$this->data['sort_time'] = $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . '&sort=n.time' . $url, 'SSL');
+		$this->data['sort_status'] = $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . '&sort=n.status' . $url, 'SSL');
 
         // Build url for pagination
 		$url = '';
@@ -325,7 +306,7 @@ class ControllerCatalogNews extends Controller {
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_admin_limit');
 		$pagination->text = $this->language->get('text_pagination');
-		$pagination->url = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 
 		$this->data['pagination'] = $pagination->render();
 
@@ -367,6 +348,7 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_description'] = $this->language->get('entry_description');
+		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_filename'] = $this->language->get('entry_filename');
 		$this->data['entry_store'] = $this->language->get('entry_store');
 		$this->data['entry_keyword'] = $this->language->get('entry_keyword');
@@ -444,18 +426,18 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+			'href'      => $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'),
 			'separator' => ' :: '
 		);
 
         // Insert OR Update?
 		if (!isset($this->request->get['news_id'])) {
-			$this->data['action'] = $this->url->link('catalog/news/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+			$this->data['action'] = $this->url->link('catalog/'.$this->request->get['n'].'/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		} else {
-			$this->data['action'] = $this->url->link('catalog/news/update', 'token=' . $this->session->data['token'] . '&news_id=' . $this->request->get['news_id'] . $url, 'SSL');
+			$this->data['action'] = $this->url->link('catalog/'.$this->request->get['n'].'/update', 'token=' . $this->session->data['token'] . '&news_id=' . $this->request->get['news_id'] . $url, 'SSL');
 		}
 
-		$this->data['cancel'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['cancel'] = $this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL');
 
         // Retrieve data by id
 		if (isset($this->request->get['news_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
@@ -475,13 +457,17 @@ class ControllerCatalogNews extends Controller {
 			$this->data['news_description'] = array();
 		}
 
-		if (isset($this->request->post['image'])) {
-			$this->data['image'] = $this->request->post['image'];
-		} elseif (!empty($news_info)) {
-			$this->data['image'] = $news_info['image'];
-		} else {
-			$this->data['image'] = '';
-		}
+        $data_columns = array('image', 'date_added', 'info', 'filename', 'sort_order', 'status', 'time');
+
+        foreach ($data_columns as $data_column) {
+            if (isset($this->request->post[$data_column])) {
+                $this->data[$data_column] = $this->request->post[$data_column];
+            } elseif (!empty($news_info)) {
+                $this->data[$data_column] = $news_info[$data_column];
+            } else {
+                $this->data[$data_column] = '';
+            }
+        }
 
 		$this->load->model('tool/image');
 
@@ -519,22 +505,6 @@ class ControllerCatalogNews extends Controller {
 		}
 
 		$this->data['no_image'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
-
-		if (isset($this->request->post['sort_order'])) {
-			$this->data['sort_order'] = $this->request->post['sort_order'];
-		} elseif (!empty($news_info)) {
-			$this->data['sort_order'] = $news_info['sort_order'];
-		} else {
-			$this->data['sort_order'] = 1;
-		}
-
-		if (isset($this->request->post['status'])) {
-			$this->data['status'] = $this->request->post['status'];
-		} elseif (!empty($news_info)) {
-			$this->data['status'] = $news_info['status'];
-		} else {
-			$this->data['status'] = 1;
-		}
 
 		$this->template = 'catalog/news_form.tpl';
 		$this->children = array(
@@ -583,6 +553,94 @@ class ControllerCatalogNews extends Controller {
 		} else {
 			return false;
 		}
+	}
+
+	public function upload() {
+		$this->language->load('sale/order');
+
+		$json = array();
+
+		if (!$this->user->hasPermission('modify', 'catalog/download')) {
+			$json['error'] = $this->language->get('error_permission');
+		}
+
+		if (!isset($json['error'])) {
+			if (!empty($this->request->files['file']['name'])) {
+				$filename = basename(html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8'));
+
+				if ((utf8_strlen($filename) < 3) || (utf8_strlen($filename) > 128)) {
+					$json['error'] = $this->language->get('error_filename');
+				}
+
+				// Allowed file extension types
+				$allowed = array();
+
+				$filetypes = explode("\n", $this->config->get('config_file_extension_allowed'));
+
+				foreach ($filetypes as $filetype) {
+					$allowed[] = trim($filetype);
+				}
+
+				if (!in_array(substr(strrchr($filename, '.'), 1), $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				// Allowed file mime types
+				$allowed = array();
+
+				$filetypes = explode("\n", $this->config->get('config_file_mime_allowed'));
+
+				foreach ($filetypes as $filetype) {
+					$allowed[] = trim($filetype);
+				}
+
+				if (!in_array($this->request->files['file']['type'], $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				// Check to see if any PHP files are trying to be uploaded
+				$content = file_get_contents($this->request->files['file']['tmp_name']);
+
+				if (preg_match('/\<\?php/i', $content)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				if ($this->request->files['file']['error'] != UPLOAD_ERR_OK) {
+					$json['error'] = $this->language->get('error_upload_' . $this->request->files['file']['error']);
+				}
+			} else {
+				$json['error'] = $this->language->get('error_upload');
+			}
+		}
+
+		if (!isset($json['error'])) {
+			if (is_uploaded_file($this->request->files['file']['tmp_name']) && file_exists($this->request->files['file']['tmp_name'])) {
+				$ext = md5(mt_rand());
+
+				$dir_a = $this->request->get['c'];
+				
+				$dir_p = $this->request->get['id'];
+
+				$json['filename'] = '/image/data/'.$dir_a.'/'.$dir_p .'/'. $filename;
+				
+				if(!file_exists(DIR_DOWNLOAD.$dir_a))
+				{
+					mkdir(DIR_DOWNLOAD.$dir_a);
+					file_put_contents(DIR_DOWNLOAD.$dir_a.'/index.html','');
+				}
+				if(!file_exists(DIR_DOWNLOAD.$dir_a.'/'.$dir_p))
+				{
+					mkdir(DIR_DOWNLOAD.$dir_a.'/'.$dir_p);
+					file_put_contents(DIR_DOWNLOAD.$dir_a.'/'.$dir_p.'/index.html','');
+				}
+				
+				move_uploaded_file($this->request->files['file']['tmp_name'], DIR_DOWNLOAD.$dir_a.'/'.$dir_p .'/'. $filename);
+			}
+
+			$json['success'] = $this->language->get('text_upload');
+		}
+
+		$this->response->setOutput(json_encode($json));
 	}
 }
 ?>

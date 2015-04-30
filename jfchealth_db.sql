@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 28 日 10:04
+-- 生成日期: 2015 年 04 月 30 日 06:20
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -1563,19 +1563,23 @@ CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `date_added` date NOT NULL,
   `image` varchar(255) NOT NULL,
+  `type` int(11) NOT NULL DEFAULT '1',
+  `info` varchar(1024) NOT NULL,
+  `filename` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `time` datetime DEFAULT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `oc_news`
 --
 
-INSERT INTO `oc_news` (`news_id`, `image`, `sort_order`, `status`, `time`) VALUES
-(2, '', 12, 1, '2015-04-28 00:00:00'),
-(3, '', 12, 1, '2015-04-28 00:00:00');
+INSERT INTO `oc_news` (`news_id`, `date_added`, `image`, `type`, `info`, `filename`, `sort_order`, `status`, `time`) VALUES
+(2, '0000-00-00', '', 1, '', '', 12, 1, '2015-04-28 00:00:00'),
+(3, '0000-00-00', '', 1, '', '', 12, 1, '2015-04-28 00:00:00'),
+(12, '2015-04-30', '', 2, '', '/image/data/news/12/resume.doc', 1, 1, '2015-04-30 11:55:02');
 
 -- --------------------------------------------------------
 
@@ -1588,6 +1592,7 @@ CREATE TABLE IF NOT EXISTS `oc_news_description` (
   `language_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `infod` varchar(1024) NOT NULL,
   PRIMARY KEY (`news_id`,`language_id`),
   KEY `title` (`title`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -1596,11 +1601,14 @@ CREATE TABLE IF NOT EXISTS `oc_news_description` (
 -- 转存表中的数据 `oc_news_description`
 --
 
-INSERT INTO `oc_news_description` (`news_id`, `language_id`, `title`, `description`) VALUES
-(2, 1, 'test1', 'test1 desc'),
-(3, 1, 'test2 ', '&lt;p&gt;test2 desc&lt;/p&gt;\r\n'),
-(3, 4, '', ''),
-(3, 3, '', '');
+INSERT INTO `oc_news_description` (`news_id`, `language_id`, `title`, `description`, `infod`) VALUES
+(2, 1, 'test1', 'test1 desc', ''),
+(3, 1, 'test2 ', '&lt;p&gt;test2 desc&lt;/p&gt;\r\n', ''),
+(3, 4, '', '', ''),
+(3, 3, '', '', ''),
+(12, 4, '', '', ''),
+(12, 3, '', '', ''),
+(12, 1, 'TEST user article', '&lt;p&gt;124123&lt;/p&gt;\r\n', '');
 
 -- --------------------------------------------------------
 
