@@ -23,7 +23,7 @@
 					<td>&nbsp;</td>
 				  </tr>
 				  <tr>
-					<td width="670" align="left" valign="top" class="index_content_txt"><?PHP echo $news[0]['intro']; ?>......<span class="index_read_txt"><a href="?route=product/expert_article/detail&nid=<?PHP echo $news[0]['news_id']; ?>" target="_parent"><font color="#4e4eff">&lt;&lt;閱讀全文&gt;&gt;</font></a></span></td>
+					<td width="670" align="left" valign="top" class="index_content_txt"><?PHP echo $news[0]['infod']; ?>......<span class="index_read_txt"><a href="?route=product/expert_article/detail&nid=<?PHP echo $news[0]['news_id']; ?>" target="_parent"><font color="#4e4eff">&lt;&lt;閱讀全文&gt;&gt;</font></a></span></td>
 				  </tr>
 				</table></td>
 				</tr>
@@ -46,7 +46,7 @@
 					<td>&nbsp;</td>
 				  </tr>
 				  <tr>
-					<td width="670" align="left" valign="top" class="index_content_txt"><?PHP echo $news[$idx]['intro']; ?>...... <span class="index_read_txt"><a href="?route=product/expert_article/detail&nid=<?PHP echo $news[$idx]['news_id']; ?>" target="_parent"><font color="#4e4eff">&lt;&lt;閱讀全文&gt;&gt;</font></a></span><br />                                          </td>
+					<td width="670" align="left" valign="top" class="index_content_txt"><?PHP echo $news[$idx]['infod']; ?>...... <span class="index_read_txt"><a href="?route=product/expert_article/detail&nid=<?PHP echo $news[$idx]['news_id']; ?>" target="_parent"><font color="#4e4eff">&lt;&lt;閱讀全文&gt;&gt;</font></a></span><br />                                          </td>
 				  </tr>
 				</table></td>
 				</tr>

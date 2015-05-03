@@ -5,6 +5,13 @@ class ControllerProductApplyCourse extends Controller {
 
         $this->data['course_id'] = $this->request->get['cid'];
 
+        $this->data['text_name'] = $this->language->get('text_name');
+        $this->data['text_phone'] = $this->language->get('text_phone');
+        $this->data['text_email'] = $this->language->get('text_email');
+        $this->data['text_customername'] = $this->language->get('text_customername');
+        $this->data['text_notice_required'] = $this->language->get('text_notice_required');
+        $this->data['text_notice_message_sent'] = $this->language->get('text_notice_message_sent');
+
         $this->data['css_ref'] = array();
         $this->data['css_ref'][] = 'catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/apply_course.css';
         $this->data['css_ref'][] = 'catalog/view/theme/jfchealth/css/common.css';
@@ -34,6 +41,8 @@ class ControllerProductApplyCourse extends Controller {
 	public function info() {
 		$this->language->load('product/course');
 
+        $this->data['text_notice_message_sent'] = $this->language->get('text_notice_message_sent');
+
         $this->data['css_ref'] = array();
         $this->data['css_ref'][] = 'catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/apply_course.css';
         $this->data['css_ref'][] = 'catalog/view/theme/jfchealth/css/common.css';
@@ -60,9 +69,43 @@ class ControllerProductApplyCourse extends Controller {
         $this->response->setOutput($this->render());
 	}
 
-    public function formSubmit()
-    {
-        echo 'Name : '.$_POST['name'];
+    public function formSubmit() {
+        require('system/library/class.phpmailer.php');
+        require('system/library/class.smtp.php');
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+        $subject = 'Message From JFC User';
+        $body = 'A customer ordered a position for course #'.$_POST['course_id'].'<br/><br/>Name: '.$name.'<br/>Email: '.$email.'<br/>Phone: '.$phone;
+        $this->postMail ($body, $subject, '540115739@qq.com', '2757144278@qq.com');
+    }
+    public function postMail($body,$subject,$to,$name,$isHTML = true) {
+        $mail = new PHPMailer;
+        $mail->CharSet = 'UTF-8';
+        $mail->IsSMTP ();
+        $mail->SMTPDebug = 0;
+        $mail->SMTPAuth = true;
+        $mail->Host = 'smtp.qq.com';
+        $mail->Port = '25';
+        $mail->Username = '2757144278@qq.com';
+        $mail->Password = '1q2w3e4r';
+        mb_internal_encoding ('UTF-8');
+        $mail->Subject = mb_encode_mimeheader ($subject, 'UTF-8');
+        $mail->From = '2757144278@qq.com';
+        
+        if (!$isHTML) {
+            $mail->isHTML (false);
+            $mail->Body = $body;
+        }
+        else {
+            $mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+            $mail->MsgHTML ($body);
+        }
+        
+        $mail->AddAddress ($to, $name);
+        
+        return $mail->Send() ? true : $mail->ErrorInfo;
     }
 }
 ?>

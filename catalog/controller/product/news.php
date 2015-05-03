@@ -96,7 +96,9 @@ class ControllerProductNews extends Controller {
                 'filename'        => $result['filename'],
                 'title'        => $result['title'],
                 'date_added'        => $result['date_added'],
+                'info'        => $result['info'],
                 'intro'       => $this->getIntro(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')),
+                'infod'       => $result['infod'],
                 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
             );
         }

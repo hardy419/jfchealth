@@ -35,10 +35,18 @@
                   <span class="error"><?php echo $error_name[$language['language_id']]; ?></span>
                   <?php } ?></td>
               </tr>
+              <?PHP if ('User Article' == $heading_title || 'Expert Article' == $heading_title) { ?>
+              <tr>
+                <td><?php echo $entry_introduction; ?></td>
+                <td><textarea cols="100" rows="5" name="news_description[<?php echo $language['language_id']; ?>][infod]" id="introduction<?php echo $language['language_id']; ?>"><?php echo isset($news_description[$language['language_id']]) ? $news_description[$language['language_id']]['infod'] : ''; ?></textarea></td>
+              </tr>
+              <?PHP } ?>
+              <?PHP if ('Video' != $heading_title) { ?>
               <tr>
                 <td><?php echo $entry_description; ?></td>
                 <td><textarea name="news_description[<?php echo $language['language_id']; ?>][description]" id="description<?php echo $language['language_id']; ?>"><?php echo isset($news_description[$language['language_id']]) ? $news_description[$language['language_id']]['description'] : ''; ?></textarea></td>
               </tr>
+              <?PHP } ?>
             </table>
           </div>
           <?php } ?>
@@ -46,12 +54,20 @@
 
         <div id="tab-data">
           <table class="form">
+          <?PHP if ('Video' == $heading_title) { ?>
+            <tr>
+              <td><?php echo $entry_video_url; ?></td>
+              <td><input type="text" name="info" value="<?php echo $info; ?>" size="100" /></td>
+            </tr>
+          <?PHP } ?>
+          <?PHP if ('Video' != $heading_title) { ?>
             <tr>
               <td><?php echo $entry_image; ?></td>
               <td><div class="image"><img src="<?php echo $thumb; ?>" alt="" id="thumb" /><br />
                   <input type="hidden" name="image" value="<?php echo $image; ?>" id="image" />
                   <a onclick="image_upload('image', 'thumb');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb').attr('src', '<?php echo $no_image; ?>'); $('#image').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
             </tr>
+          <?PHP } ?>
             <tr>
               <td><?php echo $entry_status; ?></td>
               <td><select name="status">

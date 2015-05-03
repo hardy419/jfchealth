@@ -1,7 +1,7 @@
 <?php
 class ModelCatalogNews extends Model {
 	public function addNews($data, $type) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET type = {$type}, info = '" . $this->db->escape($data['info']) . "', filename = '" . $this->db->escape($data['filename']) . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date_added = CURDATE()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET type = " . (int)$type . ", info = '" . $this->db->escape($data['info']) . "', filename = '" . $this->db->escape($data['filename']) . "', status = '" . (int)$data['status'] . "', sort_order = '" . (int)$data['sort_order'] . "', time = NOW(), date_added = CURDATE()");
 
 		$news_id = $this->db->getLastId();
 
@@ -99,7 +99,7 @@ class ModelCatalogNews extends Model {
 	public function getNewsItems($data = array(), $type) {
 		$sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON (n.news_id = nd.news_id)";
 
-		$sql .= " WHERE n.type = {$type} AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'"; 
+		$sql .= " WHERE n.type = " . (int)$type . " AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'"; 
 
 		$sql .= " GROUP BY n.news_id";
 
@@ -321,7 +321,7 @@ class ModelCatalogNews extends Model {
 	}
 */
 	public function getTotalNews($data = array(), $type) {
-		$sql = "SELECT COUNT(DISTINCT news_id) AS total FROM " . DB_PREFIX . "news WHERE type = {$type}";
+		$sql = "SELECT COUNT(DISTINCT news_id) AS total FROM " . DB_PREFIX . "news WHERE type = ".(int)$type;
 
 		$query = $this->db->query($sql);
 

@@ -348,6 +348,8 @@ class ControllerCatalogNews extends Controller {
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_description'] = $this->language->get('entry_description');
+		$this->data['entry_introduction'] = $this->language->get('entry_introduction');
+		$this->data['entry_video_url'] = $this->language->get('entry_video_url');
 		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_filename'] = $this->language->get('entry_filename');
 		$this->data['entry_store'] = $this->language->get('entry_store');
@@ -625,7 +627,7 @@ class ControllerCatalogNews extends Controller {
                     $json['filename'] = 'image/data/'.$dir_a.'/'.$dir_p .'/'. $filename;
                 }
                 else {
-                    $json['filename'] = 'image/data/'.$dir_a.'/0/'. $filename;
+                    $json['filename'] = 'image/data/'.$dir_a.'/'. $filename;
                 }
 				
 				if(!file_exists(DIR_DOWNLOAD.$dir_a))

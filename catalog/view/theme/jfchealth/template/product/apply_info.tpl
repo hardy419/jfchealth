@@ -18,8 +18,7 @@
     </div>
     <div style="clear:both;"></div>
     <div class="info-content" style="text-align:center;">
-        <p>網上報名名額已經爆滿</p>
-        <p>如想報名參加此課程，請致電2735 2888查詢。</p>
+        <p><?PHP echo $text_notice_message_sent; ?></p>
         <a href="javascript:parent.js_op_close(false)"><img src="<?PHP echo $dir_image_lang; ?>btn_enter.png"></img></a>
 </div></div>
 </SCRIPT>

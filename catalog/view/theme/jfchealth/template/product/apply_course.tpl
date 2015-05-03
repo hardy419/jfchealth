@@ -23,8 +23,8 @@
             <TABLE cellSpacing="10" cellPadding="0" width="60%" align="center" border="0" style="margin:auto;">
             <TBODY>
             <TR>
-            <TD height="30" width="100" align="left">姓名：</TD>
-            <TD><INPUT id="form_name" size="20" name='name' /></TD></TR>
+            <TD height="30" width="100" align="left"><?PHP echo $text_name; ?></TD>
+            <TD><INPUT id="form_name" size="20" name='name' /><INPUT type="hidden" id="form_courseid" name='course_id' value="<?PHP echo $course_id; ?>"/></TD></TR>
             <TR>
             <TD><?PHP echo $text_phone; ?></TD>
             <TD><INPUT id="form_phone" size="20" name='phone' /></TD></TR>
@@ -35,7 +35,7 @@
             <TD><?PHP echo $text_customername; ?></TD>
             <TD><INPUT id="form_customername" size="20" name='customername'></TD></TR>
             <TR>
-            <TD colspan="2" height="30" width="60" align="left">請注意，有<span style="color:#ff0000">*</span>號的必須填寫。</TD></TR>
+            <TD colspan="2" height="30" width="60" align="left"><?PHP echo $text_notice_required; ?></TD></TR>
             <TR>
             <TD>&nbsp;</TD>
             <TD><a href="javascript:course_submit();"><img src="<?PHP echo $dir_image_lang; ?>btn_submit.png"></img></a></TD></TR>
@@ -52,7 +52,7 @@ function course_submit(){
         error: function(request) {
         },
         success: function(data) {
-            alert(data);
+            //alert(data);
         }
     });
     parent.js_iframe_info('?route=product/apply_course/info');
