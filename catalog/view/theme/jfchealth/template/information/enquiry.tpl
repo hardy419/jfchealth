@@ -34,7 +34,7 @@
                   </tr>
                   <tr>
                     <td><p class="index_content_txt"><?PHP echo $text_enquiry; ?>：</p></td>
-                    <td><textarea cols="30" rows="5" name="message" id="form_message"><?PHP echo $model.': '; ?></textarea></td>
+                    <td><textarea cols="30" rows="5" name="message" id="form_message"><?PHP if(''!==$model) {echo $model.': ';} ?></textarea></td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>

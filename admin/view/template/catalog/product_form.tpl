@@ -188,6 +188,12 @@
                   <input type="hidden" name="image" value="<?php echo $image; ?>" id="image" />
                   <a onclick="image_upload('image', 'thumb');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb').attr('src', '<?php echo $no_image; ?>'); $('#image').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
             </tr>
+            <tr>
+              <td><?php echo 'Preview Image'; ?></td>
+              <td><div class="image"><img src="<?php echo $preview_thumb; ?>" alt="" id="preview-thumb" /><br />
+                  <input type="hidden" name="filename" value="<?php echo $filename; ?>" id="image-filename" />
+                  <a onclick="image_upload('image-filename', 'preview-thumb');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#preview-thumb').attr('src', '<?php echo $no_image; ?>'); $('#image-filename').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+            </tr>
             <!--tr>
               <td><?php echo $entry_date_available; ?></td>
               <td><input type="text" name="date_available" value="<?php echo $date_available; ?>" size="12" class="date" /></td>
@@ -242,11 +248,11 @@
               <td><?php echo $entry_sort_order; ?></td>
               <td><input type="text" name="sort_order" value="<?php echo $sort_order; ?>" size="2" /></td>
             </tr>
-			<tr>
+			<!--tr>
             <td><?php echo $entry_filename; ?></td>
             <td><input type="text" name="filename" value="<?php echo $filename; ?>" /> <a id="button-upload" class="button"><?php echo $button_upload; ?></a>
 			<a id="button-del" class="button">Delete</a></td>
-          </tr>
+          </tr-->
           </table>
         </div>
         <div id="tab-links">

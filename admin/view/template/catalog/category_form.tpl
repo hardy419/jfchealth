@@ -32,7 +32,7 @@
                   <span class="error"><?php echo $error_name[$language['language_id']]; ?></span>
                   <?php } ?></td>
               </tr>
-              <tr>
+              <!--tr>
                 <td><?php echo $entry_meta_description; ?></td>
                 <td><textarea name="category_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['meta_description'] : ''; ?></textarea></td>
               </tr>
@@ -43,14 +43,14 @@
               <tr>
                 <td><?php echo $entry_description; ?></td>
                 <td><textarea name="category_description[<?php echo $language['language_id']; ?>][description]" id="description<?php echo $language['language_id']; ?>"><?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['description'] : ''; ?></textarea></td>
-              </tr>
+              </tr-->
             </table>
           </div>
           <?php } ?>
         </div>
         <div id="tab-data">
           <table class="form">
-            <tr>
+            <!--tr>
               <td><?php echo $entry_parent; ?></td>
               <td><input type="text" name="path" value="<?php echo $path; ?>" size="100" />
                 <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" /></td>
@@ -70,7 +70,7 @@
                   </div>
                   <?php } ?>
                 </div></td>
-            </tr>
+            </tr-->
             <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">
@@ -98,10 +98,10 @@
                   <?php } ?>
                 </div></td>
             </tr>
-            <tr>
+            <!--tr>
               <td><?php echo $entry_keyword; ?></td>
               <td><input type="text" name="keyword" value="<?php echo $keyword; ?>" /></td>
-            </tr>
+            </tr-->
             <tr>
               <td><?php echo $entry_image; ?></td>
               <td valign="top"><div class="image"><img src="<?php echo $thumb; ?>" alt="" id="thumb" />
@@ -109,7 +109,7 @@
                   <br />
                   <a onclick="image_upload('image', 'thumb');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb').attr('src', '<?php echo $no_image; ?>'); $('#image').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
             </tr>
-            <tr>
+            <!--tr>
               <td><?php echo $entry_top; ?></td>
               <td><?php if ($top) { ?>
                 <input type="checkbox" name="top" value="1" checked="checked" />
@@ -120,7 +120,7 @@
             <tr>
               <td><?php echo $entry_column; ?></td>
               <td><input type="text" name="column" value="<?php echo $column; ?>" size="1" /></td>
-            </tr>
+            </tr-->
             <tr>
               <td><?php echo $entry_sort_order; ?></td>
               <td><input type="text" name="sort_order" value="<?php echo $sort_order; ?>" size="1" /></td>
@@ -139,7 +139,7 @@
             </tr>
           </table>
         </div>
-        <div id="tab-design">
+        <!--div id="tab-design">
           <table class="list">
             <thead>
               <tr>
@@ -180,7 +180,7 @@
             </tbody>
             <?php } ?>
           </table>
-        </div>
+        </div-->
       </form>
     </div>
   </div>

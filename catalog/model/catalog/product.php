@@ -70,7 +70,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON p.product_id=p2c.product_id";
+        $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON p.product_id=p2c.product_id LEFT JOIN " . DB_PREFIX . "product_description pd ON p.product_id=pd.product_id  WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		$query = $this->db->query($sql);
 
@@ -921,5 +921,72 @@ class ModelCatalogProduct extends Model {
 
 		return $query->row['total'];
 	}
+
+    public function getNewestNews() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=1 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+
+		$query = $this->db->query($sql);
+
+		return $query->row;
+    }
+    public function getNewestCourse() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON c.course_id=cd.course_id WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.time DESC LIMIT 1";
+
+		$query = $this->db->query($sql);
+
+		return $query->row;
+    }
+    public function getNewestUserArticle() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=2 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+
+		$query = $this->db->query($sql);
+
+		return $query->row;
+    }
+    public function getNewestVideo() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=4 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+
+		$query = $this->db->query($sql);
+
+		return $query->row;
+    }
+    public function getNewestMagazine() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=5 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+
+		$query = $this->db->query($sql);
+
+		return $query->row;
+    }
+
 }
 ?>

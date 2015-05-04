@@ -873,6 +873,16 @@ class ControllerCatalogProduct extends Controller {
 			$this->data['thumb'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
 		}
 
+        // Added 2015-5-4
+		if (isset($this->request->post['filename']) && file_exists(DIR_IMAGE . $this->request->post['filename'])) {
+			$this->data['preview_thumb'] = $this->model_tool_image->resize($this->request->post['filename'], 100, 100);
+		} elseif (!empty($product_info) && $product_info['filename'] && file_exists(DIR_IMAGE . $product_info['filename'])) {
+			$this->data['preview_thumb'] = $this->model_tool_image->resize($product_info['filename'], 100, 100);
+		} else {
+			$this->data['preview_thumb'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
+		}
+
+
 		if (isset($this->request->post['shipping'])) {
 			$this->data['shipping'] = $this->request->post['shipping'];
 		} elseif (!empty($product_info)) {

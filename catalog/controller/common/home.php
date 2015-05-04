@@ -15,13 +15,24 @@ class ControllerCommonHome extends Controller {
         $this->data['product_ids'] = array();
         $this->data['product_cids'] = array();
         $this->data['product_images'] = array();
+        $this->data['product_names'] = array();
+        $this->data['product_description'] = array();
         foreach ($products as $product) {
             $this->data['product_urls'][] = $this->url->link('product/product');
             $this->data['product_ids'][] = $product['product_id'];
             $this->data['product_cids'][] = $product['category_id'];
-            $this->data['product_images'][] = $this->model_tool_image->resize($product['image'], 260, 297);//DIR_IMAGE.$product['image'];
+            $this->data['product_images'][] = $this->model_tool_image->resize($product['filename'], 260, 297);//DIR_IMAGE.$product['image'];
+            $this->data['product_names'][] = $product['name'];
+            $this->data['product_description'][] = substr(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8'),0,100);
         }
-        
+
+        $this->data['news_info'] = $this->model_catalog_product->getNewestNews();
+        $this->data['course_info'] = $this->model_catalog_product->getNewestCourse();
+        $this->data['user_article_info'] = $this->model_catalog_product->getNewestUserArticle();
+        $this->data['video_info'] = $this->model_catalog_product->getNewestVideo();
+        $this->data['magazine_info'] = $this->model_catalog_product->getNewestMagazine();
+        $this->data['magazine_info']['image'] = DIR_IMAGE.$this->data['magazine_info']['image'];
+
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/home.css');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
