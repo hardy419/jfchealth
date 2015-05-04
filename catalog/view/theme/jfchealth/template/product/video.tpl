@@ -57,7 +57,7 @@
 </div><!-- div content -->
 <div style="clear:both"></div>
 
-<div class="bottom-bar" style="margin-top:90px;position:absolute;top:900px;z-index:2147483647;">
+<div class="bottom-bar" style="margin-top:90px;position:absolute;top:1100px;z-index:2147483647;">
 <?php echo $footer; ?>
 </div>
 

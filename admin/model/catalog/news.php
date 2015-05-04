@@ -148,6 +148,7 @@ class ModelCatalogNews extends Model {
 			$news_description_data[$result['language_id']] = array(
 				'title'             => $result['title'],
 				'description'      => $result['description'],
+				'infod'      => $result['infod'],
 			);
 		}
 

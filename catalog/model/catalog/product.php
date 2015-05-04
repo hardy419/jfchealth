@@ -63,6 +63,20 @@ class ModelCatalogProduct extends Model {
 		}
 	}
 
+    public function getProductInfoList() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON p.product_id=p2c.product_id";
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+    }
+
 	public function getProducts($data = array()) {
 		if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
