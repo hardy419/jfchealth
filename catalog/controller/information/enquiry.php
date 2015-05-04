@@ -3,6 +3,8 @@ class ControllerInformationEnquiry extends Controller {
     private $msg = null;
     
 	public function index() {
+        $this->load->language ('information/information');
+
 		$this->document->setTitle($this->config->get('config_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 
@@ -17,13 +19,27 @@ class ControllerInformationEnquiry extends Controller {
         $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';
         
+        $this->data['text_notice'] = $this->language->get('text_notice');
+        $this->data['text_notice_required'] = $this->language->get('text_notice_required');
+        $this->data['text_name'] = $this->language->get('text_name');
+        $this->data['text_email'] = $this->language->get('text_email');
+        $this->data['text_phone'] = $this->language->get('text_phone');
+        $this->data['text_enquiry'] = $this->language->get('text_enquiry');
+        $this->data['text_error_required'] = $this->language->get('text_error_required');
         if (null != $this->msg) {
             if (true === $this->msg) {
-                $this->data['mail_msg'] = 'Your message was sent successfully. Thank you!';
+                $this->data['mail_msg'] = $this->language->get('text_sent_success');
             }
             else {
-                $this->data['mail_msg'] = 'Sorry! It seems to have a problem when sending message. Please try again!';
+                $this->data['mail_msg'] = $this->language->get('text_sent_failed');
             }
+        }
+
+        if (isset($this->request->get['model'])) {
+            $this->data['model'] = $this->request->get['model'];
+        }
+        else {
+            $this->data['model'] = '';
         }
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/enquiry.tpl')) {

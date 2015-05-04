@@ -12,20 +12,20 @@
 			<img src="<?PHP echo $dir_image_lang; ?>img_enquiry_title.png" width="670" height="34" />
 		</div>
 		<div class="description">
-            <p class="index_content_txt">如对我们的服务有任何疑问，只需填写表格，我们会尽快回复。</p>
-            <p class="index_content_txt">请注意，有<span style="color:#ff0000">*</span>号的必须填写：</p>
+            <p class="index_content_txt"><?PHP echo $text_notice; ?></p>
+            <p class="index_content_txt"><?PHP echo $text_notice_required; ?></p>
             <form action="?route=information/enquiry/formSubmit" method="POST" id="enquiry_form">
                 <table width="670" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td width="100"><p class="index_content_txt">姓名<span style="color:#ff0000">*</span>：</p></td>
+                    <td width="100"><p class="index_content_txt"><?PHP echo $text_name; ?><span style="color:#ff0000">*</span>：</p></td>
                     <td><input type="text" name="name" id="form_name"></input></td>
                   </tr>
                   <tr>
-                    <td><p class="index_content_txt">电邮<span style="color:#ff0000">*</span>：</p></td>
+                    <td><p class="index_content_txt"><?PHP echo $text_email; ?><span style="color:#ff0000">*</span>：</p></td>
                     <td><input type="text" name="email" id="form_email"></input></td>
                   </tr>
                   <tr>
-                    <td><p class="index_content_txt">电话<span style="color:#ff0000">*</span>：</p></td>
+                    <td><p class="index_content_txt"><?PHP echo $text_phone; ?><span style="color:#ff0000">*</span>：</p></td>
                     <td><input type="text" name="phone" id="form_phone"></input></td>
                   </tr>
                   <tr>
@@ -33,8 +33,8 @@
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td><p class="index_content_txt">查询内容：</p></td>
-                    <td><textarea cols="30" rows="5" name="message" id="form_message"></textarea></td>
+                    <td><p class="index_content_txt"><?PHP echo $text_enquiry; ?>：</p></td>
+                    <td><textarea cols="30" rows="5" name="message" id="form_message"><?PHP echo $model.': '; ?></textarea></td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
@@ -66,7 +66,7 @@
 <script>
 function enquiry_form_submit(){
 	if(''==$('#form_name').val()||''==$('#form_email').val()||''==$('#form_phone').val()){
-		alert('请填写带*号的部分');
+		alert('<?PHP echo $text_error_required; ?>');
 	}
 	else{
 		$('#enquiry_form').submit();

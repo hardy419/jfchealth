@@ -34,7 +34,7 @@
 				<div class="product_name">(<?PHP echo $model; ?>)</div>
 				<div class="product_name">(<?PHP echo $heading_title; ?>)</div>
 				<div class="description index_content_txt"><?php echo $description; ?></div>
-				<p align="right" valign="top"><a href="?route=information/enquiry" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_enquiry.png" width="163" height="46" border="0" /></a></p>
+				<p align="right" valign="top"><a href="?route=information/enquiry&model=<?PHP echo $model ?>" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_enquiry.png" width="163" height="46" border="0" /></a></p>
 			</div>
 			<div style="clear:both"></div>
 			<div class="product-bottom-desc">
