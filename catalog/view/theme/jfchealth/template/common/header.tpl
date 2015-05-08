@@ -44,7 +44,7 @@ function swt_lang(l) {
 </script>
 <![endif]-->
 </head>
-<body onload="MM_preloadImages('<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_news_mo.png')">
+<body onload="MM_preloadImages('<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_sharing_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_magazine_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png','<?PHP echo $dir_image_lang; ?>btn_menu_news_mo.png'<?PHP if(isset($product_images)) {foreach($product_images as $image) {echo ",'{$image}'";}} ?>)">
 <div class="top-bar">
 <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>

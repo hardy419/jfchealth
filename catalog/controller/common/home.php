@@ -21,7 +21,7 @@ class ControllerCommonHome extends Controller {
             $this->data['product_urls'][] = $this->url->link('product/product');
             $this->data['product_ids'][] = $product['product_id'];
             $this->data['product_cids'][] = $product['category_id'];
-            $this->data['product_images'][] = $this->model_tool_image->resize($product['filename'], 260, 297);//DIR_IMAGE.$product['image'];
+            $this->data['product_images'][] = DIR_IMAGE.$product['filename'];//$this->model_tool_image->resize($product['filename'], 260, 297);
             $this->data['product_names'][] = $product['name'];
             $this->data['product_description'][] = substr(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8'),0,100);
         }

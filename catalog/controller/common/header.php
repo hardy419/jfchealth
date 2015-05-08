@@ -144,6 +144,14 @@ class ControllerCommonHeader extends Controller {
 			'module/cart'
 		);
 
+		$this->load->model('catalog/product');
+
+        $products = $this->model_catalog_product->getProductInfoList();
+        $this->data['product_images'] = array();
+        foreach ($products as $product) {
+            $this->data['product_images'][] = DIR_IMAGE.$product['filename'];
+        }
+
         $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
         $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         $this->data['dir_pdf'] = 'pdf/';

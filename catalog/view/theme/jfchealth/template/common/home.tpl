@@ -22,9 +22,9 @@
 		<div id="product-image">
 			<table>
 				<tr>
-					<td><a href="javascript:switch_product(0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
+					<td><a style="position:relative;left:40px;" href="javascript:switch_product(0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
 					<td><a id="product-a" href="?route=product/product&path=99&product_id=185"><img id="product-img" src="<?PHP echo $dir_image; ?>product_home.png"></img></a></td>
-					<td><a href="javascript:switch_product(1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
+					<td><a style="position:relative;left:-40px;" href="javascript:switch_product(1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
 				</tr>
 			</table>
 		</div>
