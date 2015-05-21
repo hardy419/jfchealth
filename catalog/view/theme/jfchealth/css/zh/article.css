@@ -36,6 +36,11 @@ body {
 	color: #004282;
 	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
 }
+.index_course_title {	font-size: 22px;
+	font-weight: bold;
+	color: #4622a2;
+	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif", "arial", "helvetica";
+}
 .index_read_txt {
 	color: 4e4eff;
 	font-size: 12px;

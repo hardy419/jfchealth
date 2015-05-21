@@ -61,7 +61,7 @@
 			  <tr>
 				<td height="20">&nbsp;</td>
 				</tr>
-			  <tr>
+			  <!--tr>
 				<style>
 .results a:link {
 	color: #000000;
@@ -77,7 +77,7 @@
 }
 				</style>
 				<td height="10" colspan="3" align="right"><?php echo $pagination; ?></td>
-				</tr>
+				</tr-->
 		  </table>
 		</div>
     </div>

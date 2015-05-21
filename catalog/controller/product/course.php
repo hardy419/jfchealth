@@ -53,6 +53,13 @@ class ControllerProductCourse extends Controller {
         $this->data['text_sort'] = $this->language->get('text_sort');
         $this->data['text_limit'] = $this->language->get('text_limit');
 
+        $this->data['text_date'] = $this->language->get('text_date');
+        $this->data['text_time'] = $this->language->get('text_time');
+        $this->data['text_location'] = $this->language->get('text_location');
+        $this->data['text_num_seats'] = $this->language->get('text_num_seats');
+        $this->data['text_speaker'] = $this->language->get('text_speaker');
+        $this->data['text_phone'] = $this->language->get('text_phone');
+
         $this->data['button_cart'] = $this->language->get('button_cart');
         $this->data['button_wishlist'] = $this->language->get('button_wishlist');
         $this->data['button_compare'] = $this->language->get('button_compare');

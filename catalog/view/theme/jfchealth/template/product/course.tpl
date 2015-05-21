@@ -27,12 +27,12 @@
 					<td>&nbsp;</td>
 				  </tr>
 				  <tr>
-					<td class="index_course_content_txt">日期： <?PHP echo $courses[0]['course_date']; ?><br />
-					  時間： <?PHP echo $courses[0]['time_period']; ?><br />
-					  地點： <?PHP echo $courses[0]['location']; ?><br />
-					  名額： <?PHP echo $courses[0]['seats']; ?>名<br />
-					  主講： <?PHP echo $courses[0]['speaker']; ?><br />
-					  查詢： <?PHP echo $courses[0]['phone']; ?></td>
+					<td class="index_course_content_txt"><?PHP echo $text_date; ?> <?PHP echo $courses[0]['course_date']; ?><br />
+					  <?PHP echo $text_time; ?> <?PHP echo $courses[0]['time_period']; ?><br />
+					  <?PHP echo $text_location; ?> <?PHP echo $courses[0]['location']; ?><br />
+					  <?PHP echo $text_num_seats; ?> <?PHP echo $courses[0]['seats']; ?>名<br />
+					  <?PHP echo $text_speaker; ?> <?PHP echo $courses[0]['speaker']; ?><br />
+					  <?PHP echo $text_phone; ?> <?PHP echo $courses[0]['phone']; ?></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				  </tr>
@@ -67,18 +67,24 @@
 					<td>&nbsp;</td>
 				  </tr>
 				  <tr>
-					<td class="index_course_content_txt">日期： <?PHP echo $courses[$idx]['course_date']; ?><br />
-					  時間： <?PHP echo $courses[$idx]['time_period']; ?><br />
-					  地點： <?PHP echo $courses[$idx]['location']; ?><br />
-					  名額： <?PHP echo $courses[$idx]['seats']; ?>名<br />
-					  主講： <?PHP echo $courses[$idx]['speaker']; ?><br />
-					  查詢： <?PHP echo $courses[$idx]['phone']; ?></td>
+					<td class="index_course_content_txt"><?PHP echo $text_date; ?> <?PHP echo $courses[$idx]['course_date']; ?><br />
+					  <?PHP echo $text_time; ?> <?PHP echo $courses[$idx]['time_period']; ?><br />
+					  <?PHP echo $text_location; ?> <?PHP echo $courses[$idx]['location']; ?><br />
+					  <?PHP echo $text_num_seats; ?> <?PHP echo $courses[$idx]['seats']; ?>名<br />
+					  <?PHP echo $text_speaker; ?> <?PHP echo $courses[$idx]['speaker']; ?><br />
+					  <?PHP echo $text_phone; ?> <?PHP echo $courses[$idx]['phone']; ?></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				  </tr>
 				</table></td>
 				</tr>
 			  <?PHP } else {break;} ?>
+			  <tr>
+				<td height="20">&nbsp;</td>
+				</tr>
+			  <tr>
+				<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_course_line.png" width="903" height="1" /></td>
+				</tr>
 			  <tr>
 				<td height="20">&nbsp;</td>
 				</tr>

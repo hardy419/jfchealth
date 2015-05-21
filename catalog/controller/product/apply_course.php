@@ -6,7 +6,7 @@ class ControllerProductApplyCourse extends Controller {
         $this->data['course_id'] = $this->request->get['cid'];
 
         $this->data['text_name'] = $this->language->get('text_name');
-        $this->data['text_phone'] = $this->language->get('text_phone');
+        $this->data['text_telephone'] = $this->language->get('text_telephone');
         $this->data['text_email'] = $this->language->get('text_email');
         $this->data['text_customername'] = $this->language->get('text_customername');
         $this->data['text_notice_required'] = $this->language->get('text_notice_required');

@@ -26,7 +26,7 @@
             <TD height="30" width="100" align="left"><?PHP echo $text_name; ?></TD>
             <TD><INPUT id="form_name" size="20" name='name' /><INPUT type="hidden" id="form_courseid" name='course_id' value="<?PHP echo $course_id; ?>"/></TD></TR>
             <TR>
-            <TD><?PHP echo $text_phone; ?></TD>
+            <TD><?PHP echo $text_telephone; ?></TD>
             <TD><INPUT id="form_phone" size="20" name='phone' /></TD></TR>
             <TR>
             <TD><?PHP echo $text_email; ?></TD>

@@ -1,10 +1,10 @@
 <?php
 // Text
-$_['text_name']       = '会员名: ';
-$_['text_phone']       = '电话: ';
-$_['text_email']       = '邮箱地址: ';
-$_['text_customername']       = '姓名: ';
-$_['text_notice_required']       = '請注意，有<span style="color:#ff0000">*</span>號的必須填寫。';
+$_['text_name']       = '姓名: ';
+$_['text_telephone']   = '电话: ';
+$_['text_email']       = '邮箱: ';
+$_['text_customername']       = '会员名: ';
+$_['text_notice_required']       = '请注意，有<span style="color:#ff0000">*</span>号的必须填写。';
 $_['text_notice_message_sent']       = '您的电邮已发送，谢谢';
 $_['text_search']       = 'Search';
 $_['text_brand']        = 'Brand';
@@ -33,6 +33,13 @@ $_['text_wait']         = 'Please Wait!';
 $_['text_tags']         = 'Tags:';
 $_['text_error']        = 'Product not found!';
 $_['text_payment_profile'] = 'Payment Profiles';
+
+$_['text_date']        = '日期：';
+$_['text_time']        = '时间：';
+$_['text_location']    = '地点：';
+$_['text_num_seats']   = '名额：';
+$_['text_speaker']     = '主讲：';
+$_['text_phone']       = '查询：';
 
 $_['text_trial_description'] = '%s every %d %s(s) for %d payment(s) then';
 $_['text_payment_description'] = '%s every %d %s(s) for %d payment(s)';

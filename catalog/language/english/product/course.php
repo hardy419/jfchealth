@@ -1,7 +1,7 @@
 <?php
 // Text
 $_['text_name']       = 'Name: ';
-$_['text_phone']       = 'Phone: ';
+$_['text_telephone']   = 'Phone: ';
 $_['text_email']       = 'Email: ';
 $_['text_customername']       = 'Customer Name: ';
 $_['text_notice_required']       = 'Please notice that blanks with <span style="color:#ff0000">*</span> are required.';
@@ -33,6 +33,13 @@ $_['text_wait']         = 'Please Wait!';
 $_['text_tags']         = 'Tags:';
 $_['text_error']        = 'Product not found!';
 $_['text_payment_profile'] = 'Payment Profiles';
+
+$_['text_date']        = 'Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+$_['text_time']        = 'Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+$_['text_location']    = 'Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+$_['text_num_seats']   = 'Seats Available:&nbsp;&nbsp;';
+$_['text_speaker']     = 'Speaker:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+$_['text_phone']       = 'Telephone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 
 $_['text_trial_description'] = '%s every %d %s(s) for %d payment(s) then';
 $_['text_payment_description'] = '%s every %d %s(s) for %d payment(s)';
