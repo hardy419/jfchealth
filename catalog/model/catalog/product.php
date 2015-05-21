@@ -974,18 +974,18 @@ class ModelCatalogProduct extends Model {
 
 		return $query->row;
     }
-    public function getNewestMagazine() {
+    public function getMagazines() {
 		if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
 		} else {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=5 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=5 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC";
 
 		$query = $this->db->query($sql);
 
-		return $query->row;
+		return $query->rows;
     }
 
 }

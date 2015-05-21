@@ -1,7 +1,7 @@
 <?php
 // Text
-$_['text_name']       = '姓名: ';
-$_['text_telephone']   = '电话: ';
+$_['text_name']       = '姓名<span style="color:#ff0000">*</span>: ';
+$_['text_telephone']   = '电话<span style="color:#ff0000">*</span>: ';
 $_['text_email']       = '邮箱: ';
 $_['text_customername']       = '会员名: ';
 $_['text_notice_required']       = '请注意，有<span style="color:#ff0000">*</span>号的必须填写。';

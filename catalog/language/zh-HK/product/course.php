@@ -1,7 +1,7 @@
 <?php
 // Text
-$_['text_name']       = '姓名: ';
-$_['text_telephone']   = '聯絡電話: ';
+$_['text_name']       = '姓名<span style="color:#ff0000">*</span>: ';
+$_['text_telephone']   = '聯絡電話<span style="color:#ff0000">*</span>: ';
 $_['text_email']       = '電郵地址: ';
 $_['text_customername']       = '會員名稱: ';
 $_['text_notice_required']       = '請注意，有<span style="color:#ff0000">*</span>號的必須填寫。';

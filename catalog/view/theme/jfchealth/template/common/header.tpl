@@ -66,7 +66,7 @@ function swt_lang(l) {
           </tr>
         </table></td>
         <td width="262" align="center"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></a></td>
-        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>簡</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("en")'>ENG</a></td>
+        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>简</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("en")'>ENG</a></td>
         </tr>
       <tr>
         <td>&nbsp;</td>

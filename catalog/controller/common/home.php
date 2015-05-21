@@ -30,8 +30,10 @@ class ControllerCommonHome extends Controller {
         $this->data['course_info'] = $this->model_catalog_product->getNewestCourse();
         $this->data['user_article_info'] = $this->model_catalog_product->getNewestUserArticle();
         $this->data['video_info'] = $this->model_catalog_product->getNewestVideo();
-        $this->data['magazine_info'] = $this->model_catalog_product->getNewestMagazine();
-        $this->data['magazine_info']['image'] = DIR_IMAGE.$this->data['magazine_info']['image'];
+        $this->data['magazine_info'] = $this->model_catalog_product->getMagazines();
+        foreach ($this->data['magazine_info'] as &$magz) {
+            $magz['image'] = DIR_IMAGE.$magz['image'];
+        }
 
         $this->document->addScript('catalog/view/theme/jfchealth/js/home.js');
         $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/home.css');

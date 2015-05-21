@@ -1,7 +1,7 @@
 <?php
 // Text
-$_['text_name']       = 'Name: ';
-$_['text_telephone']   = 'Phone: ';
+$_['text_name']       = 'Name<span style="color:#ff0000">*</span>: ';
+$_['text_telephone']   = 'Phone<span style="color:#ff0000">*</span>: ';
 $_['text_email']       = 'Email: ';
 $_['text_customername']       = 'Customer Name: ';
 $_['text_notice_required']       = 'Please notice that blanks with <span style="color:#ff0000">*</span> are required.';
