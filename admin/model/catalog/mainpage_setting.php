@@ -59,5 +59,19 @@ class ModelCatalogMainpageSetting extends Model {
         $query = $this->db->query("SELECT c.date, cd.name FROM oc_course c LEFT JOIN oc_course_description cd ON c.course_id=cd.course_id WHERE c.course_id = '" . (int)$course_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
         return $query->row['name'].' '.$query->row['date'];
     }
+
+	public function getCourses() {
+		$sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON (c.course_id = cd.course_id)";
+
+		$sql .= " WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "'"; 
+
+		$sql .= " GROUP BY c.course_id";
+
+		$sql .= " ORDER BY c.date DESC";
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+	}
 }
 ?>

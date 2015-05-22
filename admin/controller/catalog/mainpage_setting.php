@@ -20,7 +20,7 @@ class ControllerCatalogMainpageSetting extends Controller {
 		$this->load->model('catalog/mainpage_setting');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_option->editOption($this->request->get['option_id'], $this->request->post);
+			$this->model_catalog_mainpage_setting->editSetting($this->request->get['main_setting_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -38,7 +38,7 @@ class ControllerCatalogMainpageSetting extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->redirect($this->url->link('catalog/option', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+			$this->redirect($this->url->link('catalog/mainpage_setting', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
 
 		$this->getForm();
@@ -264,83 +264,43 @@ class ControllerCatalogMainpageSetting extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => 'Main Page Settings', //$this->language->get('heading_title'),
-			'href'      => $this->url->link('catalog/option', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+			'href'      => $this->url->link('catalog/mainpage_setting', 'token=' . $this->session->data['token'] . $url, 'SSL'),
 			'separator' => ' :: '
 		);
 
-		if (!isset($this->request->get['option_id'])) {
-			$this->data['action'] = $this->url->link('catalog/option/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		if (!isset($this->request->get['main_setting_id'])) {
+			$this->data['action'] = $this->url->link('catalog/mainpage_setting/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		} else { 
-			$this->data['action'] = $this->url->link('catalog/option/update', 'token=' . $this->session->data['token'] . '&option_id=' . $this->request->get['option_id'] . $url, 'SSL');
+			$this->data['action'] = $this->url->link('catalog/mainpage_setting/update', 'token=' . $this->session->data['token'] . '&main_setting_id=' . $this->request->get['main_setting_id'] . $url, 'SSL');
 		}
 
-		$this->data['cancel'] = $this->url->link('catalog/option', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['cancel'] = $this->url->link('catalog/mainpage_setting', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-		if (isset($this->request->get['option_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-			$option_info = $this->model_catalog_option->getOption($this->request->get['option_id']);
+		if (isset($this->request->get['main_setting_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
+			$setting_info = $this->model_catalog_mainpage_setting->getSetting($this->request->get['main_setting_id']);
 		}
 
 		$this->data['token'] = $this->session->data['token'];
 
-		$this->load->model('localisation/language');
-
-		$this->data['languages'] = $this->model_localisation_language->getLanguages();
-
-		if (isset($this->request->post['option_description'])) {
-			$this->data['option_description'] = $this->request->post['option_description'];
-		} elseif (isset($this->request->get['option_id'])) {
-			$this->data['option_description'] = $this->model_catalog_option->getOptionDescriptions($this->request->get['option_id']);
+		if (isset($this->request->post['key'])) {
+			$this->data['key'] = $this->request->post['key'];
+		} elseif (!empty($setting_info)) {
+			$this->data['key'] = $setting_info['key'];
 		} else {
-			$this->data['option_description'] = array();
-		}	
-
-		if (isset($this->request->post['type'])) {
-			$this->data['type'] = $this->request->post['type'];
-		} elseif (!empty($option_info)) {
-			$this->data['type'] = $option_info['type'];
-		} else {
-			$this->data['type'] = '';
+			$this->data['key'] = '';
 		}
 
-		if (isset($this->request->post['sort_order'])) {
-			$this->data['sort_order'] = $this->request->post['sort_order'];
-		} elseif (!empty($option_info)) {
-			$this->data['sort_order'] = $option_info['sort_order'];
+		if (isset($this->request->post['value'])) {
+			$this->data['value'] = $this->request->post['value'];
+		} elseif (!empty($setting_info)) {
+			$this->data['value'] = $setting_info['value'];
 		} else {
-			$this->data['sort_order'] = '';
+			$this->data['value'] = '';
 		}
 
-		if (isset($this->request->post['option_value'])) {
-			$option_values = $this->request->post['option_value'];
-		} elseif (isset($this->request->get['option_id'])) {
-			$option_values = $this->model_catalog_option->getOptionValueDescriptions($this->request->get['option_id']);
-		} else {
-			$option_values = array();
-		}
+        $this->data['course_info'] = $this->model_catalog_mainpage_setting->getCourses ();
 
-		$this->load->model('tool/image');
-
-		$this->data['option_values'] = array();
-
-		foreach ($option_values as $option_value) {
-			if ($option_value['image'] && file_exists(DIR_IMAGE . $option_value['image'])) {
-				$image = $option_value['image'];
-			} else {
-				$image = 'no_image.jpg';
-			}
-
-			$this->data['option_values'][] = array(
-				'option_value_id'          => $option_value['option_value_id'],
-				'option_value_description' => $option_value['option_value_description'],
-				'image'                    => $image,
-				'thumb'                    => $this->model_tool_image->resize($image, 100, 100),
-				'sort_order'               => $option_value['sort_order']
-			);
-		}
-
-		$this->data['no_image'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
-
-		$this->template = 'catalog/option_form.tpl';
+		$this->template = 'catalog/mainpage_setting_form.tpl';
 		$this->children = array(
 			'common/header',
 			'common/footer'
@@ -350,28 +310,8 @@ class ControllerCatalogMainpageSetting extends Controller {
 	}
 
 	protected function validateForm() {
-		if (!$this->user->hasPermission('modify', 'catalog/option')) {
+		if (!$this->user->hasPermission('modify', 'catalog/mainpage_setting')) {
 			$this->error['warning'] = $this->language->get('error_permission');
-		}
-
-		foreach ($this->request->post['option_description'] as $language_id => $value) {
-			if ((utf8_strlen($value['name']) < 1) || (utf8_strlen($value['name']) > 128)) {
-				$this->error['name'][$language_id] = $this->language->get('error_name');
-			}
-		}
-
-		if (($this->request->post['type'] == 'select' || $this->request->post['type'] == 'radio' || $this->request->post['type'] == 'checkbox') && !isset($this->request->post['option_value'])) {
-			$this->error['warning'] = $this->language->get('error_type');
-		}
-
-		if (isset($this->request->post['option_value'])) {
-			foreach ($this->request->post['option_value'] as $option_value_id => $option_value) {
-				foreach ($option_value['option_value_description'] as $language_id => $option_value_description) {
-					if ((utf8_strlen($option_value_description['name']) < 1) || (utf8_strlen($option_value_description['name']) > 128)) {
-						$this->error['option_value'][$option_value_id][$language_id] = $this->language->get('error_option_value'); 
-					}					
-				}
-			}	
 		}
 
 		if (!$this->error) {
@@ -379,92 +319,6 @@ class ControllerCatalogMainpageSetting extends Controller {
 		} else {
 			return false;
 		}
-	}
-
-	public function autocomplete() {
-		$json = array();
-
-		if (isset($this->request->get['filter_name'])) {
-			$this->language->load('catalog/option');
-
-			$this->load->model('catalog/option');
-
-			$this->load->model('tool/image');
-
-			$data = array(
-				'filter_name' => $this->request->get['filter_name'],
-				'start'       => 0,
-				'limit'       => 20
-			);
-
-			$options = $this->model_catalog_option->getOptions($data);
-
-			foreach ($options as $option) {
-				$option_value_data = array();
-
-				if ($option['type'] == 'select' || $option['type'] == 'radio' || $option['type'] == 'checkbox' || $option['type'] == 'image') {
-					$option_values = $this->model_catalog_option->getOptionValues($option['option_id']);
-
-					foreach ($option_values as $option_value) {
-						if ($option_value['image'] && file_exists(DIR_IMAGE . $option_value['image'])) {
-							$image = $this->model_tool_image->resize($option_value['image'], 50, 50);
-						} else {
-							$image = '';
-						}
-
-						$option_value_data[] = array(
-							'option_value_id' => $option_value['option_value_id'],
-							'name'            => html_entity_decode($option_value['name'], ENT_QUOTES, 'UTF-8'),
-							'image'           => $image					
-						);
-					}
-
-					$sort_order = array();
-
-					foreach ($option_value_data as $key => $value) {
-						$sort_order[$key] = $value['name'];
-					}
-
-					array_multisort($sort_order, SORT_ASC, $option_value_data);					
-				}
-
-				$type = '';
-
-				if ($option['type'] == 'select' || $option['type'] == 'radio' || $option['type'] == 'checkbox' || $option['type'] == 'image') {
-					$type = $this->language->get('text_choose');
-				}
-
-				if ($option['type'] == 'text' || $option['type'] == 'textarea') {
-					$type = $this->language->get('text_input');
-				}
-
-				if ($option['type'] == 'file') {
-					$type = $this->language->get('text_file');
-				}
-
-				if ($option['type'] == 'date' || $option['type'] == 'datetime' || $option['type'] == 'time') {
-					$type = $this->language->get('text_date');
-				}
-
-				$json[] = array(
-					'option_id'    => $option['option_id'],
-					'name'         => strip_tags(html_entity_decode($option['name'], ENT_QUOTES, 'UTF-8')),
-					'category'     => $type,
-					'type'         => $option['type'],
-					'option_value' => $option_value_data
-				);
-			}
-		}
-
-		$sort_order = array();
-
-		foreach ($json as $key => $value) {
-			$sort_order[$key] = $value['name'];
-		}
-
-		array_multisort($sort_order, SORT_ASC, $json);
-
-		$this->response->setOutput(json_encode($json));
 	}
 }
 ?>

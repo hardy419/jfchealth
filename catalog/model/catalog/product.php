@@ -942,7 +942,9 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON c.course_id=cd.course_id WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.time DESC LIMIT 1";
+        $course_id = $this->db->query('SELECT value FROM ' . DB_PREFIX . 'main_setting WHERE main_setting_id=1')->row['value'];
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON c.course_id=cd.course_id WHERE c.course_id = " . (int)$course_id . " AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		$query = $this->db->query($sql);
 

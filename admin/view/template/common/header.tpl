@@ -65,7 +65,7 @@ $(document).ready(function(){
       <!--li id="dashboard"><a href="<?php echo $home; ?>" class="top"><?php echo $text_dashboard; ?></a></li-->
       <li id="catalog"><a class="top"><?php echo $text_catalog; ?></a>
         <ul>
-          <li><a href="<?php echo $main_page; ?>"><?php echo 'Main Page'; ?></a></li>
+          <li><a href="<?php echo $main_page; ?>"><?php echo 'Main Page Settings'; ?></a></li>
           <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
           <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
           <!--li><a href="<?php echo $support; ?>"><?php echo $text_support; ?></a></li>

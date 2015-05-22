@@ -23,9 +23,9 @@
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
               <td class="left"><?php if ($sort == 'ms.key') { ?>
-                <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Key'; ?></a>
+                <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Name'; ?></a>
                 <?php } else { ?>
-                <a href="<?php echo $sort_name; ?>"><?php echo 'Key'; ?></a>
+                <a href="<?php echo $sort_name; ?>"><?php echo 'Name'; ?></a>
                 <?php } ?></td>
               <td class="right"><?php if ($sort == 'ms.value') { ?>
                 <a href="<?php echo $sort_sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Value'; ?></a>
