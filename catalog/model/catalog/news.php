@@ -8,7 +8,7 @@ class ModelCatalogNews extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	*/
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.news_id={$news_id} AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.news_id=" . (int)$news_id . " AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		$query = $this->db->query($sql);
 
