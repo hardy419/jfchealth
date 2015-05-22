@@ -75,7 +75,7 @@ class ControllerCatalogCourse extends Controller {
 
 		$this->getForm();
 	}
-
+/*
 	public function delete() {
 		$this->language->load('catalog/course');
 
@@ -109,7 +109,7 @@ class ControllerCatalogCourse extends Controller {
 
 		$this->getList();
 	}
-
+*/
 	public function copy() {
 		$this->language->load('catalog/course');
 

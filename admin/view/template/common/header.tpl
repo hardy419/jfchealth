@@ -83,7 +83,12 @@ $(document).ready(function(){
           <li><a href="<?php echo $review; ?>"><?php echo $text_review; ?></a></li-->
           <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
           <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
-          <li><a href="<?php echo $course; ?>"><?php echo $text_course; ?></a></li>
+          <li><a class="parent"><?php echo $text_course; ?></a>
+            <ul>
+              <li><a href="<?php echo $course; ?>"><?php echo $text_course; ?></a></li>
+              <li><a href="<?php echo $course_customer; ?>"><?php echo 'Customers'; ?></a></li>
+            </ul>
+          </li>
           <li><a class="parent"><?php echo $text_article; ?></a>
             <ul>
               <li><a href="<?php echo $user_article; ?>"><?php echo $text_user_article; ?></a></li>

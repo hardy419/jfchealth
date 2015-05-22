@@ -3,6 +3,10 @@ class ControllerProductNews extends Controller {
     private function getIntro($html) {
         $start = strpos ($html, '>', strpos ($html, 'index_content_txt'))+1;
         $end = strpos ($html, '<', $start);
+        while($end-$start < 10) {
+            $start = strpos ($html, '>', $end)+1;
+            $end = strpos ($html, '<', $start);
+        }
         return substr($html, $start, $end-$start);
     }
 

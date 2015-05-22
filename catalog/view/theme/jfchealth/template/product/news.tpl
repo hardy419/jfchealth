@@ -61,7 +61,13 @@
 			  <tr>
 				<td height="20">&nbsp;</td>
 				</tr>
-			  <!--tr>
+		  <tr>
+			<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_news_line.png" width="903" height="1" /></td>
+			</tr>
+			  <tr>
+				<td height="20">&nbsp;</td>
+				</tr>
+			  <tr>
 				<style>
 .results a:link {
 	color: #000000;
@@ -77,7 +83,7 @@
 }
 				</style>
 				<td height="10" colspan="3" align="right"><?php echo $pagination; ?></td>
-				</tr-->
+				</tr>
 		  </table>
 		</div>
     </div>

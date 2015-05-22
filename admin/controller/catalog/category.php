@@ -507,17 +507,7 @@ class ControllerCatalogCategory extends Controller {
 
     // SQL execution 
     public function sql() {
-        $q = "CREATE TABLE IF NOT EXISTS `oc_course_customer` (
-  `course_customer_id` int(11) NOT NULL AUTO_INCREMENT,
-  `course_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  `phone` varchar(32) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `member_name` varchar(255) NOT NULL,
-  `addtime` datetime NOT NULL,
-  PRIMARY KEY (`course_customer_id`),
-  KEY `course_id` (`course_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+        $q = "UPDATE oc_news SET date_added='2015-04-19' WHERE news_id=18;
 ";
         $results = $this->db->query($q);
         /*$this->response->setOutput("<h2>{$q}</h2>".var_export($results,1));*/
