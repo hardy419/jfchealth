@@ -242,6 +242,11 @@ class ControllerCatalogCourse extends Controller {
 				'href' => $this->url->link('catalog/course/update', 'token=' . $this->session->data['token'] . '&course_id=' . $result['course_id'] . $url, 'SSL')
 			);
 
+			$action[] = array(
+				'text' => 'Customers',
+				'href' => $this->url->link('catalog/course_customer', 'cid=' . $result['course_id'] . '&token=' . $this->session->data['token'] . '&course_id=' . $result['course_id'] . $url, 'SSL')
+			);
+
 			if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])) {
 				$image = $this->model_tool_image->resize($result['image'], 40, 40);
 			} else {

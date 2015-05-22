@@ -61,5 +61,25 @@ class ModelCatalogCourse extends Model {
 
 		return $query->row['total'];
 	}
+
+    public function getCourseNumSeats($cid) {
+		$sql = "SELECT seats FROM " . DB_PREFIX . "course WHERE course_id = " . (int)$cid;
+
+		$query = $this->db->query($sql);
+
+		return $query->row['seats'];
+    }
+
+	public function addCourseCustomer($data) {
+		$this->db->query("INSERT INTO " . DB_PREFIX . "course_customer SET course_id = " . (int)$data['course_id'] . ", name = '" . $this->db->escape($data['name']) . "', phone = '" . $this->db->escape($data['phone']) . "', email = '" . $this->db->escape($data['email']) . "', member_name = '" . $this->db->escape($data['member_name']) . "', addtime = NOW()");
+	}
+
+	public function getTotalCourseCustomer($cid) {
+		$sql = "SELECT COUNT(DISTINCT course_customer_id) AS total FROM " . DB_PREFIX . "course_customer WHERE course_id = " . (int)$cid;
+
+		$query = $this->db->query($sql);
+
+		return $query->row['total'];
+	}	
 }
 ?>

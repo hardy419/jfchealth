@@ -49,13 +49,13 @@ function course_submit(){
         type: "POST",
         url:"?route=product/apply_course/formSubmit",
         data:$('#apply_form').serialize(),
+        dataType:"json",
         error: function(request) {
         },
         success: function(data) {
-            //alert(data);
+          parent.js_iframe_info('?route=product/apply_course/info&msg=' + data.msg);
         }
     });
-    parent.js_iframe_info('?route=product/apply_course/info');
 }
 </SCRIPT>
 </BODY>

@@ -19,7 +19,7 @@ class ModelCatalogCourseCustomer extends Model {
 	}
 
 	public function getCourseCustomers($data = array()) {
-		$sql = "SELECT * FROM " . DB_PREFIX . "course_customer GROUP BY course_customer_id";
+		$sql = "SELECT * FROM " . DB_PREFIX . "course_customer" . (isset($data['cid']) ? ' WHERE course_id = ' . $data['cid'] : '') . " GROUP BY course_customer_id";
 
 		$sort_data = array(
 			'course_id',
@@ -57,7 +57,7 @@ class ModelCatalogCourseCustomer extends Model {
 	}
 
 	public function getTotalCourseCustomer($data = array()) {
-		$sql = "SELECT COUNT(DISTINCT course_customer_id) AS total FROM " . DB_PREFIX . "course_customer";
+		$sql = "SELECT COUNT(DISTINCT course_customer_id) AS total FROM " . DB_PREFIX . "course_customer" . (isset($data['cid']) ? ' WHERE course_id = ' . $data['cid'] : '');
 
 		$query = $this->db->query($sql);
 

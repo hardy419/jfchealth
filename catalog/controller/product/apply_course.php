@@ -41,7 +41,12 @@ class ControllerProductApplyCourse extends Controller {
 	public function info() {
 		$this->language->load('product/course');
 
-        $this->data['text_notice_message_sent'] = $this->language->get('text_notice_message_sent');
+        if ($this->request->get['msg'] == 'success') {
+            $this->data['text_notice_message_sent'] = $this->language->get('text_notice_message_sent');
+        }
+        else {
+            $this->data['text_notice_message_sent'] = $this->language->get('text_notice_seats_unavailable');
+        }
 
         $this->data['css_ref'] = array();
         $this->data['css_ref'][] = 'catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/apply_course.css';
@@ -70,6 +75,7 @@ class ControllerProductApplyCourse extends Controller {
 	}
 
     public function formSubmit() {
+/*
         require('system/library/class.phpmailer.php');
         require('system/library/class.smtp.php');
         $name = $_POST['name'];
@@ -79,7 +85,32 @@ class ControllerProductApplyCourse extends Controller {
         $subject = 'Message From JFC User';
         $body = 'A customer ordered a position for course #'.$_POST['course_id'].'<br/><br/>Name: '.$name.'<br/>Email: '.$email.'<br/>Phone: '.$phone;
         $this->postMail ($body, $subject, '540115739@qq.com', '2757144278@qq.com');
+*/
+        $this->load->model ('catalog/course');
+        $num_application = $this->model_catalog_course->getTotalCourseCustomer ($this->request->post['course_id']);
+        $num_seats = $this->model_catalog_course->getCourseNumSeats ($this->request->post['course_id']);
+        if ($num_application < $num_seats) {
+            $data = array(
+                'course_id' => $this->request->post['course_id'],
+                'name'      => $this->request->post['name'],
+                'phone'     => $this->request->post['phone'],
+                'email'     => $this->request->post['email'],
+                'member_name'      => $this->request->post['customername']
+            );
+            $this->model_catalog_course->addCourseCustomer($data);
+
+            $ret = array(
+              'msg' => 'success'
+            );
+        }
+        else {
+            $ret = array(
+              'msg' => 'failed'
+            );
+        }
+        echo json_encode ($ret);
     }
+
     public function postMail($body,$subject,$to,$name,$isHTML = true) {
         $mail = new PHPMailer;
         $mail->CharSet = 'UTF-8';

@@ -3,7 +3,7 @@ class ControllerCatalogCourseCustomer extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->language->load('catalog/course_customer');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle('Customer'/*$this->language->get('heading_title')*/); 
 
@@ -13,7 +13,7 @@ class ControllerCatalogCourseCustomer extends Controller {
 	}
 
 	public function insert() {
-		$this->language->load('catalog/course_customer');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle('Customer'/*$this->language->get('heading_title')*/);
 
@@ -24,7 +24,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$url = '';
+            if (isset ($this->request->get['cid'])) {
+                $url = '&cid=' . $this->request->get['cid'];
+            }
+            else {
+                $url = '';
+            }
 
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
@@ -45,7 +50,7 @@ class ControllerCatalogCourseCustomer extends Controller {
 	}
 
 	public function update() {
-		$this->language->load('catalog/course_customer');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle('Customer'/*$this->language->get('heading_title')*/);
 
@@ -56,7 +61,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$url = '';
+            if (isset ($this->request->get['cid'])) {
+                $url = '&cid=' . $this->request->get['cid'];
+            }
+            else {
+                $url = '';
+            }
 
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
@@ -77,7 +87,7 @@ class ControllerCatalogCourseCustomer extends Controller {
 	}
 
 	public function delete() {
-		$this->language->load('catalog/course_customer');
+		$this->language->load('catalog/course');
 
 		$this->document->setTitle('Customer'/*$this->language->get('heading_title')*/);
 
@@ -90,7 +100,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$url = '';
+            if (isset ($this->request->get['cid'])) {
+                $url = '&cid=' . $this->request->get['cid'];
+            }
+            else {
+                $url = '';
+            }
 
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
@@ -130,8 +145,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 			$page = 1;
 		}
 
-		$url = '';
-
+        if (isset ($this->request->get['cid'])) {
+            $url = '&cid=' . $this->request->get['cid'];
+        }
+        else {
+            $url = '';
+        }
 
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
@@ -172,6 +191,9 @@ class ControllerCatalogCourseCustomer extends Controller {
 			'start'           => ($page - 1) * $this->config->get('config_admin_limit'),
 			'limit'           => $this->config->get('config_admin_limit')
 		);
+        if (isset ($this->request->get['cid'])) {
+            $data['cid'] = $this->request->get['cid'];
+        }
 
         // Retrieving data
 		$course_total = $this->model_catalog_course_customer->getTotalCourseCustomer($data);
@@ -233,7 +255,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 		}
 
         // Build url with sorts
-		$url = '';
+        if (isset ($this->request->get['cid'])) {
+            $url = '&cid=' . $this->request->get['cid'];
+        }
+        else {
+            $url = '';
+        }
 
 		if ($order == 'ASC') {
 			$url .= '&order=DESC';
@@ -252,7 +279,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 		$this->data['sort_course_id'] = $this->url->link('catalog/course_customer', 'token=' . $this->session->data['token'] . '&sort=course_id' . $url, 'SSL');
 
         // Build url for pagination
-		$url = '';
+        if (isset ($this->request->get['cid'])) {
+            $url = '&cid=' . $this->request->get['cid'];
+        }
+        else {
+            $url = '';
+        }
 
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
@@ -360,7 +392,12 @@ class ControllerCatalogCourseCustomer extends Controller {
 		}	
 
         // Build basic sort, order, page urls
-		$url = '';
+        if (isset ($this->request->get['cid'])) {
+            $url = '&cid=' . $this->request->get['cid'];
+        }
+        else {
+            $url = '';
+        }
 
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
