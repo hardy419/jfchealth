@@ -90,7 +90,7 @@
 <script>
 function export_xls()
 {
-  $("#table-to-export").tableExport({type:'excel',separator:';',escape:'false'});
+  $("#table-to-export").tableExport({type:'excel',separator:';',escape:'false',ignoreColumn:'6'});
 }
 </script>
 <?php echo $footer; ?>
