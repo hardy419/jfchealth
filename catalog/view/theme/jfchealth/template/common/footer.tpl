@@ -7,7 +7,7 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="left" valign="top"><table width="430" border="0" cellspacing="0" cellpadding="0">
+    <td align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="56" class="footer_txt"><a href="index.php?route=product/news" target="_parent">最新消息</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
@@ -22,6 +22,8 @@
         <td width="56" class="footer_txt"><a href="index.php?route=product/magazine" target="_parent">頻譜生活</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
         <td width="56" class="footer_txt"><a href="index.php?route=information/contactus" target="_parent">聯絡我們</a></td>
+        <td width="10" class="footer_txt">&nbsp;</td>
+        <td width="180" class="footer_txt"><a href="http://www.jfcgroup.com.cn" target="_parent">駿豐頻譜中國官網</a></td>
       </tr>
     </table></td>
     <td align="right" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">

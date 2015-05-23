@@ -65,8 +65,8 @@ class ModelCatalogCourseCustomer extends Model {
 	}	
 
     public function getCourseName($course_id) {
-        $query = $this->db->query("SELECT c.date, cd.name FROM oc_course c LEFT JOIN oc_course_description cd ON c.course_id=cd.course_id WHERE c.course_id = '" . (int)$course_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
-        return $query->row['name'].' '.$query->row['date'];
+        $query = $this->db->query("SELECT cd.course_date, cd.name FROM oc_course c LEFT JOIN oc_course_description cd ON c.course_id=cd.course_id WHERE c.course_id = '" . (int)$course_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+        return $query->row['name'].' '.$query->row['course_date'];
     }
 
 	public function getCourses() {

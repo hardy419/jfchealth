@@ -17,7 +17,7 @@
 				<td width="20">&nbsp;</td>
 				<td width="690" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="560" class="index_course_title"><?PHP echo $courses[0]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[0]['date']; ?></td>
+					<td width="560" class="index_course_title"><?PHP echo $courses[0]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[0]['course_date']; ?></td>
 					<td width="20">&nbsp;</td>
 					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[0]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
 				  </tr>
@@ -57,7 +57,7 @@
 				<td width="20">&nbsp;</td>
 				<td width="690" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="560" class="index_course_title"><?PHP echo $courses[$idx]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[$idx]['date']; ?></td>
+					<td width="560" class="index_course_title"><?PHP echo $courses[$idx]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[$idx]['course_date']; ?></td>
 					<td width="20">&nbsp;</td>
 					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[$idx]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
 				  </tr>

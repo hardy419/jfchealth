@@ -22,9 +22,9 @@
 		<div id="product-image">
 			<table>
 				<tr>
-					<td><a style="position:relative;left:40px;" href="javascript:switch_product(0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
-					<td><a id="product-a" href="?route=product/product&path=99&product_id=185"><img id="product-img" src="<?PHP echo $dir_image; ?>product_home.png"></img></a></td>
-					<td><a style="position:relative;left:-40px;" href="javascript:switch_product(1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
+					<td><a style="position:relative;left:40px;z-index:2147483647" href="javascript:switch_product(0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
+					<td><a style="position:relative;left:276px;z-index:2147483647" href="javascript:switch_product(1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
+					<td><div style="width:330px;height:330px;border-radius:170px;left:-41px;top:7px;position:relative;overflow:hidden"><div style="left:10px;top:-25px;position:relative;"><ul class="banner_u" style="left:0;position: relative;padding:0"><?PHP foreach($product_urls as $key=>$url) { ?><li style="float:left"><a id="product-a" href="<?PHP echo "{$url}&path={$product_cids[$key]}&product_id={$product_ids[$key]}"; ?>"><img id="product-img" src="<?PHP echo $product_images[$key]; ?>"></img></a></li><?PHP } ?></ul></div></div></td>
 				</tr>
 			</table>
 		</div>
@@ -127,6 +127,12 @@ function switch_product(dir){
 	$('#product-name').html(name_list[list_i]);
 	//$('#product-description').html('');
 }
+</script>
+<script>
+var banner_width=310;
+$(document).ready(function (){linum=$(".banner_u li").length;w=banner_width*linum;$(".banner_u").css("width",w+"px");linums=$(".banner_btn li").length;w=20*linums;$(".banner_btn ul").css("width",w+"px");setTimeout(autopaly,5E3);$(".banner_btn li img").click(function(){var a=$(this).attr("s");cliplay(a)});
+function autopaly(){linum=$(".banner_u li").length;w=banner_width*linum;1<$(".banner_u li").length&&(ml=parseInt($(".banner_u").css("left")),0>=ml&&0==ml%banner_width&&(ml==-1*(w-banner_width)?$(".banner_u").animate({left:"0px"},"slow"):$(".banner_u").animate({left:ml-banner_width+"px"},"slow"),playbtn((ml-banner_width*2)/-banner_width>linum?"1":(ml-banner_width*2)/-banner_width)));setTimeout(autopaly,5E3)}function cliplay(a){$(".banner_u").animate({left:-banner_width*(a-1)+"px"},"slow");playbtn(a)}
+function playbtn(a){var b=$(".banner_btn li");$(b).each(function(b){$(this).find("img").attr("s")==a?$(this).find("img").attr("src",img_s_path):$(this).find("img").attr("src",img_e_path)})};});
 </script>
 
 <!-- Magazine list -->

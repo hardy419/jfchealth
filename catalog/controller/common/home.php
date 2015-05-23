@@ -23,7 +23,7 @@ class ControllerCommonHome extends Controller {
             $this->data['product_cids'][] = $product['category_id'];
             $this->data['product_images'][] = DIR_IMAGE.$product['filename'];//$this->model_tool_image->resize($product['filename'], 260, 297);
             $this->data['product_names'][] = $product['name'];
-            $this->data['product_description'][] = substr(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8'),0,100);
+            $this->data['product_description'][] = html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8');
         }
 
         $this->data['news_info'] = $this->model_catalog_product->getNewestNews();

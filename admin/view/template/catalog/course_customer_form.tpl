@@ -37,7 +37,7 @@
             <td>
               <select name="course_id">
                 <?php foreach ($course_info as $c) { ?>
-                <option value="<?php echo $c['course_id']; ?>" <?php if($c['course_id']===$course_id) echo 'selected'; ?>><?php echo $c['name'].' '.$c['date']; ?></option>
+                <option value="<?php echo $c['course_id']; ?>" <?php if($c['course_id']===$course_id) echo 'selected'; ?>><?php echo $c['name'].' '.$c['course_date']; ?></option>
                 <?php } ?>
               </select>
             </td>
