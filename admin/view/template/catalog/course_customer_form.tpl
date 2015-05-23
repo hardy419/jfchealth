@@ -33,7 +33,7 @@
             <td><input type="text" name="member_name" value="<?php echo $member_name; ?>" size="40" /></td>
           </tr>
           <tr>
-            <td><?php echo 'Course:'; ?></td>
+            <td><?php echo 'Applied Course:'; ?></td>
             <td>
               <select name="course_id">
                 <?php foreach ($course_info as $c) { ?>

@@ -14,19 +14,19 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/information.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a href="<?php echo $insert; ?>" class="button"><?php echo $button_insert; ?></a><a onclick="$('form').submit();" class="button"><?php echo $button_delete; ?></a><a onclick="export_csv();" class="button"><?php echo 'Export csv'; ?></a></div>
+      <div class="buttons"><a href="<?php echo $insert; ?>" class="button"><?php echo $button_insert; ?></a><a onclick="$('form').submit();" class="button"><?php echo $button_delete; ?></a><a onclick="export_xls();" class="button"><?php echo 'Export XLS'; ?></a></div>
     </div>
     <div class="content">
       <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form">
-        <table class="list">
+        <table id="table-to-export" class="list">
           <thead>
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
 
               <td class="left"><?php if ($sort == 'name') { ?>
-                <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
+                <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Name'; ?></a>
                 <?php } else { ?>
-                <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
+                <a href="<?php echo $sort_name; ?>"><?php echo 'Name'; ?></a>
                 <?php } ?></td>
               <td class="right"><?php if ($sort == 'phone') { ?>
                 <a href="<?php echo $sort_phone; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Telephone'; ?></a>
@@ -44,9 +44,9 @@
                 <a href="<?php echo $sort_member_name; ?>"><?php echo 'Member Name'; ?></a>
                 <?php } ?></td>
               <td class="right"><?php if ($sort == 'course_id') { ?>
-                <a href="<?php echo $sort_course_id; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Course'; ?></a>
+                <a href="<?php echo $sort_course_id; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Applied Course'; ?></a>
                 <?php } else { ?>
-                <a href="<?php echo $sort_course_id; ?>"><?php echo 'Course'; ?></a>
+                <a href="<?php echo $sort_course_id; ?>"><?php echo 'Applied Course'; ?></a>
                 <?php } ?></td>
 
               <td class="right"><?php echo $column_action; ?></td>
@@ -85,4 +85,12 @@
     </div>
   </div>
 </div>
+<script src="view/javascript/tableExport/tableExport.js"></script>
+<!--script src="view/javascript/tableExport/base64.js"></script-->
+<script>
+function export_xls()
+{
+  $("#table-to-export").tableExport({type:'excel',separator:';',escape:'false'});
+}
+</script>
 <?php echo $footer; ?>
