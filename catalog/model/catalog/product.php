@@ -70,7 +70,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON p.product_id=p2c.product_id LEFT JOIN " . DB_PREFIX . "product_description pd ON p.product_id=pd.product_id  WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON p.product_id=p2c.product_id LEFT JOIN " . DB_PREFIX . "product_description pd ON p.product_id=pd.product_id  WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY p.date_added ASC";
 
 		$query = $this->db->query($sql);
 
@@ -929,11 +929,11 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=1 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=1 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC";
 
 		$query = $this->db->query($sql);
 
-		return $query->row;
+		return $query->rows;
     }
     public function getNewestCourse() {
 		if ($this->customer->isLogged()) {

@@ -1,40 +1,28 @@
 <?php echo $header; ?>
 
-<style>
-#news-section-img
-{
-    background-image: url("<?PHP echo $dir_image; ?>img_index_news_photo01.png");
-    width:208px;
-    height:176px;
-    margin-left:10px;
-}
-</style>
 <div class="content">
 	<div class="content-background">
 		<div id="news-section">
 			<img src="<?PHP echo $dir_image_lang; ?>img_index_newstitle.png" width="230" height="25" border="0" usemap="#Map" />
-			<div id="news-section-img">
-				<div class="news-section-intro">
-					<p class="index_news_title">愛的事業‧再啟航”駿豐頻譜第13屆健康大使表彰大會</p>
-				</div>
-			</div>
+            <div style="overflow:hidden;width:208px;height:176px;position:relative;left:10px"><div style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#fff;width:208px;height:70px;position:absolute;top:110px;z-index:2147483646"></div><ul class="slide-left" style="padding:0;position:relative" uw="208" uh="176"><?PHP foreach ($news_info as $news) { ?><li style="float:left"><img src="<?PHP echo DIR_IMAGE.$news['image']; ?>" style="width:208px;height:176px;"></img><p class="index_news_title" style="width:188px;position:relative;top:-90px;left:10px;z-index:2147483647"><?PHP echo $news['title']; ?></p></li><?PHP } ?></ul></div>
 		</div>
 		<div id="product-image">
 			<table>
 				<tr>
-					<td><a style="position:relative;left:40px;z-index:2147483647" href="javascript:switch_product(0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
-					<td><a style="position:relative;left:276px;z-index:2147483647" href="javascript:switch_product(1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
-					<td><div style="width:330px;height:330px;border-radius:170px;left:-41px;top:7px;position:relative;overflow:hidden"><div style="left:10px;top:-25px;position:relative;"><ul class="banner_u" style="left:0;position: relative;padding:0"><?PHP foreach($product_urls as $key=>$url) { ?><li style="float:left"><a id="product-a" href="<?PHP echo "{$url}&path={$product_cids[$key]}&product_id={$product_ids[$key]}"; ?>"><img id="product-img" src="<?PHP echo $product_images[$key]; ?>"></img></a></li><?PHP } ?></ul></div></div></td>
+					<td><a style="position:relative;left:40px;z-index:2147483647" href="javascript:slide($('#product-img-u'),0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
+					<td><a style="position:relative;left:276px;z-index:2147483647" href="javascript:slide($('#product-img-u'),1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
+					<td><div style="width:330px;height:330px;border-radius:170px;left:-41px;top:7px;position:relative;overflow:hidden"><div style="left:10px;top:-25px;position:relative;"><ul class="slide-right" id="product-img-u" style="left:0;position: relative;padding:0" uw="310"><?PHP foreach($product_urls as $key=>$url) { ?><li style="float:left"><a id="product-a" href="<?PHP echo "{$url}&path={$product_cids[$key]}&product_id={$product_ids[$key]}"; ?>"><img id="product-img" src="<?PHP echo $product_images[$key]; ?>"></img></a></li><?PHP } ?></ul></div></div></td>
 				</tr>
 			</table>
 		</div>
-		<div id="product-section">
-				<p height="60" id="product-name" class="index_discription_title">半截式<br />
-				  駿豐頻譜水保健儀</p>
+		<div id="product-section" style="overflow:hidden">
+          <ul class="slide-right" uw="230" style="padding:0;position:relative">
+            <?PHP foreach($product_names as $key=>$name) { ?><li style="float:left;width:230px;height:200px">
+				<p height="60" id="product-name" class="index_discription_title"><?PHP echo $name; ?></p>
 			  
-				<p height="100" id="product-description" class="index_content_txt">改善微循環，有效調節腎臟泌尿系統，預防心腦血管病。<br />
-				  增強腸胃功能，促進食物消化與營養吸收，平衡新陳代謝。<br />
-				  提高人體綜合免疫力，有保健作用。</p>
+				<p height="100" id="product-description" class="index_content_txt"><?PHP echo $product_description[$key]; ?></p>
+            </li><?PHP } ?>
+          </ul>
 		</div>
 		<div style="clear:both;"></div>
 		<div id="course-section">
@@ -105,7 +93,7 @@ function switch_product(dir){
 	var a_list=[<?PHP foreach($product_urls as $key=>$u) { if($key>0) {echo ', ';}; echo "'{$u}&path={$product_cids[$key]}&product_id={$product_ids[$key]}'"; } ?>];
 	var img_list=[<?PHP foreach($product_images as $key=>$img) { if($key>0) {echo ', ';}; echo "'{$img}'"; } ?>];
 	var name_list=[<?PHP foreach($product_names as $key=>$name) { if($key>0) {echo ', ';}; echo "'{$name}'"; } ?>];
-	//var desc_list=[<?PHP foreach($product_description as $key=>$desc) { if($key>0) {echo ', ';}; echo "'{$desc}'"; } ?>];
+	/*var desc_list=[<?PHP foreach($product_description as $key=>$desc) { if($key>0) {echo ', ';}; echo "'{$desc}'"; } ?>];*/
 	if (0 == dir) {
 		if (list_i == 0){
 			list_i = a_list.length-1;
@@ -129,10 +117,38 @@ function switch_product(dir){
 }
 </script>
 <script>
-var banner_width=310;
-$(document).ready(function (){linum=$(".banner_u li").length;w=banner_width*linum;$(".banner_u").css("width",w+"px");linums=$(".banner_btn li").length;w=20*linums;$(".banner_btn ul").css("width",w+"px");setTimeout(autopaly,5E3);$(".banner_btn li img").click(function(){var a=$(this).attr("s");cliplay(a)});
-function autopaly(){linum=$(".banner_u li").length;w=banner_width*linum;1<$(".banner_u li").length&&(ml=parseInt($(".banner_u").css("left")),0>=ml&&0==ml%banner_width&&(ml==-1*(w-banner_width)?$(".banner_u").animate({left:"0px"},"slow"):$(".banner_u").animate({left:ml-banner_width+"px"},"slow"),playbtn((ml-banner_width*2)/-banner_width>linum?"1":(ml-banner_width*2)/-banner_width)));setTimeout(autopaly,5E3)}function cliplay(a){$(".banner_u").animate({left:-banner_width*(a-1)+"px"},"slow");playbtn(a)}
-function playbtn(a){var b=$(".banner_btn li");$(b).each(function(b){$(this).find("img").attr("s")==a?$(this).find("img").attr("src",img_s_path):$(this).find("img").attr("src",img_e_path)})};});
+$(document).ready(function (){
+  $(".slide-right").each(function(){var linum=$(this).find("li").length;var width=parseInt($(this).attr("uw"));var w=width*linum;$(this).css("width",w+"px").css("left",(width-w)+"px");});$(".slide-left").each(function(){var linum=$(this).find("li").length;var width=parseInt($(this).attr("uw"));var w=width*linum;$(this).css("width",w+"px").css("left","0px");});setTimeout(autoplay,5E3);
+function autopaly(){linum=$(".banner_u li").length;w=width*linum;1<$(".banner_u li").length&&(ml=parseInt($(".banner_u").css("left")),0>=ml&&0==ml%width&&(ml==-1*(w-width)?$(".banner_u").animate({left:"0px"},"slow"):$(".banner_u").animate({left:ml-width+"px"},"slow")));setTimeout(autopaly,5E3)}
+function cliplay(a){$(".banner_u").animate({left:-width*(a-1)+"px"},"slow");playbtn(a)}
+});
+function slide(obj,dir){
+  var linum=obj.find("li").length;
+  var width=parseInt(obj.attr("uw"));
+  var w=width*linum;
+  var ml=parseInt(obj.css("left"));
+  ml-=ml%width;
+  if(0===dir){
+    if(0===ml){
+      obj.animate({left:(width-w)+"px"},"slow");
+    }
+    else{
+      obj.animate({left:(ml+width)+"px"},"slow");
+    }
+  }
+  else{
+    if(width-w==ml){
+      obj.animate({left:"0px"},"slow");
+    }
+    else{
+      obj.animate({left:(ml-width)+"px"},"slow");
+    }
+  }
+}
+function autoplay(){
+  $(".slide-right").each(function(){slide($(this),0)});$(".slide-left").each(function(){slide($(this),1)});
+  setTimeout(autoplay,5E3);
+}
 </script>
 
 <!-- Magazine list -->
