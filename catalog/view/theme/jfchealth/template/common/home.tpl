@@ -18,9 +18,9 @@
 		<div id="product-section" style="overflow:hidden">
           <ul class="slide-right" uw="230" style="padding:0;position:relative">
             <?PHP foreach($product_names as $key=>$name) { ?><li style="float:left;width:230px;height:200px">
-				<p height="60" id="product-name" class="index_discription_title"><?PHP echo $name; ?></p>
+				<p height="60" class="product-name index_discription_title"><?PHP echo $name; ?></p>
 			  
-				<p height="100" id="product-description" class="index_content_txt"><?PHP echo $product_description[$key]; ?></p>
+				<div height="100" class="product-description index_content_txt"><?PHP echo $product_description[$key]; ?></div>
             </li><?PHP } ?>
           </ul>
 		</div>
@@ -84,43 +84,13 @@
 <map name="Map" id="Map"><area shape="rect" coords="149,5,222,18" href="?route=product/news" target="_parent" />
 <map name="Map2" id="Map2"><area shape="rect" coords="268,6,344,23" href="?route=product/video" target="_parent" />
 
-<!-- Product list -->
-<script>
-(function init(){
-	list_i=0;
-})();
-function switch_product(dir){
-	var a_list=[<?PHP foreach($product_urls as $key=>$u) { if($key>0) {echo ', ';}; echo "'{$u}&path={$product_cids[$key]}&product_id={$product_ids[$key]}'"; } ?>];
-	var img_list=[<?PHP foreach($product_images as $key=>$img) { if($key>0) {echo ', ';}; echo "'{$img}'"; } ?>];
-	var name_list=[<?PHP foreach($product_names as $key=>$name) { if($key>0) {echo ', ';}; echo "'{$name}'"; } ?>];
-	/*var desc_list=[<?PHP foreach($product_description as $key=>$desc) { if($key>0) {echo ', ';}; echo "'{$desc}'"; } ?>];*/
-	if (0 == dir) {
-		if (list_i == 0){
-			list_i = a_list.length-1;
-		}
-		else {
-			list_i--;
-		}
-	}
-	else {
-		if (list_i == a_list.length-1){
-			list_i = 0;
-		}
-		else {
-			list_i++;
-		}
-	}
-	$('#product-a').attr('href',a_list[list_i]);
-	$('#product-img').attr('src',img_list[list_i]);
-	$('#product-name').html(name_list[list_i]);
-	//$('#product-description').html('');
-}
-</script>
 <script>
 $(document).ready(function (){
   $(".slide-right").each(function(){var linum=$(this).find("li").length;var width=parseInt($(this).attr("uw"));var w=width*linum;$(this).css("width",w+"px").css("left",(width-w)+"px");});$(".slide-left").each(function(){var linum=$(this).find("li").length;var width=parseInt($(this).attr("uw"));var w=width*linum;$(this).css("width",w+"px").css("left","0px");});setTimeout(autoplay,5E3);
-function autopaly(){linum=$(".banner_u li").length;w=width*linum;1<$(".banner_u li").length&&(ml=parseInt($(".banner_u").css("left")),0>=ml&&0==ml%width&&(ml==-1*(w-width)?$(".banner_u").animate({left:"0px"},"slow"):$(".banner_u").animate({left:ml-width+"px"},"slow")));setTimeout(autopaly,5E3)}
-function cliplay(a){$(".banner_u").animate({left:-width*(a-1)+"px"},"slow");playbtn(a)}
+  $(".product-description").each(function(){
+    var txt=$(this).text();
+    $(this).html(txt.substr(0,90)+"......");
+  });
 });
 function slide(obj,dir){
   var linum=obj.find("li").length;
