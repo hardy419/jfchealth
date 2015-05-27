@@ -66,7 +66,7 @@ function swt_lang(l) {
           </tr>
         </table></td>
         <td width="262" align="center"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></a></td>
-        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>简</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("en")'>ENG</a></td>
+        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>简</a>&nbsp;&nbsp;&nbsp;<a style="visibility:hidden" href='javascript:swt_lang("en")'>ENG</a></td>
         </tr>
       <tr>
         <td>&nbsp;</td>
@@ -91,9 +91,9 @@ function swt_lang(l) {
             <td width="20" valign="middle">&nbsp;</td>
             <td width="78" valign="middle"><a href="index.php?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_contactus.png" width="78" height="15" border="0" id="Image7" onmouseover="MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="30" valign="middle">&nbsp;</td>
-            <td width="60" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
-            <td width="20" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="16" /></td>
-            <td width="85" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <td style="visibility:hidden" width="60" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <td style="visibility:hidden" width="20" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="16" /></td>
+            <td style="visibility:hidden" width="85" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
           </tr>
         </table></td>
         </tr>

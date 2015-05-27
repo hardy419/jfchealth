@@ -84,7 +84,7 @@
               </select-->
               <select name="value">
                 <?php foreach ($course_info as $c) { ?>
-                <option value="<?php echo $c['course_id']; ?>" <?php if($c['course_id']===$value) echo 'selected'; ?>><?php echo $c['name'].' '.$c['date']; ?></option>
+                <option value="<?php echo $c['course_id']; ?>" <?php if($c['course_id']===$value) echo 'selected'; ?>><?php echo $c['name'].' '.$c['course_date']; ?></option>
                 <?php } ?>
               </select>
             </td>

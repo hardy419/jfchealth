@@ -23,7 +23,7 @@
         <td width="10" class="footer_txt">&nbsp;</td>
         <td width="56" class="footer_txt"><a href="index.php?route=information/contactus" target="_parent">聯絡我們</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="180" class="footer_txt"><a href="http://www.jfcgroup.com.cn" target="_parent">駿豐頻譜中國官網</a></td>
+        <td width="180" class="footer_txt"><a href="http://www.junfeng.com.cn/index.html" target="_parent">駿豐頻譜中國官網</a></td>
       </tr>
     </table></td>
     <td align="right" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">

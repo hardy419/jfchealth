@@ -3,7 +3,7 @@
 $_['text_name']       = '姓名<span style="color:#ff0000">*</span>: ';
 $_['text_telephone']   = '电话<span style="color:#ff0000">*</span>: ';
 $_['text_email']       = '邮箱: ';
-$_['text_customername']       = '会员名: ';
+$_['text_customername']       = '会员编号: ';
 $_['text_notice_required']       = '请注意，有<span style="color:#ff0000">*</span>号的必须填写。';
 $_['text_notice_message_sent']       = '您的申请已发送，谢谢';
 $_['text_notice_seats_unavailable']       = '网上报名名额已经爆满<br/>如想参加报名此课程，请致电2735 2888查询';

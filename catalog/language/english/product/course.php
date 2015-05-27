@@ -3,7 +3,7 @@
 $_['text_name']       = 'Name<span style="color:#ff0000">*</span>: ';
 $_['text_telephone']   = 'Phone<span style="color:#ff0000">*</span>: ';
 $_['text_email']       = 'Email: ';
-$_['text_customername']       = 'Customer Name: ';
+$_['text_customername']       = 'Customer Number: ';
 $_['text_notice_required']       = 'Please notice that blanks with <span style="color:#ff0000">*</span> are required.';
 $_['text_notice_message_sent']       = 'Your application was sent. Thank you!';
 $_['text_notice_seats_unavailable']       = 'This course is unavailable right now<br/>Please call 2735 2888 if you want to apply this course.';
