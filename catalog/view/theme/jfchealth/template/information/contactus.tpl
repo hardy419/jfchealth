@@ -3,8 +3,8 @@
 <div class="content">
 	<div class="left-nav">
 		<ul>
-			<li><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_address.png" width="100" height="18" /></li>
-			<li><a href="index.php?route=information/enquiry" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_form.png" width="100" height="18" border="0" id="Image12" onmouseover="MM_swapImage('Image12','','<?PHP echo $dir_image_lang; ?>btn_contactus_form_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
+			<li><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_address_mo.png" /></li>
+			<li><a href="index.php?route=information/enquiry" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_form.png" border="0" id="Image12" onmouseover="MM_swapImage('Image12','','<?PHP echo $dir_image_lang; ?>btn_contactus_form_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
 		</ul>
 	</div>
 	<div class="right-content">

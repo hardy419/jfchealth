@@ -7,7 +7,7 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
+    <td style="position:relative;top:10px" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="56" class="footer_txt"><a href="index.php?route=product/news" target="_parent">最新消息</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
@@ -23,10 +23,10 @@
         <td width="10" class="footer_txt">&nbsp;</td>
         <td width="56" class="footer_txt"><a href="index.php?route=information/contactus" target="_parent">聯絡我們</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="180" class="footer_txt"><a href="http://www.junfeng.com.cn/index.html" target="_parent">駿豐頻譜中國官網</a></td>
+        <td width="180" class="footer_txt"><a href="#" target="_parent">JFC Youtube Channel</a></td>
       </tr>
     </table></td>
-    <td align="right" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+    <td align="right" valign="top"><!--table width="130" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="30"><a href="https://www.facebook.com/jfchk" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_footer_facebook.png" width="31" height="30" border="0" /></a></td>
         <td width="20">&nbsp;</td>
@@ -34,13 +34,13 @@
         <td width="20">&nbsp;</td>
         <td width="30"><img src="<?PHP echo $dir_image; ?>btn_footer_instagram.png" width="30" height="30" /></td>
       </tr>
-    </table></td>
+    </table--></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td height="32">&nbsp;</td>
-    <td align="right" valign="middle" class="footer_txt">版權由駿豐頻譜(香港)有限公司所有 不得轉載.</td>
+    <td style="position:relative;top:-20px" align="right" valign="middle" class="footer_txt">版權由駿豐頻譜(香港)有限公司所有 不得轉載.</td>
     <td>&nbsp;</td>
   </tr>
 </table>

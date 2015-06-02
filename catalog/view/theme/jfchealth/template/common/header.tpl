@@ -58,15 +58,16 @@ function swt_lang(l) {
       <tr>
         <td width="329" valign="top"><table width="329" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="92"><a href="https://www.facebook.com/jfchk" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_facebook.png" width="92" height="26" border="0" /></a></td>
-            <td width="15">&nbsp;</td>
-            <td width="82"><a href="https://www.youtube.com/channel/UCkQ9aBI9K8jA_1Ml-96Gm6g" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_youtube.png" width="82" height="26" border="0" /></a></td>
-            <td width="15">&nbsp;</td>
-            <td><img src="<?PHP echo $dir_image; ?>btn_instagram.png" width="93" height="26" /></td>
+            <!--td width="92"><a href="https://www.facebook.com/jfchk" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_facebook.png" width="92" height="26" border="0" /></a></td-->
+            <td><a href="javascript:wechat2d()"><img style="position:relative;top:-5px" src="<?PHP echo $dir_image_lang; ?>btn_wechat.png" border="0" /></a></td>
+            <td width="15" style="visibility:hidden">&nbsp;</td>
+            <td width="82" style="visibility:hidden"><a href="https://www.youtube.com/channel/UCkQ9aBI9K8jA_1Ml-96Gm6g" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_youtube.png" width="82" height="26" border="0" /></a></td>
+            <td width="15" style="visibility:hidden">&nbsp;</td>
+            <td style="visibility:hidden"><img src="<?PHP echo $dir_image; ?>btn_instagram.png" width="93" height="26" /></td>
           </tr>
         </table></td>
         <td width="262" align="center"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="260" height="63" /></a></td>
-        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>简</a>&nbsp;&nbsp;&nbsp;<a style="visibility:hidden" href='javascript:swt_lang("en")'>ENG</a></td>
+        <td width="329" id="lang-tab"><a href='javascript:swt_lang("zh-HK")'>繁</a>&nbsp;&nbsp;&nbsp;<a href='javascript:swt_lang("zh")'>简</a>&nbsp;&nbsp;&nbsp;<!--a href='javascript:swt_lang("en")'>ENG</a--></td>
         </tr>
       <tr>
         <td>&nbsp;</td>
@@ -91,9 +92,10 @@ function swt_lang(l) {
             <td width="20" valign="middle">&nbsp;</td>
             <td width="78" valign="middle"><a href="index.php?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_contactus.png" width="78" height="15" border="0" id="Image7" onmouseover="MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>btn_menu_contactus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="30" valign="middle">&nbsp;</td>
-            <td style="visibility:hidden" width="60" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <!--td style="visibility:hidden" width="60" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_login.png" width="60" height="15" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_login_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td-->
+            <td valign="middle"><a href="http://www.junfeng.com.cn/index.html" target="_blank"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_Officialwebsite.png" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_menu_Officialwebsite_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td style="visibility:hidden" width="20" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="16" /></td>
-            <td style="visibility:hidden" width="85" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+            <!--td style="visibility:hidden" width="85" valign="middle"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_register.png" width="60" height="15" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>btn_menu_register_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td-->
           </tr>
         </table></td>
         </tr>
