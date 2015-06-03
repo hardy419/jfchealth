@@ -17,6 +17,14 @@
 <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/jfchealth/js/highslide/highslide-full.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/jfchealth/js/highslide/highslide.css" />
+<script type="text/javascript">
+hs.graphicsDir = 'catalog/view/theme/jfchealth/js/highslide/graphics/';
+hs.align = 'center';
+hs.fadeInOut = true;
+hs.dimmingOpacity = 0.75;
+</script>
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
@@ -59,7 +67,9 @@ function swt_lang(l) {
         <td width="329" valign="top"><table width="329" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <!--td width="92"><a href="https://www.facebook.com/jfchk" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_facebook.png" width="92" height="26" border="0" /></a></td-->
-            <td><a href="javascript:wechat2d()"><img style="position:relative;top:-5px" src="<?PHP echo $dir_image_lang; ?>btn_wechat.png" border="0" /></a></td>
+            <td><a onclick="return hs.expand(this, {align:'center'});" href="<?PHP echo $dir_image; ?>JFC_wechatQR.png">
+													<img style="position:relative;top:-5px" src="<?PHP echo $dir_image_lang; ?>btn_wechat.png" border="0" />
+												</a></td>
             <td width="15" style="visibility:hidden">&nbsp;</td>
             <td width="82" style="visibility:hidden"><a href="https://www.youtube.com/channel/UCkQ9aBI9K8jA_1Ml-96Gm6g" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_youtube.png" width="82" height="26" border="0" /></a></td>
             <td width="15" style="visibility:hidden">&nbsp;</td>

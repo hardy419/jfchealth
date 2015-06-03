@@ -2,21 +2,57 @@
 
 <div class="content">
 	<div class="content-background">
+
+<div style="position: absolute; z-index: 2147483647; width: 1000px; display: block;" id="promoPop">
+	<style>
+		.promo-dimming {
+			background: none repeat scroll 0 0 #000000;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			padding: 0px;
+			border: medium none;
+			margin: 0px;
+			visibility: visible;
+			opacity: 0.7;
+		}
+	</style>
+	<script>
+		function closePromotion() {
+			$("#promoPop").fadeOut(500);
+		}
+		$(document).ready(function(){
+			setTimeout( function() {closePromotion();}, 4000 );
+		});
+	</script>
+	<div class="promo-dimming"></div>
+	<div style="position:absolute; text-align:center; width:100%;">
+		<img src="<?PHP echo $dir_image; ?>banner.jpg">
+	</div>
+	<div style="position:absolute; text-align:right; width:100%;">
+		<div style="padding:4px 24px 0 0;">
+			<img onclick="closePromotion();" class="imgButton" src="<?PHP echo $dir_image; ?>btn_close (2).png">
+		</div>
+	</div>
+</div>
+
 		<div id="news-section">
 			<img src="<?PHP echo $dir_image_lang; ?>img_index_newstitle.png" width="230" height="25" border="0" usemap="#Map" />
-            <div style="overflow:hidden;width:208px;height:176px;position:relative;left:10px"><div style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#fff;width:208px;height:70px;position:absolute;top:110px;z-index:2147483646"></div><ul class="slide-left" style="padding:0;position:relative" uw="208" uh="176"><?PHP foreach ($news_info as $news) { ?><li style="float:left"><img src="<?PHP echo DIR_IMAGE.$news['image']; ?>" style="width:208px;height:176px;"></img><p class="index_news_title" style="width:188px;position:relative;top:-90px;left:10px;z-index:2147483647"><?PHP echo $news['title']; ?></p></li><?PHP } ?></ul></div>
+            <div style="overflow:hidden;width:208px;height:176px;position:relative;left:10px"><div style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#fff;width:208px;height:70px;position:absolute;top:110px;z-index:1"></div><ul class="slide-left" style="padding:0;position:relative" uw="208" uh="176"><?PHP foreach ($news_info as $news) { ?><li style="float:left"><img src="<?PHP echo DIR_IMAGE.$news['image']; ?>" style="width:208px;height:176px;"></img><p class="index_news_title" style="width:188px;position:relative;top:-90px;left:10px;z-index:2"><?PHP echo $news['title']; ?></p></li><?PHP } ?></ul></div>
 		</div>
 		<div id="product-image">
 			<table>
 				<tr>
-					<td><a style="position:relative;left:40px;z-index:2147483647" href="javascript:slide($('#product-img-u'),0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
-					<td><a style="position:relative;left:276px;z-index:2147483647" href="javascript:slide($('#product-img-u'),1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
+					<td><a style="position:relative;left:40px;z-index:2" href="javascript:slide($('#product-img-u'),0);slide($('#product-text-u'),0)"><img src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png"></img></a></td>
+					<td><a style="position:relative;left:276px;z-index:2" href="javascript:slide($('#product-img-u'),1);slide($('#product-text-u'),1)"><img src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png"></img></a></td>
 					<td><div style="width:330px;height:330px;border-radius:170px;left:-41px;top:7px;position:relative;overflow:hidden"><div style="left:10px;top:-25px;position:relative;"><ul class="slide-right" id="product-img-u" style="left:0;position: relative;padding:0" uw="310"><?PHP foreach($product_urls as $key=>$url) { ?><li style="float:left"><a id="product-a" href="<?PHP echo "{$url}&path={$product_cids[$key]}&product_id={$product_ids[$key]}"; ?>"><img id="product-img" src="<?PHP echo $product_images[$key]; ?>"></img></a></li><?PHP } ?></ul></div></div></td>
 				</tr>
 			</table>
 		</div>
 		<div id="product-section" style="overflow:hidden">
-          <ul class="slide-right" uw="230" style="padding:0;position:relative">
+          <ul class="slide-right" id="product-text-u" uw="230" style="padding:0;position:relative">
             <?PHP foreach($product_names as $key=>$name) { ?><li style="float:left;width:230px;height:200px">
 				<p height="60" class="product-name index_discription_title"><?PHP echo $name; ?></p>
 			  
@@ -100,7 +136,9 @@ function slide(obj,dir){
   ml-=ml%width;
   if(0===dir){
     if(0===ml){
-      obj.animate({left:(width-w)+"px"},"slow");
+      obj.find("li").last().insertBefore(obj.find("li").first());
+      obj.css("left",(ml-width)+"px");
+      obj.animate({left:ml+"px"},"slow");
     }
     else{
       obj.animate({left:(ml+width)+"px"},"slow");
@@ -108,7 +146,9 @@ function slide(obj,dir){
   }
   else{
     if(width-w==ml){
-      obj.animate({left:"0px"},"slow");
+      obj.find("li").first().insertAfter(obj.find("li").last());
+      obj.css("left",(ml+width)+"px");
+      obj.animate({left:ml+"px"},"slow");
     }
     else{
       obj.animate({left:(ml-width)+"px"},"slow");
