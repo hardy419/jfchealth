@@ -23,7 +23,7 @@
         <td width="10" class="footer_txt">&nbsp;</td>
         <td width="56" class="footer_txt"><a href="index.php?route=information/contactus" target="_parent">聯絡我們</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="180" class="footer_txt"><a href="#" target="_parent">JFC Youtube Channel</a></td>
+        <td width="180" class="footer_txt"><a href="https://www.youtube.com/channel/UCkQ9aBI9K8jA_1Ml-96Gm6g" target="_parent">JFC Youtube Channel</a></td>
       </tr>
     </table></td>
     <td align="right" valign="top"><!--table width="130" border="0" cellspacing="0" cellpadding="0">
