@@ -8,7 +8,7 @@ class ModelCatalogCourse extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	*/
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON c.course_id=cd.course_id WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT * FROM " . DB_PREFIX . "course c LEFT JOIN " . DB_PREFIX . "course_description cd ON c.course_id=cd.course_id WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c.status=1";
 
 		$sort_data = array(
 			'cd.name',

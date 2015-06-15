@@ -92,7 +92,7 @@ function swt_lang(l) {
             <td width="45" height="36" valign="middle">&nbsp;</td>
             <td width="58" valign="middle"><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_aboutus.png" name="Image2" width="58" height="15" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="38" valign="middle">&nbsp;</td>
-            <td width="51" valign="middle"><a href="index.php?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_course.png" width="51" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+            <td width="51" valign="middle"><a href="index.php?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_course.png" width="60" height="15" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="30" valign="middle">&nbsp;</td>
             <td width="86" valign="middle"><a href="index.php?route=product/category" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_menu_product.png" width="86" height="15" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
             <td width="35" valign="middle">&nbsp;</td>

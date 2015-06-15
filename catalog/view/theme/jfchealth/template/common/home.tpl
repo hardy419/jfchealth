@@ -29,7 +29,7 @@
 	</script>
 	<div class="promo-dimming"></div>
 	<div style="position:absolute; text-align:center; width:100%;">
-		<img src="<?PHP echo $dir_image; ?>banner.jpg">
+		<img src="<?PHP echo $dir_image_lang; ?>banner.jpg">
 	</div>
 	<div style="position:absolute; text-align:right; width:100%;">
 		<div style="padding:4px 24px 0 0;">

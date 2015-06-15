@@ -22,7 +22,7 @@ class ControllerProductNews extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'n.date_added';
+			$sort = ($this->request->get['t']== 5)? 'n.sort_order' : 'n.date_added';
 		}
 
 		if (isset($this->request->get['order'])) {
