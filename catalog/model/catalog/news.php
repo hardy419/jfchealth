@@ -67,7 +67,7 @@ class ModelCatalogNews extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}*/
 
-        $sql = "SELECT  COUNT(DISTINCT n.news_id) AS total FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type = " . (int)$type . " AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+        $sql = "SELECT  COUNT(DISTINCT n.news_id) AS total FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type = " . (int)$type . " AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND n.status=1";
 
 		$query = $this->db->query($sql);
 

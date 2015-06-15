@@ -30,7 +30,7 @@
 </div><!-- div content -->
 <div style="clear:both"></div>
 
-<div class="bottom-bar" style="margin-top:150px;position:relative;">
+<div class="bottom-bar" style="margin-top:60px;position:relative;">
 <?php echo $footer; ?>
 </div>
 
