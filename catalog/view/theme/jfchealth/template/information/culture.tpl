@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="left-nav" style="margin-top:100px">
 		<ul>
-			<li><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_aboutus_intro.png" border="0" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>btn_aboutus_intro_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
+			<li><a href="index.php?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_aboutus_intro.png" border="0" id="Image11" onmouseover="MM_swapImage('Image11','','<?PHP echo $dir_image_lang; ?>btn_aboutus_intro_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
 			<li><img src="<?PHP echo $dir_image_lang; ?>btn_aboutus_culture_mo.png" /></li>
 			<li><a href="index.php?route=information/certificate" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_aboutus_cert.png" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image_lang; ?>btn_aboutus_cert_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
 		</ul>
