@@ -13,7 +13,7 @@
 			<img src="<?PHP echo $dir_image_lang; ?>img_culture_title.png" width="670" height="34" />
 		</div>
 		<div class="description" style="text-align:center">
-			<img style="width:450px" src="<?PHP echo $dir_image_lang; ?>img_culture.png" />
+			<img src="<?PHP echo $dir_image_lang; ?>img_culture.png" />
 		</div>
 	</div>
 	<div style="clear:both"></div>
