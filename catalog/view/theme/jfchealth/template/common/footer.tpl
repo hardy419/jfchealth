@@ -15,7 +15,7 @@
         <td width="10">&nbsp;</td>
         <td width="34" class="footer_txt"><a href="index.php?route=product/course" target="_parent">課程</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
-        <td width="56" class="footer_txt"><a href="index.php?route=product/product" target="_parent">產品介紹</a></td>
+        <td width="56" class="footer_txt"><a href="index.php?route=product/category" target="_parent">產品介紹</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
         <td width="56" class="footer_txt"><a href="index.php?route=product/article" target="_parent">分享平台</a></td>
         <td width="10" class="footer_txt">&nbsp;</td>
