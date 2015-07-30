@@ -66,7 +66,7 @@ class ControllerInformationEnquiry extends Controller {
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $subject = 'Message From JFC User';
+        $subject = '[Feedback From JFC]';
         $body = $message.'<br/><br/>Name: '.$name.'<br/>Email: '.$email.'<br/>Phone: '.$phone;
         $this->msg = $this->postMail ($body, $subject, '540115739@qq.com', '2757144278@qq.com');
         $this->index ();
@@ -77,14 +77,14 @@ class ControllerInformationEnquiry extends Controller {
         $mail->IsSMTP ();
         $mail->SMTPDebug = 0;
         $mail->SMTPAuth = true;
-        $mail->Host = 'smtp.qq.com';
+        $mail->Host = 'smtp.jfcgroup.com.cn';
         $mail->Port = '25';
-        $mail->Username = '2757144278@qq.com';
-        $mail->Password = '1q2w3e4r';
+        $mail->Username = 'system@lifespring.com.hk';
+        $mail->Password = '2201sys##';
         mb_internal_encoding ('UTF-8');
         $mail->Subject = mb_encode_mimeheader ($subject, 'UTF-8');
-        $mail->From = '2757144278@qq.com';
-        
+        $mail->From = 'system@lifespring.com.hk';
+        $mail->FromName = 'JFC';
         if (!$isHTML) {
             $mail->isHTML (false);
             $mail->Body = $body;

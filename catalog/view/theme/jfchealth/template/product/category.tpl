@@ -1,8 +1,41 @@
 <?php echo $header; ?>
 
+<script>
+function button1_click() {
+  $('.product-list').css('text-align', 'center');
+  $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSBacterial_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_03.jpg" />');
+  $('.content-title').find('img').attr('src', '<?PHP echo $dir_image_lang; ?>img_title_report.png');
+  $('.content-title').find('img').attr('usemap', '#Map');
+  $('.bottom-bar').css('top', '3080px');
+  $(document).bind('contextmenu',function(e){
+    return false;
+  });
+}
+function button2_click() {
+  $('.product-list').css('text-align', 'center');
+  $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSMetal_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_03.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_04.jpg" />');
+  $('.content-title').find('img').attr('src', '<?PHP echo $dir_image_lang; ?>img_title_report.png');
+  $('.content-title').find('img').attr('usemap', '#Map');
+  $('.bottom-bar').css('top', '3980px');
+  $(document).bind('contextmenu',function(e){
+    return false;
+  });
+}
+</script>
+
 <div class="content">
 	<div class="left-nav">
 		<?php echo $column_left; ?>
+<?PHP if (!isset($_GET['path']) || 99 == $_GET['path']) { ?>
+		<div class="extra-buttons"><br/><br/><br/><br/><br/><br/>
+			<div class="button1-div">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="button1_click();"><img src="<?PHP echo $dir_image_lang; ?>btn_SGSBacterial.png" /></a></div>
+			<br/>
+			<div class="button2-div">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="button2_click();"><img src="<?PHP echo $dir_image_lang; ?>btn_SGSMetal.png" /></a></div>
+			<map name="Map" id="Map">
+				<area shape="rect" coords="1,7,69,35" href="?route=product/category" target="_parent" />
+			</map>
+		</div>
+<?PHP } ?>
 	</div>
 	<div class="right-content">
 		<div class="content-title">
