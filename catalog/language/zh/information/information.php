@@ -1,7 +1,7 @@
 <?php
 // Text
 $_['text_error'] = 'Information Page Not Found!';
-$_['text_notice'] = '如对我们的服务有任何疑问，只需填写表格，我们会尽快回复。';
+$_['text_notice'] = '如对我们的服务有任何疑问，只需填写表格，我们会尽快回覆。';
 $_['text_notice_required'] = '请注意，有<span style="color:#ff0000">*</span>号的必须填写：';
 $_['text_name'] = '姓名';
 $_['text_email'] = '邮箱';
