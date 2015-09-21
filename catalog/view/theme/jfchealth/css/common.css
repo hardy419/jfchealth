@@ -3,6 +3,28 @@ body
     overflow:-Scroll;
     overflow-x:hidden;
 }
+.content
+{
+    width:1280px;
+    margin:40px auto 0px auto;
+}
+
+ul
+{
+    list-style:outside none none;
+}
+
+.cb {
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+/*
 .top-bar
 {
     position:relative;width:100%;background-image:url('../images/img_top_bar.png');background-repeat:repeat-x;top:0px;z-index:2147483640;
@@ -17,15 +39,6 @@ body
     font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
 }
 
-ul
-{
-    list-style:outside none none;
-}
-.content
-{
-    width:960px;
-    margin:auto;
-}
 .left-nav
 {
     float:left;
@@ -191,3 +204,4 @@ ul
 .right-content .description iframe {
   border-radius:25px;
 }
+*/
