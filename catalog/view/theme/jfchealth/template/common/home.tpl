@@ -1,15 +1,113 @@
 <?php echo $header; ?>
 
 <div class="content">
-	<div class="content-background">
-	</div>
+  <div class="home-banner" style="overflow:hidden">
+    <ul class="slide-right" id="home-banner-u" uw="1280" delay="0" style="padding:0;position:relative">
+      <?PHP //foreach($product_names as $key=>$name) { ?>
+      <li style="float:left;width:1280px;height:530px">
+		<img src="<?PHP echo $dir_image; ?>banner_test.png" />
+      </li>
+      <li style="float:left;width:1280px;height:530px">
+		<img src="<?PHP echo $dir_image; ?>banner_test.png" />
+      </li>
+      <li style="float:left;width:1280px;height:530px">
+		<img src="<?PHP echo $dir_image; ?>img_logo.png" />
+      </li>
+      <?PHP //} ?>
+    </ul>
+    <div class="home-banner-icons pa">
+      <a href="javascript:(function(){slide($('#home-banner-u'),1);})();"><img id="home-larrow-img" src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png" /></a>
+      <a href="javascript:(function(){slide($('#home-banner-u'),0);})();"><img id="home-rarrow-img" src="<?PHP echo $dir_image; ?>btn_index_Rbutton.png" /></a>
+    </div>
+  </div>
+
+  <div class="home-4categories">
+    <ul>
+      <li class="fl">
+        <div style="overflow:hidden;width:295px;height:295px">
+          <ul class="slide-right" uw="295" delay="1500" style="padding:0;position:relative">
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="fl">
+        <div style="overflow:hidden;width:295px;height:295px">
+          <ul class="slide-right" uw="295" delay="2500" style="padding:0;position:relative">
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="fl">
+        <div style="overflow:hidden;width:295px;height:295px">
+          <ul class="slide-right" uw="295" delay="700" style="padding:0;position:relative">
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="fl">
+        <div style="overflow:hidden;width:295px;height:295px">
+          <ul class="slide-right" uw="295" delay="4000" style="padding:0;position:relative">
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
+            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="cb"></div>
+  </div>
+
+  <div class="home-about">
+    <img src="<?PHP echo $dir_image_lang; ?>home-about.png" />
+    <div class="home-about-text pa">
+      <p>駿豐頻譜公司創業於1989年，是一家專門致力於家庭保健事業的高新技術企業。公司以高科技為先導，以雄厚的科研力量為基礎，以國內資深科學家、醫學專家、國家權威研究及檢測機構為依託，以擁有自主知識產權的發明專利和非藥物健康產品為核心，以嚴實的經營作風與科學規範的管理而不斷發展壯大。</p>
+    </div>
+  </div>
+
+  <div class="home-news">
+    <div class="home-news-text pa">
+      <div class="home-news-div">
+        <div class="news-section-div">
+          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
+          <div class="fr">
+            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會<span class="fr">24-03-2015</span></h3>
+            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
+          </div>
+          <div class="cb"></div>
+        </div>
+        <div class="news-section-div">
+          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
+          <div class="fr">
+            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會<span class="fr">24-03-2015</span></h3>
+            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
+          </div>
+          <div class="cb"></div>
+        </div>
+        <div class="news-section-div">
+          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
+          <div class="fr">
+            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會<span class="fr">24-03-2015</span></h3>
+            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
+          </div>
+          <div class="cb"></div>
+        </div>
+      </div>
+    </div>
+    <img src="<?PHP echo $dir_image_lang; ?>home-news.png" />
+  </div>
 </div>
 
 <div id="TB_window" style="position:absolute; top:50%; left:50%; width: 560px;height: 315px; margin-left:-280px;margin-top:-160px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course" id="TB_iframeContent" style="width:560px;height:315px;background-color:transparent"> </iframe></div>
 <div id="TB_window2" style="position:absolute; top:50%; left:50%; width: 560px;height: 222px; margin-left:-280px;margin-top:-111px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course/info" id="TB_iframeContent2" style="width:560px;height:222px;background-color:transparent"> </iframe></div>
 <div id="TB_mask" style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#000000;position:absolute;left:0px;top:0px;width:100%;height:300%;z-index:2147483646;display:none" onclick="js_op_close(false)"></div>
 
-<div class="bottom-bar" style="margin-top:10px;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
 
@@ -23,6 +121,10 @@ $(document).ready(function (){
     var txt=$(this).text();
     $(this).html(txt.substr(0,90)+"......");
   });
+
+  // Show sub menu
+  //$(".sub-menu").css('display','block');
+  //$(".content").css('margin-top','0px');
 });
 function slide(obj,dir){
   var linum=obj.find("li").length;
@@ -51,8 +153,10 @@ function slide(obj,dir){
     }
   }
 }
+robj=[];
+lobj=[];
 function autoplay(){
-  $(".slide-right").each(function(){slide($(this),0)});$(".slide-left").each(function(){slide($(this),1)});
+  $(".slide-right").each(function(idx){robj[idx]=$(this);setTimeout("slide(robj["+idx+"],0)",$(this).attr('delay'))});$(".slide-left").each(function(idx){lobj[idx]=$(this);setTimeout("slide(lobj["+idx+"],1)",$(this).attr('delay'))});
   setTimeout(autoplay,5E3);
 }
 </script>

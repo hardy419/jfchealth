@@ -113,10 +113,10 @@ a:active {
   <tr>
     <td height="100"><table width="1280" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="20" height="20" align="left" valign="middle">&nbsp;</td>
-        <td width="670">&nbsp;</td>
-        <td width="670">&nbsp;</td>
-        <td width="20">&nbsp;</td>
+        <td width="20" height="20" align="left" valign="middle"></td>
+        <td width="670"></td>
+        <td width="670"></td>
+        <td width="20"></td>
       </tr>
       <tr>
         <td height="80" align="left" valign="middle">&nbsp;</td>
@@ -166,3 +166,7 @@ a:active {
   </tr>
 </table>
 </div><!-- top-bar -->
+
+<div class="sub-menu">
+  <img src="<?PHP echo $dir_image_lang; ?>img_products_sub.jpg" />
+</div>
