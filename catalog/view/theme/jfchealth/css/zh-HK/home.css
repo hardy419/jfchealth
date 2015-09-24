@@ -47,12 +47,15 @@
   height: 120px;
 }
 .news-section-div {
-  margin-bottom: 23px;
+  margin-bottom: 40px;
 }
 .news-section-div div.fr {
   width: 880px;
 }
 .news-section-div h3 {
+  margin: 0;
+}
+.news-section-div p {
   margin: 0;
 }
 .news-section-div span.fr {

@@ -2,7 +2,8 @@ body
 {
     overflow:-Scroll;
     overflow-x:hidden;
-  font-family:Microsoft JhengHei;
+  /*font-family:Microsoft JhengHei;*/
+  font-family:"メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif", "arial", "helvetica";
 }
 p,h1,h2,h3 {
   line-height:1.6;

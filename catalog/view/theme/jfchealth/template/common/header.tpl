@@ -120,12 +120,12 @@ a:active {
       </tr>
       <tr>
         <td height="80" align="left" valign="middle">&nbsp;</td>
-        <td align="left" valign="top"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>img_logo.png" width="259" height="59" /></a></td>
+        <td align="left" valign="top"><a href="index.php" target="_parent"><img src="<?PHP echo $dir_image; ?>img_logo.png" width="259" height="59" /></a></td>
         <td align="right" valign="top"><table width="378" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td align="right" valign="middle"><a onclick="return hs.expand(this, {align:'center'});" href="<?PHP echo $dir_image; ?>JFC_wechatQR.png"><img src="<?PHP echo $dir_image_lang; ?>btn_wechat.png" width="106" height="30" /></a></td>
+            <td align="right" valign="middle"><a onclick="return hs.expand(this, {align:'center'});" href="<?PHP echo $dir_image; ?>JFC_wechatQR.png"><img src="<?PHP echo $dir_image; ?>btn_wechat.png" width="106" height="30" /></a></td>
             <td width="20" valign="middle">&nbsp;</td>
-            <td width="127" valign="middle"><a href="http://www.junfeng.com.cn/index.html" target="_blank"><img src="<?PHP echo $dir_image_lang; ?>btn_chinasite.png" width="127" height="16" border="0" /></a></td>
+            <td width="127" valign="middle"><a href="http://www.junfeng.com.cn/index.html" target="_blank"><img src="<?PHP echo $dir_image; ?>btn_chinasite.png" width="127" height="16" border="0" /></a></td>
             <td width="20" valign="middle">&nbsp;</td>
             <td width="16" valign="middle"><a href='javascript:swt_lang("zh-HK")'><img src="<?PHP echo $dir_image; ?>btn_language_tw.png" width="16" height="16" /></a></td>
             <td width="20" valign="middle">&nbsp;</td>
