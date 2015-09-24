@@ -143,9 +143,9 @@ a:active {
     <td height="70"><table width="1280" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="55" height="70">&nbsp;</td>
-        <td><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png" width="98" height="70" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+        <td><a href="?route=common/home" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png" width="98" height="70" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="aboutus01.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="news.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_news.png" name="Image3" width="133" height="70" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
