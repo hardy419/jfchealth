@@ -1,10 +1,12 @@
 <?php echo $header; ?>
 
-<div class="content">
-	<div class="left-nav">
+<div class="content product-bg">
+	<div class="gap"></div>
+	<div class="left-nav fl">
+		<div class="gap"></div>
 		<?php echo $column_left; ?>
 	</div>
-	<div class="right-content">
+	<div class="right-content fr">
 		<div class="content-title">
 			<img src="<?PHP echo $dir_image_lang; ?>img_product<?php echo $category_sort_order; ?>_detail_title.png" width="670" height="34"  border="0" usemap="#Map" />
 			<map name="Map" id="Map">
@@ -34,15 +36,15 @@
 				<div class="product_name"><?PHP echo $model; ?></div>
 				<div class="product_name"><?PHP echo $heading_title; ?></div>
 				<div class="description index_content_txt"><?php echo $description; ?></div>
-				<p align="right" valign="top"><a href="?route=information/enquiry&model=<?PHP echo $model ?>" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_enquiry.png" width="163" height="46" border="0" /></a></p>
+				<p align="right" valign="top"><a href="?route=information/enquiry&model=<?PHP echo $model ?>" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_enquiry.png" border="0" /></a></p>
 			</div>
-			<div style="clear:both"></div>
+			<div class="cb"></div>
 			<div class="product-bottom-desc">
 				<?PHP echo $feature; ?>
 			</div>
 		</div>
 	</div>
-	<div style="clear:both"></div>
+	<div class="cb"></div>
 </div><!-- div content -->
 <script>
 function changepic(id) {
@@ -51,9 +53,17 @@ function changepic(id) {
 }
 </script>
 
-<div class="bottom-bar" style="margin-top:90px;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
+
+<script>
+$(function(){
+  // Menu highlight
+  $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
+  $('#Image4').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png');
+});
+</script>
 
 </body>
 </html>

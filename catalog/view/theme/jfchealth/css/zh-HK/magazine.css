@@ -1,7 +1,4 @@
 body {
-	background-image: url("../../images/zh-HK/img_bg.jpg");
-	background-repeat:no-repeat;
-	background-position:center top;
 	margin-top: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
@@ -11,37 +8,44 @@ body {
 	margin-right: 0px;
 	margin-bottom: 0px;
 }
-.footer_txt {
-	font-size: 12px;
-	color: #FFFFFF;
-	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
+
+.JFChealth-bg {
+  background: rgb(234,237,236) url("img_JFChealth_bg.jpg") no-repeat;
+  height: auto;
 }
-.index_news_title {
-	font-size: 14px;
-	font-weight: bold;
-	color: #252525;
-	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
+.content>.gap {
+  height:60px;
 }
+.left-nav {
+  margin-left:40px;
+}
+.left-nav>.gap {
+  height:100px;
+}
+.left-nav>ul>li {
+  margin-bottom: 0;
+}
+.right-content {
+  width: 850px;
+  position: relative;
+  top: -20px;
+  margin-right:40px;
+  padding: 25px;
+  background-color: rgba(255,255,255,0.6);
+}
+
 .index_content_txt {
 	font-size: 14px;
 	font-weight: normal;
 	color: #252525;
 	line-height: 18px;
-	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
 }
-.style1 {color: #252525; font-size: 14px;}
 .index_discription_title {
 	font-size: 24px;
 	font-weight: bold;
 	color: #004282;
-	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
 }
-.index_read_txt {
-	color: 4e4eff;
-	font-size: 12px;
-	font-weight: bold;
-	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif","arial","helvetica";
-}
+
 a:link {
 	color: #FFFFFF;
 	text-decoration: none;

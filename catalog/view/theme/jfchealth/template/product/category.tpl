@@ -1,46 +1,12 @@
 <?php echo $header; ?>
 
-<script>
-function button1_click() {
-  $('.product-list').css('text-align', 'center');
-  $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSBacterial_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_03.jpg" />');
-  $('.content-title').find('img').attr('src', '<?PHP echo $dir_image_lang; ?>img_title_report.png');
-  $('.content-title').find('img').attr('usemap', '#Map');
-  $('.bottom-bar').css('top', '3080px');
-  $(document).bind('contextmenu',function(e){
-    return false;
-  });
-}
-function button2_click() {
-  $('.product-list').css('text-align', 'center');
-  $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSMetal_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_03.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_04.jpg" />');
-  $('.content-title').find('img').attr('src', '<?PHP echo $dir_image_lang; ?>img_title_report.png');
-  $('.content-title').find('img').attr('usemap', '#Map');
-  $('.bottom-bar').css('top', '3980px');
-  $(document).bind('contextmenu',function(e){
-    return false;
-  });
-}
-</script>
-
-<div class="content">
-	<div class="left-nav">
+<div class="content product-bg">
+	<div class="gap"></div>
+	<div class="left-nav fl">
+		<div class="gap"></div>
 		<?php echo $column_left; ?>
-<?PHP if (!isset($_GET['path']) || 99 == $_GET['path']) { ?>
-		<div class="extra-buttons"><br/><br/><br/><br/><br/><br/>
-			<div class="button1-div">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="button1_click();"><img src="<?PHP echo $dir_image_lang; ?>btn_SGSBacterial.png" /></a></div>
-			<br/>
-			<div class="button2-div">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="button2_click();"><img src="<?PHP echo $dir_image_lang; ?>btn_SGSMetal.png" /></a></div>
-			<map name="Map" id="Map">
-				<area shape="rect" coords="1,7,69,35" href="?route=product/category" target="_parent" />
-			</map>
-		</div>
-<?PHP } ?>
 	</div>
-	<div class="right-content">
-		<div class="content-title">
-			<img src="<?PHP echo $dir_image_lang; ?>img_product<?php echo $sort_order; ?>_title.png" width="670" height="34" />
-		</div>
+	<div class="right-content fr">
 		<div class="product-list">
 		  <table width="670" border="0" cellpadding="0" cellspacing="0"><tr>
 			<td align="left" valign="top"><table width="670" border="0" cellspacing="0" cellpadding="0">
@@ -118,12 +84,20 @@ function button2_click() {
 		  </table>
 		</div>
 	</div>
-	<div style="clear:both"></div>
+	<div class="cb"></div>
 </div><!-- div content -->
 
-<div class="bottom-bar" style="position:absolute;top:880px;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
+
+<script>
+$(function(){
+  // Menu highlight
+  $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
+  $('#Image4').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png');
+});
+</script>
 
 </body>
 </html>

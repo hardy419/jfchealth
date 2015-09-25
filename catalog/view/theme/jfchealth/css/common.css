@@ -46,6 +46,25 @@ ul
 .pa {
   position: absolute;
 }
+
+.product-img
+{
+    float:left;
+    width:310px;
+}
+.product-img table
+{
+    margin-top:20px;
+}
+.product-right-desc
+{
+    float:right;
+    width:334px;
+}
+.product-bottom-desc
+{
+    margin-top:0;
+}
 /*
 .top-bar
 {
@@ -153,24 +172,6 @@ ul
 .content-detail
 {
     width:670px;
-}
-.product-img
-{
-    float:left;
-    width:310px;
-}
-.product-img table
-{
-    margin-top:20px;
-}
-.product-right-desc
-{
-    float:right;
-    width:334px;
-}
-.product-bottom-desc
-{
-    margin-top:40px;
 }
 
 .course-content

@@ -1,12 +1,15 @@
 <?php echo $header; ?>
 
-<div class="content">
-    <div class="course-content">
-		<div class="content-title">
-			<img src="<?PHP echo $dir_image_lang; ?>img_course_title.png" width="920" height="62" />
-		</div>
+<div class="content course-bg">
+	<div class="gap"></div>
+	<div class="left-nav fl">
+		<div class="gap"></div>
+		<ul>
+		</ul>
+	</div>
+    <div class="course-content right-content fr">
 		<div class="course-list">
-		  <table width="920" border="0" cellpadding="0" cellspacing="0">
+		  <table width="850" border="0" cellpadding="0" cellspacing="0">
 			  <tr>
 				<td height="20">&nbsp;</td>
 				<td>&nbsp;</td>
@@ -15,9 +18,9 @@
 			  <tr>
 				<td width="210"><img src="<?PHP echo $courses[0]['image']; ?>" width="210" height="210" /></td>
 				<td width="20">&nbsp;</td>
-				<td width="690" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
+				<td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="560" class="index_course_title"><?PHP echo $courses[0]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[0]['course_date']; ?></td>
+					<td width="490" class="index_course_title"><?PHP echo $courses[0]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[0]['course_date']; ?></td>
 					<td width="20">&nbsp;</td>
 					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[0]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
 				  </tr>
@@ -44,9 +47,9 @@
 				<td>&nbsp;</td>
 				<td height="20">&nbsp;</td>
 				</tr>
-			  <tr>
-				<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_course_line.png" width="903" height="1" /></td>
-				</tr>
+			  <!--tr>
+				<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_course_line.png" width="833" height="1" /></td>
+				</tr-->
 			  <tr>
 				<td align="center" valign="middle">&nbsp;</td>
 				<td>&nbsp;</td>
@@ -55,9 +58,9 @@
 			  <tr>
 				<td width="210"><img src="<?PHP echo $courses[$idx]['image']; ?>" width="210" height="210" /></td>
 				<td width="20">&nbsp;</td>
-				<td width="690" align="left" valign="top"><table width="690" border="0" cellspacing="0" cellpadding="0">
+				<td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="560" class="index_course_title"><?PHP echo $courses[$idx]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[$idx]['course_date']; ?></td>
+					<td width="490" class="index_course_title"><?PHP echo $courses[$idx]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[$idx]['course_date']; ?></td>
 					<td width="20">&nbsp;</td>
 					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[$idx]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
 				  </tr>
@@ -82,9 +85,9 @@
 			  <tr>
 				<td height="20">&nbsp;</td>
 				</tr>
-			  <tr>
-				<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_course_line.png" width="903" height="1" /></td>
-				</tr>
+			  <!--tr>
+				<td colspan="3" align="center" valign="middle"><img src="<?PHP echo $dir_image; ?>img_course_line.png" width="833" height="1" /></td>
+				</tr-->
 			  <tr>
 				<td height="20">&nbsp;</td>
 				</tr>
@@ -108,14 +111,14 @@
 		  </table>
 		</div>
     </div>
-	<div style="clear:both"></div>
+	<div class="cb"></div>
 </div><!-- div content -->
 
 <div id="TB_window" style="position:absolute; top:50%; left:50%; width: 560px;height: 315px; margin-left:-280px;margin-top:-160px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course" id="TB_iframeContent" style="width:560px;height:315px;background-color:transparent"> </iframe></div>
 <div id="TB_window2" style="position:absolute; top:50%; left:50%; width: 560px;height: 222px; margin-left:-280px;margin-top:-111px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course/info" id="TB_iframeContent2" style="width:560px;height:222px;background-color:transparent"> </iframe></div>
 <div id="TB_mask" style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#000000;position:absolute;left:0px;top:0px;width:100%;height:300%;z-index:2147483646;display:none" onclick="js_op_close(false)"></div>
 
-<div class="bottom-bar" style="margin-top:90px;position:absolute;top:1100px;z-index:2147483647;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
 
@@ -168,6 +171,14 @@ function js_op(_url)
 		}
 	});
 }
+
+$(function(){
+  $('.results').css('text-align','center');
+  // Menu highlight
+  $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
+  $('#Image6').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png');
+});
+
 </script>
 </body>
 </html>

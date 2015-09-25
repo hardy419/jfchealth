@@ -1,16 +1,15 @@
 <?php echo $header; ?>
 
-<div class="content">
-	<div class="left-nav">
+<div class="content contactus-bg">
+	<div class="gap"></div>
+	<div class="left-nav fl">
+		<div class="gap"></div>
 		<ul>
 			<li><a href="index.php?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_address.png" border="0" id="Image11" onmouseover="MM_swapImage('Image11','','<?PHP echo $dir_image_lang; ?>btn_contactus_address_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
 			<li><img src="<?PHP echo $dir_image_lang; ?>btn_contactus_form_mo.png" /></li>
 		</ul>
 	</div>
-	<div class="right-content">
-		<div class="content-title">
-			<img src="<?PHP echo $dir_image_lang; ?>img_enquiry_title.png" width="670" height="34" />
-		</div>
+	<div class="right-content fr">
 		<div class="description">
             <p class="index_content_txt"><?PHP echo $text_notice; ?></p>
             <p class="index_content_txt"><?PHP echo $text_notice_required; ?></p>
@@ -33,7 +32,7 @@
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td><p class="index_content_txt"><?PHP echo $text_enquiry; ?>：</p></td>
+                    <td valign="top"><p class="index_content_txt"><?PHP echo $text_enquiry; ?>：</p></td>
                     <td><textarea cols="30" rows="5" name="message" id="form_message"><?PHP if(''!==$model) {echo $model.': ';} ?></textarea></td>
                   </tr>
                   <tr>
@@ -60,7 +59,7 @@
             </form>
 		</div>
 	</div>
-	<div style="clear:both"></div>
+	<div class="cb"></div>
 </div><!-- div content -->
 
 <script>
@@ -72,13 +71,19 @@ function enquiry_form_submit(){
 		$('#enquiry_form').submit();
 	}
 }
-$(document).ready(function(){
-});
 </script>
 
-<div class="bottom-bar" style="margin-top:220px;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
+
+<script>
+$(function(){
+  // Menu highlight
+  $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
+  $('#Image9').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png');
+});
+</script>
 
 </body>
 </html>
