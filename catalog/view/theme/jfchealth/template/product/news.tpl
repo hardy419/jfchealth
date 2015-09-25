@@ -41,5 +41,14 @@
 <?php echo $footer; ?>
 </div>
 
+<script>
+$(function(){
+  $('.results').css('text-align','center');
+  // Menu highlight
+  $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
+  $('#Image3').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png');
+});
+</script>
+
 </body>
 </html>

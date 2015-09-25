@@ -10,7 +10,7 @@ body {
 }
 
 .aboutus-bg {
-  background-image: url("aboutus_bg.png");
+  background: rgb(245,251,240) url("img_aboutus_bg.jpg") no-repeat;
   height: auto;
 }
 .content>.gap {

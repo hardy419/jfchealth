@@ -10,7 +10,7 @@ body {
 }
 
 .news-bg {
-  background-image: url("news_bg.png");
+  background: rgb(204,124,123) url("img_news_bg.jpg") no-repeat;
   height: auto;
 }
 .content>.gap {
