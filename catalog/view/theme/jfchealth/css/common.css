@@ -50,16 +50,16 @@ ul
 .product-img
 {
     float:left;
-    width:310px;
+    width:431px;
 }
-.product-img table
+.product-img img.fr
 {
-    margin-top:20px;
+    margin-bottom:8px;
 }
 .product-right-desc
 {
     float:right;
-    width:334px;
+    width:390px;
 }
 .product-bottom-desc
 {

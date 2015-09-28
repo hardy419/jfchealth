@@ -34,6 +34,10 @@ body {
   background-color: rgba(255,255,255,0.6);
 }
 
+.product-list td[align="center"] {
+  padding-top: 10px;
+}
+
 a:link {
 	color: #FFFFFF;
 	text-decoration: none;

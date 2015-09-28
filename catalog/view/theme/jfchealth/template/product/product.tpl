@@ -8,29 +8,21 @@
 	</div>
 	<div class="right-content fr">
 		<div class="content-title">
-			<img src="<?PHP echo $dir_image_lang; ?>img_product<?php echo $category_sort_order; ?>_detail_title.png" width="670" height="34"  border="0" usemap="#Map" />
+			<img src="<?PHP echo $dir_image_lang; ?>img_product<?php echo $category_sort_order; ?>_detail_title.png" width="850" height="34"  border="0" usemap="#Map" />
 			<map name="Map" id="Map">
 				<area shape="rect" coords="1,7,69,35" href="?route=product/category&path=<?PHP echo $_GET['path'] ?>" target="_parent" />
 			</map>
 		</div>
 		<div class="content-detail">
 			<div class="product-img">
-				<img id="imgmain" src="<?PHP echo $images[0]['thumb']; ?>" width="310" height="350" />
-				<table width="310" border="0" cellpadding="0" cellspacing="0"><tr>
-				  <?PHP
+				<img class="fl" id="imgmain" src="<?PHP echo $images[0]['thumb']; ?>" width="320" height="415" />
+				<?PHP
 					for($idx=0; $idx<3; ++$idx) if(isset($images[$idx])) {
-				  ?>
-					  <td width="90"><img style="cursor:pointer" src="<?PHP echo $images[$idx]['thumb']; ?>" width="90" height="102" onclick="changepic(<?PHP echo $idx; ?>);" /></td>
-				  <?PHP
-					  if($idx<2) { echo '<td width="20">&nbsp;</td>'; }
-					} else {
-				  ?>
-					  <td width="90">&nbsp;</td>
-				  <?PHP
-					  if($idx<2) { echo '<td width="20">&nbsp;</td>'; }
+				?>
+					<img class="fr" style="cursor:pointer" src="<?PHP echo $images[$idx]['thumb']; ?>" width="103" height="133" onclick="changepic(<?PHP echo $idx; ?>);" />
+				<?PHP
 					}
-				  ?>
-				</tr></table>
+				?>
 			</div>
 			<div class="product-right-desc">
 				<div class="product_name"><?PHP echo $model; ?></div>
@@ -62,6 +54,10 @@ $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
   $('#Image4').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png');
+  // Backend contents
+  $('td.product_name').removeAttr('style');
+  $('div.product-bottom-desc table,div.product-bottom-desc table img').attr('width','850px');
+  $('.product-bottom-desc style').remove();
 });
 </script>
 
