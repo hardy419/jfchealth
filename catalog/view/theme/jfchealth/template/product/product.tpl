@@ -54,6 +54,8 @@ $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
   $('#Image4').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png');
+  // Sub menu
+  show_submenu('img_products_sub.png','#product_map');
   // Backend contents
   $('td.product_name').removeAttr('style');
   $('div.product-bottom-desc table,div.product-bottom-desc table img').attr('width','850px');

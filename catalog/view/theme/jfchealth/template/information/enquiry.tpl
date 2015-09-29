@@ -82,6 +82,8 @@ $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
   $('#Image9').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png');
+  // Sub menu
+  show_submenu('img_contactus_sub.png','#contactus_map');
 });
 </script>
 

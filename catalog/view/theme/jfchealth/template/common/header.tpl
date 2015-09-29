@@ -66,6 +66,17 @@ function MM_swapImage() { //v3.0
   var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
+
+function show_submenu(name,map){
+  $('.sub-menu img').attr('src','<?PHP echo $dir_image_lang; ?>menu/'+name);
+  $('.sub-menu img').attr('usemap',map);
+  $('.sub-menu').css('display','block');
+  $('.content').css('margin-top','0');
+}
+function hide_submenu(){
+  //$('.sub-menu').css('display','none');
+  //$('.content').css('margin-top','40px');
+}
 </script>
 <style type="text/css">
 <!--
@@ -145,21 +156,21 @@ a:active {
         <td width="55" height="70">&nbsp;</td>
         <td><a href="?route=common/home" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png" width="98" height="70" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="(function(){MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1);show_submenu('img_aboutus_sub.png','#aboutus_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="news.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_news.png" name="Image3" width="133" height="70" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/news" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_news.png" name="Image3" width="133" height="70" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="products01.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_product.png" width="133" height="70" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/category&path=99" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_product.png" width="133" height="70" border="0" id="Image4" onmouseover="(function(){MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png',1);show_submenu('img_products_sub.png','#product_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="experience.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience.png" width="133" height="70" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="course.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_course.png" width="133" height="70" border="0" id="Image6" onmouseover="MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_course.png" width="133" height="70" border="0" id="Image6" onmouseover="MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="share01.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_share.png" width="133" height="70" border="0" id="Image7" onmouseover="MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_share.png" width="133" height="70" border="0" id="Image7" onmouseover="(function(){MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png',1);show_submenu('img_share_sub.png','#share_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="naturopathy.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="(function(){MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1);show_submenu('img_magazine_sub.png','#magazine_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="contactus.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus.png" width="133" height="70" border="0" id="Image9" onmouseover="MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus.png" width="133" height="70" border="0" id="Image9" onmouseover="(function(){MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png',1);show_submenu('img_contactus_sub.png','#contactus_map');})();" onmouseout="(function(){MM_swapImgRestore()})();" /></a></td>
         <td width="55">&nbsp;</td>
       </tr>
     </table></td>
@@ -168,5 +179,29 @@ a:active {
 </div><!-- top-bar -->
 
 <div class="sub-menu">
-  <img src="<?PHP echo $dir_image_lang; ?>img_products_sub.jpg" />
+  <img src="<?PHP echo $dir_image_lang; ?>img_products_sub.jpg" usemap="#product_map" />
+  <map name="aboutus_map" id="aboutus_map">
+	<area shape="rect" coords="162,0,289,39" href="?route=information/aboutus" target="_parent" />
+	<area shape="rect" coords="292,0,421,39" href="?route=information/culture" target="_parent" />
+	<area shape="rect" coords="424,0,617,39" href="?route=information/certificate" target="_parent" />
+  </map>
+  <map name="product_map" id="product_map">
+	<area shape="rect" coords="430,0,552,39" href="?route=product/category&path=99" target="_parent" />
+	<area shape="rect" coords="555,0,685,39" href="?route=product/category&path=100" target="_parent" />
+	<area shape="rect" coords="687,0,814,39" href="?route=product/category&path=102" target="_parent" />
+	<area shape="rect" coords="817,0,953,39" href="?route=product/category&path=101" target="_parent" />
+  </map>
+  <map name="share_map" id="share_map">
+	<area shape="rect" coords="826,0,950,39" href="?route=product/article" target="_parent" />
+	<area shape="rect" coords="955,0,1082,39" href="?route=product/expert_article" target="_parent" />
+	<area shape="rect" coords="1086,0,1224,39" href="?route=product/video" target="_parent" />
+  </map>
+  <map name="magazine_map" id="magazine_map">
+	<area shape="rect" coords="944,0,1075,39" href="?route=product/magazine" target="_parent" />
+	<area shape="rect" coords="1078,0,1224,39" href="?route=product/magazine" target="_parent" />
+  </map>
+  <map name="contactus_map" id="contactus_map">
+	<area shape="rect" coords="957,0,1085,39" href="?route=information/contactus" target="_parent" />
+	<area shape="rect" coords="1087,0,1218,39" href="?route=information/enquiry" target="_parent" />
+  </map>
 </div>

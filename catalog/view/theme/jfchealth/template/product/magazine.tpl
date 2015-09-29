@@ -85,6 +85,8 @@ $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
   $('#Image8').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png');
+  // Sub menu
+  show_submenu('img_magazine_sub.png','#magazine_map');
 });
 </script>
 

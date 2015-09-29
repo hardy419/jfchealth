@@ -27,6 +27,8 @@ $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');
   $('#Image2').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png');
+  // Sub menu
+  show_submenu('img_aboutus_sub.png','#aboutus_map');
 });
 </script>
 
