@@ -69,3 +69,24 @@ a:active {
 	line-height: 24px;
 	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif", "arial", "helvetica";
 }
+
+.apply-div {
+  background: rgb(245,251,240) url("../../images/zh-HK/course_popup1c.png") no-repeat;
+  height: 550px;
+}
+.apply-info-div {
+  background: rgb(245,251,240) url("../../images/zh-HK/course_popup2c.png") no-repeat;
+  height: 300px;
+}
+.apply-form {
+  margin-top: 40px;
+}
+.apply-div td:first-child {
+  padding-left: 80px;
+}
+.apply-div td {
+  padding-bottom: 30px;
+}
+.info-content {
+  margin-top: 60px;
+}

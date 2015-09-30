@@ -179,7 +179,7 @@ a:active {
 </div><!-- top-bar -->
 
 <div class="sub-menu">
-  <img src="<?PHP echo $dir_image_lang; ?>img_products_sub.jpg" usemap="#product_map" />
+  <img src="" usemap="#product_map" />
   <map name="aboutus_map" id="aboutus_map">
 	<area shape="rect" coords="162,0,289,39" href="?route=information/aboutus" target="_parent" />
 	<area shape="rect" coords="292,0,421,39" href="?route=information/culture" target="_parent" />

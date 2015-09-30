@@ -11,33 +11,24 @@
 		<div class="course-list">
 		  <table width="850" border="0" cellpadding="0" cellspacing="0">
 			  <tr>
-				<td height="20">&nbsp;</td>
-				<td>&nbsp;</td>
-				<td align="left" valign="top">&nbsp;</td>
-			  </tr>
-			  <tr>
-				<td width="210"><img src="<?PHP echo $courses[0]['image']; ?>" width="210" height="210" /></td>
+				<td width="210" valign="bottom"><img src="<?PHP echo $courses[0]['image']; ?>" width="210" height="210" /></td>
 				<td width="20">&nbsp;</td>
-				<td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
+				<td width="620" align="left" valign="bottom"><table width="620" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="490" class="index_course_title"><?PHP echo $courses[0]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[0]['course_date']; ?></td>
-					<td width="20">&nbsp;</td>
-					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[0]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
+					<td width="620" class="index_course_title" colspan="3"><?PHP echo $courses[0]['name']; ?></td>
 				  </tr>
 				  <tr>
-					<td height="10">&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+					<td height="10"></td>
+					<td></td>
+					<td></td>
 				  </tr>
 				  <tr>
-					<td class="index_course_content_txt"><?PHP echo $text_date; ?> <?PHP echo $courses[0]['course_date']; ?><br />
+					<td class="index_course_content_txt" colspan="3"><?PHP echo $text_date; ?> <?PHP echo $courses[0]['course_date']; ?><br />
 					  <?PHP echo $text_time; ?> <?PHP echo $courses[0]['time_period']; ?><br />
 					  <?PHP echo $text_location; ?> <?PHP echo $courses[0]['location']; ?><br />
 					  <?PHP echo $text_num_seats; ?> <?PHP echo $courses[0]['seats']; ?>名<br />
 					  <?PHP echo $text_speaker; ?> <?PHP echo $courses[0]['speaker']; ?><br />
-					  <?PHP echo $text_phone; ?> <?PHP echo $courses[0]['phone']; ?></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+					  <?PHP echo $text_phone; ?> <?PHP echo $courses[0]['phone']; ?><a href="javascript:apply_course('<?PHP echo $courses[0]['course_id']; ?>');" style="float:right"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="120" height="40" /></a></td>
 				  </tr>
 				</table></td>
 				</tr>
@@ -56,28 +47,24 @@
 				<td>&nbsp;</td>
 				</tr>
 			  <tr>
-				<td width="210"><img src="<?PHP echo $courses[$idx]['image']; ?>" width="210" height="210" /></td>
+				<td width="210" valign="bottom"><img src="<?PHP echo $courses[$idx]['image']; ?>" width="210" height="210" /></td>
 				<td width="20">&nbsp;</td>
-				<td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
+				<td width="620" align="left" valign="bottom"><table width="620" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="490" class="index_course_title"><?PHP echo $courses[$idx]['name']; ?>&nbsp;&nbsp;&nbsp;<?PHP echo $courses[$idx]['course_date']; ?></td>
-					<td width="20">&nbsp;</td>
-					<td width="110" align="right" valign="middle"><a href="javascript:apply_course('<?PHP echo $courses[$idx]['course_id']; ?>');"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="86" height="26" /></a></td>
+					<td width="620" class="index_course_title" colspan="3"><?PHP echo $courses[$idx]['name']; ?></td>
 				  </tr>
 				  <tr>
-					<td height="10">&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+					<td height="10"></td>
+					<td></td>
+					<td></td>
 				  </tr>
 				  <tr>
-					<td class="index_course_content_txt"><?PHP echo $text_date; ?> <?PHP echo $courses[$idx]['course_date']; ?><br />
+					<td class="index_course_content_txt" colspan="3"><?PHP echo $text_date; ?> <?PHP echo $courses[$idx]['course_date']; ?><br />
 					  <?PHP echo $text_time; ?> <?PHP echo $courses[$idx]['time_period']; ?><br />
 					  <?PHP echo $text_location; ?> <?PHP echo $courses[$idx]['location']; ?><br />
 					  <?PHP echo $text_num_seats; ?> <?PHP echo $courses[$idx]['seats']; ?>名<br />
 					  <?PHP echo $text_speaker; ?> <?PHP echo $courses[$idx]['speaker']; ?><br />
-					  <?PHP echo $text_phone; ?> <?PHP echo $courses[$idx]['phone']; ?></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+					  <?PHP echo $text_phone; ?> <?PHP echo $courses[$idx]['phone']; ?><a href="javascript:apply_course('<?PHP echo $courses[0]['course_id']; ?>');" style="float:right"><img src="<?PHP echo $dir_image_lang; ?>btn_apply_course.png" width="120" height="40" /></a></td>
 				  </tr>
 				</table></td>
 				</tr>
@@ -93,16 +80,16 @@
 				</tr>
 			  <tr>
 				<style>
-.results a:link {
+.results a:link,.links a:link {
 	color: #000000;
 }
-.results a:visited {
+.results a:visited,.links a:visited {
 	color: #000000;
 }
-.results a:hover {
+.results a:hover,.links a:hover {
 	color: #000000;
 }
-.results a:active {
+.results a:active,.links a:active {
 	color: #000000;
 }
 				</style>
@@ -114,8 +101,8 @@
 	<div class="cb"></div>
 </div><!-- div content -->
 
-<div id="TB_window" style="position:absolute; top:50%; left:50%; width: 560px;height: 315px; margin-left:-280px;margin-top:-160px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course" id="TB_iframeContent" style="width:560px;height:315px;background-color:transparent"> </iframe></div>
-<div id="TB_window2" style="position:absolute; top:50%; left:50%; width: 560px;height: 222px; margin-left:-280px;margin-top:-111px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course/info" id="TB_iframeContent2" style="width:560px;height:222px;background-color:transparent"> </iframe></div>
+<div id="TB_window" style="position:absolute; top:50%; left:50%; width: 800px;height: 550px; margin-left:-400px;margin-top:-280px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course" id="TB_iframeContent" style="width:800px;height:550px;background-color:transparent"> </iframe></div>
+<div id="TB_window2" style="position:absolute; top:50%; left:50%; width: 800px;height: 300px; margin-left:-400px;margin-top:-150px; display: none;z-index:2147483647"><iframe frameborder="0" hspace="0" scrolling="no" allowtransparency="yes" src="?route=product/apply_course/info" id="TB_iframeContent2" style="width:800px;height:300px;background-color:transparent"> </iframe></div>
 <div id="TB_mask" style="filter:alpha(opacity=30);-moz-opacity:0.5;opacity:0.5;background-color:#000000;position:absolute;left:0px;top:0px;width:100%;height:300%;z-index:2147483646;display:none" onclick="js_op_close(false)"></div>
 
 <div class="bottom-bar">

@@ -11,7 +11,7 @@ body {
 
 .news-bg {
   background: rgb(204,124,123) url("img_news_bg.jpg") no-repeat;
-  height: auto;
+  height: 865px;
 }
 .content>.gap {
   height:60px;
@@ -45,7 +45,12 @@ body {
 }
 .right-content h3 {
   color: rgb(97,137,172);
-  margin-top: 20px;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.right-content p {
+  margin: 0;
 }
 
 a:link {
