@@ -14,7 +14,7 @@
 	<div class="cb"></div>
 </div><!-- div content -->
 
-<div class="bottom-bar" style="margin-top:90px;position:relative;">
+<div class="bottom-bar">
 <?php echo $footer; ?>
 </div>
 

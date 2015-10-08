@@ -11,7 +11,7 @@ body {
 
 .news-bg {
   background: rgb(204,124,123) url("img_news_bg.jpg") no-repeat;
-  height: 865px;
+  min-height: 865px;
 }
 .content>.gap {
   height:60px;

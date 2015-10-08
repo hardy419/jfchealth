@@ -9,8 +9,8 @@ body {
 	margin-bottom: 0px;
 }
 
-.news-bg {
-  background: rgb(204,124,123) url("img_news_bg.jpg") no-repeat;
+.experience-bg {
+  background: rgb(234,237,236) url("img_experience_bg.jpg") no-repeat;
   min-height: 865px;
 }
 .content>.gap {
@@ -45,12 +45,7 @@ body {
 }
 .right-content h3 {
   color: rgb(97,137,172);
-  font-size: 22px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.right-content p {
-  margin: 0;
+  margin-top: 20px;
 }
 
 a:link {
@@ -70,7 +65,14 @@ a:active {
 	color: #FFFFFF;
 }
 
-a.readmore {
-  font-size: 14px;
-  color: #0000ff !important;
+.index_course_title {
+	font-size: 22px;
+	font-weight: bold;
+	color: rgb(97,137,172);
+}
+.index_course_content_txt {
+	font-size: 14px;
+	font-weight: normal;
+	color: #252525;
+	line-height: 24px;
 }

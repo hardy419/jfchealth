@@ -162,7 +162,7 @@ a:active {
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="?route=product/category&path=99" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_product.png" width="133" height="70" border="0" id="Image4" onmouseover="(function(){MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png',1);hide_submenu();show_submenu('img_products_sub.png','#product_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="experience.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience.png" width="133" height="70" border="0" id="Image5" onmouseover="(function(){MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience_mo.png',1);hide_submenu();})();" /></a></td>
+        <td><a href="?route=product/experience" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience.png" width="133" height="70" border="0" id="Image5" onmouseover="(function(){MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_course.png" width="133" height="70" border="0" id="Image6" onmouseover="(function(){MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
