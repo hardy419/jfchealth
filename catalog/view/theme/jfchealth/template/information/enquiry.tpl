@@ -41,7 +41,7 @@
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><p class="index_content_txt"><a href="javascript:enquiry_form_submit()"><img src="<?PHP echo $dir_image_lang; ?>btn_contact_enquiry.png"></img></a></p></td>
+                    <td><p class="index_content_txt"><a href="javascript:enquiry_form_submit()"><img src="<?PHP echo $dir_image_lang; ?>btn_submit.png"></img></a></p></td>
                   </tr>
                   <?PHP
                   ?>

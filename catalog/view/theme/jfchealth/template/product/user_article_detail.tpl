@@ -5,29 +5,19 @@
 	<div class="left-nav fl">
 		<div class="gap"></div>
 		<ul>
-			<li><img <?PHP if('en' == $this->language->get('code')) { echo 'style="position:relative;left:-20px"'; } ?> src="<?PHP echo $dir_image_lang; ?>btn_article_user_mo.png" border="0" id="Image111" /></li>
-			<li><a href="?route=product/expert_article" target="_parent"><img <?PHP if('en' == $this->language->get('code')) { echo 'style="position:relative;left:-20px"'; } ?> src="<?PHP echo $dir_image_lang; ?>btn_article_expert.png" name="Image10" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image_lang; ?>btn_article_expert_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
-			<li><a href="?route=product/video" target="_parent"><img <?PHP if('en' == $this->language->get('code')) { echo 'style="position:relative;left:-20px"'; } ?> src="<?PHP echo $dir_image_lang; ?>btn_article_video.png" name="Image1211" border="0" id="Image1211" onmouseover="MM_swapImage('Image1211','','<?PHP echo $dir_image_lang; ?>btn_article_video_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
+			<li><img src="<?PHP echo $dir_image_lang; ?>btn_article_user_mo.png" border="0" id="Image111" /></li>
+			<li><a href="?route=product/expert_article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_article_expert.png" name="Image10" border="0" id="Image10" onmouseover="MM_swapImage('Image10','','<?PHP echo $dir_image_lang; ?>btn_article_expert_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
+			<li><a href="?route=product/video" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>btn_article_video.png" name="Image1211" border="0" id="Image1211" onmouseover="MM_swapImage('Image1211','','<?PHP echo $dir_image_lang; ?>btn_article_video_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></li>
 		</ul>
 	</div>
 	<div class="right-content fr">
 		<div class="content-title">
-			<img src="<?PHP echo $dir_image_lang; ?>img_usershare_detail_title.png" width="850" height="34" border="0" usemap="#Map" />
+			<img src="<?PHP echo $dir_image_lang; ?>img_share01_detail_title.png" width="850" height="34" border="0" usemap="#Map" />
 			  <map name="Map" id="Map">
 				<area shape="rect" coords="1,7,69,35" href="?route=product/article" target="_parent" />
 			  </map>
 		</div>
 		<div class="article-list">
-			<table width="850" border="0" cellspacing="0" cellpadding="0">
-				  <tr>
-					<td colspan="3" class="index_discription_title"><?PHP echo $title; ?></td>
-					</tr>
-				  <tr>
-					<td width="280">&nbsp;</td>
-					<td width="20">&nbsp;</td>
-					<td width="550">&nbsp;</td>
-					</tr>
-				</table>
 			<?PHP echo $description; ?>
 		</div>
 	</div>

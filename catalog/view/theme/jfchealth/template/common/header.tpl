@@ -74,8 +74,8 @@ function show_submenu(name,map){
   $('.content').css('margin-top','0');
 }
 function hide_submenu(){
-  //$('.sub-menu').css('display','none');
-  //$('.content').css('margin-top','40px');
+  $('.sub-menu').css('display','none');
+  $('.content').css('margin-top','40px');
 }
 </script>
 <style type="text/css">
@@ -151,33 +151,33 @@ a:active {
     </table></td>
   </tr>
   <tr>
-    <td height="70"><table width="1280" border="0" cellspacing="0" cellpadding="0">
+    <td height="70"><table id="menu-table" width="1280" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="55" height="70">&nbsp;</td>
-        <td><a href="?route=common/home" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png" width="98" height="70" id="Image1" onmouseover="MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=common/home" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png" width="98" height="70" id="Image1" onmouseover="(function(){MM_swapImage('Image1','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="(function(){MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1);show_submenu('img_aboutus_sub.png','#aboutus_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
+        <td><a href="?route=information/aboutus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus.png" name="Image2" width="133" height="70" border="0" id="Image2" onmouseover="(function(){MM_swapImage('Image2','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_aboutus_mo.png',1);hide_submenu();show_submenu('img_aboutus_sub.png','#aboutus_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/news" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_news.png" name="Image3" width="133" height="70" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/news" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_news.png" name="Image3" width="133" height="70" border="0" id="Image3" onmouseover="(function(){MM_swapImage('Image3','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_news_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/category&path=99" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_product.png" width="133" height="70" border="0" id="Image4" onmouseover="(function(){MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png',1);show_submenu('img_products_sub.png','#product_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
+        <td><a href="?route=product/category&path=99" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_product.png" width="133" height="70" border="0" id="Image4" onmouseover="(function(){MM_swapImage('Image4','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_product_mo.png',1);hide_submenu();show_submenu('img_products_sub.png','#product_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="experience.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience.png" width="133" height="70" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="experience.html" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience.png" width="133" height="70" border="0" id="Image5" onmouseover="(function(){MM_swapImage('Image5','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_experience_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_course.png" width="133" height="70" border="0" id="Image6" onmouseover="MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        <td><a href="?route=product/course" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_course.png" width="133" height="70" border="0" id="Image6" onmouseover="(function(){MM_swapImage('Image6','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_course_mo.png',1);hide_submenu();})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_share.png" width="133" height="70" border="0" id="Image7" onmouseover="(function(){MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png',1);show_submenu('img_share_sub.png','#share_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
+        <td><a href="?route=product/article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_share.png" width="133" height="70" border="0" id="Image7" onmouseover="(function(){MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png',1);hide_submenu();show_submenu('img_share_sub.png','#share_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="(function(){MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1);show_submenu('img_magazine_sub.png','#magazine_map');})();" onmouseout="(function(){MM_swapImgRestore();hide_submenu();})();" /></a></td>
+        <td><a href="?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="(function(){MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1);hide_submenu();show_submenu('img_magazine_sub.png','#magazine_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus.png" width="133" height="70" border="0" id="Image9" onmouseover="(function(){MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png',1);show_submenu('img_contactus_sub.png','#contactus_map');})();" onmouseout="(function(){MM_swapImgRestore()})();" /></a></td>
+        <td><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus.png" width="133" height="70" border="0" id="Image9" onmouseover="(function(){MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png',1);hide_submenu();show_submenu('img_contactus_sub.png','#contactus_map');})();" /></a></td>
         <td width="55">&nbsp;</td>
       </tr>
     </table></td>
   </tr>
 </table>
 </div><!-- top-bar -->
-
+<!--div class="debug"></div-->
 <div class="sub-menu">
   <img src="" usemap="#product_map" />
   <map name="aboutus_map" id="aboutus_map">
@@ -205,3 +205,23 @@ a:active {
 	<area shape="rect" coords="1087,0,1218,39" href="?route=information/enquiry" target="_parent" />
   </map>
 </div>
+
+<script>
+$(function(){
+  $('#menu-table td a img').mouseout(function(e){
+    if(e.pageY<170 || e.pageY>210){
+      //$('.debug').html(e.pageY);
+      hide_submenu();
+    }
+    else{
+      $('.sub-menu').mouseout(function(e){
+        //$('.debug').html(e.pageY);
+        if(e.pageY<170 || e.pageY>210){
+          hide_submenu();
+        }
+      });
+    }
+    MM_swapImgRestore();
+  });
+});
+</script>

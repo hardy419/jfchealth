@@ -71,11 +71,11 @@ a:active {
 }
 
 .apply-div {
-  background: rgb(245,251,240) url("../../images/zh-HK/course_popup1c.png") no-repeat;
+  background: rgb(245,251,240) url("../../images/zh/course_popup1c.png") no-repeat;
   height: 550px;
 }
 .apply-info-div {
-  background: rgb(245,251,240) url("../../images/zh-HK/course_popup2c.png") no-repeat;
+  background: rgb(245,251,240) url("../../images/zh/course_popup2c.png") no-repeat;
   height: 300px;
 }
 .apply-form {

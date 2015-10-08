@@ -84,11 +84,7 @@
   if (99 == $_GET['path']) {
 ?>
 			  <tr>
-				<td><img src="<?PHP echo $dir_image_lang; ?>img_report.png" /></td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td colspan="5"><img src="<?PHP echo $dir_image_lang; ?>img_report.png" /></td>
 			  </tr>
 			  <tr>
 				<td height="40" class="index_content_txt">&nbsp;</td>
