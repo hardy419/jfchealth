@@ -168,7 +168,7 @@ a:active {
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="?route=product/article" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_share.png" width="133" height="70" border="0" id="Image7" onmouseover="(function(){MM_swapImage('Image7','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png',1);hide_submenu();show_submenu('img_share_sub.png','#share_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
-        <td><a href="?route=product/magazine" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="(function(){MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1);hide_submenu();show_submenu('img_magazine_sub.png','#magazine_map');})();" /></a></td>
+        <td><a href="?route=product/naturopathy" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine.png" name="Image8" width="133" height="70" border="0" id="Image8" onmouseover="(function(){MM_swapImage('Image8','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png',1);hide_submenu();show_submenu('img_magazine_sub.png','#magazine_map');})();" /></a></td>
         <td><img src="<?PHP echo $dir_image; ?>img_menu_line.png" width="1" height="15" /></td>
         <td><a href="?route=information/contactus" target="_parent"><img src="<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus.png" width="133" height="70" border="0" id="Image9" onmouseover="(function(){MM_swapImage('Image9','','<?PHP echo $dir_image_lang; ?>menu/btn_menu_contactus_mo.png',1);hide_submenu();show_submenu('img_contactus_sub.png','#contactus_map');})();" /></a></td>
         <td width="55">&nbsp;</td>
@@ -197,7 +197,7 @@ a:active {
 	<area shape="rect" coords="1086,0,1224,39" href="?route=product/video" target="_parent" />
   </map>
   <map name="magazine_map" id="magazine_map">
-	<area shape="rect" coords="944,0,1075,39" href="?route=product/magazine" target="_parent" />
+	<area shape="rect" coords="944,0,1075,39" href="?route=product/naturopathy" target="_parent" />
 	<area shape="rect" coords="1078,0,1224,39" href="?route=product/magazine" target="_parent" />
   </map>
   <map name="contactus_map" id="contactus_map">

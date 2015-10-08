@@ -40,7 +40,7 @@ class ControllerProductNews extends Controller {
 		if (isset($this->request->get['limit'])) {
 			$limit = $this->request->get['limit'];
 		} else {
-			$limit = ($this->request->get['t']== 3 || $this->request->get['t']== 5)? 6 : 3;
+			$limit = (in_array ($this->request->get['t'], array(3,5,6)))? 6 : 3;
 		}
 
         $this->document->setTitle($this->config->get('config_title'));
@@ -101,6 +101,7 @@ class ControllerProductNews extends Controller {
                 'image'       => DIR_IMAGE.$result['image'],
                 'filename'        => $result['filename'],
                 'title'        => $result['title'],
+                'description'        => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
                 'date_added'        => $result['date_added'],
                 'info'        => $result['info'],
                 'intro'       => $this->getIntro(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')),
@@ -215,6 +216,9 @@ class ControllerProductNews extends Controller {
         }
         else if($this->request->get['t'] >=2 && $this->request->get['t'] <= 4) {
             $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/article.css');
+        }
+        else {
+            $this->document->addStyle('catalog/view/theme/jfchealth/css/'.$this->language->get('code').'/magazine.css');
         }
         $this->document->addStyle('catalog/view/theme/jfchealth/css/common.css');
         //$this->data['dir_image'] = DIR_TEMPLATE . $this->config->get('config_template') . '/images/';

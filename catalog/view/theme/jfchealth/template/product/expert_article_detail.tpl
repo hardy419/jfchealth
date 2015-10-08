@@ -22,9 +22,6 @@
 				  <tr>
 					<td class="index_discription_title"><?PHP echo $title; ?></td>
 					</tr>
-				  <tr>
-					<td>&nbsp;</td>
-					 </tr>
 				</table>
 			<?PHP echo $description; ?>
 		</div>
