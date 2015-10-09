@@ -228,10 +228,16 @@ class ControllerCatalogNews extends Controller {
 				$image = $this->model_tool_image->resize('no_image.jpg', 40, 40);
 			}
 
+            // Special cases
+            if ('magazine' == $this->request->get['n']) {
+                $result['title'] .= ' '.strip_tags (html_entity_decode ($result['description']));
+            }
+
             // $informations = the showing list array
 			$this->data['informations'][] = array(
 				'news_id' => $result['news_id'],
 				'title'       => $result['title'],
+				'description' => strip_tags (html_entity_decode ($result['description'])),
 				'time'      => $result['time'],
 				'status'      => $result['status'],
 				'selected'   => isset($this->request->post['selected']) && in_array($result['news_id'], $this->request->post['selected']),

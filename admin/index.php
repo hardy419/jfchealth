@@ -168,6 +168,11 @@ if(isset($request->get['route'])) {
         $request->get['t'] = '5';
         $request->get['n'] = 'magazine';
     }
+    if (false !== strpos ($request->get['route'], 'naturopathy')) {
+        $request->get['route'] = str_replace ('naturopathy', 'news', $request->get['route']);
+        $request->get['t'] = '6';
+        $request->get['n'] = 'naturopathy';
+    }
 }
 
 // Front Controller

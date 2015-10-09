@@ -163,6 +163,7 @@ class ControllerCommonHeader extends Controller {
 			$this->data['user_article'] = $this->url->link('catalog/user_article', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['expert_article'] = $this->url->link('catalog/expert_article', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['video'] = $this->url->link('catalog/video', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['naturopathy'] = $this->url->link('catalog/naturopathy', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['magazine'] = $this->url->link('catalog/magazine', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['language'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], 'SSL');

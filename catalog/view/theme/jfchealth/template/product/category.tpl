@@ -94,9 +94,9 @@
 				<td>&nbsp;</td>
 			  </tr>
 			  <tr>
-				<td width="269"><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_01.jpg" width="269" height="350" /></td>
+				<td width="269"><a href="javascript:void(0);" onclick="show_report('bacterial');"><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_01.jpg" width="269" height="350" /></a></td>
 				<td width="20">&nbsp;</td>
-				<td width="269"><img src="<?PHP echo $dir_image; ?>img_SGSMetal_01.jpg" width="269" height="350" /></td>
+				<td width="269"><a href="javascript:void(0);" onclick="show_report('metal');"><img src="<?PHP echo $dir_image; ?>img_SGSMetal_01.jpg" width="269" height="350" /></a></td>
 				<td width="20">&nbsp;</td>
 				<td>&nbsp;</td>
 			  </tr>
@@ -129,6 +129,21 @@
 </div>
 
 <script>
+function show_report(name){
+  $('.product-list').css('text-align', 'center');
+  $('<div class="content-title"></div>').insertBefore('.product-list');
+  $('.content-title').html('<map name="Map" id="Map"><area shape="rect" coords="1,7,69,35" href="?route=product/category&path=99" target="_parent"></map><img src="<?PHP echo $dir_image_lang; ?>img_title_report.png" usemap="#Map">');
+  if('metal'==name){
+    $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSMetal_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_03.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSMetal_04.jpg" />');
+  }
+  else{
+    $('.product-list').html('<img src="<?PHP echo $dir_image; ?>img_SGSBacterial_01.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_02.jpg" /><br/><br/><br/><img src="<?PHP echo $dir_image; ?>img_SGSBacterial_03.jpg" />');
+  }
+  $(document).bind('contextmenu',function(e){
+    return false;
+  });
+}
+
 $(function(){
   // Menu highlight
   $('#Image1').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_home.png');

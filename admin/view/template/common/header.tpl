@@ -96,7 +96,12 @@ $(document).ready(function(){
               <li><a href="<?php echo $video; ?>"><?php echo $text_video; ?></a></li>
             </ul>
           </li>
-          <li><a href="<?php echo $magazine; ?>"><?php echo $text_magazine; ?></a></li>
+          <li><a class="parent"><?php echo 'JFChealth'; ?></a>
+            <ul>
+              <li><a href="<?php echo $naturopathy; ?>"><?php echo 'Naturopathy'; ?></a></li>
+              <li><a href="<?php echo $magazine; ?>"><?php echo $text_magazine; ?></a></li>
+            </ul>
+          </li>
         </ul>
       </li>
       <!--<li id="extension"><a class="top"><?php echo $text_extension; ?></a>
