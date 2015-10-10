@@ -3,17 +3,11 @@
 <div class="content">
   <div class="home-banner" style="overflow:hidden">
     <ul class="slide-right" id="home-banner-u" uw="1280" delay="0" style="padding:0;position:relative">
-      <?PHP //foreach($product_names as $key=>$name) { ?>
+      <?PHP foreach($main_settings[0]['images'] as $key=>$image) { ?>
       <li style="float:left;width:1280px;height:530px">
-		<img src="<?PHP echo $dir_image; ?>banner_test.png" />
+		<a href="<?PHP echo $main_settings[0]['links'][$key]; ?>"><img src="<?PHP echo DIR_IMAGE . $image; ?>" /></a>
       </li>
-      <li style="float:left;width:1280px;height:530px">
-		<img src="<?PHP echo $dir_image; ?>banner_test.png" />
-      </li>
-      <li style="float:left;width:1280px;height:530px">
-		<img src="<?PHP echo $dir_image; ?>img_logo.png" />
-      </li>
-      <?PHP //} ?>
+      <?PHP } ?>
     </ul>
     <div class="home-banner-icons pa">
       <a href="javascript:(function(){slide($('#home-banner-u'),1);})();"><img id="home-larrow-img" src="<?PHP echo $dir_image; ?>btn_index_Lbutton.png" /></a>
@@ -26,36 +20,36 @@
       <li class="fl">
         <div style="overflow:hidden;width:295px;height:295px">
           <ul class="slide-right" uw="295" delay="1500" style="padding:0;position:relative">
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1neihe.png" /></a></li>
+            <?PHP foreach($main_settings[1]['images'] as $key=>$image) { ?>
+            <li style="float:left;width:295px;height:295px"><a href="<?PHP echo $main_settings[1]['links'][$key]; ?>"><img src="<?PHP echo DIR_IMAGE . $image; ?>" /></a></li>
+            <?PHP } ?>
           </ul>
         </div>
       </li>
       <li class="fl">
         <div style="overflow:hidden;width:295px;height:295px">
           <ul class="slide-right" uw="295" delay="2500" style="padding:0;position:relative">
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1waizhao.png" /></a></li>
+            <?PHP foreach($main_settings[2]['images'] as $key=>$image) { ?>
+            <li style="float:left;width:295px;height:295px"><a href="<?PHP echo $main_settings[2]['links'][$key]; ?>"><img src="<?PHP echo DIR_IMAGE . $image; ?>" /></a></li>
+            <?PHP } ?>
           </ul>
         </div>
       </li>
       <li class="fl">
         <div style="overflow:hidden;width:295px;height:295px">
           <ul class="slide-right" uw="295" delay="700" style="padding:0;position:relative">
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1jiankang.png" /></a></li>
+            <?PHP foreach($main_settings[3]['images'] as $key=>$image) { ?>
+            <li style="float:left;width:295px;height:295px"><a href="<?PHP echo $main_settings[3]['links'][$key]; ?>"><img src="<?PHP echo DIR_IMAGE . $image; ?>" /></a></li>
+            <?PHP } ?>
           </ul>
         </div>
       </li>
       <li class="fl">
         <div style="overflow:hidden;width:295px;height:295px">
           <ul class="slide-right" uw="295" delay="4000" style="padding:0;position:relative">
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
-            <li style="float:left;width:295px;height:295px"><a href=""><img src="<?PHP echo $dir_image; ?>1taozhuang.png" /></a></li>
+            <?PHP foreach($main_settings[4]['images'] as $key=>$image) { ?>
+            <li style="float:left;width:295px;height:295px"><a href="<?PHP echo $main_settings[4]['links'][$key]; ?>"><img src="<?PHP echo DIR_IMAGE . $image; ?>" /></a></li>
+            <?PHP } ?>
           </ul>
         </div>
       </li>
@@ -128,6 +122,7 @@ $(document).ready(function (){
 });
 function slide(obj,dir){
   var linum=obj.find("li").length;
+  if(linum<=1) return;
   var width=parseInt(obj.attr("uw"));
   var w=width*linum;
   var ml=parseInt(obj.css("left"));

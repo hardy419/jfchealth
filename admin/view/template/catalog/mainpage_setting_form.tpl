@@ -15,83 +15,196 @@
     </div>
     <div class="content">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
-        <table class="form">
-          <tr>
-            <td><?php echo 'Name:'; ?></td>
-            <td><input type="text" name="key" value="<?php echo $key; ?>" size="40" disabled /></td>
-          </tr>
-          <tr>
-            <td><?php echo 'Value'; ?></td>
-            <td><!--select name="type">
-                <optgroup label="<?php echo $text_choose; ?>">
-                <?php if ($type == 'select') { ?>
-                <option value="select" selected><?php echo $text_select; ?></option>
-                <?php } else { ?>
-                <option value="select"><?php echo $text_select; ?></option>
-                <?php } ?>
-                <?php if ($type == 'radio') { ?>
-                <option value="radio" selected><?php echo $text_radio; ?></option>
-                <?php } else { ?>
-                <option value="radio"><?php echo $text_radio; ?></option>
-                <?php } ?>
-                <?php if ($type == 'checkbox') { ?>
-                <option value="checkbox" selected><?php echo $text_checkbox; ?></option>
-                <?php } else { ?>
-                <option value="checkbox"><?php echo $text_checkbox; ?></option>
-                <?php } ?>
-                <?php if ($type == 'image') { ?>
-                <option value="image" selected><?php echo $text_image; ?></option>
-                <?php } else { ?>
-                <option value="image"><?php echo $text_image; ?></option>
-                <?php } ?>
-                </optgroup>
-                <optgroup label="<?php echo $text_input; ?>">
-                <?php if ($type == 'text') { ?>
-                <option value="text" selected><?php echo $text_text; ?></option>
-                <?php } else { ?>
-                <option value="text"><?php echo $text_text; ?></option>
-                <?php } ?>
-                <?php if ($type == 'textarea') { ?>
-                <option value="textarea" selected><?php echo $text_textarea; ?></option>
-                <?php } else { ?>
-                <option value="textarea"><?php echo $text_textarea; ?></option>
-                <?php } ?>
-                </optgroup>
-                <optgroup label="<?php echo $text_file; ?>">
-                <?php if ($type == 'file') { ?>
-                <option value="file" selected><?php echo $text_file; ?></option>
-                <?php } else { ?>
-                <option value="file"><?php echo $text_file; ?></option>
-                <?php } ?>
-                </optgroup>
-                <optgroup label="<?php echo $text_date; ?>">
-                <?php if ($type == 'date') { ?>
-                <option value="date" selected><?php echo $text_date; ?></option>
-                <?php } else { ?>
-                <option value="date"><?php echo $text_date; ?></option>
-                <?php } ?>
-                <?php if ($type == 'time') { ?>
-                <option value="time" selected><?php echo $text_time; ?></option>
-                <?php } else { ?>
-                <option value="time"><?php echo $text_time; ?></option>
-                <?php } ?>
-                <?php if ($type == 'datetime') { ?>
-                <option value="datetime" selected><?php echo $text_datetime; ?></option>
-                <?php } else { ?>
-                <option value="datetime"><?php echo $text_datetime; ?></option>
-                <?php } ?>
-                </optgroup>
-              </select-->
-              <select name="value">
-                <?php foreach ($course_info as $c) { ?>
-                <option value="<?php echo $c['course_id']; ?>" <?php if($c['course_id']===$value) echo 'selected'; ?>><?php echo $c['name'].' '.$c['course_date']; ?></option>
-                <?php } ?>
-              </select>
-            </td>
-          </tr>
-        </table>
+        <div id="tab-image">
+          <table id="images" class="list">
+            <thead>
+              <tr>
+                <td class="left"><?php echo $entry_image; ?></td>
+                <td class="right"><?php echo 'Link'; ?></td>
+                <td class="right"><?php echo $entry_sort_order; ?></td>
+                <td></td>
+              </tr>
+            </thead>
+            <?php $image_row = 0; ?>
+            <?php foreach ($news_images as $news_image) { ?>
+            <tbody id="image-row<?php echo $image_row; ?>">
+              <tr>
+                <td class="left"><div class="image"><img src="<?php echo $news_image['thumb']; ?>" alt="" id="thumb<?php echo $image_row; ?>" />
+                    <input type="hidden" name="news_image[<?php echo $image_row; ?>][image]" value="<?php echo $news_image['image']; ?>" id="image<?php echo $image_row; ?>" />
+                    <br />
+                    <a onclick="image_upload('image<?php echo $image_row; ?>', 'thumb<?php echo $image_row; ?>');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb<?php echo $image_row; ?>').attr('src', '<?php echo $no_image; ?>'); $('#image<?php echo $image_row; ?>').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+                <td class="right"><input type="text" name="news_image[<?php echo $image_row; ?>][link]" value="<?php echo $news_image['link']; ?>" size="50" /></td>
+                <td class="right"><input type="text" name="news_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $news_image['sort_order']; ?>" size="2" /></td>
+                <td class="left"><a onclick="$('#image-row<?php echo $image_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+              </tr>
+            </tbody>
+            <?php $image_row++; ?>
+            <?php } ?>
+            <tfoot>
+              <tr>
+                <td colspan="3"></td>
+                <td class="left"><a onclick="addImage();" class="button"><?php echo $button_add_image; ?></a></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </form>
     </div>
   </div>
 </div>
+<script type="text/javascript"><!--
+function image_upload(field, thumb) {
+	$('#dialog').remove();
+	
+	$('#content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe src="index.php?route=common/filemanager&token=<?php echo $token; ?>&field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');
+	
+	$('#dialog').dialog({
+		title: '<?php echo $text_image_manager; ?>',
+		close: function (event, ui) {
+			if ($('#' + field).attr('value')) {
+				$.ajax({
+					url: 'index.php?route=common/filemanager/image&token=<?php echo $token; ?>&image=' + encodeURIComponent($('#' + field).attr('value')),
+					dataType: 'text',
+					success: function(text) {
+						$('#' + thumb).replaceWith('<img src="' + text + '" alt="" id="' + thumb + '" />');
+					}
+				});
+			}
+		},	
+		bgiframe: false,
+		width: 800,
+		height: 400,
+		resizable: false,
+		modal: false
+	});
+};
+//--></script> 
+<script type="text/javascript"><!--
+var image_row = <?php echo $image_row; ?>;
+
+function addImage() {
+  if(<?php echo $maxnum_images; ?>==$('#images tbody').length) return;
+
+    html  = '<tbody id="image-row' + image_row + '">';
+	html += '  <tr>';
+	html += '    <td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="news_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
+	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][link]" value="http://" size="50" /></td>';
+	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][sort_order]" value="" size="2" /></td>';
+	html += '    <td class="left"><a onclick="$(\'#image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+	html += '  </tr>';
+	html += '</tbody>';
+	
+	$('#images tfoot').before(html);
+	
+	image_row++;
+}
+//--></script> 
+<script type="text/javascript" src="view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
+<script type="text/javascript"><!--
+$('.date').datepicker({dateFormat: 'yy-mm-dd'});
+$('.datetime').datetimepicker({
+	dateFormat: 'yy-mm-dd',
+	timeFormat: 'h:m'
+});
+$('.time').timepicker({timeFormat: 'h:m'});
+//--></script> 
+<script type="text/javascript"><!--
+$('#tabs a').tabs(); 
+$('#languages a').tabs(); 
+$('#vtab-option a').tabs();
+/*
+var profileCount = <?php echo $profileCount ?>;
+
+function addProfile() {
+    profileCount++;
+    
+    var html = '';
+    html += '<tr id="profile-row' + profileCount + '">';
+    html += '  <td class="left">';
+    html += '    <select name="news_profiles[' + profileCount + '][profile_id]">';
+    <?php foreach ($profiles as $profile): ?>
+    html += '      <option value="<?php echo $profile['profile_id'] ?>"><?php echo $profile['name'] ?></option>';
+    <?php endforeach; ?>
+    html += '    </select>';
+    html += '  </td>';
+    html += '  <td class="left">';
+    html += '    <select name="news_profiles[' + profileCount + '][customer_group_id]">';
+    <?php foreach ($customer_groups as $customer_group): ?>
+    html += '      <option value="<?php echo $customer_group['customer_group_id'] ?>"><?php echo $customer_group['name'] ?></option>';
+    <?php endforeach; ?>
+    html += '    <select>';
+    html += '  </td>';
+    html += '  <td class="left">';
+    html += '    <a class="button" onclick="$(\'#profile-row' + profileCount + '\').remove()"><?php echo $button_remove ?></a>';
+    html += '  </td>';
+    html += '</tr>';
+    
+    $('#tab-profile table tbody').append(html);
+}
+*/
+<?php /* if (isset($this->request->get['news_id'])) { ?>
+    function openbayLinkStatus(){
+        var news_id = '<?php echo $this->request->get['news_id']; ?>';
+        $.ajax({
+            type: 'GET',
+            url: 'index.php?route=extension/openbay/linkStatus&token=<?php echo $token; ?>&news_id='+news_id,
+            dataType: 'html',
+            success: function(data) {
+                //add the button to nav
+                $('<a href="#tab-openbay"><?php echo $tab_marketplace_links ?></a>').hide().appendTo("#tabs").fadeIn(1000);
+                $('#tab-general').before(data);
+                $('#tabs a').tabs();
+            },
+            failure: function(){
+
+            },
+            error: function() {
+
+            }
+        });
+    }
+
+    $(document).ready(function(){
+        openbayLinkStatus();
+    });
+<?php }*/ ?>
+
+//--></script>
+<script type="text/javascript" src="view/javascript/jquery/ajaxupload.js"></script> 
+<script type="text/javascript"><!--
+new AjaxUpload('#button-upload', {
+	action: 'index.php?route=catalog/news/upload&token=<?php echo $token; ?>&c=news&id=<?php echo $id;?>',
+	name: 'file',
+	autoSubmit: true,
+	responseType: 'json',
+	onSubmit: function(file, extension) {
+		$('#button-upload').after('<img src="view/image/loading.gif" class="loading" style="padding-left: 5px;" />');
+		$('#button-upload').attr('disabled', true);
+	},
+	onComplete: function(file, json) {
+		$('#button-upload').attr('disabled', false);
+		
+		if (json['success']) {
+			alert(json['success']);
+			
+			$('input[name=\'filename\']').attr('value', json['filename']);
+		}
+		
+		if (json['error']) {
+			alert(json['error']);
+		}
+		
+		$('.loading').remove();	
+	}
+});
+//--></script> 
+<script>
+$('#button-del').click(function (){
+	if($('input[name=\'filename\']').attr('value')!=''){
+		alert('The file has been deleted sucseefully.');
+	}
+	$('input[name=\'filename\']').attr('value','');
+})
+</script>
+
 <?php echo $footer; ?>

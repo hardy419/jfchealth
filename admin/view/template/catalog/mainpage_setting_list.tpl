@@ -27,11 +27,11 @@
                 <?php } else { ?>
                 <a href="<?php echo $sort_name; ?>"><?php echo 'Name'; ?></a>
                 <?php } ?></td>
-              <td class="right"><?php if ($sort == 'ms.value') { ?>
+              <!--td class="right"><?php if ($sort == 'ms.value') { ?>
                 <a href="<?php echo $sort_sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo 'Value'; ?></a>
                 <?php } else { ?>
                 <a href="<?php echo $sort_sort_order; ?>"><?php echo 'Value'; ?></a>
-                <?php } ?></td>
+                <?php } ?></td-->
               <td class="right"><?php echo $column_action; ?></td>
             </tr>
           </thead>
@@ -45,7 +45,7 @@
                 <input type="checkbox" name="selected[]" value="<?php echo $option['main_setting_id']; ?>" />
                 <?php } ?></td>
               <td class="left"><?php echo $option['key']; ?></td>
-              <td class="right"><?php echo $option['value']; ?></td>
+              <!--td class="right"><?php echo $option['value']; ?></td-->
               <td class="right"><?php foreach ($option['action'] as $action) { ?>
                 [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]
                 <?php } ?></td>
@@ -53,7 +53,7 @@
             <?php } ?>
             <?php } else { ?>
             <tr>
-              <td class="center" colspan="4"><?php echo $text_no_results; ?></td>
+              <td class="center" colspan="3"><?php echo $text_no_results; ?></td>
             </tr>
             <?php } ?>
           </tbody>

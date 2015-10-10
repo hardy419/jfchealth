@@ -1,8 +1,25 @@
 <?php
+
+function cmp($a, $b) {
+	return ($a['sort_order'] < $b['sort_order']) ? -1 : 1;
+}
+
 class ModelCatalogMainpageSetting extends Model {
 
 	public function editSetting($setting_id, $data) {
-		$this->db->query("UPDATE `" . DB_PREFIX . "main_setting` SET value = '" . $this->db->escape($data['value']) . "'");
+		if (isset($data['news_image'])) {
+			usort ($data['news_image'], 'cmp');
+			$images = array ();
+			$links = array ();
+			foreach ($data['news_image'] as $arr) {
+				$images[] = $arr['image'];
+				$links[] = $arr['link'];
+			}
+			$this->db->query("UPDATE `" . DB_PREFIX . "main_setting` SET value = '" . $this->db->escape(implode (',', $images) . ';' . implode (',', $links)) . "' WHERE `main_setting_id` = " . (int)$setting_id);
+		}
+		else {
+			$this->db->query("UPDATE `" . DB_PREFIX . "main_setting` SET value = '' WHERE `main_setting_id` = " . (int)$setting_id);
+		}
 	}
 
 	public function getSetting($setting_id) {
@@ -54,6 +71,12 @@ class ModelCatalogMainpageSetting extends Model {
 
 		return $query->row['total'];
 	}		
+
+	public function getImages($id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "main_setting WHERE main_setting_id = '" . (int)$id . "'");
+
+		return $query->rows;
+	}
 
     public function getCourseName($course_id) {
         $query = $this->db->query("SELECT cd.course_date, cd.name FROM oc_course c LEFT JOIN oc_course_description cd ON c.course_id=cd.course_id WHERE c.course_id = '" . (int)$course_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'");

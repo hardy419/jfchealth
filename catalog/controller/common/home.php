@@ -26,6 +26,12 @@ class ControllerCommonHome extends Controller {
             $this->data['product_description'][] = html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8');
         }
 
+        $this->data['main_settings'] = $this->model_catalog_product->getMainSettings();
+        foreach ($this->data['main_settings'] as &$setting) {
+            $setting['value'] = explode (';', html_entity_decode ($setting['value']));
+            $setting['images'] = explode (',', $setting['value'][0]);
+            $setting['links'] = explode (',', $setting['value'][1]);
+        }
         $this->data['news_info'] = $this->model_catalog_product->getNewestNews();
         $this->data['course_info'] = $this->model_catalog_product->getNewestCourse();
         $this->data['user_article_info'] = $this->model_catalog_product->getNewestUserArticle();

@@ -922,6 +922,19 @@ class ModelCatalogProduct extends Model {
 		return $query->row['total'];
 	}
 
+    public function getMainSettings() {
+		if ($this->customer->isLogged()) {
+			$customer_group_id = $this->customer->getCustomerGroupId();
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}	
+
+        $sql = "SELECT * FROM " . DB_PREFIX . "main_setting ORDER BY main_setting_id ASC";
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+    }
     public function getNewestNews() {
 		if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
