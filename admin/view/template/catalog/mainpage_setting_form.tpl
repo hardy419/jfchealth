@@ -16,7 +16,14 @@
     <div class="content">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
         <div id="tab-image">
-          <table id="images" class="list">
+          <div id="languages" class="htabs">
+            <?php foreach ($languages as $language) { ?>
+            <a href="#language<?php echo $language['language_id']; ?>"><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></a>
+            <?php } ?>
+          </div>
+          <?php foreach ($languages as $language) { ?>
+          <div id="language<?php echo $language['language_id']; ?>">
+          <table class="list">
             <thead>
               <tr>
                 <td class="left"><?php echo $entry_image; ?></td>
@@ -26,16 +33,16 @@
               </tr>
             </thead>
             <?php $image_row = 0; ?>
-            <?php foreach ($news_images as $news_image) { ?>
-            <tbody id="image-row<?php echo $image_row; ?>">
+            <?php foreach ($news_images[$language['language_id']] as $news_image) { ?>
+            <tbody class="image-row<?php echo $image_row; ?>" id="image-row<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>">
               <tr>
-                <td class="left"><div class="image"><img src="<?php echo $news_image['thumb']; ?>" alt="" id="thumb<?php echo $image_row; ?>" />
-                    <input type="hidden" name="news_image[<?php echo $image_row; ?>][image]" value="<?php echo $news_image['image']; ?>" id="image<?php echo $image_row; ?>" />
+                <td class="left"><div class="image"><img src="<?php echo $news_image['thumb']; ?>" alt="" id="thumb<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>" />
+                    <input type="hidden" name="news_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][image]" value="<?php echo $news_image['image']; ?>" id="image<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>" />
                     <br />
-                    <a onclick="image_upload('image<?php echo $image_row; ?>', 'thumb<?php echo $image_row; ?>');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb<?php echo $image_row; ?>').attr('src', '<?php echo $no_image; ?>'); $('#image<?php echo $image_row; ?>').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
-                <td class="right"><input type="text" name="news_image[<?php echo $image_row; ?>][link]" value="<?php echo $news_image['link']; ?>" size="50" /></td>
-                <td class="right"><input type="text" name="news_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $news_image['sort_order']; ?>" size="2" /></td>
-                <td class="left"><a onclick="$('#image-row<?php echo $image_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+                    <a onclick="image_upload('image<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>', 'thumb<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>').attr('src', '<?php echo $no_image; ?>'); $('#image<?php echo $image_row; ?>-lang<?php echo $language['language_id']; ?>').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+                <td class="right"><input type="text" name="news_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][link]" value="<?php echo $news_image['link']; ?>" size="50" /></td>
+                <td class="right"><input type="text" name="news_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][sort_order]" value="<?php echo $news_image['sort_order']; ?>" size="2" /></td>
+                <td class="left"><a onclick="$('.image-row<?php echo $image_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
               </tr>
             </tbody>
             <?php $image_row++; ?>
@@ -47,6 +54,8 @@
               </tr>
             </tfoot>
           </table>
+          </div>
+          <?php } ?>
         </div>
       </form>
     </div>
@@ -83,18 +92,27 @@ function image_upload(field, thumb) {
 var image_row = <?php echo $image_row; ?>;
 
 function addImage() {
-  if(<?php echo $maxnum_images; ?>==$('#images tbody').length) return;
+  if(<?php echo $maxnum_images; ?>==$('#languages+div>table tbody').length) return;
 
-    html  = '<tbody id="image-row' + image_row + '">';
+    html  = '<tbody class="image-row' + image_row + '">';
 	html += '  <tr>';
-	html += '    <td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="news_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
-	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][link]" value="http://" size="50" /></td>';
-	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][sort_order]" value="" size="2" /></td>';
-	html += '    <td class="left"><a onclick="$(\'#image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+	html += '    <td class="left"><div class="image"><img src="<?php echo $no_image; ?>" alt="" id="thumb' + image_row + '" /><input type="hidden" name="news_image[' + image_row + '][image]" value="" id="image' + image_row + '" /><br /><a id="upload-a" onclick="image_upload(\'image' + image_row + '\', \'thumb' + image_row + '\');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="clear-a" onclick="$(\'#thumb' + image_row + '\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '\').attr(\'value\', \'\');"><?php echo $text_clear; ?></a></div></td>';
+	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][link]" value="http://" id="link-input" size="50" /></td>';
+	html += '    <td class="right"><input type="text" name="news_image[' + image_row + '][sort_order]" value="" id="sort-input" size="2" /></td>';
+	html += '    <td class="left"><a onclick="$(\'.image-row' + image_row  + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
 	html += '</tbody>';
 	
-	$('#images tfoot').before(html);
+<?php foreach ($languages as $language) { ?>
+  $('#language<?PHP echo $language['language_id']; ?>>table tfoot').before(html);
+  $('#language<?PHP echo $language['language_id']; ?> .image-row' + image_row).attr('id','image-row' + image_row + '-lang<?PHP echo $language['language_id']; ?>');
+  $('#language<?PHP echo $language['language_id']; ?> #thumb' + image_row).attr('id','thumb' + image_row + '-lang<?PHP echo $language['language_id']; ?>');
+  $('#language<?PHP echo $language['language_id']; ?> #image' + image_row).attr('id','image' + image_row + '-lang<?PHP echo $language['language_id']; ?>').attr('name','news_image[<?PHP echo $language['language_id']; ?>][' + image_row + '][image]');
+  $('#language<?PHP echo $language['language_id']; ?> #upload-a').removeAttr('id').attr('onclick','image_upload(\'image' + image_row + '-lang<?PHP echo $language['language_id']; ?>\', \'thumb' + image_row + '-lang<?PHP echo $language['language_id']; ?>\');');
+  $('#language<?PHP echo $language['language_id']; ?> #clear-a').removeAttr('id').attr('onclick','$(\'#thumb' + image_row + '-lang<?PHP echo $language['language_id']; ?>\').attr(\'src\', \'<?php echo $no_image; ?>\'); $(\'#image' + image_row + '-lang<?PHP echo $language['language_id']; ?>\').attr(\'value\', \'\');');
+  $('#language<?PHP echo $language['language_id']; ?> #link-input').removeAttr('id').attr('name','news_image[<?PHP echo $language['language_id']; ?>][' + image_row + '][link]');
+  $('#language<?PHP echo $language['language_id']; ?> #sort-input').removeAttr('id').attr('name','news_image[<?PHP echo $language['language_id']; ?>][' + image_row + '][sort_order]');
+<?PHP } ?>
 	
 	image_row++;
 }

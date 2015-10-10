@@ -7,15 +7,18 @@ function cmp($a, $b) {
 class ModelCatalogMainpageSetting extends Model {
 
 	public function editSetting($setting_id, $data) {
+		$this->db->query("DELETE FROM `" . DB_PREFIX . "main_setting_description` WHERE `main_setting_id` = " . (int)$setting_id);
 		if (isset($data['news_image'])) {
-			usort ($data['news_image'], 'cmp');
-			$images = array ();
-			$links = array ();
-			foreach ($data['news_image'] as $arr) {
-				$images[] = $arr['image'];
-				$links[] = $arr['link'];
+			foreach ($data['news_image'] as $lang_id=>&$data_lang) {
+				usort ($data_lang, 'cmp');
+				$images = array ();
+				$links = array ();
+				foreach ($data_lang as $arr) {
+					$images[] = $arr['image'];
+					$links[] = $arr['link'];
+				}
+				$this->db->query("INSERT `" . DB_PREFIX . "main_setting_description` (main_setting_id, language_id, description) VALUES (" . (int)$setting_id . ", " . (int)$lang_id . ", '" . $this->db->escape(implode (',', $images) . ';' . implode (',', $links)) . "')");
 			}
-			$this->db->query("UPDATE `" . DB_PREFIX . "main_setting` SET value = '" . $this->db->escape(implode (',', $images) . ';' . implode (',', $links)) . "' WHERE `main_setting_id` = " . (int)$setting_id);
 		}
 		else {
 			$this->db->query("UPDATE `" . DB_PREFIX . "main_setting` SET value = '' WHERE `main_setting_id` = " . (int)$setting_id);
@@ -73,7 +76,7 @@ class ModelCatalogMainpageSetting extends Model {
 	}		
 
 	public function getImages($id) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "main_setting WHERE main_setting_id = '" . (int)$id . "'");
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "main_setting s LEFT JOIN " . DB_PREFIX . "main_setting_description sd ON (s.main_setting_id=sd.main_setting_id) WHERE s.main_setting_id = '" . (int)$id . "'");
 
 		return $query->rows;
 	}

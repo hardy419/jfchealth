@@ -313,6 +313,11 @@ class ControllerCatalogMainpageSetting extends Controller {
 			'separator' => ' :: '
 		);
 
+
+		$this->load->model('localisation/language');
+
+		$this->data['languages'] = $this->model_localisation_language->getLanguages();
+
 		if (!isset($this->request->get['main_setting_id'])) {
 			$this->data['action'] = $this->url->link('catalog/mainpage_setting/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		} else { 
@@ -359,12 +364,12 @@ class ControllerCatalogMainpageSetting extends Controller {
 		} elseif (isset($this->request->get['main_setting_id'])) {
 			$temp = $this->model_catalog_mainpage_setting->getImages($this->request->get['main_setting_id']);
 			$news_images = array ();
-			foreach ($temp as $news_image) if (!empty($news_image['value'])) {
-				$news_image['value'] = explode (';', html_entity_decode ($news_image['value']));
-				$images = explode (',', $news_image['value'][0]);
-				$links = explode (',', $news_image['value'][1]);
+			foreach ($temp as $t) if (!empty($t['description'])) {
+				$t['description'] = explode (';', html_entity_decode ($t['description']));
+				$images = explode (',', $t['description'][0]);
+				$links = explode (',', $t['description'][1]);
 				foreach ($images as $key=>$val) {
-					$news_images[] = array(
+					$news_images[$t['language_id']][] = array(
 						'image'      => $val,
 						'link'       => $links[$key],
 						'sort_order' => $key
@@ -377,20 +382,20 @@ class ControllerCatalogMainpageSetting extends Controller {
 
 		$this->data['news_images'] = array();
 
-		foreach ($news_images as $news_image) {
+		foreach ($news_images as $lang_id=>$news_images_lang) { foreach ($news_images_lang as $news_image) {
 			if ($news_image['image'] && file_exists(DIR_IMAGE . $news_image['image'])) {
 				$image = $news_image['image'];
 			} else {
 				$image = 'no_image.jpg';
 			}
 
-			$this->data['news_images'][] = array(
+			$this->data['news_images'][$lang_id][] = array(
 				'image'      => $image,
 				'link'       => $news_image['link'],
 				'thumb'      => $this->model_tool_image->resize($image, 100, 100),
 				'sort_order' => $news_image['sort_order']
 			);
-		}
+		} }
 
 		$this->data['no_image'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
 
