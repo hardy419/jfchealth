@@ -90,6 +90,17 @@ class ModelCatalogNews extends Model {
 		$this->cache->delete('news');
 	}
 
+    public function showNewsInHomepage ($arr_id) {
+        $this->db->query ("UPDATE " . DB_PREFIX . "news SET info=0 WHERE type=1");
+
+        foreach ($arr_id as &$id) {
+            $id = "'{$id}'";
+        }
+        $str_id = implode (',', $arr_id);
+        $sql = "UPDATE " . DB_PREFIX . "news SET info=1 WHERE news_id IN ({$str_id})";
+        $this->db->query ($sql);
+    }
+
 	public function getNewsItem($news_id) {
 		$query = $this->db->query("SELECT DISTINCT *, (SELECT keyword FROM " . DB_PREFIX . "url_alias WHERE query = 'news_id=" . (int)$news_id . "') AS keyword FROM " . DB_PREFIX . "news p LEFT JOIN " . DB_PREFIX . "news_description pd ON (p.news_id = pd.news_id) WHERE p.news_id = '" . (int)$news_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
@@ -112,13 +123,13 @@ class ModelCatalogNews extends Model {
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
 			$sql .= " ORDER BY " . $data['sort'];	
 		} else {
-			$sql .= " ORDER BY nd.title";	
+			$sql .= " ORDER BY n.sort_order";	
 		}
 
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC";
-		} else {
+		if (isset($data['order']) && ($data['order'] == 'ASC')) {
 			$sql .= " ASC";
+		} else {
+			$sql .= " DESC";
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {

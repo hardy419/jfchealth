@@ -22,7 +22,7 @@ class ControllerProductNews extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = ($this->request->get['t']== 5)? 'n.sort_order' : 'n.date_added';
+			$sort = 'n.sort_order';
 		}
 
 		if (isset($this->request->get['order'])) {
@@ -105,7 +105,7 @@ class ControllerProductNews extends Controller {
                 'date_added'        => $result['date_added'],
                 'info'        => $result['info'],
                 'intro'       => $this->getIntro(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')),
-                'infod'       => $result['infod'],
+                'infod'       => empty($result['infod']) ? $this->getIntro(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')) : $result['infod'],
                 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
             );
         }

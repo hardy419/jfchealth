@@ -37,10 +37,10 @@ class ModelCatalogNews extends Model {
 			$sql .= " ORDER BY n.sort_order";	
 		}
 
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC, LCASE(nd.title) DESC";
+		if (isset($data['order']) && ($data['order'] == 'ASC')) {
+			$sql .= " ASC, n.time ASC";
 		} else {
-			$sql .= " ASC, LCASE(nd.title) ASC";
+			$sql .= " DESC, n.time DESC";
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {

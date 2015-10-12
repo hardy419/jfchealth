@@ -929,7 +929,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "main_setting ORDER BY main_setting_id ASC";
+        $sql = "SELECT * FROM " . DB_PREFIX . "main_setting s LEFT JOIN " . DB_PREFIX . "main_setting_description sd ON (s.main_setting_id=sd.main_setting_id) WHERE sd.language_id='" . (int)$this->config->get('config_language_id') . "' ORDER BY s.main_setting_id ASC";
 
 		$query = $this->db->query($sql);
 
@@ -942,7 +942,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=1 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=1 AND n.info='1' AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.sort_order DESC";
 
 		$query = $this->db->query($sql);
 
@@ -970,7 +970,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=2 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=2 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.sort_order DESC LIMIT 1";
 
 		$query = $this->db->query($sql);
 
@@ -983,7 +983,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=4 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC LIMIT 1";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=4 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.sort_order DESC LIMIT 1";
 
 		$query = $this->db->query($sql);
 
@@ -996,7 +996,7 @@ class ModelCatalogProduct extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}	
 
-        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=5 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.time DESC";
+        $sql = "SELECT * FROM " . DB_PREFIX . "news n LEFT JOIN " . DB_PREFIX . "news_description nd ON n.news_id=nd.news_id WHERE n.type=5 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.sort_order DESC";
 
 		$query = $this->db->query($sql);
 

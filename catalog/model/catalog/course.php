@@ -23,10 +23,10 @@ class ModelCatalogCourse extends Model {
 			$sql .= " ORDER BY c.sort_order";	
 		}
 
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC, LCASE(cd.name) DESC";
+		if (isset($data['order']) && ($data['order'] == 'ASC')) {
+			$sql .= " ASC, c.time ASC";
 		} else {
-			$sql .= " ASC, LCASE(cd.name) ASC";
+			$sql .= " DESC, c.time DESC";
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {

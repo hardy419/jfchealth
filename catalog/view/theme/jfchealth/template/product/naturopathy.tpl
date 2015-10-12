@@ -19,7 +19,7 @@
 					<td class="index_discription_title"><?PHP echo $news[$idx]['title']; ?></td>
 				  </tr>
 				  <tr>
-					<td width="850" align="left" valign="top" class="index_content_txt"><?PHP echo $news[$idx]['infod']; ?>...... <span class="index_read_txt"><a class="readmore" href="?route=product/naturopathy/detail&nid=<?PHP echo $news[$idx]['news_id']; ?>" target="_parent">閱讀全文</a></span><br />                                          </td>
+					<td width="850" align="left" valign="top" class="index_content_txt intro" nid="<?PHP echo $news[$idx]['news_id']; ?>" intro="<?PHP echo $news[$idx]['infod']; ?>">...... <span class="index_read_txt"><a class="readmore" href="?route=product/naturopathy/detail&nid=<?PHP echo $news[$idx]['news_id']; ?>" target="_parent">閱讀全文</a></span><br />                                          </td>
 				  </tr>
 				</table></td>
 				</tr>
@@ -53,6 +53,12 @@ $(function(){
   $('#Image8').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_magazine_mo.png');
   // Sub menu
   show_submenu('img_magazine_sub.png','#magazine_map');
+  
+  $('.intro').each(function(){
+    var txt=$(this).attr('intro');
+    $(this).text(txt.substr(0,90)+"......");
+    $(this).html($(this).html()+'<span class="index_read_txt"><a class="readmore" style="color:#0000ff" href="?route=product/naturopathy/detail&nid='+$(this).attr('nid')+'" target="_parent">閱讀全文</a></span>');
+  });
 });
 </script>
 

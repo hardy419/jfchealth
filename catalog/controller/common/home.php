@@ -1,5 +1,17 @@
 <?php  
 class ControllerCommonHome extends Controller {
+    private function getIntro($html) {
+        $start = strpos ($html, '>', strpos ($html, 'index_content_txt'))+1;
+        $end = strpos ($html, '<', $start);
+        $i = 0;
+        while($end-$start < 10 && $i<10) {
+            $start = strpos ($html, '>', $end)+1;
+            $end = strpos ($html, '<', $start);
+            ++$i;
+        }
+        return substr($html, $start, $end-$start);
+    }
+
 	public function index() {
 		$this->document->setTitle($this->config->get('config_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
@@ -28,11 +40,14 @@ class ControllerCommonHome extends Controller {
 
         $this->data['main_settings'] = $this->model_catalog_product->getMainSettings();
         foreach ($this->data['main_settings'] as &$setting) {
-            $setting['value'] = explode (';', html_entity_decode ($setting['value']));
-            $setting['images'] = explode (',', $setting['value'][0]);
-            $setting['links'] = explode (',', $setting['value'][1]);
+            $setting['description'] = explode (';', html_entity_decode ($setting['description']));
+            $setting['images'] = explode (',', $setting['description'][0]);
+            $setting['links'] = explode (',', $setting['description'][1]);
         }
         $this->data['news_info'] = $this->model_catalog_product->getNewestNews();
+        foreach ($this->data['news_info'] as &$news) {
+            $news['description'] = $this->getIntro (html_entity_decode ($news['description']));
+        }
         $this->data['course_info'] = $this->model_catalog_product->getNewestCourse();
         $this->data['user_article_info'] = $this->model_catalog_product->getNewestUserArticle();
         $this->data['video_info'] = $this->model_catalog_product->getNewestVideo();

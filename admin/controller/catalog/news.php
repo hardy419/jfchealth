@@ -110,6 +110,38 @@ class ControllerCatalogNews extends Controller {
 		$this->getList();
 	}
 
+	public function show_in_homepage() {
+		$this->language->load('catalog/' . $this->request->get['n']);
+
+		$this->document->setTitle($this->language->get('heading_title'));
+
+		$this->load->model('catalog/news');
+
+		if (isset($this->request->post['selected']) && $this->validateShowInHomepage()) {
+			$this->model_catalog_news->showNewsInHomepage($this->request->post['selected']);
+
+			$this->session->data['success'] = $this->language->get('text_success');
+
+			$url = '';
+
+			if (isset($this->request->get['sort'])) {
+				$url .= '&sort=' . $this->request->get['sort'];
+			}
+
+			if (isset($this->request->get['order'])) {
+				$url .= '&order=' . $this->request->get['order'];
+			}
+
+			if (isset($this->request->get['page'])) {
+				$url .= '&page=' . $this->request->get['page'];
+			}
+
+			$this->redirect($this->url->link('catalog/'.$this->request->get['n'], 'token=' . $this->session->data['token'] . $url, 'SSL'));
+		}
+
+		$this->getList();
+	}
+
 	public function copy() {
 		$this->language->load('catalog/' . $this->request->get['n']);
 
@@ -149,7 +181,7 @@ class ControllerCatalogNews extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'n.time';
+			$sort = 'n.sort_order';
 		}
 
 		if (isset($this->request->get['order'])) {
@@ -194,6 +226,9 @@ class ControllerCatalogNews extends Controller {
 			'separator' => ' :: '
 		);
 
+		if ('news' == $this->request->get['n']) {
+			$this->data['show_in_homepage'] = $this->url->link('catalog/'.$this->request->get['n'].'/show_in_homepage', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		}
 		$this->data['insert'] = $this->url->link('catalog/'.$this->request->get['n'].'/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$this->data['copy'] = $this->url->link('catalog/'.$this->request->get['n'].'/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');	
 		$this->data['delete'] = $this->url->link('catalog/'.$this->request->get['n'].'/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
@@ -259,6 +294,7 @@ class ControllerCatalogNews extends Controller {
 		$this->data['column_action'] = $this->language->get('column_action');		
 
 		$this->data['button_copy'] = $this->language->get('button_copy');		
+		$this->data['button_show_in_homepage'] = 'Show in Homepage';		
 		$this->data['button_insert'] = $this->language->get('button_insert');		
 		$this->data['button_delete'] = $this->language->get('button_delete');		
 		$this->data['button_filter'] = $this->language->get('button_filter');
@@ -542,6 +578,22 @@ class ControllerCatalogNews extends Controller {
 	protected function validateDelete() {
 		if (!$this->user->hasPermission('modify', 'catalog/news')) {
 			$this->error['warning'] = $this->language->get('error_permission');
+		}
+
+		if (!$this->error) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	protected function validateShowInHomepage() {
+		if (!$this->user->hasPermission('modify', 'catalog/news')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+		}
+
+		if (count ($this->request->post['selected']) > 3) {
+			$this->error['warning'] = 'Please select no more than 3';
 		}
 
 		if (!$this->error) {

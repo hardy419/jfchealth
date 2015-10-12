@@ -67,30 +67,16 @@
   <div class="home-news">
     <div class="home-news-text pa">
       <div class="home-news-div">
+      <?PHP foreach ($news_info as $item) { ?>
         <div class="news-section-div">
-          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
+          <div class="fl"><a href="?route=product/news/detail&nid=<?PHP echo $item['news_id']; ?>"><img src="<?PHP echo DIR_IMAGE . $item['image']; ?>" /></a></div>
           <div class="fr">
-            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會</h3>
-            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
+            <h3><?PHP echo $item['title']; ?></h3>
+            <p><?PHP echo $item['description']; ?>......</p>
           </div>
           <div class="cb"></div>
         </div>
-        <div class="news-section-div">
-          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
-          <div class="fr">
-            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會</h3>
-            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
-          </div>
-          <div class="cb"></div>
-        </div>
-        <div class="news-section-div">
-          <div class="fl"><img src="<?PHP echo $dir_image; ?>img_photo03.png" /></div>
-          <div class="fr">
-            <h3>愛的事業·再啟航”駿豐頻譜第13屆健康大使表彰大會</h3>
-            <p>2015年3月24日，“愛的事業•再啟航”駿豐頻譜第13屆健康大使表彰大會在廣州保利世貿博覽館隆重召開。國家司法部原部長高昌禮，國家體育總局訓練局副局長呂鐵杭，奧運跳水冠軍羅玉通，奧運體操冠軍馮喆，中國醫學科學院基礎醫學研究所研究員、北京協和醫院教授、博士生導師吳元德，駿豐事業的創始人、董事長趙毅......</p>
-          </div>
-          <div class="cb"></div>
-        </div>
+      <?PHP } ?>
       </div>
     </div>
     <img src="<?PHP echo $dir_image_lang; ?>home-news.png" />
