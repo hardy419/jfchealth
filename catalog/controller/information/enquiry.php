@@ -68,7 +68,7 @@ class ControllerInformationEnquiry extends Controller {
         $message = $_POST['message'];
         $subject = '[Feedback From JFC]';
         $body = $message.'<br/><br/>Name: '.$name.'<br/>Email: '.$email.'<br/>Phone: '.$phone;
-        $this->msg = $this->postMail ($body, $subject, '540115739@qq.com', '2757144278@qq.com');
+        $this->msg = $this->postMail ($body, $subject, 'thomaslaw@mrnewbie.com', 'thomaslaw@mrnewbie.com');
         $this->index ();
     }
     public function postMail($body,$subject,$to,$name,$isHTML = true) {
@@ -77,8 +77,8 @@ class ControllerInformationEnquiry extends Controller {
         $mail->IsSMTP ();
         $mail->SMTPDebug = 0;
         $mail->SMTPAuth = true;
-        $mail->Host = 'smtp.jfcgroup.com.cn';
-        $mail->Port = '25';
+        $mail->Host = 'mail.lifespring.com.hk';
+        $mail->Port = '26';
         $mail->Username = 'system@lifespring.com.hk';
         $mail->Password = '2201sys##';
         mb_internal_encoding ('UTF-8');

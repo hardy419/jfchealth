@@ -71,7 +71,7 @@
         <div class="news-section-div">
           <div class="fl"><a href="?route=product/news/detail&nid=<?PHP echo $item['news_id']; ?>"><img src="<?PHP echo DIR_IMAGE . $item['image']; ?>" /></a></div>
           <div class="fr">
-            <h3><?PHP echo $item['title']; ?></h3>
+            <h3><a style="color:#000000" href="?route=product/news/detail&nid=<?PHP echo $item['news_id']; ?>"><?PHP echo $item['title']; ?></a></h3>
             <p><?PHP echo $item['description']; ?>......</p>
           </div>
           <div class="cb"></div>
@@ -105,6 +105,11 @@ $(document).ready(function (){
   // Show sub menu
   //$(".sub-menu").css('display','block');
   //$(".content").css('margin-top','0px');
+  
+  // Firefox
+  if(navigator.userAgent.indexOf("Firefox")>0){
+    $('.home-news-div').css('top','106px');
+  }
 });
 function slide(obj,dir){
   var linum=obj.find("li").length;

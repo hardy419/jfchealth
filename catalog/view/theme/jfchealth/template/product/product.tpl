@@ -60,6 +60,15 @@ $(function(){
   $('td.product_name').removeAttr('style');
   $('div.product-bottom-desc table,div.product-bottom-desc table img').attr('width','850px');
   $('.product-bottom-desc style').remove();
+  // font unification
+  /*
+  <?PHP if (false !== strpos($dir_image_lang, '/zh/')) { ?>
+    $('*').css('font-family','"Microsoft JhengHei", "¥Ò¥é¥®¥Î½Ç¥´ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", "sans-serif", "arial", "helvetica" !important');
+  <?PHP } else { ?>
+    $('*').css('font-family','"¥á¥¤¥ê¥ª", "Meiryo", "¥Ò¥é¥®¥Î½Ç¥´ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", "sans-serif", "arial", "helvetica" !important');
+  <?PHP } ?>
+  */
+  $('table,span').css('font-family','inherit').css('font-size','inherit');
 });
 </script>
 

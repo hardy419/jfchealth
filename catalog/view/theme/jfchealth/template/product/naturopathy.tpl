@@ -37,6 +37,12 @@
 				</tr>
 			  <?PHP } else {break;} ?>
 			</table>
+	  <style>
+      .links a:visited,.links a:link {
+        color:#000000 !important;
+      }
+      </style>
+	  <?php echo $pagination; ?>
 		</div>
 	</div>
 	<div class="cb"></div>

@@ -21,6 +21,12 @@
 		<div class="cb"></div>
 	  </div>
 <?PHP $idx++; } ?>
+	  <style>
+      .links a:visited,.links a:link {
+        color:#000000 !important;
+      }
+      </style>
+	  <?php echo $pagination; ?>
 	</div>
 	<div class="cb"></div>
 </div><!-- div content -->
@@ -36,6 +42,8 @@ $(function(){
   $('#Image7').attr('src','<?PHP echo $dir_image_lang; ?>menu/btn_menu_share_mo.png');
   // Sub menu
   show_submenu('img_share_sub.png','#share_map');
+  // Pagination
+  $('.links a').attr('href',$('.links a').attr('href').replace('user_article','article'));
 });
 </script>
 

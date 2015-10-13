@@ -81,6 +81,10 @@ class ControllerModuleCategory extends Controller {
 			);	
 		}
 
+        $temp = $this->data['categories'][2];
+        $this->data['categories'][2] = $this->data['categories'][3];
+        $this->data['categories'][3] = $temp;
+
         $this->data['dir_image'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/';
         $this->data['dir_image_lang'] = 'catalog/view/theme/'.$this->config->get('config_template').'/images/'.$this->language->get('code').'/';
         
